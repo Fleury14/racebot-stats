@@ -1,3 +1,4 @@
 import ParseWinLoss from './ParseWinLoss';
+import GetCurrentRaces from './GetCurrentRaces';
 
-export { ParseWinLoss };
+export { ParseWinLoss, GetCurrentRaces };

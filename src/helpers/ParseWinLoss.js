@@ -1,7 +1,6 @@
 
 // Should take in an array of races
 const ParseWinLoss = (data) => {
-  console.log('data', data);
   const racers = [];
   const forfeitString = 'Forfeited';
   const completedString = 'Completed';
@@ -10,7 +9,7 @@ const ParseWinLoss = (data) => {
   // loop through each race
   for (let race of data) {
     // skip over races that arent complete and 2v2s
-    if (race.details.status !== completedString || race.details.mode === '2v2') {
+    if (race.details.status !== completedString || race.details.mode === twov2String) {
       continue;
     }
     // loop through entrants
