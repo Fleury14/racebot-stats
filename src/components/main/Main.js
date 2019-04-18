@@ -4,6 +4,7 @@ import { getBotData } from '../../redux/actions';
 import { GetCurrentRaces } from '../../helpers'
 import WinLoss from '../win-loss/WinLoss';
 import CurrentRaces from '../current-races/CurrentRaces';
+import { Navbar } from '..';
 
 const mapStateToProps = (state) => {
   return {
@@ -45,6 +46,7 @@ class MainComponent extends Component {
     const { data } = this.state;
     return (
       <div>
+        <Navbar />
         <h1>Main</h1>
         {data && (
           <React.Fragment>

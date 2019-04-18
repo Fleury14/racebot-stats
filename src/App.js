@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
 import AppRouter from './router/AppRouter';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   render() {
