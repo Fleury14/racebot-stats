@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getBotData } from '../../redux/actions';
+import WinLoss from '../win-loss/WinLoss';
 
 const mapStateToProps = (state) => {
   return {
@@ -37,11 +38,13 @@ class MainComponent extends Component {
   }
 
   render() {
-    console.log('props', this.props);
-    console.log('state', this.state);
+    // console.log('props', this.props);
+    // console.log('state', this.state);
+    const { data } = this.state;
     return (
       <div>
         <h1>Main</h1>
+        {data && <WinLoss data={data}/>}
         {/* {this.state.error && <p>{this.state.error}</p>} */}
       </div>
     )
