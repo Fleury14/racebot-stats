@@ -5,6 +5,7 @@ import { GetCurrentRaces } from '../../helpers'
 import WinLoss from '../win-loss/WinLoss';
 import CurrentRaces from '../current-races/CurrentRaces';
 import { Navbar } from '..';
+import './Main.scss';
 
 const mapStateToProps = (state) => {
   return {
@@ -45,12 +46,14 @@ class MainComponent extends Component {
     // console.log('state', this.state);
     const { data } = this.state;
     return (
-      <div>
+      <div className="main-body">
         <Navbar />
-        <h1>Main</h1>
         {data && (
           <React.Fragment>
-            <CurrentRaces data={GetCurrentRaces(data.items)} />
+            <div className="p-5">
+              <CurrentRaces data={GetCurrentRaces(data.items)} />
+            </div>
+            
             <WinLoss data={data} />
           </React.Fragment>
           
