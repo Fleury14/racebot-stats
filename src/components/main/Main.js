@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getBotData } from '../../redux/actions';
+import { GetCurrentRaces } from '../../helpers'
 import WinLoss from '../win-loss/WinLoss';
+import CurrentRaces from '../current-races/CurrentRaces';
 
 const mapStateToProps = (state) => {
   return {
@@ -44,7 +46,13 @@ class MainComponent extends Component {
     return (
       <div>
         <h1>Main</h1>
-        {data && <WinLoss data={data}/>}
+        {data && (
+          <React.Fragment>
+            <CurrentRaces data={GetCurrentRaces(data.items)} />
+            <WinLoss data={data} />
+          </React.Fragment>
+          
+        )}
         {/* {this.state.error && <p>{this.state.error}</p>} */}
       </div>
     )
