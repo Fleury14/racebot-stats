@@ -25,14 +25,12 @@ class MainComponent extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('updated?');
     if (prevState.data !== this.state.data) {
       this.setState({ data: prevState.data });
     }
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log('next props', nextProps);
     if (nextProps.botData.data !== prevState.data | nextProps.botData.error) {
       return { data: nextProps.botData.data, error: nextProps.botData.error }
     } else return null;
