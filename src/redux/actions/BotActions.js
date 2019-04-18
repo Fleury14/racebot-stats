@@ -1,4 +1,4 @@
-import { GET_BOT_DATA, DATA_START_LOADING, DATA_DONE_LOADING, BOT_DATA_ERROR } from './types';
+import { DATA_START_LOADING, DATA_DONE_LOADING, BOT_DATA_ERROR } from './types';
 import axios from 'axios';
 
 const loadStart = () => ({
@@ -19,20 +19,17 @@ const loadError = error => ({
   }
 });
 
-const dataSuccess = data => ({
-  type: GET_BOT_DATA,
-  payload: {
-    data,
-  }
-});
 
-export const getBotData = async () => {
-  return dispatch => {
+export const getBotData = () => {
+  console.log('getting bot data...');
+  return (dispatch) => {
+    console.log('apikey', process.env.REACT_APP_RACEBOT_APIKEY);
     dispatch(loadStart());
-
-    axios.get('http://ec2-52-15-172-83.us-east-2.compute.amazonaws.com:8080/races?pageSize=1000')
+    console.log('started load, now getting...');
+    axios.get('http://ec2-52-15-172-83.us-east-2.compute.amazonaws.com:8080/races?pageSize=1000', { headers: { apikey: process.env.REACT_APP_RACEBOT_APIKEY } })
     .then(response => {
-      dispatch(loadFinish(response));
+      console.log('response', response);
+      dispatch(loadFinish(response.data));
     })
     .catch(err => {
       dispatch(loadError(err));
@@ -40,5 +37,3 @@ export const getBotData = async () => {
   }
 
 }
-
-// http://ec2-52-15-172-83.us-east-2.compute.amazonaws.com:8080/races?pageSize=1000

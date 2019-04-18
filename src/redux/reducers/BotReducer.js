@@ -9,7 +9,7 @@ export default (state = INITIAL_STATE, action) => {
     case DATA_START_LOADING:
       return { ...state, loading: true };
     case DATA_DONE_LOADING:
-      return { ...state, loading: false, data: action.payload.data };
+      return { ...state, loading: false, data: action.payload.data, error: null };
 
     default:
       return state;
