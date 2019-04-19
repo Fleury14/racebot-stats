@@ -4,7 +4,7 @@ import { getBotData } from '../../redux/actions';
 import { GetCurrentRaces } from '../../helpers'
 import WinLoss from '../win-loss/WinLoss';
 import CurrentRaces from '../current-races/CurrentRaces';
-import { Navbar } from '..';
+import { Navbar, PlayerSearcher } from '..';
 import './Main.scss';
 
 const mapStateToProps = (state) => {
@@ -41,10 +41,14 @@ class MainComponent extends Component {
     } else return null;
   }
 
+  handlePlayerSelect(player) {
+    console.log('selected player', player);
+  }
+
   render() {
     // console.log('props', this.props);
     // console.log('state', this.state);
-    const { data } = this.state;
+    const { data, selectedPlayer } = this.state;
     return (
       <div className="main-body">
         <Navbar />
@@ -53,7 +57,7 @@ class MainComponent extends Component {
             <div className="p-5">
               <CurrentRaces data={GetCurrentRaces(data.items)} />
             </div>
-            
+            <PlayerSearcher onSelect={(player) => this.handlePlayerSelect(player)} />
             <WinLoss data={data} />
           </React.Fragment>
           
