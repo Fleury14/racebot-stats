@@ -46,8 +46,9 @@ class MainComponent extends Component {
   }
 
   render() {
-    // console.log('props', this.props);
+    console.log('props', this.props);
     // console.log('state', this.state);
+    const { history } = this.props;
     const { data, selectedPlayer } = this.state;
     return (
       <div className="main-body">
@@ -57,7 +58,7 @@ class MainComponent extends Component {
             <div className="p-5">
               <CurrentRaces data={GetCurrentRaces(data.items)} />
             </div>
-            <PlayerSearcher onSelect={(player) => this.handlePlayerSelect(player)} />
+            <PlayerSearcher navigation={history} onSelect={(player) => this.handlePlayerSelect(player)} />
             <WinLoss data={data} />
           </React.Fragment>
           
