@@ -11,13 +11,11 @@ class PlayerSearcher extends Component {
 
   onSubmitName() {
     const { playerInput } = this.state;
-    const { onSelect, navigation } = this.props;
-    // onSelect(playerInput);
+    const { navigation } = this.props;
     navigation.push(`/racer/${playerInput}`);
   }
 
   render() {
-    console.log('nav?', this.props);
     const { playerInput } = this.state;
     return (
       <div className="player-searcher-container p-5">

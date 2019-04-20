@@ -29,7 +29,6 @@ class RacerStats extends Component {
   componentDidMount() {
     // if theres go general data, get it
     if (!this.props.generalData || !this.state.generalData) {
-      console.log('getting general data');
       this.props.getData();
       this.setState({ generalData: this.props.generalData});
     }
@@ -40,8 +39,6 @@ class RacerStats extends Component {
   }
 
   render() {
-    console.log('state in racer stats', this.state);
-    console.log('props in racer stats', this.props);
     const { racerData, generalData } = this.state;
     return (
       <div className="racer-stats-container">
@@ -75,8 +72,8 @@ class RacerStats extends Component {
                   </Row>
                 </Container>
               </div>
-              <div>
-              {generalData && <WinLoss data={generalData} selectedPlayer={this.props.match.params.racer} />}
+              <div className="racer-first-row">
+                {generalData && <WinLoss data={generalData} selectedPlayer={this.props.match.params.racer} />}
               </div>
             </div>
             

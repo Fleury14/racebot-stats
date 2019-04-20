@@ -17,7 +17,6 @@ const renderRaceRow = (race) => {
 }
 
 const CurrentRaces = (props) => {
-  console.log('current races props', props);
   const { data } = props;
   return (
     <div className="current-races-container open-sans">

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getBotData } from '../../redux/actions';
 import { GetCurrentRaces } from '../../helpers'
-import WinLoss from '../win-loss/WinLoss';
 import CurrentRaces from '../current-races/CurrentRaces';
 import { Navbar, PlayerSearcher } from '..';
 import './Main.scss';
@@ -41,15 +40,10 @@ class MainComponent extends Component {
     } else return null;
   }
 
-  handlePlayerSelect(player) {
-    console.log('selected player', player);
-  }
-
   render() {
-    console.log('props', this.props);
     // console.log('state', this.state);
     const { history } = this.props;
-    const { data, selectedPlayer } = this.state;
+    const { data } = this.state;
     return (
       <div className="main-body">
         <Navbar />
@@ -58,12 +52,10 @@ class MainComponent extends Component {
             <div className="p-5">
               <CurrentRaces data={GetCurrentRaces(data.items)} />
             </div>
-            <PlayerSearcher navigation={history} onSelect={(player) => this.handlePlayerSelect(player)} />
-            <WinLoss data={data} />
+            <PlayerSearcher navigation={history} />
           </React.Fragment>
           
         )}
-        {/* {this.state.error && <p>{this.state.error}</p>} */}
       </div>
     )
   }
