@@ -1,0 +1,27 @@
+@import "../../scss/variables.scss";
+
+.racer-stats-container {
+  min-height: 100vh;
+  background-color: #eee;
+}
+
+.racer-stats-body {
+  height: 100%;
+}
+
+.racer-title {
+  font-weight: 700;
+  color: $primaryColor;
+}
+
+.racer-first-row {
+  background-color: #fff;
+  border-radius: 13px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.racer-info-box-top {
+  background-color: $primaryColor;
+  color: #eee;
+}

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getBotData } from '../../redux/actions';
 import { GetCurrentRaces } from '../../helpers'
-import WinLoss from '../win-loss/WinLoss';
 import CurrentRaces from '../current-races/CurrentRaces';
+import { Navbar, PlayerSearcher } from '..';
+import './Main.scss';
 
 const mapStateToProps = (state) => {
   return {
@@ -40,20 +41,21 @@ class MainComponent extends Component {
   }
 
   render() {
-    // console.log('props', this.props);
     // console.log('state', this.state);
+    const { history } = this.props;
     const { data } = this.state;
     return (
-      <div>
-        <h1>Main</h1>
+      <div className="main-body">
+        <Navbar />
         {data && (
           <React.Fragment>
-            <CurrentRaces data={GetCurrentRaces(data.items)} />
-            <WinLoss data={data} />
+            <div className="p-5">
+              <CurrentRaces data={GetCurrentRaces(data.items)} />
+            </div>
+            <PlayerSearcher navigation={history} />
           </React.Fragment>
           
         )}
-        {/* {this.state.error && <p>{this.state.error}</p>} */}
       </div>
     )
   }
