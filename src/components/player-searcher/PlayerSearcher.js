@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Input, Button } from 'reactstrap';
 import './PlayerSearcher.scss';
 
+
+
 class PlayerSearcher extends Component {
   state = {
     playerInput: ''
