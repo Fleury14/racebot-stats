@@ -9,6 +9,7 @@ import './RacerStats.scss';
 const mapStateToProps = state => ({
   racerData: state.botData.racerData,
   generalData: state.botData.data,
+  currentRacer: null,
 });
 
 const mapActionsToProps = (dispatch) => ({
@@ -29,17 +30,29 @@ class RacerStats extends Component {
   componentDidMount() {
     // if theres go general data, get it
     if (!this.props.generalData || !this.state.generalData) {
-      this.props.getData();
+      this.props.getGeneralData();
       this.setState({ generalData: this.props.generalData});
     }
-
     this.props.getData(this.props.match.params.racer);
-    this.setState({ racerData: this.props.racerData});
-
+    this.setState({ racerData: this.props.racerData, currentRacer: this.props.match.params.racer });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.data !== this.state.data) {
+      this.setState({ data: prevState.data });
+    }
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.match.params.racer !== prevState.currentRacer) {
+      nextProps.getData(nextProps.match.params.racer);  
+      return { racerData: nextProps.racerData, currentRacer: nextProps.match.params.racer }
+    } else return null;
+  }
+
+
   render() {
-    const { racerData, generalData } = this.state;
+    const { racerData, generalData, currentRacer } = this.state;
     return (
       <div className="racer-stats-container">
         <Navbar />
@@ -47,7 +60,7 @@ class RacerStats extends Component {
           {!racerData && <h1>There is no data for this racer.</h1>}
           {racerData && (
             <div>
-              <h1 className="racer-title text-uppercase text-center">{racerData.name}</h1>
+              <h1 className="racer-title text-uppercase text-center">{currentRacer}</h1>
               <div className="racer-first-row">
                 <Container fluid>
                   <Row className="text-center">
