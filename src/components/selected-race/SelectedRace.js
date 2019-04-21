@@ -91,7 +91,7 @@ class SelectedRace extends Component {
               </Container>
             </div>
           )}
-          {raceData && raceData.details && raceData.details.finishers && (
+          {raceData && raceData.details && raceData.details.finishers && raceData.details.finishers.length > 0 && (
             <div className="race-stats-finisher-bubble">
               <Table striped borderless>
                 <thead>
