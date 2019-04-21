@@ -1,0 +1,69 @@
+@import "../../scss/variables.scss";
+
+.race-stats-container {
+  min-height: 100vh;
+  background-color: #eee;
+}
+
+.race-stats-body {
+  height: 100%;
+}
+
+.race-stats-top-bubble {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 13px;
+
+  h1 {
+    color: $primaryColor;
+    font-size: 32px;
+    text-align: center;
+  }
+}
+
+.race-stats-entrants {
+  h3 {
+    font-weight: 900;
+    font-size: 24px;
+  }
+
+  ul {
+    list-style: none;
+    background-color: $primaryColor;
+    color: #fff;
+    padding: 1.5rem;
+  }
+}
+
+.race-stats-left-col {
+  h4 {
+    color: $primaryColor;
+    font-weight: 900;
+    font-size: 24px;
+  }
+  
+  p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.race-stats-mid-col {
+  h4 {
+    color: $primaryColor;
+    font-weight: 900;
+    font-size: 24px;
+  }
+  
+  p {
+    font-size: 10px;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  h6 {
+    background-color: $primaryColor;
+    color: #eee;
+    padding: 1rem;
+  }
+}
