@@ -39,6 +39,10 @@ export const getRacerData = (racer) => {
     dispatch(loadStart());
       axios.get(`http://ec2-52-15-172-83.us-east-2.compute.amazonaws.com:8080/users?name=${racer}`, { headers: { apikey: process.env.REACT_APP_RACEBOT_APIKEY } })
       .then(response => {
+        // flip history if exists
+        if (response.data.race_details.races_completed) {
+          response.data.race_details.races_completed.reverse();
+        }
         dispatch(loadFinish(response.data, DATA_DONE_LOADING_RACER));
       })
       .catch(err => {

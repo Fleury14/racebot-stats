@@ -17,14 +17,28 @@ const mapActionsToProps = dispatch => ({
 });
 
 class SelectedRace extends Component {
-  state ={
+  state = {
     raceData: null,
+    currentRace: null,
   }
 
   componentDidMount() {
-    console.log('param', this.props.match.params.race);
     this.props.getRaceData(this.props.match.params.race);
-    this.setState({ raceData: this.props.raceData });
+    this.setState({ raceData: this.props.raceData, currentRace: this.props.match.params.race });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.raceData && prevState.raceData.key && prevState.raceData.key !== this.state.currentRace) {
+      this.setState({ raceData: prevProps.raceData });
+    }
+  }
+
+  static async getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.match.params.race !== prevState.currentRace) {
+      await nextProps.getRaceData(nextProps.match.params.race);
+      return { raceData: nextProps.raceData, currentRace: nextProps.match.params.race };
+    }
+    return null;
   }
 
   render() {
@@ -39,10 +53,12 @@ class SelectedRace extends Component {
           {raceData && (
             <div className="race-stats-top-bubble">
               <h1 className="text-uppercase">{raceData.key}</h1>
-              <p className="text-center">Created by {raceData.details.creator.name} on {dataCreated.toLocaleDateString()} at {dataCreated.toLocaleTimeString()} </p>
-              <a href={raceData.details.metadata.Url} target="_blank" rel="noreferrer noopener">
-                <p className="text-center">{raceData.details.metadata.Url}</p>
-              </a>
+              <p className="text-center">Created by {raceData.details.creator && raceData.details.creator.name ? raceData.details.creator.name : "????"} on {dataCreated.toLocaleDateString()} at {dataCreated.toLocaleTimeString()} </p>
+              {raceData.details.metadata && raceData.details.metadata.Url && (
+                <a href={raceData.details.metadata.Url} target="_blank" rel="noreferrer noopener">
+                  <p className="text-center">{raceData.details.metadata.Url}</p>
+                </a>
+              )}
               <Container fluid>
                 <Row>
                   <Col md="4" className="race-stats-left-col">
@@ -58,7 +74,7 @@ class SelectedRace extends Component {
                   </Col>
                   <Col md="4" className="race-stats-mid-col">
                     <h4 className="text-center text-uppercase">FLAGS</h4>
-                    <p>{raceData.details.metadata.Flags}</p>
+                    {raceData.details.metadata && raceData.details.metadata.Flags ? <p>{raceData.details.metadata.Flags}</p> : '????'}
                     <h6 className="text-center text-uppercase">{raceData.details.status}</h6>
                   </Col>
                   <Col md="4" className="race-stats-entrants">

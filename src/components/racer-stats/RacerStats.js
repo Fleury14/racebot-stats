@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Badge } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import { Navbar, WinLoss } from '..';
 import { getRacerData, getBotData } from '../../redux/actions/BotActions';
 import './RacerStats.scss';
@@ -37,12 +38,6 @@ class RacerStats extends Component {
     this.setState({ racerData: this.props.racerData, currentRacer: this.props.match.params.racer });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.data !== this.state.data) {
-      this.setState({ data: prevState.data });
-    }
-  }
-
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.match.params.racer !== prevState.currentRacer) {
       nextProps.getData(nextProps.match.params.racer);  
@@ -52,6 +47,7 @@ class RacerStats extends Component {
 
 
   render() {
+    console.log(this.state.racerData);
     const { racerData, generalData, currentRacer } = this.state;
     return (
       <div className="racer-stats-container">
@@ -88,6 +84,24 @@ class RacerStats extends Component {
               <div className="racer-first-row">
                 {generalData && <WinLoss data={generalData} selectedPlayer={this.props.match.params.racer} />}
               </div>
+              <Container fluid>
+                <Row>
+                  <Col md="6" className="p-2">
+                    <div className="racer-history">
+                      <h5 className="text-uppercase text-center">Recent Races</h5>
+                      <div className="d-flex badge-holder">
+                        {racerData.race_details.races_completed.map((race, index) => {
+                          return index < 20 ? (
+                            <Link to={`../race/${race}`} key={race}>
+                              <Badge color="primary" className="mr-2 mb-2">{race}</Badge>
+                            </Link>
+                          ) : null;
+                        })}
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
             </div>
             
           )}
