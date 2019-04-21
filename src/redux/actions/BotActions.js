@@ -69,7 +69,7 @@ export const getSingleRaceData = (key) => {
 export const getAllRacers = () => {
   return (dispatch) => {
     dispatch(loadStart());
-      axios.get(`http://ec2-52-15-172-83.us-east-2.compute.amazonaws.com:8080/users`, { headers: { apikey: process.env.REACT_APP_RACEBOT_APIKEY } })
+      axios.get(`http://ec2-52-15-172-83.us-east-2.compute.amazonaws.com:8080/users?pageSize=1000`, { headers: { apikey: process.env.REACT_APP_RACEBOT_APIKEY } })
       .then(response => {
         dispatch(loadFinish(response.data, DATA_DONE_LOADING_ALL_RACERS));
       })
