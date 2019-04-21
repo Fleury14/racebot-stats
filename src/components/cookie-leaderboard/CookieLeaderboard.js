@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getAllRacers } from '../../redux/actions';
+import { GetCookieLeaders } from '../../helpers';
+import './CookieLeaderboard.scss';
 
 const mapStateToProps = state => ({
   allRacerData: state.botData.allRacerData,
@@ -19,15 +21,30 @@ class CookieLeaderboard extends Component {
 
   componentDidMount() {
     this.props.grabRacerData();
-    this.setState({ userData: this.props.allRacerData });
+    if (this.props.allRacerData && this.props.allRacerData.items) {
+      this.setState({ userData: GetCookieLeaders(this.props.allRacerData.items) });
+    }
   }
 
   render() {
     console.log('leaderboard state', this.state);
     console.log('leaderboard props', this.props);
-    return (
-      <h1>COOKIE LEADERBOARD</h1>
-    );
+    const { userData } = this.state;
+    return userData ? (
+      <div className="cookie-leaderboard-container">
+        <h1 className="text-center">COOKIE LEADERBOARD</h1>
+        <ol>
+          {userData.map(user => {
+            return (
+              <li key={user.id}>
+                <span className="ml-3 mr-3 cookie-number">{user.cookies}</span>
+                <span className="cookie-name">{user.name}</span>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
+    ) : null;
   }
 }
 
