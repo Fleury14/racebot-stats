@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import { getBotData } from '../../redux/actions';
 import { GetCurrentRaces } from '../../helpers';
 import CurrentRaces from '../current-races/CurrentRaces';
-import { Navbar, PlayerSearcher } from '..';
+import { Navbar, PlayerSearcher, CookieLeaderboard } from '..';
 import './Main.scss';
 
 const mapStateToProps = (state) => {
@@ -58,7 +58,9 @@ class MainComponent extends Component {
                 <Col md="6" className="p-4">
                   <PlayerSearcher navigation={history} />
                 </Col>
-                <Col md="6" className="p-4"></Col>
+                <Col md="6" className="p-4">
+                  <CookieLeaderboard />
+                </Col>
               </Row>
             </Container>
             
