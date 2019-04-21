@@ -42,8 +42,6 @@ class SelectedRace extends Component {
   }
 
   render() {
-    console.log('props', this.props);
-    console.log('state', this.state);
     const { raceData } = this.state;
     const dataCreated = raceData ? new Date(raceData.details.created) : null;
     return (
