@@ -1,12 +1,15 @@
 import React from 'react';
 import { Table } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import './CurrentRaces.scss';
 
 const renderRaceRow = (race) => {
   const startDate = new Date(race.details.created);
   return (
     <tr key={race.key}>
-      <th>{race.key}</th>
+      <th>
+        <Link to={`/race/${race.key}`}>{race.key}</Link>
+      </th>
       <td>{race.details.guild.name}</td>
       <td>{race.details.async ? 'Yes' : 'No'}</td>
       <td>{race.details.entrants.length}</td>

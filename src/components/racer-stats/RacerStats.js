@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Badge } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import { Navbar, WinLoss } from '..';
 import { getRacerData, getBotData } from '../../redux/actions/BotActions';
 import './RacerStats.scss';
@@ -9,6 +10,7 @@ import './RacerStats.scss';
 const mapStateToProps = state => ({
   racerData: state.botData.racerData,
   generalData: state.botData.data,
+  currentRacer: null,
 });
 
 const mapActionsToProps = (dispatch) => ({
@@ -29,17 +31,23 @@ class RacerStats extends Component {
   componentDidMount() {
     // if theres go general data, get it
     if (!this.props.generalData || !this.state.generalData) {
-      this.props.getData();
+      this.props.getGeneralData();
       this.setState({ generalData: this.props.generalData});
     }
-
     this.props.getData(this.props.match.params.racer);
-    this.setState({ racerData: this.props.racerData});
-
+    this.setState({ racerData: this.props.racerData, currentRacer: this.props.match.params.racer });
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.match.params.racer !== prevState.currentRacer) {
+      nextProps.getData(nextProps.match.params.racer);  
+      return { racerData: nextProps.racerData, currentRacer: nextProps.match.params.racer }
+    } else return null;
+  }
+
+
   render() {
-    const { racerData, generalData } = this.state;
+    const { racerData, generalData, currentRacer } = this.state;
     return (
       <div className="racer-stats-container">
         <Navbar />
@@ -47,7 +55,7 @@ class RacerStats extends Component {
           {!racerData && <h1>There is no data for this racer.</h1>}
           {racerData && (
             <div>
-              <h1 className="racer-title text-uppercase text-center">{racerData.name}</h1>
+              <h1 className="racer-title text-uppercase text-center">{currentRacer}</h1>
               <div className="racer-first-row">
                 <Container fluid>
                   <Row className="text-center">
@@ -75,6 +83,24 @@ class RacerStats extends Component {
               <div className="racer-first-row">
                 {generalData && <WinLoss data={generalData} selectedPlayer={this.props.match.params.racer} />}
               </div>
+              <Container fluid>
+                <Row>
+                  <Col md="6" className="p-2">
+                    <div className="racer-history">
+                      <h5 className="text-uppercase text-center">Recent Races</h5>
+                      <div className="d-flex badge-holder">
+                        {racerData.race_details.races_completed.map((race, index) => {
+                          return index < 20 ? (
+                            <Link to={`../race/${race}`} key={race}>
+                              <Badge color="primary" className="mr-2 mb-2">{race}</Badge>
+                            </Link>
+                          ) : null;
+                        })}
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
             </div>
             
           )}
