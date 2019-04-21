@@ -13,6 +13,7 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 13px;
+  margin-bottom: 2rem;
 
   h1 {
     color: $primaryColor;
@@ -65,5 +66,15 @@
     background-color: $primaryColor;
     color: #eee;
     padding: 1rem;
+  }
+}
+
+.race-stats-finisher-bubble {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 13px;
+
+  .finish-time {
+    font-weight: 800;
   }
 }

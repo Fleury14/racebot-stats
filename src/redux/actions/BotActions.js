@@ -52,6 +52,8 @@ export const getSingleRaceData = (key) => {
     dispatch(loadStart());
       axios.get(`http://ec2-52-15-172-83.us-east-2.compute.amazonaws.com:8080/races?key=${key}`, { headers: { apikey: process.env.REACT_APP_RACEBOT_APIKEY } })
       .then(response => {
+        // sort finishers by placement before sending data
+        response.data.details.finishers.sort((a, b) => a.placement - b.placement);
         dispatch(loadFinish(response.data, DATA_DONE_LOADING_SINGLE_RACE));
       })
       .catch(err => {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { getSingleRaceData } from '../../redux/actions';
 import { Navbar } from '..';
@@ -78,8 +78,31 @@ class SelectedRace extends Component {
             </div>
           )}
           {raceData && raceData.details && raceData.details.finishers && (
-            <div className="race-stats-top-bubble">
-
+            <div className="race-stats-finisher-bubble">
+              <Table striped borderless>
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Racer</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {raceData.details.finishers.map(finisher => {
+                    return (
+                      <tr key={finisher.id}>
+                        <th>{finisher.placement}</th>
+                        <td>
+                          <Link to={`../racer/${finisher.name}`}>
+                            {finisher.name}
+                          </Link>  
+                        </td>
+                        <td className="finish-time">{finisher.finish}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </Table>
             </div>
           )}
         </div>
