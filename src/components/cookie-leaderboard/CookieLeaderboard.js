@@ -28,8 +28,6 @@ class CookieLeaderboard extends Component {
   }
 
   render() {
-    console.log('leaderboard state', this.state);
-    console.log('leaderboard props', this.props);
     const { userData } = this.state;
     return userData ? (
       <div className="cookie-leaderboard-container">
