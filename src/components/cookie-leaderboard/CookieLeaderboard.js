@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getAllRacers } from '../../redux/actions';
 import { GetCookieLeaders } from '../../helpers';
 import './CookieLeaderboard.scss';
@@ -38,7 +39,9 @@ class CookieLeaderboard extends Component {
             return (
               <li key={user.id}>
                 <span className="ml-3 mr-3 cookie-number">{user.cookies}</span>
-                <span className="cookie-name">{user.name}</span>
+                <Link to={`racer/${user.name}`}>
+                  <span className="cookie-name">{user.name}</span>
+                </Link>
               </li>
             );
           })}
