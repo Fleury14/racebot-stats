@@ -55,10 +55,10 @@ class MainComponent extends Component {
             </div>
             <Container fluid >
               <Row>
-                <Col md="6" className="p-4">
+                <Col md="7" className="p-4">
                   <PlayerSearcher navigation={history} />
                 </Col>
-                <Col md="6" className="p-4">
+                <Col md="5" className="p-4">
                   <CookieLeaderboard />
                 </Col>
               </Row>
