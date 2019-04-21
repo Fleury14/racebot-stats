@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Container, Row, Col } from 'reactstrap';
 import { getBotData } from '../../redux/actions';
-import { GetCurrentRaces } from '../../helpers'
+import { GetCurrentRaces } from '../../helpers';
 import CurrentRaces from '../current-races/CurrentRaces';
 import { Navbar, PlayerSearcher } from '..';
 import './Main.scss';
@@ -52,7 +53,15 @@ class MainComponent extends Component {
             <div className="p-5">
               <CurrentRaces data={GetCurrentRaces(data.items)} />
             </div>
-            <PlayerSearcher navigation={history} />
+            <Container fluid >
+              <Row>
+                <Col md="6" className="p-4">
+                  <PlayerSearcher navigation={history} />
+                </Col>
+                <Col md="6" className="p-4"></Col>
+              </Row>
+            </Container>
+            
           </React.Fragment>
           
         )}
