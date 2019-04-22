@@ -58,6 +58,11 @@ const parse2v2Data = (data) => {
           const myTeamTime = (myTime.getTime() - startTime.getTime()) + (myPartnerTime.getTime() - startTime.getTime());
           const opponentTeamTime = (opponentTime.getTime() - startTime.getTime()) + (opponentPartnerTime.getTime() - startTime.getTime());
 
+          // for testing my data
+          // if (entrant.name === 'Fleury14' || partner.name === 'Fleury14') {
+          //   console.log(entrant.name, partner.name, myTeamTime, opponent.name, opponentPartner.name, opponentTeamTime, race.key);
+          // }
+
           // because each opposing team will be hit twice, increase wins/losses by 0.5
           // TODO: there must be a better workaround than this lol
           if (myTeamTime < opponentTeamTime) {
@@ -72,7 +77,7 @@ const parse2v2Data = (data) => {
       }
       
     }
-    console.log('teams', teams);
+    // console.log('teams', teams);
     // console.log('race', race);
   }
 }
