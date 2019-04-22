@@ -48,7 +48,6 @@ class RacerStats extends Component {
 
   render() {
     const { racerData, generalData, currentRacer } = this.state;
-    console.log('data', racerData);
     return (
       <div className="racer-stats-container">
         <Navbar />
