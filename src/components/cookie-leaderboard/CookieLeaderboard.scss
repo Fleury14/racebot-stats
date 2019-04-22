@@ -1,0 +1,22 @@
+@import "../../scss/variables.scss";
+
+.cookie-leaderboard-container {
+  background-color: #fff;
+  border-radius: 13px;
+  padding: 1rem;
+
+  h1 {
+    color: $primaryColor;
+    font-weight: 900;
+    font-size: 20px;
+  }
+
+  ol {
+    font-size: 14px;
+  }
+
+  .cookie-number {
+    color: $primaryColor;
+    font-weight: 700;
+  }
+}
