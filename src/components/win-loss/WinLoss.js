@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ParseWinLoss } from '../../helpers';
+import { ParseWinLoss, Parse2v2 } from '../../helpers';
 import WinLossDisplay from './WinLossDisplay';
 
 class WinLoss extends Component {
@@ -11,6 +11,7 @@ class WinLoss extends Component {
   componentDidMount() {
     const { data, selectedPlayer } = this.props;
     const dataResult = ParseWinLoss(data.items);
+    const test = Parse2v2(data.items);
     if (selectedPlayer) {
       this.setState({ playerWinLoss: dataResult.find(racer => racer.name.toLowerCase() === selectedPlayer.toLowerCase()) });
     }
