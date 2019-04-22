@@ -48,6 +48,7 @@ class RacerStats extends Component {
 
   render() {
     const { racerData, generalData, currentRacer } = this.state;
+    console.log('data', racerData);
     return (
       <div className="racer-stats-container">
         <Navbar />
@@ -96,6 +97,26 @@ class RacerStats extends Component {
                             </Link>
                           ) : null;
                         })}
+                      </div>
+                    </div>
+                  </Col>
+                  <Col md="6" className="p-2">
+                    <div className="racer-history">
+                      <div className="d-flex lato mb-2">
+                        <div className="w-50 pr-4 text-right">First Places</div>
+                        <div className="w-50 pl-4">{racerData.race_details.races_first} ({(racerData.race_details.races_first / racerData.race_details.races_run * 100).toFixed(1)}%)</div>
+                      </div>
+                      <div className="d-flex lato mb-2">
+                        <div className="w-50 pr-4 text-right">Second Places</div>
+                        <div className="w-50 pl-4">{racerData.race_details.races_second} ({(racerData.race_details.races_second / racerData.race_details.races_run * 100).toFixed(1)}%)</div>
+                      </div>
+                      <div className="d-flex lato mb-2">
+                        <div className="w-50 pr-4 text-right">Third Places</div>
+                        <div className="w-50 pl-4">{racerData.race_details.races_third} ({(racerData.race_details.races_third / racerData.race_details.races_run * 100).toFixed(1)}%)</div>
+                      </div>
+                      <div className="d-flex lato">
+                        <div className="w-50 pr-4 text-right">Forfeits</div>
+                        <div className="w-50 pl-4">{racerData.race_details.races_forfeit} ({(racerData.race_details.races_forfeit / racerData.race_details.races_run * 100).toFixed(1)}%)</div>
                       </div>
                     </div>
                   </Col>
