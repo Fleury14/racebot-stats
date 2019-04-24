@@ -4,14 +4,16 @@ const parse2v2Data = (data) => {
   const forfeitString = 'Forfeited';
   const completedString = 'Completed';
   const twov2String = '2v2';
+  console.log('received', data);
 
   // loop through each race
   for (let race of data) {
     // skip over races that arent complete and arent 2v2's
+    // if (race.details.mode !== twov2String) console.log('not finished');
     if (race.details.status !== completedString || race.details.mode !== twov2String) {
       continue;
     }
-
+    // console.log('found 2v2 race');
     const startTime = new Date(race.details.startTime);
     
     // loop through entrants
@@ -79,7 +81,9 @@ const parse2v2Data = (data) => {
     }
     // console.log('teams', teams);
     // console.log('race', race);
+    // return teams;
   }
+  return teams;
 }
 
 export default parse2v2Data;
