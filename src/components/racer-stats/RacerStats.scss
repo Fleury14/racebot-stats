@@ -36,3 +36,18 @@
 .badge-holder {
   flex-wrap: wrap;
 }
+
+.racer-summary-title {
+  font-size: 20px;
+}
+
+.racer-big-num {
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.racer-pct-num {
+  color: $primaryColor;
+  font-weight: 700;
+  font-size: 20px;
+}

@@ -99,6 +99,38 @@ class RacerStats extends Component {
                       </div>
                     </div>
                   </Col>
+                  <Col md="6" className="p-2">
+                    <div className="racer-history">
+                      <div className="d-flex align-items-center lato mb-2">
+                        <div className="w-50 pr-4 text-right text-uppercase racer-summary-title">First Places</div>
+                        <div className="w-50 pl-4 d-flex align-items-center">
+                          <span className="racer-big-num mr-4">{racerData.race_details.races_first}</span>
+                          <span className="racer-pct-num">({(racerData.race_details.races_first / racerData.race_details.races_run * 100).toFixed(1)}%)</span>
+                        </div>
+                      </div>
+                      <div className="d-flex align-items-center lato mb-2">
+                        <div className="w-50 pr-4 text-right text-uppercase racer-summary-title">Second Places</div>
+                        <div className="w-50 pl-4 d-flex align-items-center">
+                          <span className="racer-big-num mr-4">{racerData.race_details.races_second}</span>
+                          <span className="racer-pct-num">({(racerData.race_details.races_second / racerData.race_details.races_run * 100).toFixed(1)}%)</span>
+                        </div>
+                      </div>
+                      <div className="d-flex align-items-center lato mb-2">
+                        <div className="w-50 pr-4 text-right text-uppercase racer-summary-title">Third Places</div>
+                        <div className="w-50 pl-4 d-flex align-items-center">
+                          <span className="racer-big-num mr-4">{racerData.race_details.races_third}</span>
+                          <span className="racer-pct-num">({(racerData.race_details.races_third / racerData.race_details.races_run * 100).toFixed(1)}%)</span>
+                        </div>
+                      </div>
+                      <div className="d-flex align-items-center lato">
+                        <div className="w-50 pr-4 text-right text-uppercase racer-summary-title">Forfeits</div>
+                        <div className="w-50 pl-4 d-flex align-items-center">
+                          <span className="racer-big-num mr-4">{racerData.race_details.races_forfeit}</span>
+                          <span className="racer-pct-num">({(racerData.race_details.races_forfeit / racerData.race_details.races_run * 100).toFixed(1)}%)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Col>
                 </Row>
               </Container>
             </div>
