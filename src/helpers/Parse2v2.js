@@ -1,10 +1,8 @@
 // should take in an array of races
 const parse2v2Data = (data) => {
   const teams = [];
-  const forfeitString = 'Forfeited';
   const completedString = 'Completed';
   const twov2String = '2v2';
-  console.log('received', data);
 
   // loop through each race
   for (let race of data) {
