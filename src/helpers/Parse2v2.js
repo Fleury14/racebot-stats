@@ -1,5 +1,6 @@
 // should take in an array of races
 const parse2v2Data = (data) => {
+  console.log('recvd', data);
   const teams = [];
   const completedString = 'Completed';
   const twov2String = '2v2';
@@ -8,10 +9,9 @@ const parse2v2Data = (data) => {
   for (let race of data) {
     // skip over races that arent complete and arent 2v2's
     // if (race.details.mode !== twov2String) console.log('not finished');
-    if (race.details.status !== completedString || race.details.mode !== twov2String) {
+    if (race.details.status !== completedString || (race.details.mode !== twov2String && race.key.indexOf('2v2') && race.details.type.indexOf('2v2') < 0)) {
       continue;
     }
-    // console.log('found 2v2 race');
     const startTime = new Date(race.details.startTime);
     
     // loop through entrants
@@ -40,7 +40,6 @@ const parse2v2Data = (data) => {
       const myTeam = teams.find(team => (team.racer1Id === entrant.id && team.racer2Id === partner.id) || (team.racer2Id === entrant.id && team.racer1Id === partner.id));
       if (myTeam.races_entered.indexOf(race.key) < 0) {
         for (let opponent of race.details.entrants) {
-          // console.log('second loop');
           const myPartner = race.details.entrants.find(partner => partner.team === entrant.team && partner.id !== entrant.id);
           const opponentPartner = race.details.entrants.find(partner => partner.team === opponent.team && partner.id !== opponent.id);
           if (!myPartner || !opponentPartner) {
@@ -77,9 +76,6 @@ const parse2v2Data = (data) => {
       }
       
     }
-    // console.log('teams', teams);
-    // console.log('race', race);
-    // return teams;
   }
   return teams;
 }
