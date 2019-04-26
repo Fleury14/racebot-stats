@@ -35,7 +35,6 @@ class RacerStats extends Component {
     if (!this.props.generalData || !this.state.generalData) {
       this.props.getGeneralData();
       const twoData = parse2v2Data(this.props.generalData.items);
-      console.log(twoData);
       this.setState({ generalData: this.props.generalData, twov2Data: parse2v2Data(this.props.generalData.items) });
     }
     this.props.getData(this.props.match.params.racer);
@@ -51,7 +50,6 @@ class RacerStats extends Component {
 
 
   render() {
-    console.log('state', this.state);
     const { racerData, generalData, currentRacer, twov2Data } = this.state;
     return (
       <div className="racer-stats-container">
