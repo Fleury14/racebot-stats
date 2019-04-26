@@ -1,6 +1,5 @@
 // should take in an array of races
 const parse2v2Data = (data) => {
-  console.log('recvd', data);
   const teams = [];
   const completedString = 'Completed';
   const twov2String = '2v2';
