@@ -4,7 +4,6 @@ import './Twov2Stats.scss';
 // expects data prop and current racer
 
 const Twov2Stats = (props) => {
-  console.log('props in 2v2', props);
   const { data, currentRacer } = props;
   return (
     <div className="pairs-container">
