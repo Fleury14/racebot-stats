@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col, Badge } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Navbar, WinLoss } from '..';
+import { Navbar, WinLoss, Twov2Stats } from '..';
 import { getRacerData, getBotData } from '../../redux/actions/BotActions';
 import './RacerStats.scss';
+import parse2v2Data from '../../helpers/Parse2v2';
 
 
 const mapStateToProps = state => ({
@@ -26,13 +27,15 @@ class RacerStats extends Component {
   state = {
     racerData: null,
     generalData: null,
+    twov2Data: null,
   }
 
   componentDidMount() {
     // if theres go general data, get it
     if (!this.props.generalData || !this.state.generalData) {
       this.props.getGeneralData();
-      this.setState({ generalData: this.props.generalData});
+      const twoData = parse2v2Data(this.props.generalData.items);
+      this.setState({ generalData: this.props.generalData, twov2Data: parse2v2Data(this.props.generalData.items) });
     }
     this.props.getData(this.props.match.params.racer);
     this.setState({ racerData: this.props.racerData, currentRacer: this.props.match.params.racer });
@@ -47,7 +50,7 @@ class RacerStats extends Component {
 
 
   render() {
-    const { racerData, generalData, currentRacer } = this.state;
+    const { racerData, generalData, currentRacer, twov2Data } = this.state;
     return (
       <div className="racer-stats-container">
         <Navbar />
@@ -131,6 +134,11 @@ class RacerStats extends Component {
                       </div>
                     </div>
                   </Col>
+                </Row>
+                <Row>
+                  {twov2Data && <Col md="6">
+                      <Twov2Stats data={twov2Data.filter(team => team.racer1Name === currentRacer || team.racer2Name === currentRacer)} currentRacer={currentRacer}/>
+                  </Col>}
                 </Row>
               </Container>
             </div>
