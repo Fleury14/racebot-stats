@@ -47,6 +47,12 @@ class RacerStats extends Component {
       return { racerData: nextProps.racerData, currentRacer: nextProps.match.params.racer }
     } else return null;
   }
+  
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.racerData.name !== this.state.racerData.name) {
+      this.setState({ racerData: prevProps.racerData });
+    }
+  }
 
 
   render() {
