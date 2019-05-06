@@ -1,0 +1,12 @@
+@import "../../scss/variables.scss";
+
+.current-races-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 13px;
+
+  h1 {
+    font-weight: 700;
+    color: $primaryColor;
+  }
+}
