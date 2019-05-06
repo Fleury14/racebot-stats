@@ -71,10 +71,7 @@ class RaceDirectory extends Component {
   }
 
   render() {
-    // console.log('props', this.props);
-    // console.log('state', this.state);
     const { data, startIndex, endIndex } = this.state;
-    // console.log(data.items);
     let FERaces = data.items.filter(race => race.details && race.details.game && race.details.game === 'ff4fe');
     FERaces.sort((a, b) => {
       const timeA = new Date(a.details.created);
