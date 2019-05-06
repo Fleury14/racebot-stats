@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.scss';
 
 const Navbar = (props) => {
@@ -8,8 +9,9 @@ const Navbar = (props) => {
       <p>A stats page for the Discord Racebot built by Supremacy</p>
       <div className="sub-nav">
         <ul>
-          <li>Race Directory</li>
-          <li>Player Directory</li>
+          <Link to={'/race-directory'}>
+            <li>Race Directory</li>
+          </Link>
         </ul>
       </div>
     </div>

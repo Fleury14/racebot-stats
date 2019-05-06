@@ -34,7 +34,6 @@ class RacerStats extends Component {
     // if theres go general data, get it
     if (!this.props.generalData || !this.state.generalData) {
       this.props.getGeneralData();
-      const twoData = parse2v2Data(this.props.generalData.items);
       this.setState({ generalData: this.props.generalData, twov2Data: parse2v2Data(this.props.generalData.items) });
     }
     this.props.getData(this.props.match.params.racer);
