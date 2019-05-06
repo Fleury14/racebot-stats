@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import './CurrentRaces.scss';
+import './RaceTable.scss';
 
 const renderRaceRow = (race, index) => {
   const startDate = new Date(race.details.created);
@@ -23,7 +23,6 @@ const CurrentRaces = (props) => {
   const { data } = props;
   return (
     <div className="current-races-container open-sans">
-      <h1 className="text-center text-uppercase">Current Races</h1>
       {/* <p>Number of races running: { data.length }</p> */}
       <Table>
         <thead>
