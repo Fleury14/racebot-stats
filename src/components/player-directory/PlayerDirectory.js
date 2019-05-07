@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Navbar } from '..';
 import { getAllRacers } from '../../redux/actions';
+import PlayerTable from './PlayerTable';
 import './PlayerDirectory.scss';
 
 const mapStateToProps = (state) => {
@@ -54,6 +55,7 @@ class PlayerDirectory extends Component {
         <Navbar />
         <div className="player-directory-body">
           <h1>Player Directory</h1>
+          <PlayerTable data={this.state.racerData} />
         </div>
       </div>
     );
