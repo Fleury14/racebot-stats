@@ -80,8 +80,6 @@ class PlayerDirectory extends Component {
   // }
 
   render() {
-    console.log('priznops', this.props);
-    console.log('stizzate', this.state);
     const { startIndex, endIndex, racerData } = this.state;
     let paginatedData = racerData ? racerData.filter((race, index) => index >= startIndex && index <= endIndex) : null;
     
@@ -90,7 +88,6 @@ class PlayerDirectory extends Component {
         <div>
           <Navbar />
           <div className="player-directory-body">
-            <h1>Player Directory</h1>
             <div className="d-flex justify-content-between mb-3">
               <Button onClick={() => this.previousPage()} color="primary">PREVIOUS</Button>
               <h3 className="text-uppercase">Displaying race {startIndex + 1} to {endIndex + 1} out of {racerData.length}</h3>

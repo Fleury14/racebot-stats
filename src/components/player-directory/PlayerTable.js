@@ -21,7 +21,7 @@ const PlayerTable = (props) => {
   const { data } = props;
   if (data) { 
     return (
-      <div>
+      <div className="player-table-container">
         <Table>
           <thead>
             <tr>
