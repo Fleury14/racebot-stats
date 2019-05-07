@@ -18,7 +18,7 @@ const renderPlayerRow = (player, index) => {
 }
 
 const PlayerTable = (props) => {
-  const { data } = props;
+  const { data, cookieSort, racesRunSort, seedsSort, winsSort } = props;
   if (data) { 
     return (
       <div className="player-table-container">
@@ -26,10 +26,18 @@ const PlayerTable = (props) => {
           <thead>
             <tr>
               <th>Name</th>
-              <th>Cookies</th>
-              <th>Races Run</th>
-              <th>Seeds Rolled</th>
-              <th>Races Won</th>
+              <th>
+                <button onClick={() => cookieSort()}>Cookies</button>
+              </th>
+              <th>
+                <button onClick={() => racesRunSort()}>Races Run</button>
+              </th>
+              <th>
+                <button onClick={() => seedsSort()}>Seeds Rolled</button>
+              </th>
+              <th>
+                <button onClick={() => winsSort()}>Races Won</button>
+              </th>
             </tr>
           </thead>
           <tbody>
