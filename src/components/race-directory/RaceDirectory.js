@@ -44,14 +44,14 @@ class RaceDirectory extends Component {
 
   nextPage(totalRaces) {
     const { page } = this.state;
-    if (page === Math.floor(totalRaces / 20)) {
+    if (page === Math.ceil(totalRaces / 20)) {
       return;
     }
     this.setState(prevState => { 
       return {
         page: prevState.page + 1,
         startIndex: (prevState.page) * 20,
-        endIndex: ((prevState.page) * 20) + 19 < totalRaces ? ((prevState.page) * 20) + 19 : totalRaces,
+        endIndex: ((prevState.page) * 20) + 19 < totalRaces ? ((prevState.page) * 20) + 19 : totalRaces - 1,
       }
     })
   }
