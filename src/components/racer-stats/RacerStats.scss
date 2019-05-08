@@ -51,3 +51,16 @@
   font-weight: 700;
   font-size: 20px;
 }
+
+.racer-data-twitch {
+  background-color: #4c357c;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: lighten(#4c357c, 10);
+  }
+}
