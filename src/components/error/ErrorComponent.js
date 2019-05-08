@@ -8,7 +8,7 @@ const ErrorComponent = (props) => {
     <div>
       <Navbar />
       <div className="error-component-body">
-        <h1>Oh no honey</h1>
+        <h1>I don't recognize the link!</h1>
         <Link to="/">
           <p>Go Home</p>
         </Link>
