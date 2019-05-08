@@ -44,14 +44,14 @@ class RaceDirectory extends Component {
 
   nextPage(totalRaces) {
     const { page } = this.state;
-    if (page === Math.floor(totalRaces / 20)) {
+    if (page === Math.ceil(totalRaces / 20)) {
       return;
     }
     this.setState(prevState => { 
       return {
         page: prevState.page + 1,
         startIndex: (prevState.page) * 20,
-        endIndex: ((prevState.page) * 20) + 19 < totalRaces ? ((prevState.page) * 20) + 19 : totalRaces,
+        endIndex: ((prevState.page) * 20) + 19 < totalRaces ? ((prevState.page) * 20) + 19 : totalRaces - 1,
       }
     })
   }
@@ -71,10 +71,7 @@ class RaceDirectory extends Component {
   }
 
   render() {
-    // console.log('props', this.props);
-    // console.log('state', this.state);
     const { data, startIndex, endIndex } = this.state;
-    // console.log(data.items);
     let FERaces = data.items.filter(race => race.details && race.details.game && race.details.game === 'ff4fe');
     FERaces.sort((a, b) => {
       const timeA = new Date(a.details.created);

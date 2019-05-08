@@ -8,5 +8,6 @@ import SelectedRace from './selected-race/SelectedRace';
 import CookieLeaderboard from './cookie-leaderboard/CookieLeaderboard';
 import Twov2Stats from './twov2-stats/Twov2Stats';
 import RaceDirectory from './race-directory/RaceDirectory';
+import PlayerDirectory from './player-directory/PlayerDirectory'
 
-export { Navbar, Main, WinLoss, CurrentRaces, PlayerSearcher, RacerStats, SelectedRace, CookieLeaderboard, Twov2Stats, RaceDirectory };
+export { Navbar, Main, WinLoss, CurrentRaces, PlayerSearcher, RacerStats, SelectedRace, CookieLeaderboard, Twov2Stats, RaceDirectory, PlayerDirectory };

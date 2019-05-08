@@ -25,7 +25,7 @@ const mapActionsToProps = (dispatch) => ({
 
 class RacerStats extends Component {
   state = {
-    racerData: null,
+    racerData: { name: null},
     generalData: null,
     twov2Data: null,
   }

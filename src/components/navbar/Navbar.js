@@ -12,6 +12,9 @@ const Navbar = (props) => {
           <Link to={'/race-directory'}>
             <li>Race Directory</li>
           </Link>
+          <Link to={'/player-directory'}>
+            <li>Player Directory</li>
+          </Link>
         </ul>
       </div>
     </div>
