@@ -25,7 +25,7 @@ const mapActionsToProps = (dispatch) => ({
 
 class RacerStats extends Component {
   state = {
-    racerData: null,
+    racerData: { name: null},
     generalData: null,
     twov2Data: null,
   }
@@ -48,7 +48,7 @@ class RacerStats extends Component {
   }
   
   componentDidUpdate(prevProps, prevState) {
-    if ((!prevState.racerData) || prevProps.racerData.name !== this.state.racerData.name) {
+    if (prevProps.racerData.name !== this.state.racerData.name) {
       this.setState({ racerData: prevProps.racerData });
     }
   }
