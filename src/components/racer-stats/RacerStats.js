@@ -64,6 +64,13 @@ class RacerStats extends Component {
           {racerData && (
             <div>
               <h1 className="racer-title text-uppercase text-center">{currentRacer}</h1>
+              {racerData.streamInfo && (
+                <div className="d-flex justify-content-center">
+                  <a href={racerData.streamInfo} target="_blank" rel="noopener noreferrer">
+                    <button className="racer-data-twitch mb-4">TWITCH CHANNEL</button>
+                  </a>
+                </div>
+              )}
               <div className="racer-first-row">
                 <Container fluid>
                   <Row className="text-center">
