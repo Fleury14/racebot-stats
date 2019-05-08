@@ -48,7 +48,7 @@ class RacerStats extends Component {
   }
   
   componentDidUpdate(prevProps, prevState) {
-    if (!this.state.racerData || prevProps.racerData.name !== this.state.racerData.name) {
+    if ((!prevState.racerData) || prevProps.racerData.name !== this.state.racerData.name) {
       this.setState({ racerData: prevProps.racerData });
     }
   }
