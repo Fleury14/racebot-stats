@@ -4,7 +4,6 @@ import './RecentCompletedRaces.scss';
 
 const RecentCompletedRaces = (props) => {
   const { data } = props;
-  console.log(data);
   return (
     <div className="recently-completed-container p-5">
       <h2 className="text-uppercase">Recently Completed Races</h2>
