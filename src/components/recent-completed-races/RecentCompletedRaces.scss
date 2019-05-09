@@ -11,4 +11,15 @@
     color: $primaryColor;
     text-align: center;
   }
+
+  .recently-completed-header {
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 1px solid grey;
+  }
+
+  .recently-completed-data-row {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0px;
+  }
 }
