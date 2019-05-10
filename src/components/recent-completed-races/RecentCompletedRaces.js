@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import './RecentCompletedRaces.scss';
 
 const RecentCompletedRaces = (props) => {
@@ -18,7 +19,11 @@ const RecentCompletedRaces = (props) => {
           const winner = eachRace.details.entrants.find(entrant => entrant.placement === 1);
           return (
             <Row key={eachRace.key} className="recently-completed-data-row">
-              <Col md="3">{eachRace.key}</Col>
+              <Col md="3">
+                <Link to={`/race/${eachRace.key}`}>
+                  {eachRace.key}
+                </Link>
+              </Col>
               <Col md="5">{eachRace.details.guild.name}</Col>
               <Col md="1">{eachRace.details.entrants.length}</Col>
               <Col md="3">{winner.name}</Col>
