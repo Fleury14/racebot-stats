@@ -6,7 +6,7 @@ import { Main, RacerStats, SelectedRace, RaceDirectory, PlayerDirectory, ErrorCo
 class AppRouter extends Component {
   render() {
     return (
-      <Router>
+      <Router basename="/racebot-stats">
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/racer/:racer" exact component={RacerStats} />
