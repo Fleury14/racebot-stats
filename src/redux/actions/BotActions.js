@@ -20,11 +20,14 @@ const loadError = error => ({
   }
 });
 
+const apiUrl = process.env.REACT_APP_RACEBOT_OLD_API_URL;
+const apiKey = process.env.REACT_APP_RACEBOT_OLD_APIKEY;
+const apiHeader = 'apikey';
 
 export const getBotData = () => {
   return (dispatch) => {
     dispatch(loadStart());
-    axios.get('http://ec2-52-15-172-83.us-east-2.compute.amazonaws.com:8080/races?pageSize=1000', { headers: { apikey: process.env.REACT_APP_RACEBOT_APIKEY } })
+    axios.get(`${apiUrl}/races?pageSize=1000`, { headers: { [apiHeader]: apiKey } })
     .then(response => {
       dispatch(loadFinish(response.data, DATA_DONE_LOADING));
     })
@@ -37,7 +40,7 @@ export const getBotData = () => {
 export const getRacerData = (racer) => {
   return (dispatch) => {
     dispatch(loadStart());
-      axios.get(`http://ec2-52-15-172-83.us-east-2.compute.amazonaws.com:8080/users?name=${racer}`, { headers: { apikey: process.env.REACT_APP_RACEBOT_APIKEY } })
+      axios.get(`${apiUrl}/users?name=${racer}`, { headers: { [apiHeader]: apiKey } })
       .then(response => {
         // flip history if exists
         if (response.data.race_details.races_completed) {
@@ -54,7 +57,7 @@ export const getRacerData = (racer) => {
 export const getSingleRaceData = (key) => {
   return (dispatch) => {
     dispatch(loadStart());
-      axios.get(`http://ec2-52-15-172-83.us-east-2.compute.amazonaws.com:8080/races?key=${key}`, { headers: { apikey: process.env.REACT_APP_RACEBOT_APIKEY } })
+      axios.get(`${apiUrl}/races?key=${key}`, { headers: { [apiHeader]: apiKey } })
       .then(response => {
         // sort finishers by placement before sending data
         response.data.details.finishers.sort((a, b) => a.placement - b.placement);
@@ -69,7 +72,7 @@ export const getSingleRaceData = (key) => {
 export const getAllRacers = () => {
   return (dispatch) => {
     dispatch(loadStart());
-      axios.get(`http://ec2-52-15-172-83.us-east-2.compute.amazonaws.com:8080/users?pageSize=1000`, { headers: { apikey: process.env.REACT_APP_RACEBOT_APIKEY } })
+      axios.get(`${apiUrl}/users?pageSize=1000`, { headers: { [apiHeader]: apiKey } })
       .then(response => {
         dispatch(loadFinish(response.data, DATA_DONE_LOADING_ALL_RACERS));
       })
