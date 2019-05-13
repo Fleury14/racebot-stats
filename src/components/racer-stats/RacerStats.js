@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col, Badge } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Navbar, WinLoss, Twov2Stats } from '..';
+import { Navbar, WinLoss, Twov2Stats, LoadingModal } from '..';
 import { getRacerData, getBotData } from '../../redux/actions/BotActions';
 import './RacerStats.scss';
 import parse2v2Data from '../../helpers/Parse2v2';
@@ -29,6 +29,7 @@ class RacerStats extends Component {
     racerData: { name: null},
     generalData: null,
     twov2Data: null,
+    loading: false,
   }
 
   componentDidMount() {
@@ -45,8 +46,14 @@ class RacerStats extends Component {
     console.log('nextprops', nextProps);
     if (nextProps.match.params.racer !== prevState.currentRacer) {
       nextProps.getData(nextProps.match.params.racer);  
-      return { racerData: nextProps.racerData, currentRacer: nextProps.match.params.racer }
-    } else return null;
+      return { racerData: nextProps.racerData, currentRacer: nextProps.match.params.racer, loading: nextProps.loading}
+    } else if(nextProps.loading !== prevState.loading) {
+      return { loading: nextProps.loading }
+    } else {
+      return null;
+    }
+    
+    
   }
   
   componentDidUpdate(prevProps, prevState) {
@@ -57,13 +64,15 @@ class RacerStats extends Component {
 
 
   render() {
-    const { racerData, generalData, currentRacer, twov2Data } = this.state;
+    const { racerData, generalData, currentRacer, twov2Data, loading } = this.state;
+    console.log('loading:', loading);
     return (
       <div className="racer-stats-container">
+        {loading && <LoadingModal />}
         <Navbar />
         <div className="racer-stats-body p-5">
           {!racerData && <h1>There is no data for this racer.</h1>}
-          {racerData && (
+          {racerData && !loading && (
             <div>
               <h1 className="racer-title text-uppercase text-center">{currentRacer}</h1>
               {racerData.streamInfo && (
