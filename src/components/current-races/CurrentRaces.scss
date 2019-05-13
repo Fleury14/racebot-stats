@@ -10,3 +10,22 @@
     color: $primaryColor;
   }
 }
+
+.current-races-header {
+  font-weight: 800;
+  border-bottom: 1px solid #ddd;
+}
+
+.current-races-body {
+  padding: 5px 0px;
+}
+
+.current-races-stripe {
+  background-color: #eee;
+}
+
+@media only screen and (max-width: 500px) {
+  .current-races-hide-mobile {
+    display: none;
+  }
+}
