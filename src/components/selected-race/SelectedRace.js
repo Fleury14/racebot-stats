@@ -34,9 +34,6 @@ class SelectedRace extends Component {
       this.setState({ raceData: prevProps.raceData });
     } else if (prevProps.raceData && !this.state.raceData) {
       this.setState({ raceData: prevProps.raceData });
-    } else if (prevProps.loading !== prevState.loading) {
-      // this.setState({ loading: prevProps.loading });
-      // TODO: causes infinite loop
     }
   }
 
@@ -46,7 +43,6 @@ class SelectedRace extends Component {
       return { raceData: nextProps.raceData, currentRace: nextProps.match.params.race, loading: nextProps.loading };
     }
     if (nextProps.loading !== prevState.loading) {
-
       return { loading: nextProps.loading }
     }
   }
@@ -54,6 +50,7 @@ class SelectedRace extends Component {
   render() {
     const { raceData, loading } = this.state;
     const dataCreated = raceData ? new Date(raceData.details.created) : null;
+    console.log('loading', loading);
     return (
       <div className="race-stats-container">
         <Navbar />
