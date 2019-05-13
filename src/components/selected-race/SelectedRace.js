@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import { Container, Row, Col, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { getSingleRaceData } from '../../redux/actions';
-import { Navbar } from '..';
+import { Navbar, LoadingModal } from '..';
 import './SelectedRace.scss';
 
 const mapStateToProps = state => ({
   raceData: state.botData.singleRaceData,
+  loading: state.botData.loading,
 });
 
 const mapActionsToProps = dispatch => ({
@@ -20,6 +21,7 @@ class SelectedRace extends Component {
   state = {
     raceData: null,
     currentRace: null,
+    loading: false,
   }
 
   componentDidMount() {
@@ -32,25 +34,32 @@ class SelectedRace extends Component {
       this.setState({ raceData: prevProps.raceData });
     } else if (prevProps.raceData && !this.state.raceData) {
       this.setState({ raceData: prevProps.raceData });
+    } else if (prevProps.loading !== prevState.loading) {
+      // this.setState({ loading: prevProps.loading });
+      // TODO: causes infinite loop
     }
   }
 
   static async getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.match.params.race !== prevState.currentRace) {
       await nextProps.getRaceData(nextProps.match.params.race);
-      return { raceData: nextProps.raceData, currentRace: nextProps.match.params.race };
+      return { raceData: nextProps.raceData, currentRace: nextProps.match.params.race, loading: nextProps.loading };
     }
-    return null;
+    if (nextProps.loading !== prevState.loading) {
+
+      return { loading: nextProps.loading }
+    }
   }
 
   render() {
-    const { raceData } = this.state;
+    const { raceData, loading } = this.state;
     const dataCreated = raceData ? new Date(raceData.details.created) : null;
     return (
       <div className="race-stats-container">
         <Navbar />
+        {loading && <LoadingModal />}
         <div className="race-stats-body p-5">
-          {raceData && (
+          {raceData && !loading && (
             <div className="race-stats-top-bubble">
               <h1 className="text-uppercase">{raceData.key}</h1>
               <p className="text-center">Created by {raceData.details.creator && raceData.details.creator.name ? raceData.details.creator.name : "????"} on {dataCreated.toLocaleDateString()} at {dataCreated.toLocaleTimeString()} </p>
