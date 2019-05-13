@@ -24,7 +24,21 @@ class CookieLeaderboard extends Component {
     this.props.grabRacerData();
     if (this.props.allRacerData && this.props.allRacerData.items) {
       this.setState({ userData: GetCookieLeaders(this.props.allRacerData.items) });
+    } else if (this.props.allRacerData && !this.props.allRacerData.items) {
+      this.setState({ userData: GetCookieLeaders(this.props.allRacerData) });
     }
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    return nextProps;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps && !this.state.userData) {
+      // NOTE: with old api, .items will need to be user
+      // TODO: make this conditional
+      this.setState({ userData: GetCookieLeaders(prevProps.allRacerData)});
+    } 
   }
 
   render() {

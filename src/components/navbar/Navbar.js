@@ -5,7 +5,9 @@ import './Navbar.scss';
 const Navbar = (props) => {
   return (
     <div className="navbar-container open-sans">
-      <h3>RACEBOT STATS</h3>
+      <Link to={'/'}>
+        <h3>RACEBOT STATS</h3>
+      </Link>
       <p>A stats page for the Discord Racebot built by Supremacy</p>
       <div className="sub-nav">
         <ul>

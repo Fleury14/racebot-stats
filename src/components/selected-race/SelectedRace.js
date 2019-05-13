@@ -30,6 +30,8 @@ class SelectedRace extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.raceData && prevState.raceData.key && prevState.raceData.key !== this.state.currentRace) {
       this.setState({ raceData: prevProps.raceData });
+    } else if (prevProps.raceData && !this.state.raceData) {
+      this.setState({ raceData: prevProps.raceData });
     }
   }
 
