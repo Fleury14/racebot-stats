@@ -56,7 +56,7 @@ class MainComponent extends Component {
         <Navbar />
         {loading && <LoadingModal />}
         {data && (
-          <React.Fragment>
+          <div className={loading ? 'hide-me' : ''}>
             <div className="p-5">
               <CurrentRaces data={GetCurrentRaces(data.items || data)} />
             </div>
@@ -72,7 +72,7 @@ class MainComponent extends Component {
               </Row>
             </Container>
             
-          </React.Fragment>
+          </div>
           
         )}
       </div>
