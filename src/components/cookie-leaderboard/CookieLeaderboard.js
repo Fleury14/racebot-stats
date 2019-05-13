@@ -24,6 +24,8 @@ class CookieLeaderboard extends Component {
     this.props.grabRacerData();
     if (this.props.allRacerData && this.props.allRacerData.items) {
       this.setState({ userData: GetCookieLeaders(this.props.allRacerData.items) });
+    } else if (this.props.allRacerData && !this.props.allRacerData.items) {
+      this.setState({ userData: GetCookieLeaders(this.props.allRacerData) });
     }
   }
 
