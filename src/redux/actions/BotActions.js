@@ -20,9 +20,9 @@ const loadError = error => ({
   }
 });
 
-const apiUrl = process.env.REACT_APP_RACEBOT_OLD_API_URL;
-const apiKey = process.env.REACT_APP_RACEBOT_OLD_APIKEY;
-const apiHeader = 'apikey';
+const apiUrl = process.env.REACT_APP_RACEBOT_API_URL;
+const apiKey = process.env.REACT_APP_RACEBOT_APIKEY;
+const apiHeader = 'x-api-key';
 
 export const getBotData = () => {
   return (dispatch) => {
@@ -43,12 +43,21 @@ export const getRacerData = (racer) => {
       axios.get(`${apiUrl}/users?name=${racer}`, { headers: { [apiHeader]: apiKey } })
       .then(response => {
         // flip history if exists
-        if (response.data.race_details.races_completed) {
-          response.data.race_details.races_completed.reverse();
+        // have to have two conditionals for different data formatitting
+        // new ver
+        if (Array.isArray(response.data)) {
+          if (response.data[0].race_details.races_completed) {
+            response.data[0].race_details.races_completed.reverse();
+          }
         }
-        dispatch(loadFinish(response.data, DATA_DONE_LOADING_RACER));
+        // oldver
+        // if (response.data.race_details.races_completed) {
+        //   response.data.race_details.races_completed.reverse();
+        // }
+        dispatch(loadFinish(response.data[0], DATA_DONE_LOADING_RACER));
       })
       .catch(err => {
+        console.log('error', err);
         dispatch(loadError(err));
     });
   }

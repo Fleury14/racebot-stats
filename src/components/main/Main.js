@@ -51,13 +51,13 @@ class MainComponent extends Component {
         {data && (
           <React.Fragment>
             <div className="p-5">
-              <CurrentRaces data={GetCurrentRaces(data.items)} />
+              <CurrentRaces data={GetCurrentRaces(data.items || data)} />
             </div>
             <Container fluid >
               <Row>
                 <Col md="7" className="p-4">
                   <PlayerSearcher navigation={history} />
-                  <RecentlyCompletedRaces data={GetRecentlyCompleteRaces(data.items)} />
+                  <RecentlyCompletedRaces data={GetRecentlyCompleteRaces(data.items || data)} />
                 </Col>
                 <Col md="5" className="p-4">
                   <CookieLeaderboard />

@@ -8,7 +8,7 @@ import './PlayerDirectory.scss';
 
 const mapStateToProps = (state) => {
   return {
-    racerData: state.botData.allRacerData.items,
+    racerData: state.botData.allRacerData.items || state.botData.allRacerData,
   }
 }
 

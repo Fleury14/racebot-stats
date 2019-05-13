@@ -1,5 +1,6 @@
 // should take in an array of races
 const GetRecentlyCompleteRaces = (data) => {
+  if (!data) return [];
   const completedString = 'Completed';
   let filteredData = data.filter(race => race.details.status && race.details.finishTime && race.details.status === completedString);
   filteredData.sort((race1, race2) => {
