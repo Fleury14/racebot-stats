@@ -1,21 +1,21 @@
 import React from 'react';
-import { Table } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './CurrentRaces.scss';
 
-const renderRaceRow = (race) => {
+const renderRaceRow = (race, index) => {
   const startDate = new Date(race.details.created);
   return (
-    <tr key={race.key}>
-      <th>
+    <Row key={race.key} className={`current-races-body ${index % 2 === 0 ? 'current-races-stripe' : ''}`}>
+      <Col>
         <Link to={`/race/${race.key}`}>{race.key}</Link>
-      </th>
-      <td>{race.details.guild.name}</td>
-      <td>{race.details.async ? 'Yes' : 'No'}</td>
-      <td>{race.details.entrants.length}</td>
-      <td>{startDate.toLocaleString()}</td>
-      <td>{race.details.mode}</td>
-    </tr>
+      </Col>
+      <Col className="current-races-hide-mobile">{race.details.guild.name}</Col>
+      <Col className="current-races-hide-mobile">{race.details.async ? 'Yes' : 'No'}</Col>
+      <Col>{race.details.entrants.length}</Col>
+      <Col>{startDate.toLocaleString()}</Col>
+      <Col className="current-races-hide-mobile">{race.details.mode}</Col>
+    </Row>
   );
 }
 
@@ -25,21 +25,17 @@ const CurrentRaces = (props) => {
     <div className="current-races-container open-sans">
       <h1 className="text-center text-uppercase">Current Races</h1>
       {/* <p>Number of races running: { data.length }</p> */}
-      <Table>
-        <thead>
-          <tr>
-            <th>Tag</th>
-            <th>Location</th>
-            <th>Async?</th>
-            <th>Entrants</th>
-            <th>Time Started</th>
-            <th>Mode</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map(race => renderRaceRow(race))}
-        </tbody>
-      </Table>
+      <Container>
+        <Row className="current-races-header">
+          <Col>Tag</Col>
+          <Col className="current-races-hide-mobile">Location</Col>
+          <Col className="current-races-hide-mobile">Async?</Col>
+          <Col>Entrants</Col>
+          <Col>Time Started</Col>
+          <Col className="current-races-hide-mobile">Mode</Col>
+        </Row>
+          {data.map((race, index) => renderRaceRow(race, index))}
+      </Container>
     </div>
   );
 };
