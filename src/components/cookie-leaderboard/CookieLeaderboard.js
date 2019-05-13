@@ -22,15 +22,31 @@ class CookieLeaderboard extends Component {
 
   componentDidMount() {
     this.props.grabRacerData();
+    console.log('inside CDM props', this.props, 'state', this.state);
     if (this.props.allRacerData && this.props.allRacerData.items) {
+      console.log('setting state with items');
       this.setState({ userData: GetCookieLeaders(this.props.allRacerData.items) });
     } else if (this.props.allRacerData && !this.props.allRacerData.items) {
+      console.log('setting state with no items');
       this.setState({ userData: GetCookieLeaders(this.props.allRacerData) });
     }
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    return nextProps;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps && !this.state.userData) {
+      // NOTE: with old api, .items will need to be user
+      // TODO: make this conditional
+      this.setState({ userData: GetCookieLeaders(prevProps.allRacerData)});
+    } 
+  }
+
   render() {
     const { userData } = this.state;
+    console.log('props', this.props, 'state', this.state);
     return userData ? (
       <div className="cookie-leaderboard-container">
         <h1 className="text-center">COOKIE LEADERBOARD</h1>

@@ -24,11 +24,14 @@ class SelectedRace extends Component {
 
   componentDidMount() {
     this.props.getRaceData(this.props.match.params.race);
+    console.log('getting race data');
     this.setState({ raceData: this.props.raceData, currentRace: this.props.match.params.race });
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.raceData && prevState.raceData.key && prevState.raceData.key !== this.state.currentRace) {
+      this.setState({ raceData: prevProps.raceData });
+    } else if (prevProps.raceData && !this.state.raceData) {
       this.setState({ raceData: prevProps.raceData });
     }
   }
@@ -43,6 +46,7 @@ class SelectedRace extends Component {
 
   render() {
     const { raceData } = this.state;
+    console.log('state', this.state, 'props', this.props);
     const dataCreated = raceData ? new Date(raceData.details.created) : null;
     return (
       <div className="race-stats-container">
