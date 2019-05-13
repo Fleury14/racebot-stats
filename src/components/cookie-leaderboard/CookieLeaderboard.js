@@ -22,12 +22,9 @@ class CookieLeaderboard extends Component {
 
   componentDidMount() {
     this.props.grabRacerData();
-    console.log('inside CDM props', this.props, 'state', this.state);
     if (this.props.allRacerData && this.props.allRacerData.items) {
-      console.log('setting state with items');
       this.setState({ userData: GetCookieLeaders(this.props.allRacerData.items) });
     } else if (this.props.allRacerData && !this.props.allRacerData.items) {
-      console.log('setting state with no items');
       this.setState({ userData: GetCookieLeaders(this.props.allRacerData) });
     }
   }
@@ -46,7 +43,6 @@ class CookieLeaderboard extends Component {
 
   render() {
     const { userData } = this.state;
-    console.log('props', this.props, 'state', this.state);
     return userData ? (
       <div className="cookie-leaderboard-container">
         <h1 className="text-center">COOKIE LEADERBOARD</h1>
