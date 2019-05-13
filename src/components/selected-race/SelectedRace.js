@@ -24,7 +24,6 @@ class SelectedRace extends Component {
 
   componentDidMount() {
     this.props.getRaceData(this.props.match.params.race);
-    console.log('getting race data');
     this.setState({ raceData: this.props.raceData, currentRace: this.props.match.params.race });
   }
 
@@ -46,7 +45,6 @@ class SelectedRace extends Component {
 
   render() {
     const { raceData } = this.state;
-    console.log('state', this.state, 'props', this.props);
     const dataCreated = raceData ? new Date(raceData.details.created) : null;
     return (
       <div className="race-stats-container">
