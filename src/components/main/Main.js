@@ -45,7 +45,6 @@ class MainComponent extends Component {
     // console.log('state', this.state);
     const { history } = this.props;
     const { data } = this.state;
-    console.log('stizzate', this.state);
     return (
       <div className="main-body">
         <Navbar />
