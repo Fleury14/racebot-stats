@@ -12,6 +12,7 @@ const mapStateToProps = state => ({
   racerData: state.botData.racerData,
   generalData: state.botData.data,
   currentRacer: null,
+  loading: state.botData.loading,
 });
 
 const mapActionsToProps = (dispatch) => ({
@@ -41,6 +42,7 @@ class RacerStats extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
+    console.log('nextprops', nextProps);
     if (nextProps.match.params.racer !== prevState.currentRacer) {
       nextProps.getData(nextProps.match.params.racer);  
       return { racerData: nextProps.racerData, currentRacer: nextProps.match.params.racer }
