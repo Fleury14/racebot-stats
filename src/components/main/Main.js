@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 import { getBotData } from '../../redux/actions';
-import { GetCurrentRaces, GetRecentlyCompleteRaces } from '../../helpers';
+import { GetCurrentRaces, GetRecentlyCompleteRaces, FlagStats } from '../../helpers';
 import CurrentRaces from '../current-races/CurrentRaces';
 import { Navbar, PlayerSearcher, CookieLeaderboard, RecentlyCompletedRaces, LoadingModal } from '..';
 import './Main.scss';
@@ -29,6 +29,7 @@ class MainComponent extends Component {
   
   componentDidMount() {
     this.props.getData();
+    FlagStats(this.props.botData.data);
   }
 
   componentDidUpdate(prevProps, prevState) {
