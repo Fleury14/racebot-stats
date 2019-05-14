@@ -112,6 +112,40 @@ const FlagStats = (raceArr) => {
       whyBurn: 0,
       whichBurn: 0,
     },
+    F: {
+      0: 0,
+      1: 0,
+    },
+    N: {
+      0: 0,
+      c: 0,
+      k: 0,
+      b: 0,
+    },
+    E: {
+      0: 0,
+      t: 0,
+      f: 0,
+      x: 0,
+      r: 0,
+      d: 0,
+      c: 0,
+    },
+    X: {
+      0: 0,
+      s: 0,
+      k: 0,
+      b: 0,
+      x: 0,
+    },
+    G: {
+      0: 0,
+      d: 0,
+      m: 0,
+      w: 0,
+      l: 0,
+      64: 0,
+    },
     total: 0,
 
   };
@@ -490,6 +524,143 @@ const FlagStats = (raceArr) => {
     }
     if (flags.indexOf('-whyburn') < 0 && flags.indexOf('-whichburn') < 0) {
       FlagResults.W.alwaysBurn++;
+    }
+
+    // MOP
+    if (flags.indexOf('F') >= 0) {
+      FlagResults.F[1]++;
+    } else {
+      FlagResults.F[0]++;
+    }
+
+    // N Flag
+    if (flags.indexOf('N') < 0) {
+      FlagResults.N[0]++;
+    } else {
+      const index = flags.indexOf('N');
+      let nextLetter = null;
+      let currentIndex = index;
+      while (nextLetter !== ' ') {
+        currentIndex++;
+        if (currentIndex === flags.length) {
+          break;
+        }
+        nextLetter = flags.charAt(currentIndex);
+        switch(nextLetter) {
+          case 'c':
+            FlagResults.N.c++;
+            break;
+          case 'k':
+            FlagResults.N.k++;
+            break;
+          case 'b':
+            FlagResults.N.b++;
+            break;
+          default:
+        }
+      }
+    }
+    
+    // E Flag
+    if (flags.indexOf('E') < 0) {
+      FlagResults.E[0]++;
+    } else {
+      const index = flags.indexOf('E');
+      let nextLetter = null;
+      let currentIndex = index;
+      while (nextLetter !== ' ') {
+        currentIndex++;
+        if (currentIndex === flags.length) {
+          break;
+        }
+        nextLetter = flags.charAt(currentIndex);
+        switch(nextLetter) {
+          case 't':
+            FlagResults.E.t++;
+            break;
+          case 'r':
+            FlagResults.E.r++;
+            break;
+          case 'x':
+            FlagResults.E.x++;
+            break;
+          case 'f':
+            FlagResults.E.f++;
+            break;
+          case 'c':
+            FlagResults.E.c++;
+            break;
+          case 'd':
+            FlagResults.E.d++;
+            break;
+          default:
+        }
+      }
+    }
+
+    // X Flag
+    if (flags.indexOf('X') < 0) {
+      FlagResults.X[0]++;
+    } else {
+      const index = flags.indexOf('X');
+      let nextLetter = null;
+      let currentIndex = index;
+      while (nextLetter !== ' ') {
+        currentIndex++;
+        if (currentIndex === flags.length) {
+          break;
+        }
+        nextLetter = flags.charAt(currentIndex);
+        switch(nextLetter) {
+          case 's':
+            FlagResults.X.s++;
+            break;
+          case 'k':
+            FlagResults.X.k++;
+            break;
+          case 'x':
+            FlagResults.X.x++;
+            break;
+          case 'b':
+            FlagResults.X.b++;
+            break;
+          default:
+        }
+      }
+    }
+
+    // G Flag
+    if (flags.indexOf('G') < 0) {
+      FlagResults.G[0]++;
+    } else {
+      const index = flags.indexOf('G');
+      let nextLetter = null;
+      let currentIndex = index;
+      while (nextLetter !== ' ') {
+        currentIndex++;
+        if (currentIndex === flags.length) {
+          break;
+        }
+        nextLetter = flags.charAt(currentIndex);
+        switch(nextLetter) {
+          case 'd':
+            FlagResults.G.d++;
+            break;
+          case 'm':
+            FlagResults.G.m++;
+            break;
+          case 'w':
+            FlagResults.G.w++;
+            break;
+          case 'l':
+            FlagResults.G.l++;
+            break;
+          case '6':
+            FlagResults.G[64]++;
+            break;
+          default:
+        }
+      }
     }
   }
   console.log('end result', FlagResults);
