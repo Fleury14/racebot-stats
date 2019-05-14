@@ -44,7 +44,7 @@ class RacerStats extends Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.match.params.racer !== prevState.currentRacer) {
-      nextProps.getData(nextProps.match.params.racer);  
+      nextProps.getData(nextProps.match.params.racer);
       return { racerData: nextProps.racerData, currentRacer: nextProps.match.params.racer, loading: nextProps.loading}
     } else if(nextProps.loading !== prevState.loading) {
       return { loading: nextProps.loading }
@@ -64,7 +64,10 @@ class RacerStats extends Component {
 
   render() {
     const { racerData, generalData, currentRacer, twov2Data, loading } = this.state;
-    console.log('loading:', loading);
+    let racesCompleted = [];
+    if (racerData) {
+      racesCompleted = [...new Set(racerData.race_details.races_completed)];
+    }
     return (
       <div className="racer-stats-container">
         {loading && <LoadingModal />}
@@ -114,7 +117,7 @@ class RacerStats extends Component {
                     <div className="racer-history">
                       <h5 className="text-uppercase text-center">Recent Races</h5>
                       <div className="d-flex badge-holder">
-                        {racerData.race_details.races_completed.map((race, index) => {
+                        {racesCompleted.map((race, index) => {
                           return index < 20 ? (
                             <Link to={`../race/${race}`} key={race}>
                               <Badge color="primary" className="mr-2 mb-2">{race}</Badge>
