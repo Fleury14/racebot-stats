@@ -25,32 +25,30 @@ class SelectedRace extends Component {
   }
 
   componentDidMount() {
+    console.log('mounting');
     this.props.getRaceData(this.props.match.params.race);
-    this.setState({ raceData: this.props.raceData, currentRace: this.props.match.params.race });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.raceData && prevState.raceData.key && prevState.raceData.key !== this.state.currentRace) {
-      this.setState({ raceData: prevProps.raceData });
-    } else if (prevProps.raceData && !this.state.raceData) {
-      this.setState({ raceData: prevProps.raceData });
-    }
-  }
-
-  static async getDerivedStateFromProps(nextProps, prevState) {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    // console.log('nextprops', nextProps, 'prevstate', prevState)
     if (nextProps.match.params.race !== prevState.currentRace) {
-      await nextProps.getRaceData(nextProps.match.params.race);
-      return { raceData: nextProps.raceData, currentRace: nextProps.match.params.race, loading: nextProps.loading };
+      nextProps.getRaceData(nextProps.match.params.race);
+      return { currentRace: nextProps.match.params.race, loading: nextProps.loading };
     }
+
+     if ((prevState.raceData && prevState.raceData.id !== nextProps.raceData.id) || (!prevState.raceData && nextProps.raceData)) {
+      return { raceData: nextProps.raceData, loading: nextProps.loading };
+    }
+
     if (nextProps.loading !== prevState.loading) {
       return { loading: nextProps.loading }
     }
+    return null;
   }
 
   render() {
     const { raceData, loading } = this.state;
     const dataCreated = raceData ? new Date(raceData.details.created) : null;
-    console.log('loading', loading);
     return (
       <div className="race-stats-container">
         <Navbar />
