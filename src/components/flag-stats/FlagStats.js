@@ -199,6 +199,73 @@ class FlagStats extends Component {
                     <p>S!: {data.S.noSafety} ({(data.S.noSafety / data.total * 100).toFixed(1)}%)</p>
                     <p>Sf: {data.S.f} ({(data.S.f / data.total * 100).toFixed(1)}%)</p>
                     <p>Sq: {data.S.q} ({(data.S.q / data.total * 100).toFixed(1)}%)</p>
+                    <p>-no-apples: {data.other.noApples} ({(data.other.noApples / data.total * 100).toFixed(1)}%)</p>
+                    <p>-no-sirens: {data.other.noSirens} ({(data.other.noSirens / data.total * 100).toFixed(1)}%)</p>
+                  </div>
+                </Col>
+                <Col md="4" className="mb-4">
+                  <div className="text-center">
+                    <h2>B Flag (Bosses)</h2>
+                    <p>None: {data.B[0]} ({(data.B[0] / data.total * 100).toFixed(1)}%)</p>
+                    <p>B (By itself): {data.B[1]} ({(data.B[1] / data.total * 100).toFixed(1)}%)</p>
+                    <p>B!: {data.B.noSafety} ({(data.B.noSafety / data.total * 100).toFixed(1)}%)</p>
+                    <p>-whyburn: {data.W.whyBurn} ({(data.W.whyBurn / data.total * 100).toFixed(1)}%)</p>
+                    <p>-whichburn: {data.W.whichBurn} ({(data.W.whichBurn / data.total * 100).toFixed(1)}%)</p>
+                    <p>MEGANUKE: {data.W.alwaysBurn} ({(data.W.alwaysBurn / data.total * 100).toFixed(1)}%)</p>
+                  </div>
+                </Col>
+                <Col md="4" className="mb-4">
+                  <div className="text-center">
+                    <h2>N/F Flags (Challenges)</h2>
+                    <p>No F: {data.F[0]} ({(data.F[0] / data.total * 100).toFixed(1)}%)</p>
+                    <p>F: {data.F[1]} ({(data.F[1] / data.total * 100).toFixed(1)}%)</p>
+                    <p>Free Lunch: {data.N[0]} ({(data.N[0] / data.total * 100).toFixed(1)}%)</p>
+                    <p>Nc: {data.N.c} ({(data.N.c / data.total * 100).toFixed(1)}%)</p>
+                    <p>Nk: {data.N.k} ({(data.N.k / data.total * 100).toFixed(1)}%)</p>
+                    <p>Nb: {data.N.b} ({(data.N.b / data.total * 100).toFixed(1)}%)</p>
+                  </div>
+                </Col>
+                <Col md="4" className="mb-4">
+                  <div className="text-center">
+                    <h2>E Flag (Encounters)</h2>
+                    <p>None: {data.E[0]} ({(data.E[0] / data.total * 100).toFixed(1)}%)</p>
+                    <p>Et: {data.E.t} ({(data.E.t / data.total * 100).toFixed(1)}%)</p>
+                    <p>Er: {data.E.r} ({(data.E.r / data.total * 100).toFixed(1)}%)</p>
+                    <p>Ex: {data.E.x} ({(data.E.x / data.total * 100).toFixed(1)}%)</p>
+                    <p>Ef: {data.E.f} ({(data.E.f / data.total * 100).toFixed(1)}%)</p>
+                  </div>
+                </Col>
+                <Col md="4" className="mb-4">
+                  <div className="text-center">
+                    <h2>X Flag (Experience)</h2>
+                    <p>None: {data.X[0]} ({(data.X[0] / data.total * 100).toFixed(1)}%)</p>
+                    <p>Xs: {data.X.s} ({(data.X.s / data.total * 100).toFixed(1)}%)</p>
+                    <p>Xk: {data.X.k} ({(data.X.k / data.total * 100).toFixed(1)}%)</p>
+                    <p>Xb: {data.X.b} ({(data.X.b / data.total * 100).toFixed(1)}%)</p>
+                    <p>Xx: {data.X.x} ({(data.X.x / data.total * 100).toFixed(1)}%)</p>
+                  </div>
+                </Col>
+                <Col md="4" className="mb-4">
+                  <div className="text-center">
+                    <h2>G Flag (Glitches)</h2>
+                    <p>None: {data.G[0]} ({(data.G[0] / data.total * 100).toFixed(1)}%)</p>
+                    <p>Gd: {data.G.d} ({(data.G.d / data.total * 100).toFixed(1)}%)</p>
+                    <p>Gm: {data.G.m} ({(data.G.m / data.total * 100).toFixed(1)}%)</p>
+                    <p>Gw: {data.G.l} ({(data.G.l / data.total * 100).toFixed(1)}%)</p>
+                    <p>Gl: {data.G.w} ({(data.G.w / data.total * 100).toFixed(1)}%)</p>
+                    <p>G64: {data.G[64]} ({(data.G[64] / data.total * 100).toFixed(1)}%)</p>
+                  </div>
+                </Col>
+                <Col md="4" className="mb-4">
+                  <div className="text-center">
+                    <h2>Others</h2>
+                    <p>-aa: {data.other.aa} ({(data.other.aa / data.total * 100).toFixed(1)}%)</p>
+                    <p>-no-adamants: {data.other.noAdamants} ({(data.other.noAdamants / data.total * 100).toFixed(1)}%)</p>
+                    <p>-spoon: {data.other.spoon} ({(data.other.spoon / data.total * 100).toFixed(1)}%)</p>
+                    <p>-fab: {data.other.fab} ({(data.other.fab / data.total * 100).toFixed(1)}%)</p>
+                    <p>-huh: {data.other.huh} ({(data.other.huh / data.total * 100).toFixed(1)}%)</p>
+                    <p>-vintage: {data.other.vintage} ({(data.other.vintage / data.total * 100).toFixed(1)}%)</p>
+                    <p>-z: {data.other.z} ({(data.other.z / data.total * 100).toFixed(1)}%)</p>
                   </div>
                 </Col>
               </Row>
