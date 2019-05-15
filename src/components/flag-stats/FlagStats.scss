@@ -16,6 +16,13 @@
     margin-bottom: 0;
   }
 
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
   p {
     margin: 0;
   }
@@ -23,4 +30,8 @@
 
 .flag-stats-body {
   background-color: #fff;
+}
+
+.flag-stats-char {
+  border-bottom: 1px solid #ddd;
 }
