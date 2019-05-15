@@ -1,5 +1,5 @@
 // expects array of races
-const FlagStats = (raceArr) => {
+const parseFlagStats = (raceArr) => {
   if (!raceArr) return null;
   const FlagResults = {
     V: {
@@ -149,7 +149,6 @@ const FlagStats = (raceArr) => {
     total: 0,
 
   };
-  console.log('flag stats!', raceArr);
   // remove all non fe-races
   const FERaces = raceArr.filter(race => race.details && race.details.game === 'ff4fe');
   // remove all races with no flag data
@@ -663,7 +662,7 @@ const FlagStats = (raceArr) => {
       }
     }
   }
-  console.log('end result', FlagResults);
+  return FlagResults;
 }
 
-export default FlagStats;
+export default parseFlagStats;
