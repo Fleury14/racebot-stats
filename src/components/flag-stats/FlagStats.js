@@ -55,7 +55,7 @@ class FlagStats extends Component {
               <Row>
                 <Col md="4" className="mb-4">
                   <div className="text-center">
-                    <h2>V Flag</h2>
+                    <h2>V Flag (Variant)</h2>
                     <p>None: {data.V[0]} ({(data.V[0] / data.total * 100).toFixed(1)}%)</p>
                     <p>V1: {data.V[1]} ({(data.V[1] / data.total * 100).toFixed(1)}%)</p>
                     <p>V2: {data.V[2]} ({(data.V[2] / data.total * 100).toFixed(1)}%)</p>
@@ -63,7 +63,7 @@ class FlagStats extends Component {
                 </Col>
                 <Col md="4" className="mb-4">
                   <div className="text-center">
-                    <h2>J Flag</h2>
+                    <h2>J Flag (J-Content)</h2>
                     <p>None: {data.J[0]} ({(data.J[0] / data.total * 100).toFixed(1)}%)</p>
                     <p>Ji: {data.J.i} ({(data.J.i / data.total * 100).toFixed(1)}%)</p>
                     <p>Js: {data.J.s} ({(data.J.s / data.total * 100).toFixed(1)}%)</p>
@@ -72,7 +72,7 @@ class FlagStats extends Component {
                 </Col>
                 <Col md="4" className="mb-4">
                   <div className="text-center">
-                    <h2>K Flag</h2>
+                    <h2>K Flag (Key Items)</h2>
                     <p>None: {data.K[0]} ({(data.K[0] / data.total * 100).toFixed(1)}%)</p>
                     <p>K (by itself): {data.K[1]} ({(data.K[1] / data.total * 100).toFixed(1)}%)</p>
                     <p>Kq: {data.K.q} ({(data.K.q / data.total * 100).toFixed(1)}%)</p>
@@ -83,7 +83,7 @@ class FlagStats extends Component {
                 </Col>
                 <Col md="4" className="mb-4">
                   <div className="text-center">
-                    <h2>C Flag</h2>
+                    <h2>C Flag (Characters)</h2>
                     <p>None: {data.C[0]} ({(data.C[0] / data.total * 100).toFixed(1)}%)</p>
                     <p>C (By itself): {data.C[1]} ({(data.C[1] / data.total * 100).toFixed(1)}%)</p>
                     <p>Cn: {data.C.n} ({(data.K.q / data.total * 100).toFixed(1)}%)</p>
@@ -162,6 +162,43 @@ class FlagStats extends Component {
                         <p className="w-33">{data.charStart.fusoya}</p>
                         <p className="w-33">{data.charRestrict.fusoya}</p>
                     </div>
+                  </div>
+                </Col>
+                <Col md="4" className="mb-4">
+                  <div className="text-center">
+                    <h2>P Flag (Pass)</h2>
+                    <p>None: {data.P[0]} ({(data.P[0] / data.total * 100).toFixed(1)}%)</p>
+                    <p>Ps: {data.P.s} ({(data.P.s / data.total * 100).toFixed(1)}%)</p>
+                    <p>Pk: {data.P.k} ({(data.P.k / data.total * 100).toFixed(1)}%)</p>
+                    <p>Pt: {data.P.t} ({(data.P.t / data.total * 100).toFixed(1)}%)</p>
+                  </div>
+                </Col>
+                <Col md="4" className="mb-4">
+                  <div className="text-center">
+                    <h2>T Flag (Treasures)</h2>
+                    <p>None: {data.T[0]} ({(data.T[0] / data.total * 100).toFixed(1)}%)</p>
+                    <p>T1: {data.T[1]} ({(data.T[1] / data.total * 100).toFixed(1)}%)</p>
+                    <p>T2: {data.T[2]} ({(data.T[2] / data.total * 100).toFixed(1)}%)</p>
+                    <p>T3: {data.T[3]} ({(data.T[3] / data.total * 100).toFixed(1)}%)</p>
+                    <p>T4: {data.T[4]} ({(data.T[4] / data.total * 100).toFixed(1)}%)</p>
+                    <p>Tg: {data.T.g} ({(data.T.g / data.total * 100).toFixed(1)}%)</p>
+                    <p>Tr: {data.T.r} ({(data.T.r / data.total * 100).toFixed(1)}%)</p>
+                    <p>Tx: {data.T.x} ({(data.T.x / data.total * 100).toFixed(1)}%)</p>
+                  </div>
+                </Col>
+                <Col md="4" className="mb-4">
+                  <div className="text-center">
+                    <h2>S Flag (Shops)</h2>
+                    <p>None: {data.S[0]} ({(data.S[0] / data.total * 100).toFixed(1)}%)</p>
+                    <p>S1: {data.S[1]} ({(data.S[1] / data.total * 100).toFixed(1)}%)</p>
+                    <p>S2: {data.S[2]} ({(data.S[2] / data.total * 100).toFixed(1)}%)</p>
+                    <p>S3: {data.S[3]} ({(data.S[3] / data.total * 100).toFixed(1)}%)</p>
+                    <p>S4: {data.S[4]} ({(data.S[4] / data.total * 100).toFixed(1)}%)</p>
+                    <p>Sc: {data.S.c} ({(data.S.c / data.total * 100).toFixed(1)}%)</p>
+                    <p>Sx: {data.S.x} ({(data.S.x / data.total * 100).toFixed(1)}%)</p>
+                    <p>S!: {data.S.noSafety} ({(data.S.noSafety / data.total * 100).toFixed(1)}%)</p>
+                    <p>Sf: {data.S.f} ({(data.S.f / data.total * 100).toFixed(1)}%)</p>
+                    <p>Sq: {data.S.q} ({(data.S.q / data.total * 100).toFixed(1)}%)</p>
                   </div>
                 </Col>
               </Row>

@@ -146,6 +146,12 @@ const parseFlagStats = (raceArr) => {
       l: 0,
       64: 0,
     },
+    P: {
+      0: 0,
+      s: 0,
+      k: 0,
+      t: 0,
+    },
     total: 0,
 
   };
@@ -430,7 +436,7 @@ const parseFlagStats = (raceArr) => {
       FlagResults.T[4]++;
     }
     if (flags.indexOf('Tx') >= 0) {
-      FlagResults.T[2]++;
+      FlagResults.T.x++;
     }
     if (flags.indexOf('T') < 0) {
       FlagResults.T[0]++;
@@ -656,6 +662,34 @@ const parseFlagStats = (raceArr) => {
             break;
           case '6':
             FlagResults.G[64]++;
+            break;
+          default:
+        }
+      }
+    }
+
+    // P Flag
+    if (flags.indexOf('P') < 0) {
+      FlagResults.N[0]++;
+    } else {
+      const index = flags.indexOf('P');
+      let nextLetter = null;
+      let currentIndex = index;
+      while (nextLetter !== ' ') {
+        currentIndex++;
+        if (currentIndex === flags.length) {
+          break;
+        }
+        nextLetter = flags.charAt(currentIndex);
+        switch(nextLetter) {
+          case 's':
+            FlagResults.P.s++;
+            break;
+          case 'k':
+            FlagResults.P.k++;
+            break;
+          case 't':
+            FlagResults.P.t++;
             break;
           default:
         }
