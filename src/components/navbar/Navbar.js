@@ -17,6 +17,9 @@ const Navbar = (props) => {
           <Link to={'/player-directory'}>
             <li>Player Directory</li>
           </Link>
+          <Link to={'/flag-stats'}>
+            <li>Flag Stats</li>
+          </Link>
         </ul>
       </div>
     </div>
