@@ -40,9 +40,7 @@ class FlagStats extends Component {
     }
   }
 
-  render() {
-    console.log('state', this.state);
-    const { data } = this.state;
+  render() {    const { data } = this.state;
     return (
       <div>
          <Navbar />
@@ -251,8 +249,8 @@ class FlagStats extends Component {
                     <p>None: {data.G[0]} ({(data.G[0] / data.total * 100).toFixed(1)}%)</p>
                     <p>Gd: {data.G.d} ({(data.G.d / data.total * 100).toFixed(1)}%)</p>
                     <p>Gm: {data.G.m} ({(data.G.m / data.total * 100).toFixed(1)}%)</p>
-                    <p>Gw: {data.G.l} ({(data.G.l / data.total * 100).toFixed(1)}%)</p>
-                    <p>Gl: {data.G.w} ({(data.G.w / data.total * 100).toFixed(1)}%)</p>
+                    <p>Gl: {data.G.l} ({(data.G.l / data.total * 100).toFixed(1)}%)</p>
+                    <p>Gw: {data.G.w} ({(data.G.w / data.total * 100).toFixed(1)}%)</p>
                     <p>G64: {data.G[64]} ({(data.G[64] / data.total * 100).toFixed(1)}%)</p>
                   </div>
                 </Col>
