@@ -49,6 +49,16 @@ class SelectedRace extends Component {
   render() {
     const { raceData, loading } = this.state;
     const dataCreated = raceData ? new Date(raceData.details.created) : null;
+    let finishers = null;
+    if (raceData && raceData.details && raceData.details.entrants) {
+      finishers = raceData.details.entrants.sort((a, b) => {
+        if (a.status === 'Forfeited' && b.status === 'Forfeited') return 0;
+        if (a.status === 'Forfeited' && b.status !== 'Forfeited') return 1;
+        if (a.status !== 'Forfeited' && b.status === 'Forfeited') return -1;
+        return a.placement - b.placement
+      });
+    }
+    console.log('racedata', raceData, 'finishers', finishers);
     return (
       <div className="race-stats-container">
         <Navbar />
@@ -97,7 +107,7 @@ class SelectedRace extends Component {
               </Container>
             </div>
           )}
-          {raceData && raceData.details && raceData.details.finishers && raceData.details.finishers.length > 0 && (
+          {finishers && (
             <div className="race-stats-finisher-bubble">
               <Table striped borderless>
                 <thead>
@@ -108,7 +118,7 @@ class SelectedRace extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {raceData.details.finishers.map(finisher => {
+                  {finishers.map(finisher => {
                     return (
                       <tr key={finisher.id}>
                         <th>{finisher.placement}</th>
