@@ -7,6 +7,7 @@
 
 .win-loss-box {
   padding: 10px;
+  transition: 0.2s all;
 
   h4 {
     color: $primaryColor;
@@ -21,5 +22,10 @@
   h2 {
     font-weight: 900;
     margin-top: 0;
+  }
+
+  &:hover {
+    background-color: #ddd;
+    cursor: pointer;
   }
 }

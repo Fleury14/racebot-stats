@@ -9,7 +9,12 @@ const ParseWinLoss = (data) => {
   // loop through each race
   for (let race of data) {
     // skip over races that arent complete and 2v2s
-    if (race.details.status !== completedString || race.details.mode === twov2String) {
+    if (race.details.status !== completedString
+      || race.details.mode === twov2String
+      || race.details.type.indexOf('2v2') >= 0
+      || race.details.type.indexOf('2v2beta') >= 0
+
+      ) {
       continue;
     }
     // loop through entrants
@@ -35,7 +40,7 @@ const ParseWinLoss = (data) => {
 
         // set current opponent
         const currentOpponent = currentRacer.opponents.find(opponentRecord => opponentRecord.id === opponent.id);
-
+                
         // if the opponent forfeited, give win by default
         if (opponent.status === forfeitString) {
           currentOpponent.wins++;
@@ -48,20 +53,18 @@ const ParseWinLoss = (data) => {
           continue;
         }
 
-        // at this point we are guaranteed to have times, so lets make those times and compare
-        const entrantTime = new Date(entrant.finishTime);
-        const opponentTime = new Date(opponent.finishTime);
-        if (entrantTime.getTime() < opponentTime.getTime()) {
+        // compare placements. bothe players should have one since we eliminated forfeits
+        if (entrant.placement < opponent.placement) {
           currentOpponent.wins++;
           continue;
         }
 
-        if (entrantTime.getTime() > opponentTime.getTime()) {
+        if (entrant.placement > opponent.placement) {
           currentOpponent.losses++;
           continue;
         }
         
-        // at this point they would have finished at the same time down to the millisecond. what a miracle!
+        // at this point they would have the same placement. what a miracle!
         continue;
       }
     }
