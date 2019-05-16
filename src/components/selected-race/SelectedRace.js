@@ -25,18 +25,18 @@ class SelectedRace extends Component {
   }
 
   componentDidMount() {
-    console.log('mounting');
     this.props.getRaceData(this.props.match.params.race);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    // console.log('nextprops', nextProps, 'prevstate', prevState)
     if (nextProps.match.params.race !== prevState.currentRace) {
+      // if the data doesnt match, trigger a call, then update the current race so this isnt triggered twice
       nextProps.getRaceData(nextProps.match.params.race);
       return { currentRace: nextProps.match.params.race, loading: nextProps.loading };
     }
 
      if ((prevState.raceData && prevState.raceData.id !== nextProps.raceData.id) || (!prevState.raceData && nextProps.raceData)) {
+       // if theres racedata that doesnt match the current, set it to state
       return { raceData: nextProps.raceData, loading: nextProps.loading };
     }
 

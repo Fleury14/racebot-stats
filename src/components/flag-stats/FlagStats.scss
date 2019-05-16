@@ -1,0 +1,37 @@
+.flag-stats-container {
+  background-color: #eee;
+  padding: 20px;
+  min-height: calc(100vh - 150px);
+  border-radius: 13px;
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.flag-stats-body {
+  background-color: #fff;
+}
+
+.flag-stats-char {
+  border-bottom: 1px solid #ddd;
+}

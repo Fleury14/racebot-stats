@@ -12,5 +12,6 @@ import PlayerDirectory from './player-directory/PlayerDirectory';
 import ErrorComponent from './error/ErrorComponent';
 import RecentlyCompletedRaces from './recent-completed-races/RecentCompletedRaces';
 import LoadingModal from './loading-modal/LoadingModal';
+import FlagStats from './flag-stats/FlagStats';
 
-export { Navbar, Main, WinLoss, CurrentRaces, PlayerSearcher, RacerStats, SelectedRace, CookieLeaderboard, Twov2Stats, RaceDirectory, PlayerDirectory, ErrorComponent, RecentlyCompletedRaces, LoadingModal };
+export { Navbar, Main, WinLoss, CurrentRaces, PlayerSearcher, RacerStats, SelectedRace, CookieLeaderboard, Twov2Stats, RaceDirectory, PlayerDirectory, ErrorComponent, RecentlyCompletedRaces, LoadingModal, FlagStats };
