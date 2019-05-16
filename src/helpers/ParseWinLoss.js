@@ -9,7 +9,12 @@ const ParseWinLoss = (data) => {
   // loop through each race
   for (let race of data) {
     // skip over races that arent complete and 2v2s
-    if (race.details.status !== completedString || race.details.mode === twov2String) {
+    if (race.details.status !== completedString
+      || race.details.mode === twov2String
+      || race.details.type.indexOf('2v2') >= 0
+      || race.details.type.indexOf('2v2beta') >= 0
+
+      ) {
       continue;
     }
     // loop through entrants
