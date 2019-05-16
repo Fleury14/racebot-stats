@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 import { getBotData } from '../../redux/actions';
 import { parseFlagStats } from '../../helpers';
-import { Navbar } from '..'
+import { Navbar, LoadingModal } from '..'
 import './FlagStats.scss';
 
 const mapStateToProps = state => ({
@@ -25,7 +25,7 @@ class FlagStats extends Component {
 
   componentDidMount() {
     const { botData } = this.props;
-    if (!botData) {
+    if (!botData || !botData.data) {
       this.props.getData();
     } else if (botData && botData.data) {
       this.setState({ data: parseFlagStats(botData.data) });
@@ -35,16 +35,21 @@ class FlagStats extends Component {
   componentDidUpdate() {
     const { botData } = this.props;
     if (botData && botData.data && !this.state.data) {
-    
       this.setState({ data: parseFlagStats(botData.data) });
+    }
+
+    if(botData.loading !== this.state.loading) {
+      this.setState({ loading: botData.loading });
     }
   }
 
-  render() {    const { data } = this.state;
+  render() {    
+    const { data, loading } = this.state;
     return (
       <div>
-         <Navbar />
-        {data && (
+        <Navbar />
+        {loading && <LoadingModal />}
+        {data && !loading &&  (
           <div className="flag-stats-container open-sans">
           <div className="flag-stats-body p-5">
           <h1 className="text-center">Flag stats</h1>
