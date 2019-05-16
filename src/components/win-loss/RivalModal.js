@@ -8,7 +8,6 @@ const RivalModal = (props) => {
   if (!raceData) return null;
   const playerName = raceData[0].details.entrants.find(entrant => entrant.id === player).name;
   const rivalName = raceData[0].details.entrants.find(entrant => entrant.id === rival).name;
-  console.log('props', props);
   return (
     <div className="rival-modal-bg open-sans">
       <div className="rival-modal-body">
