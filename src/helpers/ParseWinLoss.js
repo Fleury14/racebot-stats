@@ -40,7 +40,12 @@ const ParseWinLoss = (data) => {
 
         // set current opponent
         const currentOpponent = currentRacer.opponents.find(opponentRecord => opponentRecord.id === opponent.id);
-
+        
+        // debug
+        if (currentRacer.name === 'CaitSith2' && currentOpponent.name === 'Zilch') {
+          console.log ('hey!');
+        }
+        
         // if the opponent forfeited, give win by default
         if (opponent.status === forfeitString) {
           currentOpponent.wins++;
@@ -56,12 +61,15 @@ const ParseWinLoss = (data) => {
         // at this point we are guaranteed to have times, so lets make those times and compare
         const entrantTime = new Date(entrant.finishTime);
         const opponentTime = new Date(opponent.finishTime);
-        if (entrantTime.getTime() < opponentTime.getTime()) {
+        if (currentRacer.name === 'CaitSith2' && currentOpponent.name === 'Zilch') {
+          console.log(race.key, entrantTime.getTime(), opponentTime.getTime(), entrantTime.getTime() < opponentTime.getTime());
+        }
+        if (entrant.placement < opponent.placement) {
           currentOpponent.wins++;
           continue;
         }
 
-        if (entrantTime.getTime() > opponentTime.getTime()) {
+        if (entrant.placement > opponent.placement) {
           currentOpponent.losses++;
           continue;
         }

@@ -9,6 +9,7 @@ const parseRivalry = (races, id1, id2) => {
     && race.details.entrants.find(entrant => entrant.id === id2)
     && race.details.type.indexOf('2v2') < 0
     && race.details.type.indexOf('2v2beta') < 0
+    && race.details.mode !=='2v2'
     && race.details.status === 'Completed'
     ).sort((a, b) => {
       const timeA = new Date(a.details.created);
