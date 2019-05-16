@@ -5,7 +5,6 @@ import './Twov2Stats.scss';
 
 const Twov2Stats = (props) => {
   const { data, currentRacer } = props;
-  console.log('data', data)
   return (
     <div className="pairs-container">
       <h1 className="text-center text-uppercase">Partner Stats (2v2)</h1>
