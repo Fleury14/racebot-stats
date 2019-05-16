@@ -9,11 +9,10 @@ const RivalModal = (props) => {
   const rivalName = raceData[0].details.entrants.find(entrant => entrant.id === rival).name;
   console.log('props', props);
   return (
-    <div className="rival-modal-bg">
+    <div className="rival-modal-bg open-sans">
       <div className="rival-modal-body">
-        <h1 className="text-center">Rivalry Data</h1>
-        <h3 className="text-center">{playerName} vs. {rivalName}</h3>
-        <Container fluid>
+        <h3 className="text-center text-uppercase">{playerName} vs. {rivalName}</h3>
+        <Container fluid className="mb-4">
           <Row>
             <Col>
               <h4>Date</h4>
@@ -29,10 +28,15 @@ const RivalModal = (props) => {
             </Col>
           </Row>
           {raceData.map(race => {
+            const raceDate = new Date(race.details.created);
             return (
-              <Row key={race.key}>
+              <Row key={race.key} className={
+                race.details.entrants.find(entrant => entrant.id === player).placement < race.details.entrants.find(entrant => entrant.id === rival).placement
+                ? 'green-row'
+                : 'red-row'
+              }>
                 <Col>
-                  <p>{race.details.created}</p>
+                  <p>{raceDate.toLocaleDateString()}</p>
                 </Col>
                 <Col>
                   <p>{race.key}</p>
@@ -47,7 +51,9 @@ const RivalModal = (props) => {
             )
           })}
         </Container>
-        <Button color="danger" onClick={() => close()}>Close</Button>
+        <div className="d-flex justify-content-center">
+          <Button color="danger" onClick={() => close()}>Close</Button>
+        </div>
       </div>
     </div>
   );
