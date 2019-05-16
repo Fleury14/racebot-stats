@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Container, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import './RivalModal.scss';
 
 const RivalModal = (props) => {
@@ -39,7 +40,9 @@ const RivalModal = (props) => {
                   <p>{raceDate.toLocaleDateString()}</p>
                 </Col>
                 <Col>
-                  <p>{race.key}</p>
+                  <Link to={`/race/${race.key}`}>
+                    <p>{race.key}</p>
+                  </Link>
                 </Col>
                 <Col>
                   <p>{race.details.entrants.find(entrant => entrant.id === player).finish}</p>
