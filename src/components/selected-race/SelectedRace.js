@@ -107,7 +107,7 @@ class SelectedRace extends Component {
               </Container>
             </div>
           )}
-          {finishers && (
+          {finishers && !(raceData.details.async && raceData.details.status === 'Running') && (
             <div className="race-stats-finisher-bubble">
               <Table striped borderless>
                 <thead>
