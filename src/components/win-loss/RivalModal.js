@@ -11,7 +11,11 @@ const RivalModal = (props) => {
   return (
     <div className="rival-modal-bg open-sans">
       <div className="rival-modal-body">
-        <h3 className="text-center text-uppercase">{playerName} vs. {rivalName}</h3>
+        <h3 className="text-center text-uppercase">{playerName} vs. 
+          <Link to={`/racer/${rivalName}`}>
+          <span> {rivalName}</span>
+          </Link>
+        </h3>
         <Container fluid className="mb-4">
           <Row>
             <Col>
