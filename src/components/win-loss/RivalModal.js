@@ -8,6 +8,7 @@ const RivalModal = (props) => {
   if (!raceData) return null;
   const playerName = raceData[0].details.entrants.find(entrant => entrant.id === player).name;
   const rivalName = raceData[0].details.entrants.find(entrant => entrant.id === rival).name;
+  console.log('props', props);
   return (
     <div className="rival-modal-bg open-sans">
       <div className="rival-modal-body">
@@ -28,10 +29,13 @@ const RivalModal = (props) => {
             </Col>
           </Row>
           {raceData.map(race => {
+            const playerData = race.details.entrants.find(entrant => entrant.id === player);
+            const rivalData = race.details.entrants.find(entrant => entrant.id === rival)
             const raceDate = new Date(race.details.created);
+            console.log('race', race)
             return (
               <Row key={race.key} className={
-                race.details.entrants.find(entrant => entrant.id === player).placement < race.details.entrants.find(entrant => entrant.id === rival).placement
+                playerData.placement < rivalData.placement || (playerData.placement && rivalData.status === 'Forfeited')
                 ? 'green-row'
                 : 'red-row'
               }>
