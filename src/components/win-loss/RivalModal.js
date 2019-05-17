@@ -31,7 +31,6 @@ const RivalModal = (props) => {
             const playerData = race.details.entrants.find(entrant => entrant.id === player);
             const rivalData = race.details.entrants.find(entrant => entrant.id === rival)
             const raceDate = new Date(race.details.created);
-            console.log('race', race)
             return (
               <Row key={race.key} className={
                 playerData.placement < rivalData.placement || (playerData.status !== 'Forfeited' && rivalData.status === 'Forfeited')
