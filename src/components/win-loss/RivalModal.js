@@ -31,12 +31,12 @@ const RivalModal = (props) => {
             const playerData = race.details.entrants.find(entrant => entrant.id === player);
             const rivalData = race.details.entrants.find(entrant => entrant.id === rival)
             const raceDate = new Date(race.details.created);
-            console.log('race', race);
+            console.log('race', race)
             return (
               <Row key={race.key} className={
-                playerData.placement < rivalData.placement || (playerData.placement && rivalData.status === 'Forfeited')
+                playerData.placement < rivalData.placement || (playerData.status !== 'Forfeited' && rivalData.status === 'Forfeited')
                 ? 'green-row'
-                : 'red-row'
+                : (playerData.placement > rivalData.placement || (playerData.status === 'Forfeited' && rivalData.status !== 'Forfeited')) ? 'red-row' : ''
               }>
                 <Col>
                   <p>{raceDate.toLocaleDateString()}</p>
