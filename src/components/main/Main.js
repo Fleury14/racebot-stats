@@ -50,6 +50,7 @@ class MainComponent extends Component {
   render() {
     const { history } = this.props;
     const { data, loading } = this.state;
+    console.log('data', data.queryDate);
     return (
       <div className="main-body">
         <Navbar />
@@ -67,6 +68,7 @@ class MainComponent extends Component {
                 </Col>
                 <Col md="5" className="p-4">
                   <CookieLeaderboard />
+                  <p className="mt-4">{data.queryDate && 'Last data query: ' + data.queryDate.toLocaleDateString()}</p>
                 </Col>
               </Row>
             </Container>
