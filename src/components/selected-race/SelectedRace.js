@@ -4,6 +4,7 @@ import { Container, Row, Col, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { getSingleRaceData } from '../../redux/actions';
 import { Navbar, LoadingModal } from '..';
+import { parseZScore } from '../../helpers';
 import './SelectedRace.scss';
 
 const mapStateToProps = state => ({
@@ -49,6 +50,7 @@ class SelectedRace extends Component {
   render() {
     const { raceData, loading } = this.state;
     const dataCreated = raceData ? new Date(raceData.details.created) : null;
+    const raceWithZScore = parseZScore(raceData);
     let finishers = null;
     if (raceData && raceData.details && raceData.details.entrants) {
       finishers = raceData.details.entrants.sort((a, b) => {
