@@ -5,6 +5,7 @@ const ParseWinLoss = (data) => {
   const forfeitString = 'Forfeited';
   const completedString = 'Completed';
   const twov2String = '2v2';
+  const leagueFlags = 'V1 Jia Kqm Pk Cnx -hobs T3gr S2 B F Nck Gl Etf Xsbk -noadamants -aa -fab -huh -z';
 
   // loop through each race
   for (let race of data) {
@@ -35,7 +36,7 @@ const ParseWinLoss = (data) => {
         // since we know they're gonna get a result here, make sure opponent exists on the users object
         // if not then create
         if (!currentRacer.opponents.find(opponentRecord => opponentRecord.id === opponent.id)) {
-          currentRacer.opponents.push({ id: opponent.id, name: opponent.name, wins: 0, losses: 0 });
+          currentRacer.opponents.push({ id: opponent.id, name: opponent.name, wins: 0, losses: 0, leagueWins: 0, leagueLosses: 0 });
         }
 
         // set current opponent
@@ -44,23 +45,35 @@ const ParseWinLoss = (data) => {
         // if the opponent forfeited, give win by default
         if (opponent.status === forfeitString) {
           currentOpponent.wins++;
+          if (race.details.metadata && race.details.metadata.Flags && race.details.metadata.Flags === leagueFlags) {
+            currentOpponent.leagueWins++;
+          }
           continue;
         }
 
         // opposite if player forfeited
         if (entrant.status === forfeitString) {
           currentOpponent.losses++;
+          if (race.details.metadata && race.details.metadata.Flags && race.details.metadata.Flags === leagueFlags) {
+            currentOpponent.leagueLosses++;
+          }
           continue;
         }
 
         // compare placements. bothe players should have one since we eliminated forfeits
         if (entrant.placement < opponent.placement) {
           currentOpponent.wins++;
+          if (race.details.metadata && race.details.metadata.Flags && race.details.metadata.Flags === leagueFlags) {
+            currentOpponent.leagueWins++;
+          }
           continue;
         }
 
         if (entrant.placement > opponent.placement) {
           currentOpponent.losses++;
+          if (race.details.metadata && race.details.metadata.Flags && race.details.metadata.Flags === leagueFlags) {
+            currentOpponent.leagueLosses++;
+          }
           continue;
         }
         

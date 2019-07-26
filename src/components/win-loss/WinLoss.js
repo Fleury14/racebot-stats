@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
 import { ParseWinLoss, parseRivalry } from '../../helpers';
 import WinLossDisplay from './WinLossDisplay';
 import RivalModal from './RivalModal';
@@ -8,11 +9,13 @@ class WinLoss extends Component {
     parsedData: null,
     playerWinLoss: null,
     rivalry: null,
+    leagueMode: false,
   }
 
   componentDidMount() {
     const { data, selectedPlayer } = this.props;
     const dataResult = ParseWinLoss(data.items || data);
+    console.log('stats', dataResult);
     if (selectedPlayer) {
       this.setState({ playerWinLoss: dataResult.find(racer => racer.name.toLowerCase() === selectedPlayer.toLowerCase()) });
     }
@@ -29,7 +32,7 @@ class WinLoss extends Component {
 
   render() {
     const { selectedPlayer } = this.props;
-    const { playerWinLoss, rivalry } = this.state;
+    const { playerWinLoss, rivalry, leagueMode } = this.state;
     return (
       <div>
         {rivalry && <RivalModal
@@ -38,10 +41,13 @@ class WinLoss extends Component {
           raceData={rivalry.raceData}
           close={() => this.clearRivarly()}
           />}
+          <div className="d-flex justify-content-center mb-2">
+            <Button color="primary" outline={!leagueMode} onClick={() => this.setState({ leagueMode: !leagueMode })}>Toggle league stats</Button>
+          </div>
         {!playerWinLoss && <p>There is no data to display</p>}
         {playerWinLoss && (
           <div>
-            {selectedPlayer && <WinLossDisplay playerData={playerWinLoss} sendRivalInfo={(player1, player2) => this.getRivalry(player1, player2)} />}
+            {selectedPlayer && <WinLossDisplay leagueMode={leagueMode} playerData={playerWinLoss} sendRivalInfo={(player1, player2) => this.getRivalry(player1, player2)} />}
           </div>
         )}
       </div>
