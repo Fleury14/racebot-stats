@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
 import { ParseWinLoss, parseRivalry } from '../../helpers';
 import WinLossDisplay from './WinLossDisplay';
 import RivalModal from './RivalModal';
@@ -40,9 +41,8 @@ class WinLoss extends Component {
           raceData={rivalry.raceData}
           close={() => this.clearRivarly()}
           />}
-          <div>
-            <p>League mode: {leagueMode}</p>
-            <button onClick={() => this.setState({ leagueMode: !leagueMode })}>Toggle league stats</button>
+          <div className="d-flex justify-content-center mb-2">
+            <Button color="primary" outline={!leagueMode} onClick={() => this.setState({ leagueMode: !leagueMode })}>Toggle league stats</Button>
           </div>
         {!playerWinLoss && <p>There is no data to display</p>}
         {playerWinLoss && (
