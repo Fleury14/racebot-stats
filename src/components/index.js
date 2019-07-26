@@ -13,5 +13,6 @@ import ErrorComponent from './error/ErrorComponent';
 import RecentlyCompletedRaces from './recent-completed-races/RecentCompletedRaces';
 import LoadingModal from './loading-modal/LoadingModal';
 import FlagStats from './flag-stats/FlagStats';
+import Wagers from './wagers/Wagers';
 
-export { Navbar, Main, WinLoss, CurrentRaces, PlayerSearcher, RacerStats, SelectedRace, CookieLeaderboard, Twov2Stats, RaceDirectory, PlayerDirectory, ErrorComponent, RecentlyCompletedRaces, LoadingModal, FlagStats };
+export { Navbar, Main, WinLoss, CurrentRaces, PlayerSearcher, RacerStats, SelectedRace, CookieLeaderboard, Twov2Stats, RaceDirectory, PlayerDirectory, ErrorComponent, RecentlyCompletedRaces, LoadingModal, FlagStats, Wagers };

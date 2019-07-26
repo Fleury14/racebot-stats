@@ -5,5 +5,6 @@ import Parse2v2 from './Parse2v2';
 import GetRecentlyCompleteRaces from './GetRecentlyCompleteRaces';
 import parseFlagStats from './FlagStats';
 import parseRivalry from './parseRivalry';
+import ParseWagers from './ParseWagers';
 
-export { ParseWinLoss, GetCurrentRaces, GetCookieLeaders, Parse2v2, GetRecentlyCompleteRaces, parseFlagStats, parseRivalry };
+export { ParseWinLoss, GetCurrentRaces, GetCookieLeaders, Parse2v2, GetRecentlyCompleteRaces, parseFlagStats, parseRivalry, ParseWagers };
