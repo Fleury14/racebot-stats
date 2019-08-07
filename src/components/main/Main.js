@@ -25,6 +25,7 @@ class MainComponent extends Component {
     data: null,
     error: null,
     loading: false,
+    dataTime: null,
   }
   
   componentDidMount() {
@@ -32,19 +33,31 @@ class MainComponent extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.data !== this.state.data) {
-      this.setState({ data: prevState.data });
+    if (prevState.data !== this.state.data && Date.now() - parseInt(prevState.dataTime) > parseInt(process.env.REACT_APP_API_DATA_THRESHOLD_IN_SECS) * 1000) {
+      this.setState({ data: prevState.data, dataTime: prevState.data.dataTime });
     }
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.botData.data !== prevState.data | nextProps.botData.error) {
-      return { data: nextProps.botData.data, error: nextProps.botData.error, loading: nextProps.botData.loading }
+    console.log('next prizzles', nextProps);
+    console.log('prev stizzles', prevState);
+    console.log(parseInt(prevState.dataTime));
+    // console.log(Date.now() - parseInt(prevState.dataTime), parseInt(process.env.REACT_APP_API_DATA_THRESHOLD_IN_SECS) * 1000)
+    if (!prevState.dataTime || Date.now() - parseInt(prevState.dataTime) > parseInt(process.env.REACT_APP_API_DATA_THRESHOLD_IN_SECS) * 1000) {
+      console.log('data old or not thurr');
+      return { data: nextProps.botData.data, error: nextProps.botData.error, loading: nextProps.botData.loading, dataTime: nextProps.botData.data.dataTime };
     } else if(nextProps.loading !== prevState.loading) {
       return { loading: nextProps.loading };
     } else {
       return null;
     }
+    // if (nextProps.botData.data !== prevState.data | nextProps.botData.error) {
+    //   return { data: nextProps.botData.data, error: nextProps.botData.error, loading: nextProps.botData.loading }
+    // } else if(nextProps.loading !== prevState.loading) {
+    //   return { loading: nextProps.loading };
+    // } else {
+    //   return null;
+    // }
   }
 
   render() {
