@@ -5,6 +5,7 @@ import { getBotData } from '../../redux/actions';
 import { GetCurrentRaces, GetRecentlyCompleteRaces } from '../../helpers';
 import CurrentRaces from '../current-races/CurrentRaces';
 import { Navbar, PlayerSearcher, CookieLeaderboard, RecentlyCompletedRaces, LoadingModal } from '..';
+import ReduxMainData from '../redux-data/ReduxMainData';
 import './Main.scss';
 
 const mapStateToProps = (state) => {
@@ -28,65 +29,42 @@ class MainComponent extends Component {
     dataTime: null,
   }
   
-  componentDidMount() {
-    this.props.getData();
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.data !== this.state.data && Date.now() - parseInt(prevState.dataTime) > parseInt(process.env.REACT_APP_API_DATA_THRESHOLD_IN_SECS) * 1000) {
-      this.setState({ data: prevState.data, dataTime: prevState.data.dataTime });
-    }
-  }
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    console.log('next prizzles', nextProps);
-    console.log('prev stizzles', prevState);
-    console.log(parseInt(prevState.dataTime));
-    // console.log(Date.now() - parseInt(prevState.dataTime), parseInt(process.env.REACT_APP_API_DATA_THRESHOLD_IN_SECS) * 1000)
-    if (!prevState.dataTime || Date.now() - parseInt(prevState.dataTime) > parseInt(process.env.REACT_APP_API_DATA_THRESHOLD_IN_SECS) * 1000) {
-      console.log('data old or not thurr');
-      return { data: nextProps.botData.data, error: nextProps.botData.error, loading: nextProps.botData.loading, dataTime: nextProps.botData.data.dataTime };
-    } else if(nextProps.loading !== prevState.loading) {
-      return { loading: nextProps.loading };
-    } else {
-      return null;
-    }
-    // if (nextProps.botData.data !== prevState.data | nextProps.botData.error) {
-    //   return { data: nextProps.botData.data, error: nextProps.botData.error, loading: nextProps.botData.loading }
-    // } else if(nextProps.loading !== prevState.loading) {
-    //   return { loading: nextProps.loading };
-    // } else {
-    //   return null;
-    // }
-  }
-
   render() {
     const { history } = this.props;
     const { data, loading } = this.state;
     return (
       <div className="main-body">
         <Navbar />
-        {loading && <LoadingModal />}
-        {data && (
-          <div className={loading ? 'hide-me' : ''}>
-            <div className="p-5">
-              <CurrentRaces data={GetCurrentRaces(data.items || data)} />
-            </div>
-            <Container fluid >
-              <Row>
-                <Col md="7" className="p-4">
-                  <PlayerSearcher navigation={history} />
-                  <RecentlyCompletedRaces data={GetRecentlyCompleteRaces(data.items || data)} />
-                </Col>
-                <Col md="5" className="p-4">
-                  <CookieLeaderboard />
-                </Col>
-              </Row>
-            </Container>
+        <ReduxMainData>
+          {(reduxData) => {
+            const data = reduxData.botData;
+            const loading = reduxData.loading;
+            return (
+              <React.Fragment>
+              {loading && <LoadingModal />}
+              {data && (
+                <div className={loading ? 'hide-me' : ''}>
+                  <div className="p-5">
+                    <CurrentRaces data={GetCurrentRaces(data.items || data)} />
+                  </div>
+                  <Container fluid >
+                    <Row>
+                      <Col md="7" className="p-4">
+                        <PlayerSearcher navigation={history} />
+                        <RecentlyCompletedRaces data={GetRecentlyCompleteRaces(data.items || data)} />
+                      </Col>
+                      <Col md="5" className="p-4">
+                        <CookieLeaderboard />
+                      </Col>
+                    </Row>
+                  </Container>
+                </div>  
+              )}
+              </React.Fragment>
+            );
             
-          </div>
-          
-        )}
+          }}
+        </ReduxMainData>
       </div>
     )
   }
