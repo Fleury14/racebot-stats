@@ -23,15 +23,11 @@ const mapActionsToProps = dispatch => ({
 
 class MainComponent extends Component {
   state = {
-    data: null,
     error: null,
-    loading: false,
-    dataTime: null,
   }
   
   render() {
     const { history } = this.props;
-    const { data, loading } = this.state;
     return (
       <div className="main-body">
         <Navbar />
