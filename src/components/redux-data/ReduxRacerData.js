@@ -24,7 +24,6 @@ class ReduxRacerData extends Component {
   }
 
   componentDidMount() {
-    console.log('priznops', this.props);
         // check the date time of current data. If it either doesn't have one, or it is more than the timelimit in the env, make a new call
         if (!this.props.racerData || !this.props.racerData.dataTime || Date.now - parseInt(this.props.botDatadataTime) > process.env.REACT_APP_API_DATA_THRESHOLD_IN_SECS) {
           this.props.getData();
