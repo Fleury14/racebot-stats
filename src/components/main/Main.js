@@ -1,25 +1,12 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
-import { getBotData } from '../../redux/actions';
 import { GetCurrentRaces, GetRecentlyCompleteRaces } from '../../helpers';
 import CurrentRaces from '../current-races/CurrentRaces';
 import { Navbar, PlayerSearcher, CookieLeaderboard, RecentlyCompletedRaces, LoadingModal } from '..';
-import ReduxMainData from '../redux-data/ReduxMainData';
+import { ReduxMainData } from '../redux-data';
 import './Main.scss';
 
-const mapStateToProps = (state) => {
-  return {
-    botData: state.botData,
-    loading: state.botData.loading,
-  }
-}
 
-const mapActionsToProps = dispatch => ({
-  getData() {
-    dispatch(getBotData());
-  }
-});
 
 class MainComponent extends Component {
   state = {
@@ -66,4 +53,4 @@ class MainComponent extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapActionsToProps)(MainComponent);
+export default MainComponent;

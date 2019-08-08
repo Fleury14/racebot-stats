@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Navbar, LoadingModal } from '..';
-import ReduxSingleRaceData from '../redux-data/ReduxSingleRaceData';
+import { ReduxSingleRaceData } from '../redux-data';
 import './SelectedRace.scss';
 
 
