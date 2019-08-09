@@ -22,7 +22,7 @@ const loadError = error => ({
 
 const apiUrl = process.env.REACT_APP_RACEBOT_API_URL;
 const apiKey = process.env.REACT_APP_RACEBOT_APIKEY;
-const apiHeader = 'x-api-key';
+const apiHeader = 'apikey';
 
 export const getBotData = () => {
   return (dispatch) => {
