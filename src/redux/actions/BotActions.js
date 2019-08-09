@@ -46,17 +46,18 @@ export const getRacerData = (racer) => {
         // flip history if exists
         // have to have two conditionals for different data formatitting
         // new ver
-        if (Array.isArray(response.data)) {
-          if (response.data[0].race_details.races_completed) {
-            response.data[0].race_details.races_completed.reverse();
-          }
-        }
-        // oldver
-        // if (response.data.race_details.races_completed) {
-        //   response.data.race_details.races_completed.reverse();
+        console.log('resp', response);
+        // if (Array.isArray(response.data)) {
+        //   if (response.data.race_details.races_completed) {
+        //     response.data.race_details.races_completed.reverse();
+        //   }
         // }
-        response.data[0].dataTime = Date.now();
-        dispatch(loadFinish(response.data[0], DATA_DONE_LOADING_RACER));
+        // oldver
+        if (response.data.race_details.races_completed) {
+          response.data.race_details.races_completed.reverse();
+        }
+        response.data.dataTime = Date.now();
+        dispatch(loadFinish(response.data, DATA_DONE_LOADING_RACER));
       })
       .catch(err => {
         console.log('error', err);
