@@ -46,7 +46,6 @@ export const getRacerData = (racer) => {
         // flip history if exists
         // have to have two conditionals for different data formatitting
         // new ver
-        console.log('resp', response);
         // if (Array.isArray(response.data)) {
         //   if (response.data.race_details.races_completed) {
         //     response.data.race_details.races_completed.reverse();

@@ -30,7 +30,6 @@ class ReduxSingleRacerData extends Component {
   }
 
   componentDidUpdate() {
-    console.log('prizzops', this.props)
     // if its not loading, then we need to check a few things
     // is there no racename prop? (return)
     // we have no data in state or is there a racename prop but it doesnt match our race data (grab new data)
