@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { getRacerData } from '../../redux/actions/BotActions';
 import ReduxMainData from './ReduxMainData';
 import ReduxSingleRacerData from './ReduxSingleRacerData';
 
