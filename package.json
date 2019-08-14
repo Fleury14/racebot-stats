@@ -1,6 +1,6 @@
 {
   "name": "racebot-stats",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "private": true,
   "homepage": "https://fleury14.github.io/racebot-stats",
   "dependencies": {
