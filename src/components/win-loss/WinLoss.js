@@ -15,7 +15,6 @@ class WinLoss extends Component {
   componentDidMount() {
     const { data, selectedPlayer } = this.props;
     const dataResult = ParseWinLoss(data.items || data);
-    console.log('stats', dataResult);
     if (selectedPlayer) {
       this.setState({ playerWinLoss: dataResult.find(racer => racer.name.toLowerCase() === selectedPlayer.toLowerCase()) });
     }

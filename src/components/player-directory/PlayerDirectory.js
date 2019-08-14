@@ -79,8 +79,7 @@ class PlayerDirectory extends Component {
     return (
       <ReduxRacerData>
         {(reduxData) => {
-          
-          const { racerData } = reduxData;
+          const racerData =  reduxData.racerData ? reduxData.racerData.items : null;
           const { startIndex, endIndex } = this.state;
           let sortedData = racerData ? this.sortPlayers(racerData) : null;
           let paginatedData = racerData ? sortedData.filter((race, index) => index >= startIndex && index <= endIndex) : null;

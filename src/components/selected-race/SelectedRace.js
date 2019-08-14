@@ -22,7 +22,6 @@ const SelectedRace = (props) => {
             return a.placement - b.placement
           });
         }
-        console.log('racedata', raceData, 'finishers', finishers);
         return (
           <div className="race-stats-container">
             <Navbar />
