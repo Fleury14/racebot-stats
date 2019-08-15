@@ -52,13 +52,14 @@ const ParseWagers = (races) => {
         name: entrant.name,
         wager: entrant.wager,
         placement: entrant.placement,
-        winnings
+        winnings,
       };
       currentEntrants.push(entrantData);
     });
     
     currentRaceData['total'] = wagerTotal;
     currentRaceData['entrants'] = currentEntrants;
+    currentRaceData['start'] = currentRace.details.startTime;
     wagerData.push(currentRaceData);
   })
   

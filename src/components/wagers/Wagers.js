@@ -35,15 +35,20 @@ class Wagers extends Component {
         <Navbar />
         <ReduxMainData>
           {(reduxData) => {
-            const wageData = ParseWagers(reduxData.botData);
-            console.log('wageData', wageData);
+            let wageData = ParseWagers(reduxData.botData);
+            wageData = wageData.sort((a, b) => {
+              let aTime = new Date(a.start);
+              let bTime = new Date(b.start);
+              return bTime.getTime() - aTime.getTime();
+            });
             const raceData = this.state.selectedRace ? wageData.find(race => race.key === this.state.selectedRace) : null;
             return (
               <div className="p-5">
                 <h2>Select a race to see wager data</h2>
                 {wageData.map(race => {
+                  const startDate = race.start ? new Date(race.start).toLocaleDateString() : null;
                   return (
-                    <span key={race.key} onClick={() => this.setState({ selectedRace: race.key })} className="mb-2 mr-2 badge badge-primary">{race.key}</span>
+                    <span key={race.key} onClick={() => this.setState({ selectedRace: race.key })} className="mb-2 mr-2 badge badge-primary">{race.key} - {race.total}c - {startDate}</span>
                   )
                 })}
                 {raceData && (
