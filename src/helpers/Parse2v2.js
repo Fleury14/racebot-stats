@@ -5,7 +5,7 @@ const parse2v2Data = (data) => {
   const twov2String = '2v2';
 
   // loop through each race
-  for (let race of data) {
+  for (let race of data.items) {
     // skip over races that arent complete and arent 2v2's
     // if (race.details.mode !== twov2String) console.log('not finished');
     if (race.details.status !== completedString || (race.details.mode !== twov2String && race.key.indexOf('2v2') && race.details.type.indexOf('2v2') < 0)) {

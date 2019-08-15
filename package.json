@@ -1,8 +1,8 @@
 {
   "name": "racebot-stats",
-  "version": "0.2.2",
+  "version": "0.3.1",
   "private": true,
-  "homepage": "https://fleury14.github.io/racebot-stats",
+  "homepage": "http://adaptable-rabbit.surge.sh",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",

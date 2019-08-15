@@ -1,39 +1,17 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
 import { Navbar } from '..';
-import { getAllRacers } from '../../redux/actions';
+import { ReduxRacerData } from '../redux-data';
 import PlayerTable from './PlayerTable';
 import './PlayerDirectory.scss';
 
-const mapStateToProps = (state) => {
-  return {
-    racerData: state.botData.allRacerData,
-    // note: add .items if using old api
-  }
-}
-
-const mapActionsToProps = dispatch => ({
-  getData() {
-    dispatch(getAllRacers())
-  }
-});
-
 class PlayerDirectory extends Component {
   state = {
-    racerData: null,
     page: 1,
     startIndex: 0,
     endIndex: 19,
     sortField: null,
     sortOrder: null,
-  }
-
-  componentDidMount() {
-    if (!this.props.racerData) {
-      this.props.getData();
-    }
-    this.setState({ racerData: this.props.racerData });
   }
 
   triggerSort(field) {
@@ -46,8 +24,8 @@ class PlayerDirectory extends Component {
     
   }
 
-  sortPlayers() {
-    const { racerData, sortField, sortOrder } = this.state;
+  sortPlayers(racerData) {
+    const { sortField, sortOrder } = this.state;
     if (!racerData) {
       return null;
     }
@@ -97,47 +75,41 @@ class PlayerDirectory extends Component {
     })
   }
 
-  // TODO: Do we need to really update props post mount?
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevState.racerData !== this.state.racerData) {
-  //     this.setState({ racerData: prevState.racerData });
-  //   }
-  // }
-
-  // static getDerivedStateFromProps(nextProps, prevState) {
-  //   if (nextProps.racerData !== prevState.racerData) {
-  //     return { racerData: nextProps.racerData }
-  //   } else return null;
-  // }
-
   render() {
-    const { startIndex, endIndex, racerData } = this.state;
-    let sortedData = racerData ? this.sortPlayers() : null;
-    let paginatedData = racerData ? sortedData.filter((race, index) => index >= startIndex && index <= endIndex) : null;
+    return (
+      <ReduxRacerData>
+        {(reduxData) => {
+          const racerData =  reduxData.racerData ? reduxData.racerData.items : null;
+          const { startIndex, endIndex } = this.state;
+          let sortedData = racerData ? this.sortPlayers(racerData) : null;
+          let paginatedData = racerData ? sortedData.filter((race, index) => index >= startIndex && index <= endIndex) : null;
+          if (racerData) {
+            return (
+              <div>
+                <Navbar />
+                <div className="player-directory-body">
+                  <div className="d-flex justify-content-between mb-3">
+                    <Button onClick={() => this.previousPage()} color="primary">PREVIOUS</Button>
+                    <h3 className="text-uppercase">Displaying racer {startIndex + 1} to {endIndex + 1} out of {racerData.length}</h3>
+                    <Button onClick={() => this.nextPage(racerData.length)} color="primary">NEXT</Button>
+                  </div>
+                  <PlayerTable
+                    data={paginatedData}
+                    cookieSort={() => this.triggerSort('cookies')}
+                    racesRunSort={() => this.triggerSort('races')}
+                    seedsSort={() => this.triggerSort('seeds')}
+                    winsSort={() => this.triggerSort('wins')} 
+                  />
+                </div>
+              </div>
+            );
+          }
+          return null;
+        }}
+      </ReduxRacerData>
+    );
     
-    if (racerData) {
-      return (
-        <div>
-          <Navbar />
-          <div className="player-directory-body">
-            <div className="d-flex justify-content-between mb-3">
-              <Button onClick={() => this.previousPage()} color="primary">PREVIOUS</Button>
-              <h3 className="text-uppercase">Displaying racer {startIndex + 1} to {endIndex + 1} out of {racerData.length}</h3>
-              <Button onClick={() => this.nextPage(racerData.length)} color="primary">NEXT</Button>
-            </div>
-            <PlayerTable
-              data={paginatedData}
-              cookieSort={() => this.triggerSort('cookies')}
-              racesRunSort={() => this.triggerSort('races')}
-              seedsSort={() => this.triggerSort('seeds')}
-              winsSort={() => this.triggerSort('wins')} 
-            />
-          </div>
-        </div>
-      );
-    }
-    return null;
   }
 }
 
-export default connect(mapStateToProps, mapActionsToProps)(PlayerDirectory);
+export default PlayerDirectory;
