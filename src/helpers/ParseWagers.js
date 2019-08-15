@@ -51,6 +51,7 @@ const ParseWagers = (races) => {
       const entrantData = {
         name: entrant.name,
         wager: entrant.wager,
+        placement: entrant.placement,
         winnings
       };
       currentEntrants.push(entrantData);
