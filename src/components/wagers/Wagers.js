@@ -3,17 +3,35 @@ import { Container, Row, Col } from 'reactstrap';
 import { Navbar } from '..';
 import { ReduxMainData } from '../redux-data';
 import { ParseWagers } from '../../helpers';
+import './Wagers.scss';
 
 class Wagers extends Component {
   state = {
     selectedRace: null,
+  }
+
+  determineRowClass(entrant) {
+    if (!entrant || !entrant.placement) {
+      return 'wagers-row';
+    }
+    if (entrant.placement === 1) {
+      return 'wagers-row wagers-first-place';
+    }
+    if (entrant.placement === 2) {
+      return 'wagers-row wagers-second-place';
+    }
+    if (entrant.placement === 3) {
+      return 'wagers-row wagers-third-place';
+    }
+
+    return 'wagers-row';
   }
   
   render() {
     // console.log('proppys', this.props);
     // console.log('stizzate', this.state);
     return (
-      <div>
+      <div className="open-sans">
         <Navbar />
         <ReduxMainData>
           {(reduxData) => {
@@ -21,36 +39,35 @@ class Wagers extends Component {
             console.log('wageData', wageData);
             const raceData = this.state.selectedRace ? wageData.find(race => race.key === this.state.selectedRace) : null;
             return (
-              <React.Fragment>
-              <h2>Select a race to see wager data</h2>
-              {wageData.map(race => {
-                return (
-                  <span key={race.key} onClick={() => this.setState({ selectedRace: race.key })} className="mb-2 mr-2 badge badge-primary">{race.key}</span>
-                )
-              })}
-              {raceData && (
-                <div>
-                  <p>Total cookies wagered: {raceData.total}</p>
-                  <Container>
-                    {raceData.entrants.map(entrant => {
-                      return (
-                        <Row key={entrant.name}>
-                          <Col sm="4">{entrant.name}</Col>
-                          <Col sm="4">Wagered {entrant.wager}</Col>
-                          <Col sm="4">Won {entrant.winnings}</Col>
-                        </Row>
-                        
-                      )
-                    })}
-                  </Container>
-                  
-                </div>
-              )}
-              </React.Fragment>
+              <div className="p-5">
+                <h2>Select a race to see wager data</h2>
+                {wageData.map(race => {
+                  return (
+                    <span key={race.key} onClick={() => this.setState({ selectedRace: race.key })} className="mb-2 mr-2 badge badge-primary">{race.key}</span>
+                  )
+                })}
+                {raceData && (
+                  <div>
+                    <p className="wagers-total">Total cookies wagered: {raceData.total}</p>
+                    <Container>
+                      {raceData.entrants.map(entrant => {
+                        return (
+                          <Row key={entrant.name} className={this.determineRowClass(entrant)}>
+                            <Col className="wagers-col" sm="4">{entrant.name}</Col>
+                            <Col className="wagers-col" sm="4">Wagered {entrant.wager}</Col>
+                            <Col className="wagers-col" sm="4">Won {entrant.winnings}</Col>
+                          </Row>
+                          
+                        )
+                      })}
+                    </Container>
+                    
+                  </div>
+                )}
+              </div>
             );
           }}
         </ReduxMainData>
-        <h1>Wagers</h1>
       </div>
     );
   }
