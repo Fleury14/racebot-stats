@@ -35,15 +35,40 @@ class Wagers extends Component {
         <Navbar />
         <ReduxMainData>
           {(reduxData) => {
-            let wageData = ParseWagers(reduxData.botData);
+            const parsedData = ParseWagers(reduxData.botData)
+            let wageData = parsedData.wagerData;
             wageData = wageData.sort((a, b) => {
               let aTime = new Date(a.start);
               let bTime = new Date(b.start);
               return bTime.getTime() - aTime.getTime();
             });
+            let topGamblers = parsedData.bettorTotals.sort((a, b) => b.wagerTotal - a.wagerTotal).slice(0, 10);
+            let topWinners = parsedData.bettorTotals.sort((a, b) => b.winningsTotal - a.winningsTotal).slice(0, 10);
             const raceData = this.state.selectedRace ? wageData.find(race => race.key === this.state.selectedRace) : null;
             return (
-              <div className="p-5">
+              <div className="p-5">                
+                <Container>
+                  <Row>
+                    <Col md="6" className="d-flex flex-column align-items-center">
+                      <h2 className="text-center mb-4">Most Cookies Wagered</h2>
+                      {topGamblers.map(gambler => (
+                        <div className="d-flex justify-content-between w-100" key={gambler.name}>
+                          <p className="text-left">{gambler.name}</p>
+                          <p className="text-right">{gambler.wagerTotal}</p>
+                        </div>
+                      ))}
+                    </Col>
+                    <Col md="6">
+                    <h2 className="text-center mb-4">Most Cookies Won</h2>
+                      {topWinners.map(gambler => (
+                        <div className="d-flex justify-content-between w-100" key={gambler.name}>
+                          <p className="text-left">{gambler.name}</p>
+                          <p className="text-right">{gambler.winningsTotal}</p>
+                        </div>
+                      ))}
+                    </Col>
+                  </Row>
+                </Container>
                 <h2>Select a race to see wager data</h2>
                 {wageData.map(race => {
                   const startDate = race.start ? new Date(race.start).toLocaleDateString() : null;

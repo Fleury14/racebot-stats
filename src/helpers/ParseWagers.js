@@ -15,7 +15,7 @@ const ParseWagers = (races) => {
       })
     }
   });
-  
+  const allBetters = [];
   const wagerData = [];
   racesWithWagers.forEach(wagerRaceKey => {
     const currentRace = races.items.find(race => race.key === wagerRaceKey);
@@ -34,15 +34,29 @@ const ParseWagers = (races) => {
     });
     currentRace.details.entrants.forEach(entrant => {
       let winnings = 0;
+      let currentBettor = allBetters.find(bettor => bettor.name === entrant.name);
+      if (currentBettor) {
+        currentBettor.wagerTotal += entrant.wager;
+      } else {
+        allBetters.push({
+          name: entrant.name,
+          winningsTotal: 0,
+          wagerTotal: entrant.wager,
+        });
+        currentBettor = allBetters.find(bettor => bettor.name === entrant.name);
+      }
       switch (entrant.placement) {
         case 1:
           winnings = Math.floor(wagerTotal * 0.6);
+          currentBettor.winningsTotal += winnings;
           break;
         case 2:
           winnings = Math.floor(wagerTotal * 0.25);
+          currentBettor.winningsTotal += winnings;
           break;
         case 3:
           winnings = Math.floor(wagerTotal * 0.15);
+          currentBettor.winningsTotal += winnings;
           break;
         default:
           winnings = 0;
@@ -62,8 +76,8 @@ const ParseWagers = (races) => {
     currentRaceData['start'] = currentRace.details.startTime;
     wagerData.push(currentRaceData);
   })
-  
-  return wagerData;
+  console.log('allb', allBetters);
+  return { wagerData, bettorTotals: allBetters };
 }
 
 export default ParseWagers;
