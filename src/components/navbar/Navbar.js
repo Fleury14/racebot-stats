@@ -20,6 +20,9 @@ const Navbar = (props) => {
           <Link to={'/flag-stats'}>
             <li>Flag Stats</li>
           </Link>
+          <Link to={'/wagers'}>
+            <li>Wagers</li>
+          </Link>
         </ul>
       </div>
     </div>
