@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import { Navbar } from '..';
 import { ReduxMainData } from '../redux-data';
 import { ParseWagers } from '../../helpers';
@@ -53,7 +54,9 @@ class Wagers extends Component {
                       <h2 className="text-center mb-4">Most Cookies Wagered</h2>
                       {topGamblers.map(gambler => (
                         <div className="d-flex justify-content-between w-100" key={gambler.name}>
-                          <p className="text-left">{gambler.name}</p>
+                          <Link to={`/racer/${gambler.name}`}>
+                            <p className="text-left">{gambler.name}</p>
+                          </Link>
                           <p className="text-right">{gambler.wagerTotal}</p>
                         </div>
                       ))}
@@ -62,7 +65,9 @@ class Wagers extends Component {
                     <h2 className="text-center mb-4">Most Cookies Won</h2>
                       {topWinners.map(gambler => (
                         <div className="d-flex justify-content-between w-100" key={gambler.name}>
-                          <p className="text-left">{gambler.name}</p>
+                          <Link to={`/racer/${gambler.name}`}>
+                            <p className="text-left">{gambler.name}</p>
+                          </Link>
                           <p className="text-right">{gambler.winningsTotal}</p>
                         </div>
                       ))}
