@@ -24,10 +24,9 @@ class ReduxMainData extends Component {
 
   componentDidMount() {
     // check the date time of current data. If it either doesn't have one, or it is more than the timelimit in the env, make a new call
-    if (!this.props.botData.data || !this.props.botData.data.dataTime || Date.now - parseInt(this.props.botDatadataTime) > process.env.REACT_APP_API_DATA_THRESHOLD_IN_SECS) {
+    if (!this.props.botData.data || !this.props.botData.data.dataTime || Date.now() - parseInt(this.props.botData.data.dataTime) > process.env.REACT_APP_API_DATA_THRESHOLD_IN_SECS * 1000) {
+      console.log('getting data');
       this.props.getData();
-      // setTimeout(() => console.log('props after call', this.props), 1000);
-      // this.setState({ botData: this.props.botData, loading: this.props.loading });
     }
   }
 
