@@ -1,4 +1,4 @@
-import { DATA_START_LOADING, DATA_DONE_LOADING, BOT_DATA_ERROR, DATA_DONE_LOADING_RACER, DATA_DONE_LOADING_SINGLE_RACE, DATA_DONE_LOADING_ALL_RACERS } from '../actions/types';
+import { DATA_START_LOADING, DATA_DONE_LOADING, BOT_DATA_ERROR, DATA_DONE_LOADING_RACER, DATA_DONE_LOADING_SINGLE_RACE, DATA_DONE_LOADING_ALL_RACERS, RESET_BOT_DATA } from '../actions/types';
 
 const INITIAL_STATE = { data: null, loading: false, error: null, racerData: null, singleRaceData: null, allRacerData: null, };
 
@@ -17,6 +17,8 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, loading: false, singleRaceData: action.payload.data, error: null};
     case DATA_DONE_LOADING_ALL_RACERS:
       return { ...state, loading: false, allRacerData: action.payload.data, error: null};
+    case RESET_BOT_DATA:
+      return INITIAL_STATE;
     default:
       return state;
   }
