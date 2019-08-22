@@ -29,8 +29,6 @@ class Wagers extends Component {
   }
   
   render() {
-    // console.log('proppys', this.props);
-    // console.log('stizzate', this.state);
     return (
       <div className="open-sans">
         <Navbar />
