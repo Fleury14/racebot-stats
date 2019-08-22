@@ -37,7 +37,7 @@ class ReduxSingleRaceData extends Component {
   componentDidUpdate() {
     if (this.props.loading !== this.state.loading) {
       this.setState({ loading: this.props.loading })
-    } else if (this.state.selectedRace !== this.props.raceData.key) {
+    } else if (this.props.raceData && this.state.selectedRace !== this.props.raceData.key) {
       this.setState({ selectedRace: this.props.raceData.key, raceData: this.props.raceData });
     }
   }
