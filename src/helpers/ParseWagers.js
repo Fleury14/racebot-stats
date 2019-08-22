@@ -1,13 +1,9 @@
 const ParseWagers = (races) => {
   const racesWithWagers = [];
   races.items.forEach(race => {
-    // if (race.key === 'ff4fe-qcnnd') {
-    //   console.log('race', race);
-    // }
     if (race.details && race.details.entrants) {
       race.details.entrants.forEach(entrant => {
         if (entrant.wager) {
-          // console.log('wager?', race);
           if (racesWithWagers.indexOf(race.key) < 0) {
             racesWithWagers.push(race.key);
           }
@@ -76,7 +72,6 @@ const ParseWagers = (races) => {
     currentRaceData['start'] = currentRace.details.startTime;
     wagerData.push(currentRaceData);
   })
-  console.log('allb', allBetters);
   return { wagerData, bettorTotals: allBetters };
 }
 
