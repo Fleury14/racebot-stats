@@ -127,6 +127,7 @@ class Wagers extends Component {
                             </div>
                           )
                         }
+                        return null;
                       })}
                     </Col>
                     <Col sm="4" className="wagers-delta-container">
@@ -140,6 +141,7 @@ class Wagers extends Component {
                             </div>
                           )
                         }
+                        return null;
                       })}
                     </Col>
                     <Col sm="4" className="wagers-delta-container">
@@ -153,6 +155,7 @@ class Wagers extends Component {
                             </div>
                           )  
                         }
+                        return null;
                       })}
                     </Col>
                   </Row>
