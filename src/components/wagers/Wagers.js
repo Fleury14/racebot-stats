@@ -27,6 +27,15 @@ class Wagers extends Component {
 
     return 'wagers-row';
   }
+
+  // order expects 'a' or 'd'
+  sortByDelta(bettors, order) {
+    console.log('revd', bettors);
+    if (!bettors) {
+      return [];;
+    }
+    return order === 'd' ? bettors.sort((a, b) => b.delta - a.delta) : bettors.sort((a, b) => a.delta - b.delta);
+  }
   
   render() {
     return (
@@ -71,32 +80,84 @@ class Wagers extends Component {
                       ))}
                     </Col>
                   </Row>
-                </Container>
-                <h2>Select a race to see wager data</h2>
-                {wageData.map(race => {
-                  const startDate = race.start ? new Date(race.start).toLocaleDateString() : null;
-                  return (
-                    <span key={race.key} onClick={() => this.setState({ selectedRace: race.key })} className="mb-2 mr-2 badge badge-primary">{race.key} - {race.total}c - {startDate}</span>
-                  )
-                })}
-                {raceData && (
-                  <div>
-                    <p className="wagers-total">Total cookies wagered: {raceData.total}</p>
-                    <Container>
-                      {raceData.entrants.map(entrant => {
+                  <Row className="mt-5 mb-5">
+                    <Col sm="12">
+                      <h2>Select a race to see wager data</h2>
+                      {wageData.map(race => {
+                        const startDate = race.start ? new Date(race.start).toLocaleDateString() : null;
                         return (
-                          <Row key={entrant.name} className={this.determineRowClass(entrant)}>
-                            <Col className="wagers-col" sm="4">{entrant.name}</Col>
-                            <Col className="wagers-col" sm="4">Wagered {entrant.wager}</Col>
-                            <Col className="wagers-col" sm="4">Won {entrant.winnings}</Col>
-                          </Row>
-                          
+                          <span key={race.key} onClick={() => this.setState({ selectedRace: race.key })} className="mb-2 mr-2 badge badge-primary">{race.key} - {race.total}c - {startDate}</span>
                         )
                       })}
-                    </Container>
-                    
-                  </div>
-                )}
+                      {raceData && (
+                        <div>
+                          <p className="wagers-total">Total cookies wagered: {raceData.total}</p>
+                          <Container>
+                            {raceData.entrants.map(entrant => {
+                              return (
+                                <Row key={entrant.name} className={this.determineRowClass(entrant)}>
+                                  <Col className="wagers-col" sm="4">{entrant.name}</Col>
+                                  <Col className="wagers-col" sm="4">Wagered {entrant.wager}</Col>
+                                  <Col className="wagers-col" sm="4">Won {entrant.winnings}</Col>
+                                </Row>
+                                
+                              )
+                            })}
+                          </Container>
+                          
+                        </div>
+                      )}
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col sm="12">
+                      <h2 className="text-center">Current Delta</h2>
+                      <p className="text-center">Winnings - Total wagered</p>
+                    </Col>
+                  </Row>
+                  <Row>           
+                    <Col sm="4" className="wagers-delta-container">
+                      <h3 className="text-center">Net Gain</h3>
+                      {this.sortByDelta(parsedData.bettorTotals, 'd').map(gambler => {
+                        if (gambler.delta > 0) {
+                          return (
+                            <div key={gambler.name} className="d-flex justify-content-between wagers-delta-cell wagers-gain">
+                              <p>{gambler.name}</p>
+                              <p>{gambler.delta}</p>
+                            </div>
+                          )
+                        }
+                      })}
+                    </Col>
+                    <Col sm="4" className="wagers-delta-container">
+                      <h3 className="text-center">Even</h3>
+                      {this.sortByDelta(parsedData.bettorTotals).map(gambler => {
+                        if (gambler.delta === 0) {
+                          return (
+                            <div key={gambler.name} className="d-flex justify-content-between wagers-delta-cell wagers-even">
+                              <p>{gambler.name}</p>
+                              <p>EVEN</p>
+                            </div>
+                          )
+                        }
+                      })}
+                    </Col>
+                    <Col sm="4" className="wagers-delta-container">
+                      <h3 className="text-center">Net Loss</h3>
+                      {this.sortByDelta(parsedData.bettorTotals, 'a').map(gambler => {
+                        if (gambler.delta < 0) {
+                          return (
+                            <div key={gambler.name} className="d-flex justify-content-between wagers-delta-cell wagers-loss">
+                              <p>{gambler.name}</p>
+                              <p>{gambler.delta}</p>
+                            </div>
+                          )  
+                        }
+                      })}
+                    </Col>
+                  </Row>
+                </Container>
+                
               </div>
             );
           }}

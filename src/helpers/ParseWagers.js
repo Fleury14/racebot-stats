@@ -67,11 +67,17 @@ const ParseWagers = (races) => {
       currentEntrants.push(entrantData);
     });
     
+    
+
     currentRaceData['total'] = wagerTotal;
     currentRaceData['entrants'] = currentEntrants;
     currentRaceData['start'] = currentRace.details.startTime;
     wagerData.push(currentRaceData);
-  })
+  });
+  allBetters.forEach(gambler => {
+    gambler['delta'] = gambler.winningsTotal - gambler.wagerTotal;
+  });
+  console.log('allb', allBetters)
   return { wagerData, bettorTotals: allBetters };
 }
 
