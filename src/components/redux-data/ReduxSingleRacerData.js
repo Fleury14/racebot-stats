@@ -37,10 +37,10 @@ class ReduxSingleRacerData extends Component {
     if (!this.props.racerName) {
       
       return
-    } else if ((!this.props.racerData) || ((!this.state.racerData || (this.props.raceName && this.props.raceName !== this.props.racerData.name)) && !this.state.loading)) {
+    } else if ((!this.props.racerData && !this.state.loading) || ((!this.state.racerData || (this.props.raceName && this.props.raceName !== this.props.racerData.name)) && !this.state.loading)) {
       this.props.getData(this.props.racerName);
       this.setState({ loading: true });
-    } else if ((this.props.racerName && this.props.racerName === this.props.racerData.name && (!this.state.racerData || this.props.racerData.name === this.state.racerData.name)) && (!this.state.racerData || this.state.racerData.name !== this.props.racerName)) {
+    } else if ((this.props.racerName && this.props.racerData && this.props.racerName === this.props.racerData.name && (!this.state.racerData || this.props.racerData.name === this.state.racerData.name)) && (!this.state.racerData || this.state.racerData.name !== this.props.racerName)) {
       this.setState({ racerData: this.props.racerData, loading: false });
     }
    

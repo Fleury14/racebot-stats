@@ -3,7 +3,9 @@ const parse2v2Data = (data) => {
   const teams = [];
   const completedString = 'Completed';
   const twov2String = '2v2';
-
+  if (!data) {
+    return null;
+  }
   // loop through each race
   for (let race of data.items) {
     // skip over races that arent complete and arent 2v2's

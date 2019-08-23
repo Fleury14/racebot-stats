@@ -1,0 +1,46 @@
+
+
+.wagers-row {
+  height: 100px;
+  background-color: #eebbbb;
+}
+
+.wagers-first-place {
+  background-color: gold;
+}
+
+.wagers-second-place {
+  background-color: silver;
+}
+
+.wagers-third-place {
+  background-color: burlywood;
+}
+
+.wagers-col {
+  display: flex;
+  align-items: center;
+}
+
+.wagers-total {
+  font-size: 30px;
+}
+
+.wagers-delta-cell {
+  height: 1.5em;
+}
+
+.wagers-delta-container {
+}
+
+.wagers-gain {
+  color: #060;
+}
+
+.wagers-even {
+  color: #660;
+}
+
+.wagers-loss {
+  color: #600;
+}
