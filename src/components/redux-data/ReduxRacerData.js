@@ -25,7 +25,7 @@ class ReduxRacerData extends Component {
 
   componentDidMount() {
         // check the date time of current data. If it either doesn't have one, or it is more than the timelimit in the env, make a new call
-        if (!this.props.racerData || !this.props.racerData.dataTime || Date.now() - parseInt(this.props.botDatadataTime) > process.env.REACT_APP_API_DATA_THRESHOLD_IN_SECS) {
+        if (!this.props.racerData || !this.props.racerData.dataTime || Date.now() - parseInt(this.props.racerData.dataTime) > process.env.REACT_APP_API_DATA_THRESHOLD_IN_SECS) {
           this.props.getData();
         } else if (!this.state.time) {
           // if the data is valid but there's no time set in state, then this must be the initial run, so we can adjust the state here
