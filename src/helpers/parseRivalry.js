@@ -4,7 +4,7 @@ const parseRivalry = (races, id1, id2) => {
     return null;
   }
   // console.log('rivalry!', races, id1, id2);
-  const filteredRaces = races.filter(race => 
+  const filteredRaces = races.items.filter(race => 
     race.details.entrants.find(entrant => entrant.id === id1)
     && race.details.entrants.find(entrant => entrant.id === id2)
     && race.details.type.indexOf('2v2') < 0
