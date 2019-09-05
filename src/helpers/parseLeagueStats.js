@@ -16,6 +16,9 @@ const parseLeagueStats = (races) => {
   filteredRaces.forEach(race => {
     // for now, skip over asyncs
     // if (race.details.async) return;
+    if (race.details.metadata && race.details.metadata.Routers) {
+      return;
+    }
     const startTime = (new Date(race.details.startTime)).getTime();
 
     // we can use finishers for checking fastest winning times since forfeits dont matter
@@ -40,10 +43,7 @@ const parseLeagueStats = (races) => {
     } else {
       winningTime = (new Date(winner.finishTime)).getTime() - startTime;
     }
-    
-    if (isNaN(winningTime)) {
-      console.log('NaNi?', winner, startTime, race);
-    }
+
     if (bestWinningTime.allTime.length < 10) {
       bestWinningTime.allTime.push({
         name: winner.name,
