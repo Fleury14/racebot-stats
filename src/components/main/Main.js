@@ -6,7 +6,7 @@ import { Navbar, PlayerSearcher, CookieLeaderboard, RecentlyCompletedRaces, Load
 import { ReduxMainData } from '../redux-data';
 import './Main.scss';
 
-
+import { ParseLeagueStats } from '../../helpers';
 
 class MainComponent extends Component {
   state = {
@@ -22,6 +22,9 @@ class MainComponent extends Component {
           {(reduxData) => {
             const data = reduxData.botData;
             const loading = reduxData.loading;
+            if (data) {
+              ParseLeagueStats(data.items);
+            }
             return (
               <React.Fragment>
               {loading && <LoadingModal />}
