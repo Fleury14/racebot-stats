@@ -8,6 +8,8 @@ const parseLeagueStats = (races) => {
     allTime: [],
   }
 
+  const numOfRaces = [];
+
   // filter out league flags
   const filteredRaces = races.filter(race => {
     return race.details && race.details.metadata && race.details.metadata.Flags && race.details.metadata.Flags === 'V1 Jia Kqm Pk Cnx -hobs T3gr S2 B F Nck Gl Etf Xsbk -noadamants -aa -fab -huh -z';
@@ -25,8 +27,10 @@ const parseLeagueStats = (races) => {
     race.details.finishers.sort((a, b) => a.placement - b.placement);
     if (!race.details.finishers.length) return;
     const winner = race.details.finishers[0];
-    // console.log('winner', winner);
+    
     let winningTime = 0;
+
+    // because asyncs dont have a start time we have to parse the finish time
     if (race.details.async) {
       const timeString = winner.finish;
       const colons = timeString.replace(/[^:]/g, "").length;
@@ -60,9 +64,27 @@ const parseLeagueStats = (races) => {
       });
       bestWinningTime.allTime.sort((a, b) => a.time - b.time);
     }
+
+    for (let entrant of race.details.entrants) {
+      const findRacer = numOfRaces.find(racer => racer.name === entrant.name);
+      if (findRacer) {
+        findRacer.count++;
+      } else {
+        numOfRaces.push({
+          name: entrant.name,
+          count: 1,
+        });
+      }
+    }
   });
+  numOfRaces.sort((a, b) => b.count - a.count);
   console.log('time things', bestWinningTime);
-  console.log('races', filteredRaces);
+  console.log('num of races', numOfRaces);
+  // console.log('races', filteredRaces);
+  return {
+    numOfRaces,
+    bestWinningTime,
+  };
 }
 
 export default parseLeagueStats;
