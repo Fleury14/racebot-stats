@@ -15,7 +15,7 @@ const parseLeagueStats = (races) => {
 
   filteredRaces.forEach(race => {
     // for now, skip over asyncs
-    if (race.details.async) return;
+    // if (race.details.async) return;
     const startTime = (new Date(race.details.startTime)).getTime();
 
     // we can use finishers for checking fastest winning times since forfeits dont matter
@@ -23,7 +23,24 @@ const parseLeagueStats = (races) => {
     if (!race.details.finishers.length) return;
     const winner = race.details.finishers[0];
     // console.log('winner', winner);
-    const winningTime = (new Date(winner.finishTime)).getTime() - startTime;
+    let winningTime = 0;
+    if (race.details.async) {
+      const timeString = winner.finish;
+      const colons = timeString.replace(/[^:]/g, "").length;
+      if (colons === 1) {
+        const winningSecs = parseInt(timeString.slice(-2, timeString.length));
+        const winningMins = parseInt(timeString.slice(-5, -3));
+        winningTime = ((winningMins * 60) + winningSecs) * 1000;
+      } else {
+        const winningSecs = parseInt(timeString.slice(-2, timeString.length));
+        const winningMins = parseInt(timeString.slice(-5, -3));
+        const winningHrs = parseInt(timeString.slice(-8, -6));   
+        winningTime = ((winningHrs * 3600) + (winningMins * 60) + winningSecs) * 1000;
+      }
+    } else {
+      winningTime = (new Date(winner.finishTime)).getTime() - startTime;
+    }
+    
     if (isNaN(winningTime)) {
       console.log('NaNi?', winner, startTime, race);
     }
