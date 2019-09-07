@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://adaptable-rabbit.surge.sh",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "bootstrap": "^4.3.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
@@ -15,7 +15,8 @@
     "reactstrap": "^8.0.0",
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "ts-trueskill": "^2.5.2"
   },
   "scripts": {
     "start": "react-scripts start",

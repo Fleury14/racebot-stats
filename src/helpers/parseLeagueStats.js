@@ -1,4 +1,5 @@
 import FormatTime from './FormatTime';
+import { rate, Rating, rate_1vs1, expose } from 'ts-trueskill'
 // should take in an array of races
 const parseLeagueStats = (races) => {
 
@@ -64,7 +65,6 @@ const parseLeagueStats = (races) => {
       });
       bestWinningTime.allTime.sort((a, b) => a.time - b.time);
     }
-
     for (let entrant of race.details.entrants) {
       const findRacer = numOfRaces.find(racer => racer.name === entrant.name);
       if (findRacer) {
@@ -73,11 +73,36 @@ const parseLeagueStats = (races) => {
         numOfRaces.push({
           name: entrant.name,
           count: 1,
+          rating: new Rating(40, 8.33333),
         });
       }
     }
+    race.details.entrants.sort((a, b) => a.placement - b.placement);
+    let entrantsArr = [];
+    for (let entrant of race.details.entrants) {
+      const objRef = numOfRaces.find(racer => racer.name === entrant.name);
+      entrantsArr.push({ [objRef.name]: objRef.rating });
+    }
+    // const winnerObj = numOfRaces.find(racer => racer.name === race.details.entrants[0].name);
+    // const runnerUpObj = numOfRaces.find(racer => racer.name === race.details.entrants[1].name);
+    const ratingResult = rate(entrantsArr);
+    for (let result of ratingResult) {
+      for (let [key, val] of Object.entries(result)) {
+        const objRef = numOfRaces.find(racer => racer.name === key);
+        objRef.rating = val;
+        // objRef['expose'] = expose(val);
+      }
+    }
+    
+    
+    
   });
-  numOfRaces.sort((a, b) => b.count - a.count);
+  
+  // create points rating based off mean (mu)
+  for (let racer of numOfRaces) {
+    racer['score'] = Math.floor((racer.rating.mu - (0)) * 10);
+  }
+  numOfRaces.sort((a, b) => b.score - a.score);
   console.log('time things', bestWinningTime);
   console.log('num of races', numOfRaces);
   // console.log('races', filteredRaces);
