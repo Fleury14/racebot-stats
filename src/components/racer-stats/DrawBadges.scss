@@ -1,0 +1,15 @@
+.badge-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.badge-wrap {
+  width: 200px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Navbar, WinLoss, Twov2Stats, LoadingModal } from '..';
 import { getRacerData, getBotData } from '../../redux/actions/BotActions';
 import { ReduxRacerStatData } from '../redux-data'
+import DrawBadges from './DrawBadges';
 import './RacerStats.scss';
 import parse2v2Data from '../../helpers/Parse2v2';
 
@@ -70,6 +71,7 @@ class RacerStats extends Component {
                           </a>
                         </div>
                       )}
+                      {racerData.badges && racerData.badges.length && <DrawBadges badges={racerData.badges} />}
                       <div className="racer-first-row">
                         <Container fluid>
                           <Row className="text-center">
