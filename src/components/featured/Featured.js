@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, DrawBadges } from '..';
+import { Navbar } from '..';
 import { ReduxFeaturedData } from '../redux-data';
 import './Featured.scss';
 
@@ -13,7 +13,6 @@ const Featured = (props) => {
           <ReduxFeaturedData>
             {({ featuredData }) => {
               if (featuredData ) {
-                console.log('things', featuredData);
                 return featuredData.map((racer, index) => {
                   return (
                     <div className="racer-card" key={racer.name}>
