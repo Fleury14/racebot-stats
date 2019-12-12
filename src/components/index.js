@@ -15,5 +15,6 @@ import LoadingModal from './loading-modal/LoadingModal';
 import FlagStats from './flag-stats/FlagStats';
 import Wagers from './wagers/Wagers';
 import DrawBadges from './draw-badges/DrawBadges';
+import Featured from './featured/Featured';
 
-export { Navbar, Main, WinLoss, CurrentRaces, PlayerSearcher, RacerStats, SelectedRace, CookieLeaderboard, Twov2Stats, RaceDirectory, PlayerDirectory, ErrorComponent, RecentlyCompletedRaces, LoadingModal, FlagStats, Wagers, DrawBadges };
+export { Navbar, Main, WinLoss, CurrentRaces, PlayerSearcher, RacerStats, SelectedRace, CookieLeaderboard, Twov2Stats, RaceDirectory, PlayerDirectory, ErrorComponent, RecentlyCompletedRaces, LoadingModal, FlagStats, Wagers, DrawBadges, Featured };
