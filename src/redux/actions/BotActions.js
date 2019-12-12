@@ -1,4 +1,4 @@
-import { DATA_START_LOADING, DATA_DONE_LOADING, BOT_DATA_ERROR, DATA_DONE_LOADING_RACER, DATA_DONE_LOADING_SINGLE_RACE, DATA_DONE_LOADING_ALL_RACERS } from './types';
+import { DATA_START_LOADING, DATA_DONE_LOADING, BOT_DATA_ERROR, DATA_DONE_LOADING_RACER, DATA_DONE_LOADING_SINGLE_RACE, DATA_DONE_LOADING_ALL_RACERS, DATA_DONE_LOADING_FEATURED_RACERS } from './types';
 import axios from 'axios';
 
 const loadStart = () => ({
@@ -88,6 +88,19 @@ export const getAllRacers = () => {
       .then(response => {
         response.data.dataTime = Date.now();
         dispatch(loadFinish(response.data, DATA_DONE_LOADING_ALL_RACERS));
+      })
+      .catch(err => {
+        dispatch(loadError(err));
+    });
+  }
+}
+
+export const getFeaturedRacers = () => {
+  return (dispatch) => {
+    dispatch(loadStart());
+      axios.get(`${apiUrl}/users/featured`, { headers: { [apiHeader]: apiKey } })
+      .then(response => {
+        dispatch(loadFinish(response.data, DATA_DONE_LOADING_FEATURED_RACERS));
       })
       .catch(err => {
         dispatch(loadError(err));
