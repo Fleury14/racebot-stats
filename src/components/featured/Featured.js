@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar } from '..';
+import { Navbar, DrawBadges } from '..';
 import { ReduxFeaturedData } from '../redux-data';
 import './Featured.scss';
 
@@ -7,15 +7,49 @@ const Featured = (props) => {
   return (
     <div>
       <Navbar />
-      <h1>Featured</h1>
-      <ReduxFeaturedData>
-        {({ featuredData }) => {
-          if (featuredData ) {
-            console.log('things', featuredData);  
-          }
-          
-        }}
-      </ReduxFeaturedData>
+      <div className="featured-body open-sans">
+        <h1>Featured Racers</h1>
+        <div className="featured-data p-5">
+          <ReduxFeaturedData>
+            {({ featuredData }) => {
+              if (featuredData ) {
+                console.log('things', featuredData);
+                return featuredData.map((racer, index) => {
+                  return (
+                    <div className="racer-card" key={racer.name}>
+                      <div className="d-flex justify-content-between align-items-end">
+                        <h2>{racer.name}</h2>
+                        <p>Wins: {racer.wins}</p>
+                      </div>
+                      <div className="d-flex">
+                        <div className="mr-5 d-flex align-items-center">
+                          <span className="mr-2">% of races in top 3:</span>
+                          <span className="featured-value">{racer.top3Percentage}</span>
+                        </div>
+                        <div className="d-flex align-items-center">
+                          <span className="mr-2">Win %:</span>
+                          <span className="featured-value">{racer.winPercentage}</span>
+                        </div>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <span className="mr-2">Cookies:</span>
+                        <span className="featured-value">{racer.cookies}</span>
+                      </div>
+                      {racer.stream && (
+                        <a href={racer.stream}>{racer.name}'s Twitch stream</a>
+                      )}
+                      
+                    </div>
+                  );
+                })
+              }
+              return <p>There are no featured racers at this time.</p>
+            }}
+          </ReduxFeaturedData>
+          <p className="text-center mt-4">If you would like to be a featured racer, message the discord-bot!</p>
+        </div>
+        
+      </div>
     </div>
   );
 }
