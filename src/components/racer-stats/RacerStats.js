@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col, Badge } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Navbar, WinLoss, Twov2Stats, LoadingModal } from '..';
+import { Navbar, WinLoss, Twov2Stats, LoadingModal, DrawBadges } from '..';
 import { getRacerData, getBotData } from '../../redux/actions/BotActions';
 import { ReduxRacerStatData } from '../redux-data'
-import DrawBadges from './DrawBadges';
+// import DrawBadges from './DrawBadges';
 import './RacerStats.scss';
 import parse2v2Data from '../../helpers/Parse2v2';
 
