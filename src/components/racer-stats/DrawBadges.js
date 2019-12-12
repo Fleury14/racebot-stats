@@ -15,6 +15,13 @@ function badgeParse(badge) {
         cost: badge.cost,
         purchased: badge.purchased 
       } : null;
+    case 'High Roller':
+      return badge.enabled ? {
+        bgColor: '#400209',
+        textColor: '#eee',
+        text: 'High Roller',
+        icon: CookieIcon,
+      } : null;
     default:
       return null;
   }
