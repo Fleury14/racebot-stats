@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar } from '..';
 import { ReduxFeaturedData } from '../redux-data';
 import './Featured.scss';
@@ -17,7 +18,9 @@ const Featured = (props) => {
                   return (
                     <div className="racer-card" key={racer.name}>
                       <div className="d-flex justify-content-between align-items-end">
-                        <h2>{racer.name}</h2>
+                        <Link to={`/racer/${racer.name}`}>
+                          <h2>{racer.name}</h2>
+                        </Link>
                         <p>Wins: {racer.wins}</p>
                       </div>
                       <div className="d-flex">

@@ -40,7 +40,10 @@ const DrawBadges = (props) => {
         return (
           <div className="badge-wrap" key={badge.text} style={{ backgroundColor: badge.bgColor }}>
             <span>{badge.text}</span>
-            <img src={badge.icon} alt={badge.text} height={30} width={30} />
+            {badge.icon ? (
+              <img src={badge.icon} alt={badge.text} height={30} width={30} />
+            ) : null}
+            
           </div>
         );
       })}
