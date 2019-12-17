@@ -49,7 +49,7 @@ const Featured = (props) => {
               return <p>There are no featured racers at this time.</p>
             }}
           </ReduxFeaturedData>
-          <p className="text-center mt-4">If you would like to be a featured racer, message the discord-bot!</p>
+          <p className="text-center mt-4">If you would like to be a featured racer, you can spend cookies using "!buyreward featureme" - Featured status costs 10 cookies and lasts for 1 week!</p>
         </div>
         
       </div>
