@@ -149,7 +149,7 @@ class RacerStats extends Component {
                         </Row>
                         <Row>
                           {twov2Data && <Col md="6">
-                              <Twov2Stats data={twov2Data.filter(team => team.racer1Name === currentRacer || team.racer2Name === currentRacer)} currentRacer={currentRacer}/>
+                              <Twov2Stats data={twov2Data.filter(team => team.racer1Id === currentRacer || team.racer2Id === currentRacer)} currentRacer={currentRacer}/>
                           </Col>}
                         </Row>
                       </Container>
