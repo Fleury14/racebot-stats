@@ -50,6 +50,7 @@ class RacerStats extends Component {
             const racerData = racerRedux.racerData;
             const currentRacer = this.state.currentRacer;
             const twov2Data = parse2v2Data(generalData);
+            console.log('racerdata', racerData);
             let racesCompleted = [];
             if (racerData) {
               racesCompleted = [...new Set(racerData.race_details.races_completed)];
@@ -62,7 +63,7 @@ class RacerStats extends Component {
                   {!racerData && <h1>There is no data for this racer.</h1>}
                   {racerData && !loading && (
                     <div>
-                      <h1 className="racer-title text-uppercase text-center">{currentRacer}</h1>
+                      <h1 className="racer-title text-uppercase text-center">{racerData.name}</h1>
                       {racerData.streamInfo && (
                         <div className="d-flex justify-content-center">
                           <a href={racerData.streamInfo} target="_blank" rel="noopener noreferrer">

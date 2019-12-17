@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getRacerData } from '../../redux/actions/BotActions';
+import { getRacerData, getRacerDataById } from '../../redux/actions/BotActions';
 
 const mapStateToProps = state => ({
   racerData: state.botData.racerData,
@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 
 const mapActionsToProps = (dispatch) => ({
   getData(racer) {
-    dispatch(getRacerData(racer))
+    dispatch(getRacerDataById(racer))
   }
 });
 
@@ -40,7 +40,7 @@ class ReduxSingleRacerData extends Component {
     } else if ((!this.props.racerData && !this.state.loading) || ((!this.state.racerData || (this.props.raceName && this.props.raceName !== this.props.racerData.name)) && !this.state.loading)) {
       this.props.getData(this.props.racerName);
       this.setState({ loading: true });
-    } else if ((this.props.racerName && this.props.racerData && this.props.racerName === this.props.racerData.name && (!this.state.racerData || this.props.racerData.name === this.state.racerData.name)) && (!this.state.racerData || this.state.racerData.name !== this.props.racerName)) {
+    } else if ((this.props.racerName && this.props.racerData && this.props.racerName === this.props.racerData.id && (!this.state.racerData || this.props.racerData.name === this.state.racerData.id)) && (!this.state.racerData || this.state.racerData.id !== this.props.racerName)) {
       this.setState({ racerData: this.props.racerData, loading: false });
     }
    
