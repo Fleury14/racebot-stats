@@ -1,4 +1,9 @@
 const ParseWagers = (races) => {
+  races.items.sort((a, b) => {
+    const date1 = new Date(a.details.created);
+    const date2 = new Date(b.details.created);
+    return date1.getTime() - date2.getTime();
+  })
   const racesWithWagers = [];
   races.items.forEach(race => {
     if (race.details && race.details.entrants) {
@@ -30,9 +35,12 @@ const ParseWagers = (races) => {
     });
     currentRace.details.entrants.forEach(entrant => {
       let winnings = 0;
-      let currentBettor = allBetters.find(bettor => bettor.name === entrant.name);
+      let currentBettor = allBetters.find(bettor => bettor.id === entrant.id);
       if (currentBettor) {
         currentBettor.wagerTotal += entrant.wager;
+        if (entrant.name !== currentBettor.name) {
+          currentBettor.name = entrant.name
+        }
       } else {
         allBetters.push({
           name: entrant.name,
@@ -40,7 +48,7 @@ const ParseWagers = (races) => {
           wagerTotal: entrant.wager,
           id: entrant.id,
         });
-        currentBettor = allBetters.find(bettor => bettor.name === entrant.name);
+        currentBettor = allBetters.find(bettor => bettor.id === entrant.id);
       }
       switch (entrant.placement) {
         case 1:
