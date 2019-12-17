@@ -7,7 +7,7 @@ const renderPlayerRow = (player, index) => {
   if (index < 50) return (
     <tr key={player.id}>
       <th>
-        <Link to={`/racer/${player.name}`}>{player.name}</Link>
+        <Link to={`/racer/${player.id}`}>{player.name}</Link>
       </th>
       <td>{player.cookies}</td>
       <td>{player.race_details.races_run}</td>
