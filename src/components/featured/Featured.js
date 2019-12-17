@@ -13,7 +13,6 @@ const Featured = (props) => {
         <div className="featured-data p-5">
           <ReduxFeaturedData>
             {({ featuredData }) => {
-              console.log('featured data', featuredData);
               if (featuredData ) {
                 return featuredData.map((racer, index) => {
                   return (
