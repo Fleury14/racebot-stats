@@ -17,7 +17,6 @@ const parse2v2Data = (data) => {
     
     // loop through entrants
     for (let entrant of race.details.entrants) {
-      // if (entrant.id === '96743807797727232') console.log('gotcha');
       const partner = race.details.entrants.find(partner => partner.team === entrant.team && partner.id !== entrant.id);
       if (!partner) {
         continue;
