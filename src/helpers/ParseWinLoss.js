@@ -82,7 +82,6 @@ const ParseWinLoss = (data) => {
       }
     }
   }
-
   return racers;
 };
 
