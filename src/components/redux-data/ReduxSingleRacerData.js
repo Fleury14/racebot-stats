@@ -5,6 +5,8 @@ import { getRacerDataById } from '../../redux/actions/BotActions';
 const mapStateToProps = state => ({
   racerData: state.botData.racerData,
   time: null,
+  loading: state.botData.loading,
+  error: state.botData.error,
 });
 
 const mapActionsToProps = (dispatch) => ({
@@ -20,7 +22,7 @@ class ReduxSingleRacerData extends Component {
     racerData: null,
     time: false,
     loading: false,
-    
+    hasError: false,
   }
 
   componentDidMount() {
@@ -34,10 +36,12 @@ class ReduxSingleRacerData extends Component {
     // is there no racename prop? (return)
     // we have no data in state or is there a racename prop but it doesnt match our race data (grab new data)
     // is there a racename prop and it matches our race data but NOT our state data (update state)
-    if (!this.props.racerName) {
+    if (this.props.error && !this.state.hasError) {
+      this.setState({ loading: false, hasError: true })
+    } else if (!this.props.racerName) {
       
       return
-    } else if ((!this.props.racerData && !this.state.loading) || ((!this.state.racerData || (this.props.raceName && this.props.raceName !== this.props.racerData.name)) && !this.state.loading)) {
+    } else if (((!this.props.racerData && !this.state.loading) || ((!this.state.racerData || (this.props.raceName && this.props.raceName !== this.props.racerData.name)) && !this.state.loading)) && !this.state.hasError) {
       this.props.getData(this.props.racerName);
       this.setState({ loading: true });
     } else if ((this.props.racerName && this.props.racerData && this.props.racerName === this.props.racerData.id && (!this.state.racerData || this.props.racerData.name === this.state.racerData.id)) && (!this.state.racerData || this.state.racerData.id !== this.props.racerName)) {
