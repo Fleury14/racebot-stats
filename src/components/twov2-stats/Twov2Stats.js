@@ -13,7 +13,7 @@ const Twov2Stats = (props) => {
         return (
           <div key={index} className="d-flex">
             <div className="w-50 pr-3 text-right">
-              <h3>{team.racer1Name === currentRacer ? team.racer2Name : team.racer1Name}:</h3>
+              <h3>{team.racer1Id === currentRacer ? team.racer2Name : team.racer1Name}:</h3>
             </div>
             <div className="w-50 pr-3 text-left">
               <h4>({team.races_entered.length}) {team.wins} - {team.losses}</h4>
