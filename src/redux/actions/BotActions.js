@@ -83,7 +83,6 @@ export const getRacerDataById = (racerId) => {
           response.data.race_details.races_completed.reverse();
         }
         response.data.dataTime = Date.now();
-        console.log('response', response.data);
         dispatch(loadFinish(response.data, DATA_DONE_LOADING_RACER));
       })
       .catch(err => {

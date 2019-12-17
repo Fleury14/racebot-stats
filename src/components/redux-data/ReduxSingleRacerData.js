@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getRacerData, getRacerDataById } from '../../redux/actions/BotActions';
+import { getRacerDataById } from '../../redux/actions/BotActions';
 
 const mapStateToProps = state => ({
   racerData: state.botData.racerData,

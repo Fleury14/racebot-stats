@@ -50,7 +50,6 @@ class RacerStats extends Component {
             const racerData = racerRedux.racerData;
             const currentRacer = this.state.currentRacer;
             const twov2Data = parse2v2Data(generalData);
-            console.log('racerdata', racerData);
             let racesCompleted = [];
             if (racerData) {
               racesCompleted = [...new Set(racerData.race_details.races_completed)];
