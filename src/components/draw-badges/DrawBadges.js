@@ -58,7 +58,7 @@ function badgeParse(badge) {
 const DrawBadges = (props) => {
   const badgeOutput = [];
   const { badges } = props;
-  console.log('badge', badges);
+  // console.log('badge', badges);
   badges.forEach(badge => {
     const badgeResult = badgeParse(badge);
     if (badgeResult) badgeOutput.push(badgeResult);
