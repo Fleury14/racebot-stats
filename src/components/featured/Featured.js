@@ -13,12 +13,13 @@ const Featured = (props) => {
         <div className="featured-data p-5">
           <ReduxFeaturedData>
             {({ featuredData }) => {
+              console.log('featured data', featuredData);
               if (featuredData ) {
                 return featuredData.map((racer, index) => {
                   return (
                     <div className="racer-card" key={racer.name}>
                       <div className="d-flex justify-content-between align-items-end">
-                        <Link to={`/racer/${racer.name}`}>
+                        <Link to={`/racer/${racer.id}`}>
                           <h2>{racer.name}</h2>
                         </Link>
                         <p>Wins: {racer.wins}</p>

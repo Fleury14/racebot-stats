@@ -38,6 +38,7 @@ const ParseWagers = (races) => {
           name: entrant.name,
           winningsTotal: 0,
           wagerTotal: entrant.wager,
+          id: entrant.id,
         });
         currentBettor = allBetters.find(bettor => bettor.name === entrant.name);
       }
@@ -77,7 +78,6 @@ const ParseWagers = (races) => {
   allBetters.forEach(gambler => {
     gambler['delta'] = gambler.winningsTotal - gambler.wagerTotal;
   });
-  console.log('allb', allBetters)
   return { wagerData, bettorTotals: allBetters };
 }
 
