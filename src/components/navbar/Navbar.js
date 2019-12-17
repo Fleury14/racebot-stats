@@ -23,6 +23,9 @@ const Navbar = (props) => {
           <Link to={'/wagers'}>
             <li>Wagers</li>
           </Link>
+          <Link to={'/featured'}>
+            <li>Featured Racers</li>
+          </Link>
         </ul>
       </div>
     </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col, Badge } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Navbar, WinLoss, Twov2Stats, LoadingModal } from '..';
+import { Navbar, WinLoss, Twov2Stats, LoadingModal, DrawBadges } from '..';
 import { getRacerData, getBotData } from '../../redux/actions/BotActions';
 import { ReduxRacerStatData } from '../redux-data'
 import './RacerStats.scss';
@@ -70,6 +70,7 @@ class RacerStats extends Component {
                           </a>
                         </div>
                       )}
+                      {racerData.badges && racerData.badges.length && <DrawBadges badges={racerData.badges} />}
                       <div className="racer-first-row">
                         <Container fluid>
                           <Row className="text-center">
