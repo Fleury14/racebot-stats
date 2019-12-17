@@ -8,7 +8,7 @@ const Navbar = (props) => {
       <Link to={'/'}>
         <h3>RACEBOT STATS</h3>
       </Link>
-      <p>A stats page for the Discord Racebot built by Supremacy</p>
+      <p>A stats page for the Discord Racebot built by DarkPaladin</p>
       <div className="sub-nav">
         <ul>
           <Link to={'/race-directory'}>

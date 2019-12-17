@@ -17,7 +17,7 @@ const CookieLeaderboard = (props) => {
               return (
                 <li key={user.id}>
                   <span className="ml-3 mr-3 cookie-number">{user.cookies}</span>
-                  <Link to={`racer/${user.name}`}>
+                  <Link to={`racer/${user.id}`}>
                     <span className="cookie-name">{user.name}</span>
                   </Link>
                 </li>

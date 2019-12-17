@@ -30,7 +30,6 @@ class Wagers extends Component {
 
   // order expects 'a' or 'd'
   sortByDelta(bettors, order) {
-    console.log('revd', bettors);
     if (!bettors) {
       return [];;
     }
@@ -61,7 +60,7 @@ class Wagers extends Component {
                       <h2 className="text-center mb-4">Most Cookies Wagered</h2>
                       {topGamblers.map(gambler => (
                         <div className="d-flex justify-content-between w-100" key={gambler.name}>
-                          <Link to={`/racer/${gambler.name}`}>
+                          <Link to={`/racer/${gambler.id}`}>
                             <p className="text-left">{gambler.name}</p>
                           </Link>
                           <p className="text-right">{gambler.wagerTotal}</p>
@@ -72,7 +71,7 @@ class Wagers extends Component {
                     <h2 className="text-center mb-4">Most Cookies Won</h2>
                       {topWinners.map(gambler => (
                         <div className="d-flex justify-content-between w-100" key={gambler.name}>
-                          <Link to={`/racer/${gambler.name}`}>
+                          <Link to={`/racer/${gambler.id}`}>
                             <p className="text-left">{gambler.name}</p>
                           </Link>
                           <p className="text-right">{gambler.winningsTotal}</p>

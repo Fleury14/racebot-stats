@@ -18,7 +18,7 @@ const Featured = (props) => {
                   return (
                     <div className="racer-card" key={racer.name}>
                       <div className="d-flex justify-content-between align-items-end">
-                        <Link to={`/racer/${racer.name}`}>
+                        <Link to={`/racer/${racer.id}`}>
                           <h2>{racer.name}</h2>
                         </Link>
                         <p>Wins: {racer.wins}</p>
@@ -48,7 +48,7 @@ const Featured = (props) => {
               return <p>There are no featured racers at this time.</p>
             }}
           </ReduxFeaturedData>
-          <p className="text-center mt-4">If you would like to be a featured racer, message the discord-bot!</p>
+          <p className="text-center mt-4">If you would like to be a featured racer, you can spend cookies using "!buyreward featureme" - Featured status costs 10 cookies and lasts for 1 week!</p>
         </div>
         
       </div>

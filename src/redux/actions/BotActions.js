@@ -65,6 +65,33 @@ export const getRacerData = (racer) => {
   }
 }
 
+export const getRacerDataById = (racerId) => {
+  return (dispatch) => {
+    dispatch(loadStart());
+      axios.get(`${apiUrl}/users/${racerId}`, { headers: { [apiHeader]: apiKey } })
+      .then(response => {
+        // flip history if exists
+        // have to have two conditionals for different data formatitting
+        // new ver
+        // if (Array.isArray(response.data)) {
+        //   if (response.data.race_details.races_completed) {
+        //     response.data.race_details.races_completed.reverse();
+        //   }
+        // }
+        // oldver
+        if (response.data.race_details.races_completed) {
+          response.data.race_details.races_completed.reverse();
+        }
+        response.data.dataTime = Date.now();
+        dispatch(loadFinish(response.data, DATA_DONE_LOADING_RACER));
+      })
+      .catch(err => {
+        console.log('error', err);
+        dispatch(loadError(err));
+    });
+  }
+}
+
 export const getSingleRaceData = (key) => {
   return (dispatch) => {
     dispatch(loadStart());

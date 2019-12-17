@@ -59,7 +59,7 @@ const SelectedRace = (props) => {
                         <ul>
                           {raceData.details.entrants.map(entrant => {
                             return (
-                              <Link to={`../racer/${entrant.name}`} key={entrant.id}>
+                              <Link to={`../racer/${entrant.id}`} key={entrant.id}>
                                 <li className="text-center">{entrant.name}</li>
                               </Link>
                             );
@@ -86,7 +86,7 @@ const SelectedRace = (props) => {
                           <tr key={finisher.id}>
                             <th>{finisher.placement}</th>
                             <td>
-                              <Link to={`../racer/${finisher.name}`}>
+                              <Link to={`../racer/${finisher.id}`}>
                                 {finisher.name}
                               </Link>  
                             </td>
