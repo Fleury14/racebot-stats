@@ -1,7 +1,10 @@
 .badge-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: 20px;
+  position: relative;
+  // display: inline-block;
 }
 
 .badge-wrap {
@@ -12,4 +15,38 @@
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
+  margin-right: 20px;
+}
+
+.badge-fa-icon {
+  height: 30px;
+  width: 30px !important;
+}
+
+.badge-tooltip {
+  opacity: 0;
+  background-color: #222;
+  color: #eee;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 110%;
+  transition: 0.3s all;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+  }
+}
+
+.badge-wrap:hover .badge-tooltip {
+  opacity: 1;
 }
