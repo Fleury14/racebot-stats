@@ -36,15 +36,6 @@ class EventsComponent extends Component {
             fullSelectedEvent = eventList.find(event => event.id === selectedEvent);
           };
           
-          // if (this.props.match.params.event && !selectedEvent) {
-          //   if (eventList) {
-          //     const paramEvent = eventList.find(event => event.id === this.props.match.params.event);
-          //     if (paramEvent) {
-          //       this.setState({ selectedEvent: paramEvent });
-          //     }
-          //   }
-          // }
-          console.log('state', this.state);
           return (
             <div>
               <Navbar />
@@ -61,7 +52,6 @@ class EventsComponent extends Component {
                       {eventList.map(event => {
                         if (event.visibility !== 'private') { 
                           return (
-                            // <button key={event.id} onClick={() => this.setState({ selectedEvent: event.id })}>{event.name}</button>
                             <button key={event.id} onClick={() => {
                               this.props.history.push(`/events/${event.id}`);
                               this.setState({ selectedEvent: event.id });
