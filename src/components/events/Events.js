@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import { ReduxEventsData } from '../redux-data';
 
 class EventsComponent extends Component {
   render() {
     return (
-      <h1>eventzz</h1>
+      <ReduxEventsData>
+        {(eventData) => {
+          return (
+            <h1>eventzz</h1>
+          );
+        }}
+      </ReduxEventsData>
     );
   }
 }
