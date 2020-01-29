@@ -7,7 +7,6 @@ import { ReduxMainData } from '../redux-data';
 import './Main.scss';
 
 
-
 class MainComponent extends Component {
   state = {
     error: null,
