@@ -16,7 +16,7 @@ class AppRouter extends Component {
           <Route path="/player-directory" exact component={PlayerDirectory} />
           <Route path="/wagers" exact component={Wagers} />
           <Route path="/featured" exact component={Featured} />
-          <Route path="/events" exact component={EventsComponent} />
+          <Route path="/events/:event?" exact component={EventsComponent} />
           <Route component={ErrorComponent} />
         </Switch>
       </Router>

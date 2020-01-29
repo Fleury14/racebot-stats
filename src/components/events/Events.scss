@@ -1,0 +1,43 @@
+.event-container {
+  padding: 2em;
+  background-color: #eee;
+  min-height: 100vh;
+}
+
+.event-body {
+  font-family: "Open Sans";
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 13px;
+  text-align: center;
+  margin-bottom: 1em;
+  
+  h1, h2, h3 {
+    font-weight: 700;
+  }
+
+  button {
+    background-color: #010059;
+    color: #fff;
+    padding: 5px;
+    margin-right: 10px;
+    transition: all 0.3s;
+    
+    &:hover {
+      background-color: lighten($color: #010059, $amount: 10);
+      color: yellow;
+    }
+  }
+}
+
+.event-sub-head {
+  font-weight: 700;
+}
+
+.event-entrant-row {
+  height: 1.25em;
+}
+
+.event-admin {
+  margin-bottom: 0;
+}

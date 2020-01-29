@@ -26,7 +26,7 @@ class ReduxEventsData extends Component {
   }
 
   componentDidUpdate() {
-    if (this.props.loading != this.state.loading) {
+    if (this.props.loading !== this.state.loading) {
       this.setState({ events: this.props.events, loading: this.props.loading });
     }
   }
