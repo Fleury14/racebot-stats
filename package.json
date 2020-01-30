@@ -1,6 +1,6 @@
 {
   "name": "racebot-stats",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "private": true,
   "homepage": "http://adaptable-rabbit.surge.sh",
   "dependencies": {
