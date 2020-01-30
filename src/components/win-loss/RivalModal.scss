@@ -46,3 +46,14 @@
     }
   }
 }
+
+.page-number {
+  cursor: pointer;
+  color: blue;
+  margin: 0px 20px;
+}
+
+.page-active {
+  color: #000;
+  cursor: default;
+}
