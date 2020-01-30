@@ -48,7 +48,7 @@ class EventsComponent extends Component {
                   <div className="event-body">
                     <h1>EVENT LIST</h1>
                     <p>Click an event from the list below to see the details</p>
-                    <div className="d-flex">
+                    <div className="d-flex flex-wrap">
                       {eventList.map(event => {
                         if (event.visibility !== 'private') { 
                           return (

@@ -17,13 +17,13 @@ const Featured = (props) => {
                 return featuredData.map((racer, index) => {
                   return (
                     <div className="racer-card" key={racer.name}>
-                      <div className="d-flex justify-content-between align-items-end">
+                      <div className="d-flex justify-content-between align-items-end flex-wrap">
                         <Link to={`/racer/${racer.id}`}>
                           <h2>{racer.name}</h2>
                         </Link>
                         <p>Wins: {racer.wins}</p>
                       </div>
-                      <div className="d-flex">
+                      <div className="d-flex flex-wrap">
                         <div className="mr-5 d-flex align-items-center">
                           <span className="mr-2">% of races in top 3:</span>
                           <span className="featured-value">{racer.top3Percentage}</span>
