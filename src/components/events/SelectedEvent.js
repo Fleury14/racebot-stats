@@ -31,6 +31,7 @@ const SelectedEvent = (props) => {
                       <p>{iLoveJSRounding(entrant.points)}</p>
                     </div>
                   );
+                  return null;
                 }
               )}
               </React.Fragment>

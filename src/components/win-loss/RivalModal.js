@@ -6,6 +6,11 @@ import './RivalModal.scss';
 const RivalModal = (props) => {
   const { close, player, rival, raceData } = props;
   if (!raceData) return null;
+  raceData.sort((a, b) => {
+    const aDate = new Date(a.details.created).getTime();
+    const bDate = new Date(b.details.created).getTime();
+    return bDate - aDate;
+  })
   const playerName = raceData[0].details.entrants.find(entrant => entrant.id === player).name;
   const rivalName = raceData[0].details.entrants.find(entrant => entrant.id === rival).name;
   return (
