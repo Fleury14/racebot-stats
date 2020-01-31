@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { ReduxMainData } from '../redux-data';
-import { parseFlagStats } from '../../helpers';
+import { parseFlagStats, parseFlagStatsv4 } from '../../helpers';
 import { Navbar, LoadingModal } from '..'
 import './FlagStats.scss';
 
@@ -13,6 +13,7 @@ const FlagStats = (props) => {
       {(reduxData) => {
         console.log('redux', reduxData);
         const data = parseFlagStats(reduxData.botData ? reduxData.botData.items : null);
+        const v4data = parseFlagStatsv4(reduxData.botData ? reduxData.botData.items : null);
         const loading = reduxData.loading;
         return (
           <div>
