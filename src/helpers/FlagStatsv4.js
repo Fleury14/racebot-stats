@@ -145,6 +145,7 @@ const parseFlagStatsv4 = (raceArr) => {
       vanilla: 0,
       standard: 0,
       altGauntlet: 0,
+      unsafe: 0,
       wyvern: {
         change: 0,
         eliminate: 0,
@@ -164,6 +165,10 @@ const parseFlagStatsv4 = (raceArr) => {
       drop: {
         noSirens: 0,
         noJDrops: 0,
+      },
+      keep: {
+        doors: 0,
+        behemoths: 0,
       },
       noEscape: 0,
       noExp: 0,
@@ -211,10 +216,14 @@ const parseFlagStatsv4 = (raceArr) => {
     }
     return null;
   });
-  FlagResults.total = metadataRace.length;
+  FlagResults.total = 0;
 
   for (let race of metadataRace) {
     const flags = race.details.metadata.Flags;
+    
+    // skip non v4 races
+    if (!race.details.metadata.Version || race.details.metadata.Version.indexOf('v4') < 0) continue;
+    FlagResults.total++;
 
     // O Flag
     const oString = getPropertySection(flags, 'O');
@@ -505,7 +514,182 @@ const parseFlagStatsv4 = (raceArr) => {
     if (tString.indexOf('junk') >= 0) {
       FlagResults.T.junk++;
     }
+
+    // S FLAG
+    const sString = getPropertySection(flags, 'S');
+    if (sString.indexOf('vanilla') >= 0) {
+      FlagResults.S.vanilla++;
+    }
+    if (sString.indexOf('shuffle') >= 0) {
+      FlagResults.S.shuffle++;
+    }
+    if (sString.indexOf('standard') >= 0) {
+      FlagResults.S.standard++;
+    }if (sString.indexOf('pro') >= 0) {
+      FlagResults.S.pro++;
+    }
+    if (sString.indexOf('wild') >= 0) {
+      FlagResults.S.wild++;
+    }
+    if (sString.indexOf('cabins') >= 0) {
+      FlagResults.S.cabins++;
+    }
+    if (sString.indexOf('empty') >= 0) {
+      FlagResults.S.empty++;
+    }
+    if (sString.indexOf('free') >= 0) {
+      FlagResults.S.free++;
+    }
+    if (sString.indexOf('quarter') >= 0) {
+      FlagResults.S.quarter++;
+    }
+    if (sString.indexOf('no:j') >= 0) {
+      FlagResults.S.noJ++;
+    }
+    if (sString.indexOf('apples') >= 0) {
+      FlagResults.S.noApples++;
+    }
+    if (sString.indexOf('sirens') >= 0) {
+      FlagResults.S.noSirens++;
+    }
+
+    // B FLAG
+    const bString = getPropertySection(flags, 'B');
+    if (bString.indexOf('vanilla') >= 0) {
+      FlagResults.B.vanilla++;
+    }
+    if (bString.indexOf('standard') >= 0) {
+      FlagResults.B.standard++;
+    }
+    if (bString.indexOf('unsafe') >= 0) {
+      FlagResults.B.unsafe++;
+    }
+    if (bString.indexOf('alt:gauntlet') >= 0) {
+      FlagResults.B.altGauntlet++;
+    }
+    if (bString.indexOf('whyburn') >= 0) {
+      FlagResults.B.wyvern.eliminate++;
+    } else if (bString.indexOf('whichburn') >= 0) {
+      FlagResults.B.wyvern.change++;
+    } else {
+      FlagResults.B.wyvern.leave++;
+    }
+
+    // N FLAG
+    const nString = getPropertySection(flags, 'N');
+    if (nString.indexOf('chars') >= 0) {
+      FlagResults.N.chars++;
+    }
+    if (nString.indexOf('key') >= 0) {
+      FlagResults.N.key++;
+    }
+    if (nString.indexOf('bosses') >= 0) {
+      FlagResults.N.bosses++;
+    }
+
+    // E FLAG
+    const eString = getPropertySection(flags, 'E');
+    if (eString.indexOf('vanilla') >= 0) {
+      FlagResults.E.vanilla++;
+    }
+    if (eString.indexOf('toggle') >= 0) {
+      FlagResults.E.toggle++;
+    }
+    if (eString.indexOf('reduce') >= 0) {
+      FlagResults.E.reduce++;
+    }
+    if (eString.indexOf('noencounters') >= 0) {
+      FlagResults.E.none++;
+    }
+    if (eString.indexOf('sirens') >= 0) {
+      FlagResults.E.drop.noSirens++;
+    }
+    if (eString.indexOf('jdrops') >= 0) {
+      FlagResults.E.drop.noJDrops++;
+    }
+    if (eString.indexOf('doors') >= 0) {
+      FlagResults.E.keep.doors++;
+    }
+    if (eString.indexOf('behemoths') >= 0) {
+      FlagResults.E.keep.behemoths++;
+    }
+    if (eString.indexOf('cantrun') >= 0) {
+      FlagResults.E.noEscape++;
+    }
+    if (eString.indexOf('noexp') >= 0) {
+      FlagResults.E.noExp++;
+    }
+
+    // G FLAG
+    const gString = getPropertySection(flags, 'G');
+    if (gString.indexOf('dupe') >= 0) {
+      FlagResults.G.dupe++;
+    }
+    if (gString.indexOf('warp') >= 0) {
+      FlagResults.G.warp++;
+    }
+    if (gString.indexOf('mp') >= 0) {
+      FlagResults.G.mp++;
+    }
+    if (gString.indexOf('life') >= 0) {
+      FlagResults.G.life++;
+    }
+    if (gString.indexOf('64') >= 0) {
+      FlagResults.G[64]++;
+    }
+
+    // OTHER
+
+    const kitString = getPropertySection(flags, '-kit');
+    if (kitString.indexOf('basic') >= 0) {
+      FlagResults.other.kit.basic++;
+    } else if (kitString.indexOf('better') >= 0) {
+      FlagResults.other.kit.better++;
+    } else if (kitString.indexOf('loaded') >= 0) {
+      FlagResults.other.kit.loaded++;
+    } else if (kitString.indexOf('spitball') >= 0) {
+      FlagResults.other.kit.spitball++;
+    } else {
+      FlagResults.other.kit.none++;
+    }
+
+    if(flags.indexOf('-noadamants') >= 0) {
+      FlagResults.other.noAdamants++;
+    }
+    if(flags.indexOf('-vintage') >= 0) {
+      FlagResults.other.vintage++;
+    }
+    if(flags.indexOf('-spoon') >= 0) {
+      FlagResults.other.spoon++;
+    }
+    if(flags.indexOf('-spoiler') >= 0) {
+      FlagResults.other.spoiler++;
+    }
+
+    const vanillaString = getPropertySection(flags, '-vanilla');
+    if (vanillaString.indexOf('fusoya') >= 0) {
+      FlagResults.other.vanilla.fusoya++;
+    }
+    if (vanillaString.indexOf('agility') >= 0) {
+      FlagResults.other.vanilla.agility++;
+    }
+    if (vanillaString.indexOf('hobs') >= 0) {
+      FlagResults.other.vanilla.hobs++;
+    }
+    if (vanillaString.indexOf('exp') >= 0) {
+      FlagResults.other.vanilla.exp++;
+    }
+    if (vanillaString.indexOf('fashion') >= 0) {
+      FlagResults.other.vanilla.fashion++;
+    }
+    if (vanillaString.indexOf('traps') >= 0) {
+      FlagResults.other.vanilla.traps++;
+    }
+    if (vanillaString.indexOf('z') >= 0) {
+      FlagResults.other.vanilla.z++;
+    }
   }
+
   
   console.log('v4', FlagResults)
   return FlagResults;
@@ -523,7 +707,7 @@ const getPropertySection = (flags, criteria) => {
       }
   }
 
-  const results = flags.slice(begin, end);
+  let results = flags.slice(begin, end);
   return results;
 }
 
