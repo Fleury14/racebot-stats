@@ -28,6 +28,17 @@
   }
 }
 
+.flag-stats-button-row {
+  background-color: #eee;
+
+  button:first-child {
+    margin-right: 20px;
+  }
+  button:last-child {
+    margin-left: 20px;
+  }
+}
+
 .flag-stats-body {
   background-color: #fff;
 }

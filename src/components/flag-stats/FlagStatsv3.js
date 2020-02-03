@@ -10,7 +10,6 @@ const v3FlagStats = (props) => {
   return (
     <ReduxMainData>
       {(reduxData) => {
-        console.log('redux', reduxData);
         const data = parseFlagStats(reduxData.botData ? reduxData.botData.items : null);
         // const v4data = parseFlagStatsv4(reduxData.botData ? reduxData.botData.items : null);
         const loading = reduxData.loading;
