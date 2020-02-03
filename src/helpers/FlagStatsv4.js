@@ -10,6 +10,7 @@ const parseFlagStatsv4 = (raceArr) => {
         character: 0,
         boss: 0,
         quest: 0,
+        total: 0,
       },
       random: {
         1: 0,
@@ -247,6 +248,9 @@ const parseFlagStatsv4 = (raceArr) => {
     }
     if (oString.indexOf('quest') >= 0) {
       FlagResults.O.custom.quest++;
+    }
+    if (oString.indexOf('boss') >= 0 || oString.indexOf('char') >= 0 || oString.indexOf('quest') >= 0) {
+      FlagResults.O.custom.total++;
     }
     if (oString.indexOf('random') >= 0) {
       const numOfRandoms = parseInt(oString.charAt(oString.indexOf('random') + 7));
@@ -690,6 +694,8 @@ const parseFlagStatsv4 = (raceArr) => {
     }
   }
 
+  // post-loop additions
+  // FlagResults.O.custom.total = FlagResults.O.custom.boss + FlagResults.O.custom.quest + FlagResults.O.custom.character;
   
   console.log('v4', FlagResults)
   return FlagResults;
