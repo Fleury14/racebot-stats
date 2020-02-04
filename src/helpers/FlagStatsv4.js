@@ -310,6 +310,9 @@ const parseFlagStatsv4 = (raceArr) => {
     if (cString.indexOf('relaxed') >= 0) {
       FlagResults.C.relaxed++;
     }
+    if (cString.indexOf('maybe') >= 0) {
+      FlagResults.C.maybe++;
+    }
     if (cString.indexOf('bye') >= 0) {
       FlagResults.C.bye++;
     }
@@ -693,11 +696,7 @@ const parseFlagStatsv4 = (raceArr) => {
       FlagResults.other.vanilla.z++;
     }
   }
-
-  // post-loop additions
-  // FlagResults.O.custom.total = FlagResults.O.custom.boss + FlagResults.O.custom.quest + FlagResults.O.custom.character;
   
-  console.log('v4', FlagResults)
   return FlagResults;
 }
 
