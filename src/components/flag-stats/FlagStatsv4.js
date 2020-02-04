@@ -21,7 +21,7 @@ const v4FlagStats = (props) => {
             {data && !loading &&  (
               <div className="flag-stats-container open-sans">
                 <div className="flag-stats-body p-5">
-                  <h1 className="text-center">Flag statsv4</h1>
+                  <h1 className="text-center">Flag stats</h1>
                   <p className="text-center mb-5">Races recorded: {data.total}</p>
                   <Container>
                     <Row>
