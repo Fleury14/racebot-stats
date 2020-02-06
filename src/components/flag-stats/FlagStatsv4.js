@@ -23,7 +23,7 @@ const v4FlagStats = (props) => {
                 <div className="flag-stats-body p-5">
                   <h1 className="text-center">Flag stats</h1>
                   <p className="text-center mb-5">Races recorded: {data.total}</p>
-                  <Container>
+                  <Container fluid>
                     <Row>
                       <Col md="4" className="mb-4">
                         <div className="text-center mb-4">
