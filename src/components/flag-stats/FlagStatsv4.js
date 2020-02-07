@@ -9,7 +9,6 @@ const v4FlagStats = (props) => {
   return (
     <ReduxMainData>
       {(reduxData) => {
-        // const data = parseFlagStatsv4(reduxData.botData ? reduxData.botData.items : null);
         const data = parseFlagStatsv4(reduxData.botData ? reduxData.botData.items : null);
         const loading = reduxData.loading;
         const characters = ['Cecil', 'Kain', 'Rydia', 'Tellah', 'Edward', 'Rosa', 'Yang', 'Palom', 'Porom', 'Cid', 'Edge', 'FuSoYa'];
