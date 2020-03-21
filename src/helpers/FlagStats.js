@@ -158,9 +158,6 @@ const parseFlagStats = (raceArr) => {
   // remove all non fe-races
   const FERaces = raceArr.filter(race => race.details && race.details.game === 'ff4fe');
 
-  // remove all v4 races
-  const nov4Races = FERaces.filter(race => !race.details.metatdata || !race.details.metadata.Version || race.details.metadata.Version.indexOf('v4') < 0);
-
   // remove all races with no flag data
   const metadataRace = FERaces.filter(race => {
     if (!race.details.metadata) {
