@@ -102,7 +102,7 @@ class RacerStats extends Component {
                         <Row>
                           <Col md="6" className="p-2">
                             <div className="racer-history">
-                              <h5 className="text-uppercase text-center">Recent Races</h5>
+                              <h2 className="text-uppercase text-center">Recent Races</h2>
                               <div className="d-flex badge-holder">
                                 {racesCompleted.map((race, index) => {
                                   return index < 20 ? (
@@ -148,14 +148,14 @@ class RacerStats extends Component {
                           </Col>
                         </Row>
                         <Row>
-                          {twov2Data && <Col md="6">
-                              <Twov2Stats data={twov2Data.filter(team => team.racer1Id === currentRacer || team.racer2Id === currentRacer)} currentRacer={currentRacer}/>
-                          </Col>}
                           <Col md="6">
                             <div className="racer-history">
                               <h2>RECENT RESULTS</h2>
                             </div>
                           </Col>
+                          {twov2Data && <Col md="6">
+                              <Twov2Stats data={twov2Data.filter(team => team.racer1Id === currentRacer || team.racer2Id === currentRacer)} currentRacer={currentRacer}/>
+                          </Col>}
                         </Row>
                       </Container>
                     </div>
