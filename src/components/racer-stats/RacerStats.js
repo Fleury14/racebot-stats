@@ -151,6 +151,11 @@ class RacerStats extends Component {
                           {twov2Data && <Col md="6">
                               <Twov2Stats data={twov2Data.filter(team => team.racer1Id === currentRacer || team.racer2Id === currentRacer)} currentRacer={currentRacer}/>
                           </Col>}
+                          <Col md="6">
+                            <div className="racer-history">
+                              <h2>RECENT RESULTS</h2>
+                            </div>
+                          </Col>
                         </Row>
                       </Container>
                     </div>
