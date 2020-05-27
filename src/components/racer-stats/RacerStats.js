@@ -4,7 +4,8 @@ import { Container, Row, Col, Badge } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Navbar, WinLoss, Twov2Stats, LoadingModal, DrawBadges } from '..';
 import { getRacerData, getBotData } from '../../redux/actions/BotActions';
-import { ReduxRacerStatData } from '../redux-data'
+import { ReduxRacerStatData } from '../redux-data';
+import RacerRecent from './RacerRecent';
 import './RacerStats.scss';
 import parse2v2Data from '../../helpers/Parse2v2';
 
@@ -55,7 +56,6 @@ class RacerStats extends Component {
             if (racerData) {
               racesCompleted = [...new Set(racerData.race_details.races_completed)];
               lastFiveRaces = racesCompleted.filter((race, index) => index < 5);
-              console.log('last five', lastFiveRaces);
             }
             return (
               <div className="racer-stats-container">
@@ -152,9 +152,7 @@ class RacerStats extends Component {
                         </Row>
                         <Row>
                           <Col md="6" className="p-2">
-                            <div className="racer-history">
-                              <h2 className="text-center">RECENT RESULTS</h2>
-                            </div>
+                            {lastFiveRaces.length ? <RacerRecent last5={lastFiveRaces} /> : null}
                           </Col>
                           {twov2Data && <Col md="6">
                               <Twov2Stats data={twov2Data.filter(team => team.racer1Id === currentRacer || team.racer2Id === currentRacer)} currentRacer={currentRacer}/>
