@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { GetRaceInfo } from '../../helpers';
 import './RacerStats.scss';
 
 const mapStateToProps = state => ({
-  racerData: state.botData.racerData,
   generalData: state.botData.data,
-  currentRacer: null,
-  loading: state.botData.loading,
 });
 
 class RacerRecents extends Component {
+  state = {
+    raceData: null,
+  };
+
+  componentDidMount() {
+    const last5Data = GetRaceInfo(this.props.last5, this.props.generalData);
+    if (last5Data) {
+      this.setState({ raceData: last5Data });
+    }
+  }
+
   render() {
-    console.log('general data', this.props.generalData);
+    console.log('stizzate', this.state);
     return (
       <div className="racer-history">
         <h2 className="text-center">RECENT RESULTS</h2>
@@ -20,4 +29,5 @@ class RacerRecents extends Component {
   }
 }
 
+// export default RacerRecents;
 export default connect(mapStateToProps, null)(RacerRecents);
