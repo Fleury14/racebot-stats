@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Table } from 'reactstrap';
 import { GetRaceInfo } from '../../helpers';
 import './RacerStats.scss';
 
@@ -20,10 +21,37 @@ class RacerRecents extends Component {
   }
 
   render() {
-    console.log('stizzate', this.state);
+    const { raceData } = this.state;
+    const { id } = this.props;
+    console.log(raceData);
     return (
       <div className="racer-history">
         <h2 className="text-center">RECENT RESULTS</h2>
+        {raceData && raceData.length ? (
+          <Table>
+            <thead>
+              <tr>
+                <th>Race</th>
+                <th>Entrants</th>
+                <th>Rank</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {raceData.map(race => {
+                const myResults = race.details.entrants.find(entrant => entrant.id === id);
+                return (
+                  <tr key={race.key}>
+                    <td>{race.key}</td>
+                    <td>{race.details.entrants.length}</td>
+                    <td>{myResults.placement}</td>
+                    <td>{myResults.finish}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </Table>
+        ) : null}
       </div>
     );
   }

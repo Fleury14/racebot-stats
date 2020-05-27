@@ -152,7 +152,7 @@ class RacerStats extends Component {
                         </Row>
                         <Row>
                           <Col md="6" className="p-2">
-                            {lastFiveRaces.length ? <RacerRecent last5={lastFiveRaces} /> : null}
+                            {lastFiveRaces.length ? <RacerRecent last5={lastFiveRaces} id={this.state.currentRacer} /> : null}
                           </Col>
                           {twov2Data && <Col md="6">
                               <Twov2Stats data={twov2Data.filter(team => team.racer1Id === currentRacer || team.racer2Id === currentRacer)} currentRacer={currentRacer}/>
