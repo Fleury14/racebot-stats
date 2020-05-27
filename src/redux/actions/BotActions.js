@@ -1,5 +1,6 @@
 import { DATA_START_LOADING, DATA_DONE_LOADING, BOT_DATA_ERROR, DATA_DONE_LOADING_RACER, DATA_DONE_LOADING_SINGLE_RACE, DATA_DONE_LOADING_ALL_RACERS, DATA_DONE_LOADING_FEATURED_RACERS, DATA_DONE_LOADING_EVENTS } from './types';
 import axios from 'axios';
+import filterFERaces from '../../helpers/FilterFERaces';
 
 const loadStart = () => ({
   type: DATA_START_LOADING
@@ -29,6 +30,7 @@ export const getBotData = () => {
     dispatch(loadStart());
     axios.get(`${apiUrl}/races?pageSize=2000`, { headers: { [apiHeader]: apiKey } })
     .then(response => {
+      response.data = filterFERaces(response.data);
       response.data.dataTime = Date.now();
       dispatch(loadFinish(response.data, DATA_DONE_LOADING));
     })

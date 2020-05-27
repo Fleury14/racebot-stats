@@ -51,8 +51,11 @@ class RacerStats extends Component {
             const currentRacer = this.state.currentRacer;
             const twov2Data = parse2v2Data(generalData);
             let racesCompleted = [];
+            let lastFiveRaces = [];
             if (racerData) {
               racesCompleted = [...new Set(racerData.race_details.races_completed)];
+              lastFiveRaces = racesCompleted.filter((race, index) => index < 5);
+              console.log('last five', lastFiveRaces);
             }
             return (
               <div className="racer-stats-container">
@@ -148,9 +151,9 @@ class RacerStats extends Component {
                           </Col>
                         </Row>
                         <Row>
-                          <Col md="6">
+                          <Col md="6" className="p-2">
                             <div className="racer-history">
-                              <h2>RECENT RESULTS</h2>
+                              <h2 className="text-center">RECENT RESULTS</h2>
                             </div>
                           </Col>
                           {twov2Data && <Col md="6">
