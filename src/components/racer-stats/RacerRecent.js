@@ -44,6 +44,7 @@ class RacerRecents extends Component {
             </thead>
             <tbody>
               {raceData.map(race => {
+                if (!race || !race.details) return null;
                 const myResults = race.details.entrants.find(entrant => entrant.id === id);
                 return (
                   <tr key={race.key}>
