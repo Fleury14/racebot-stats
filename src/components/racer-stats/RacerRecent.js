@@ -13,6 +13,12 @@ class RacerRecents extends Component {
     raceData: null,
   };
 
+  removeFractions(timeString) {
+    const period = timeString.indexOf('.');
+    if (period < 0) return timeString;
+    return timeString.slice(0, period);
+  }
+
   componentDidMount() {
     const last5Data = GetRaceInfo(this.props.last5, this.props.generalData);
     if (last5Data) {
@@ -45,7 +51,7 @@ class RacerRecents extends Component {
                     <td>{race.key}</td>
                     <td>{race.details.entrants.length}</td>
                     <td>{myResults.placement}</td>
-                    <td>{myResults.finish}</td>
+                    <td>{this.removeFractions(myResults.finish)}</td>
                   </tr>
                 );
               })}
