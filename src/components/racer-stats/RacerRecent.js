@@ -29,7 +29,6 @@ class RacerRecents extends Component {
   render() {
     const { raceData } = this.state;
     const { id } = this.props;
-    console.log(raceData);
     return (
       <div className="racer-history">
         <h2 className="text-center">RECENT RESULTS</h2>
