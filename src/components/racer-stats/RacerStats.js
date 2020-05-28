@@ -4,7 +4,8 @@ import { Container, Row, Col, Badge } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Navbar, WinLoss, Twov2Stats, LoadingModal, DrawBadges } from '..';
 import { getRacerData, getBotData } from '../../redux/actions/BotActions';
-import { ReduxRacerStatData } from '../redux-data'
+import { ReduxRacerStatData } from '../redux-data';
+import RacerRecent from './RacerRecent';
 import './RacerStats.scss';
 import parse2v2Data from '../../helpers/Parse2v2';
 
@@ -51,8 +52,10 @@ class RacerStats extends Component {
             const currentRacer = this.state.currentRacer;
             const twov2Data = parse2v2Data(generalData);
             let racesCompleted = [];
+            let lastFiveRaces = [];
             if (racerData) {
               racesCompleted = [...new Set(racerData.race_details.races_completed)];
+              lastFiveRaces = racesCompleted.filter((race, index) => index < 5);
             }
             return (
               <div className="racer-stats-container">
@@ -102,7 +105,7 @@ class RacerStats extends Component {
                         <Row>
                           <Col md="6" className="p-2">
                             <div className="racer-history">
-                              <h5 className="text-uppercase text-center">Recent Races</h5>
+                              <h2 className="text-uppercase text-center">Recent Races</h2>
                               <div className="d-flex badge-holder">
                                 {racesCompleted.map((race, index) => {
                                   return index < 20 ? (
@@ -148,6 +151,9 @@ class RacerStats extends Component {
                           </Col>
                         </Row>
                         <Row>
+                          <Col md="6" className="p-2">
+                            {lastFiveRaces.length ? <RacerRecent last5={lastFiveRaces} id={this.state.currentRacer} /> : null}
+                          </Col>
                           {twov2Data && <Col md="6">
                               <Twov2Stats data={twov2Data.filter(team => team.racer1Id === currentRacer || team.racer2Id === currentRacer)} currentRacer={currentRacer}/>
                           </Col>}

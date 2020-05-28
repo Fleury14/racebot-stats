@@ -9,5 +9,6 @@ import parseRivalry from './parseRivalry';
 import ParseWagers from './ParseWagers';
 import badgeParse from './BadgeParse';
 import searchRacer from './SearchRacer';
+import GetRaceInfo from './GetRaceInfo';
 
-export { ParseWinLoss, GetCurrentRaces, GetCookieLeaders, Parse2v2, GetRecentlyCompleteRaces, parseFlagStats, parseFlagStatsv4, parseRivalry, ParseWagers, badgeParse, searchRacer };
+export { ParseWinLoss, GetCurrentRaces, GetCookieLeaders, Parse2v2, GetRecentlyCompleteRaces, parseFlagStats, parseFlagStatsv4, parseRivalry, ParseWagers, badgeParse, searchRacer, GetRaceInfo };
