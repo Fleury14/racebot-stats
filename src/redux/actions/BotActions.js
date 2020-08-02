@@ -28,7 +28,7 @@ const apiHeader = 'apikey';
 export const getBotData = () => {
   return (dispatch) => {
     dispatch(loadStart());
-    axios.get(`${apiUrl}/races?pageSize=2000`, { headers: { [apiHeader]: apiKey } })
+    axios.get(`${apiUrl}/races?pageSize=2500`, { headers: { [apiHeader]: apiKey } })
     .then(response => {
       response.data = filterFERaces(response.data);
       response.data.dataTime = Date.now();
