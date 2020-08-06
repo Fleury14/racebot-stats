@@ -29,6 +29,9 @@ const Navbar = (props) => {
           <Link to={'/events'}>
             <li>Events</li>
           </Link>
+          <Link to={'/htt3z'}>
+            <li>HTT3Z</li>
+          </Link>
         </ul>
       </div>
     </div>
