@@ -47,7 +47,8 @@ class RaceDirectory extends Component {
       <ReduxMainData>
         {(reduxData) => {
           const { startIndex, endIndex } = this.state;
-          const apiResult = reduxData.botData.items || reduxData.botData;
+          const apiResult = reduxData.botData ? reduxData.botData.items : reduxData.botData;
+          if (!apiResult) return null;
           let FERaces = apiResult.filter(race => race.details && race.details.game && race.details.game === 'ff4fe');
           FERaces.sort((a, b) => {
             const timeA = new Date(a.details.created);
