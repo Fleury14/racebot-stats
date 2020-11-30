@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { GetCurrentRaces, GetRecentlyCompleteRaces } from '../../helpers';
 import CurrentRaces from '../current-races/CurrentRaces';
-import { Navbar, PlayerSearcher, CookieLeaderboard, RecentlyCompletedRaces, LoadingModal } from '..';
+import { Navbar, PlayerSearcher, CookieLeaderboard, RecentlyCompletedRaces, LoadingModal, ClubLeaderboard } from '..';
 import { ReduxMainData } from '../redux-data';
 import './Main.scss';
 
@@ -36,6 +36,7 @@ class MainComponent extends Component {
                         <RecentlyCompletedRaces data={GetRecentlyCompleteRaces(data.items || data)} />
                       </Col>
                       <Col md="5" className="p-4">
+                        <ClubLeaderboard />
                         <CookieLeaderboard />
                       </Col>
                     </Row>
