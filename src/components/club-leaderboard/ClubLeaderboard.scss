@@ -1,0 +1,16 @@
+@import "../../scss/variables.scss";
+
+.club-leaderboard-container {
+  background-color: #fff;
+  border-radius: 13px;
+  padding: 1rem;
+  margin-bottom: 30px;
+
+  h2 {
+    color: $primaryColor;
+    font-weight: 900;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}

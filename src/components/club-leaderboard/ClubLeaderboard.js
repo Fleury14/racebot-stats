@@ -3,7 +3,9 @@ import './ClubLeaderboard.scss';
 
 const ClubLeaderboard = (props) => {
   return (
-    <h2>Club Board</h2>
+    <div class="club-leaderboard-container">
+      <h2>Club Board</h2>
+    </div>
   );
 }
 
