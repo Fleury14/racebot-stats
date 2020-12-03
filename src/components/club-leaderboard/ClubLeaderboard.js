@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import './ClubLeaderboard.scss';
 import { ReduxEventsData } from '../redux-data';
+import ClubHeader from './ClubHeader';
 
 const CLUB_NAMES = ['Underground Racing Club Season 2', 'Lunar Racing Club Season 2', 'MJC 2', 'Enterprise Legacy', 'SS2']
 const ABBREVIATIONS = ['URC', 'LRC', 'MJC', 'EL', 'SS'];
@@ -14,6 +15,30 @@ class ClubLeaderboard extends Component {
   switchClub(abbrev) {
     const newIndex = ABBREVIATIONS.indexOf(abbrev);
     this.setState({ activeClub: newIndex });
+  }
+
+  componentDidMount() {
+    const today = new Date();
+    const currentDay = today.getDay();
+    switch (currentDay) {
+      case 2:
+        this.setState({ activeClub: 0 });
+        break;
+      case 3:
+        this.setState({ activeClub: 2 });
+        break;
+      case 4:
+        this.setState({ activeClub: 1 });
+        break;
+      case 6:
+        this.setState({ activeClub: 3 });
+        break;
+      case 0:
+        this.setState({ activeClub: 4 });
+        break;
+      default:
+        break;
+    }
   }
 
   renderLeaderboard(clubData) {
@@ -46,14 +71,10 @@ class ClubLeaderboard extends Component {
             <div className="club-leaderboard-container">
               <h2>Club Leaderboard</h2>
               {/* Club header that can select one of the clubs and adjusts state when selected */}
-              {ABBREVIATIONS.map(abbrev => {
-                return <Button
-                  key={abbrev}
-                  onClick={() => this.switchClub(abbrev)}
-                >
-                  {abbrev}
-                </Button>
-              })}
+              <ClubHeader
+                abbreviations={ABBREVIATIONS}
+                onClick={abbrev => this.switchClub(abbrev)}
+              />
               {/* Club content that displays the data of the selected index, for now just name and rating */}
               {this.renderLeaderboard(activeEventData)}
             </div>
