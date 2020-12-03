@@ -72,6 +72,7 @@ class ClubLeaderboard extends Component {
               <h2>Club Leaderboard</h2>
               {/* Club header that can select one of the clubs and adjusts state when selected */}
               <ClubHeader
+                activeClub={activeClub}
                 abbreviations={ABBREVIATIONS}
                 onClick={abbrev => this.switchClub(abbrev)}
               />
