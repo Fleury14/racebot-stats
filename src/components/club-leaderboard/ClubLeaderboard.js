@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import './ClubLeaderboard.scss';
 import { ReduxEventsData } from '../redux-data';
 import ClubHeader from './ClubHeader';
@@ -21,6 +21,7 @@ class ClubLeaderboard extends Component {
     const today = new Date();
     const currentDay = today.getDay();
     switch (currentDay) {
+      case 1:
       case 2:
         this.setState({ activeClub: 0 });
         break;
@@ -30,6 +31,7 @@ class ClubLeaderboard extends Component {
       case 4:
         this.setState({ activeClub: 1 });
         break;
+      case 5:
       case 6:
         this.setState({ activeClub: 3 });
         break;
@@ -42,15 +44,16 @@ class ClubLeaderboard extends Component {
   }
 
   renderLeaderboard(clubData) {
+    const NUM_TO_DISPLAY = 10;
     if(clubData === null) return;
     const { entrants } = clubData;
     const sortedEntrants = entrants.sort((entrantOne, entrantTwo) => entrantTwo.points - entrantOne.points);
     return sortedEntrants.map((entrant, index) => {
       
-      return index < 5 ? (
-        <div key={index}>
-          <span>{entrant.name}</span>
-          <span>{entrant.points}</span>
+      return index < NUM_TO_DISPLAY ? (
+        <div key={index} className={`d-flex justify-content-between club-leaderboard-bottom`}>
+          <span>{index + 1}. <Link to={`/racer/${entrant.id}`}>{entrant.name}</Link></span>
+          <span className="club-leaderboard-points">{entrant.points}</span>
         </div>
       ) : null;
     }) 
