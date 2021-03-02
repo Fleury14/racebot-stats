@@ -17,7 +17,8 @@ import Wagers from './wagers/Wagers';
 import DrawBadges from './draw-badges/DrawBadges';
 import Featured from './featured/Featured';
 import EventsComponent from './events/Events';
+import ClubLeaderboard from './club-leaderboard/ClubLeaderboard';
 
 export { Navbar, Main, WinLoss, CurrentRaces, PlayerSearcher, RacerStats, SelectedRace, CookieLeaderboard,
   Twov2Stats, RaceDirectory, PlayerDirectory, ErrorComponent, RecentlyCompletedRaces, LoadingModal,
-  FlagStats, Wagers, DrawBadges, Featured, EventsComponent };
+  FlagStats, Wagers, DrawBadges, Featured, EventsComponent, ClubLeaderboard };
