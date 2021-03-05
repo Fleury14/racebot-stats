@@ -55,7 +55,10 @@ export const getRacerData = (racer) => {
         // }
         // oldver
         if (response.data.race_details.races_completed) {
+          console.log('response from single racer', response.data);
+          // response.data = filterFERaces(response.data);
           response.data.race_details.races_completed.reverse();
+
         }
         response.data.dataTime = Date.now();
         dispatch(loadFinish(response.data, DATA_DONE_LOADING_RACER));
@@ -82,6 +85,8 @@ export const getRacerDataById = (racerId) => {
         // }
         // oldver
         if (response.data.race_details.races_completed) {
+          // const test = filterFERaces(response.data);
+          response.data.race_details.races_completed = response.data.race_details.races_completed.filter(race => race.indexOf('ff4fe') >= 0);
           response.data.race_details.races_completed.reverse();
         }
         response.data.dataTime = Date.now();
