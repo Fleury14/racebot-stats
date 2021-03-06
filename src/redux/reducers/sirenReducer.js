@@ -11,7 +11,7 @@ export default (state = INITIAL_STATE, action) => {
     case DATA_DONE_LOADING_SIREN_RACERS:
       return { ...state, entrants: action.payload.entrants, loading: false }
     case DATA_DONE_LOADING_SIREN_RACES:
-      return { ...state, entrants: action.payload.races, loading: false }
+      return { ...state, races: action.payload.races, loading: false }
     default:
       return state;
   }

@@ -5,5 +5,6 @@ import ReduxRacerData from './ReduxRacerData';
 import ReduxRacerStatData from './ReduxRacerStatData';
 import ReduxFeaturedData from './ReduxFeaturedData';
 import ReduxEventsData from './ReduxEventsData';
+import ReduxSirenData from './ReduxSirenData';
 
-export { ReduxMainData, ReduxSingleRaceData, ReduxRacerData, ReduxSingleRacerData, ReduxRacerStatData, ReduxFeaturedData, ReduxEventsData };
+export { ReduxMainData, ReduxSingleRaceData, ReduxRacerData, ReduxSingleRacerData, ReduxRacerStatData, ReduxFeaturedData, ReduxEventsData, ReduxSirenData };

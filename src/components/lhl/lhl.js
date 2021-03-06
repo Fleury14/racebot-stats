@@ -2,27 +2,36 @@ import React from 'react';
 import { Navbar } from '../../components';
 import LHLRaces from './lhl-races';
 import LHLStandings from './lhl-standings';
+import { ReduxSirenData } from '../redux-data';
 import { Container, Row, Col } from 'reactstrap';
 import './lhl.scss';
 
 const LHL = (props) => {
   return (
-    <>
-      <Navbar />
-      <div className="open-sans lhl">
-        <h1>Lali-ho League</h1>
-        <Container>
-          <Row>
-            <Col md="6">
-              <LHLRaces />
-            </Col>
-            <Col md="6">
-              <LHLStandings />
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    </>
+    <ReduxSirenData>
+      {(sirenData) => {
+        console.log('siren data in lhl', sirenData);
+        return (
+          <>
+            <Navbar />
+            <div className="open-sans lhl">
+              <h1>Lali-ho League</h1>
+              <Container>
+                <Row>
+                  <Col md="12">
+                    <LHLRaces races={sirenData.races} />
+                  </Col>
+                  <Col md="12">
+                    <LHLStandings entrants={sirenData.entrants} />
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          </>
+        );
+      }}
+      
+    </ReduxSirenData>
   )
 }
 

@@ -21,13 +21,28 @@ const loadError = error => ({
 
 const sirenUrl = 'http://zoevee.net:5000/siren/api';
 
-const getEntrants = () => {
+export const getEntrants = () => {
   return (dispatch) => {
     dispatch(loadStart());
-    axios.get(`${sirenUrl}/entrants`)
+    axios.get(`${sirenUrl}/entrants`, { headers: { 
+      
+     } })
       .then(response => {
-        console.log('response', response);
-        dispatch(loadFinish(response, 'entrants', DATA_DONE_LOADING_SIREN_RACERS));
+        console.log('response', response.data);
+        dispatch(loadFinish(response.data, 'entrants', DATA_DONE_LOADING_SIREN_RACERS));
+      })
+      .catch(err => {
+        dispatch(loadError(err))
+      })
+  }
+}
+
+export const getRaces = () => {
+  return (dispatch) => {
+    dispatch(loadStart());
+    axios.get(`${sirenUrl}/matches`)
+      .then(response => {
+        dispatch(loadFinish(response.data, 'races', DATA_DONE_LOADING_SIREN_RACES))
       })
       .catch(err => {
         dispatch(loadError(err))
