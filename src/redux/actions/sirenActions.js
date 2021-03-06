@@ -28,7 +28,6 @@ export const getEntrants = () => {
       
      } })
       .then(response => {
-        console.log('response', response.data);
         dispatch(loadFinish(response.data, 'entrants', DATA_DONE_LOADING_SIREN_RACERS));
       })
       .catch(err => {

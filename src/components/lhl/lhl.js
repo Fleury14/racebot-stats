@@ -10,7 +10,7 @@ const LHL = (props) => {
   return (
     <ReduxSirenData>
       {(sirenData) => {
-        console.log('siren data in lhl', sirenData);
+        // console.log('siren data in lhl', sirenData);
         return (
           <>
             <Navbar />
