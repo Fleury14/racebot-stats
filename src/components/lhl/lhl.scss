@@ -16,3 +16,42 @@
   padding: 6px 0px;
   border-top: 2px solid #aaa;
 }
+
+.restream-1 {
+  color: #fff;
+  background-color: #000159;
+  padding: 5px;
+}
+
+.restream-2 {
+  color: #fff;
+  background-color: lighten(#000159, 5);
+  padding: 5px;
+}
+
+.restream-3 {
+  color: #fff;
+  background-color: lighten(#000159, 10);
+  padding: 5px;
+}
+
+.restream-4 {
+  color: #fff;
+  background-color: lighten(#000159, 15);
+  padding: 5px;
+}
+
+.unscheduled {
+  background-color: #ffdddd;
+  padding: 3px;
+}
+
+.scheduled {
+  background-color: #ffffdd;
+  padding: 3px;
+}
+
+.completed {
+  background-color: #ddffdd;
+  padding: 3px;
+}

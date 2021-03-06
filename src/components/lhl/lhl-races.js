@@ -73,14 +73,14 @@ class LHLRaces extends Component {
                   <span>{race.racer1} vs. {race.racer2}</span>
                 </Col>
                 <Col md="2">
-                  <span>{race.status}</span>
+                  <span className={race.status === 'Scheduled' ? 'scheduled' : race.status === 'Completed' ? 'completed' : 'unscheduled'}>{race.status}</span>
                 </Col> 
                 <Col md="6">
                   <div>
-                    {race.restream.channel && <p>Channel: {race.restream.channel}</p>}
-                    {race.restream.commentary && race.restream.commentary.length && <p>Commentary: {race.restream.commentary[0] + ' ' + race.restream.commentary[1]}</p>}
-                    {race.restream.restreamer && <p>Restream: {race.restream.restreamer}</p>}
-                    {race.restream.tracker && <p>Tracker: {race.restream.tracker}</p>}
+                    {race.restream.channel && <p><span className="restream-1">Channel:</span> {race.restream.channel}</p>}
+                    {race.restream.commentary && race.restream.commentary.length && <p><span className="restream-2">Commentary:</span> {race.restream.commentary[0] + ' ' + race.restream.commentary[1]}</p>}
+                    {race.restream.restreamer && <p><span className="restream-3">Restream:</span> {race.restream.restreamer}</p>}
+                    {race.restream.tracker && <p><span className="restream-4">Tracker:</span> {race.restream.tracker}</p>}
 
                   </div>
                 </Col>
