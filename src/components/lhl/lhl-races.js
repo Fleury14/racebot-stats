@@ -4,7 +4,7 @@ import './lhl.scss';
 
 class LHLRaces extends Component {
   state = {
-    raceType: 'all',
+    raceType: 'scheduled',
   }
 
   changeView(view) {
@@ -24,7 +24,9 @@ class LHLRaces extends Component {
       case 'scheduled':
         return races.filter(race => race.status === 'Scheduled');
       case 'completed':
-        return races.filter(race => race.status === 'Completed')
+        return races.filter(race => race.status === 'Completed');
+      case 'unscheduled':
+        return races.filter(race => race.status === 'Unscheduled');
       default:
         return races;
     }
@@ -45,16 +47,20 @@ class LHLRaces extends Component {
         <h2>Races</h2>
         <div className="d-flex">
           <FormGroup check className="mr-5">
-            <Input type="radio" name="radio1" onClick={() => this.changeView('all')} defaultChecked></Input>
+            <Input type="radio" name="radio1" onClick={() => this.changeView('all')}></Input>
             <Label>All Races</Label>
           </FormGroup>
           <FormGroup check className="mr-5">
-            <Input type="radio" name="radio1" onClick={() => this.changeView('scheduled')}></Input>
+            <Input type="radio" name="radio1" onClick={() => this.changeView('scheduled')} defaultChecked></Input>
             <Label>Upcoming Scheduled Races</Label>
           </FormGroup>
           <FormGroup check className="mr-5">
             <Input type="radio" name="radio1" onClick={() => this.changeView('completed')}></Input>
             <Label>Completed Races</Label>
+          </FormGroup>
+          <FormGroup check className="mr-5">
+            <Input type="radio" name="radio1" onClick={() => this.changeView('unscheduled')}></Input>
+            <Label>Unscheduled Races</Label>
           </FormGroup>
         </div>
         <Container fluid>
@@ -84,7 +90,7 @@ class LHLRaces extends Component {
                 </Col>
                 <Col md="2">
                   {race.date && <span>{this.formatDate(race.date)}</span>}</Col> 
-                <Col md="6">
+                <Col md="4">
                   <div>
                     {race.restream.channel && <p><span className="restream-1">Channel:</span> {race.restream.channel}</p>}
                     {race.restream.commentary && race.restream.commentary.length && <p><span className="restream-2">Commentary:</span> {race.restream.commentary[0] + ' ' + race.restream.commentary[1]}</p>}
