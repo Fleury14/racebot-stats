@@ -27,6 +27,8 @@ class LHLRaces extends Component {
         return races.filter(race => race.status === 'Completed');
       case 'unscheduled':
         return races.filter(race => race.status === 'Unscheduled');
+      case 'hide-all':
+        return [];
       default:
         return races;
     }
@@ -61,6 +63,10 @@ class LHLRaces extends Component {
           <FormGroup check className="mr-5">
             <Input type="radio" name="radio1" onClick={() => this.changeView('unscheduled')}></Input>
             <Label>Unscheduled Races</Label>
+          </FormGroup>
+          <FormGroup check className="mr-5">
+            <Input type="radio" name="radio1" onClick={() => this.changeView('hide-all')}></Input>
+            <Label>Hide all races</Label>
           </FormGroup>
         </div>
         <Container fluid>
