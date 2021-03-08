@@ -5,6 +5,7 @@ import './lhl.scss';
 const LHLStandings = (props) => {
   const { entrants } = props;
   if (!entrants) return <h2>Standings</h2>
+  const sortedEntrants = entrants.sort((a, b) => b.swisspoints - a.swisspoints);
   return (
     <>
       <h2>Standings</h2>
@@ -18,7 +19,7 @@ const LHLStandings = (props) => {
             </Col>
             <Col md="6">Race History</Col>
           </Row>
-        {entrants.map(entrant => {
+        {sortedEntrants.map(entrant => {
           return (
             (
               <Row className="race-row" key={entrant.displayname}>
