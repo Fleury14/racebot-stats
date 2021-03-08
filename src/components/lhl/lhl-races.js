@@ -11,6 +11,13 @@ class LHLRaces extends Component {
     this.setState({ raceType: view });
   }
 
+  formatDate(string) {
+    const matchDate = new Date(string)
+    const newString = new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'short' }).format(matchDate);
+    return newString;
+
+  }
+
   renderRaces(races) {
     const { raceType } = this.state;
     switch (raceType) {
@@ -27,6 +34,11 @@ class LHLRaces extends Component {
     const { races } = this.props;
 
     if (!races) return <h2>Races</h2>
+    const sortedByDate = races.sort((a, b) => {
+      const time1 = new Date(a.date).getTime();
+      const time2 = new Date(b.date).getTime();
+      return time1 - time2;
+    })
     let display = this.renderRaces(races);
     return (
       <>
@@ -53,7 +65,10 @@ class LHLRaces extends Component {
             <Col md="2">
               <p>Status</p>
             </Col>
-            <Col md="6">
+            <Col md="2">
+              <p>Date</p>
+            </Col>
+            <Col md="4">
               <p>Restream Info</p>
             </Col>
           </Row>
@@ -66,7 +81,9 @@ class LHLRaces extends Component {
                 </Col>
                 <Col md="2">
                   <span className={race.status === 'Scheduled' ? 'scheduled' : race.status === 'Completed' ? 'completed' : 'unscheduled'}>{race.status}</span>
-                </Col> 
+                </Col>
+                <Col md="2">
+                  {race.date && <span>{this.formatDate(race.date)}</span>}</Col> 
                 <Col md="6">
                   <div>
                     {race.restream.channel && <p><span className="restream-1">Channel:</span> {race.restream.channel}</p>}
