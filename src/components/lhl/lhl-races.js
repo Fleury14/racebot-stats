@@ -59,16 +59,8 @@ class LHLRaces extends Component {
           </Row>
          
           {display.map((race, index) => {
-            if (index === 1) {
-              race.restream = {
-                channel: "freeenterprise",
-                restreamer: 'SchalaKitty',
-                commentary: ['Invenerable', 'riversmccown'],
-                tracker: 'Antidale'
-              }
-            }
             return (
-              <Row key={race.id} className="race-row">
+              <Row key={race.id} className={`race-row${index % 2 === 0 ? ' striped' : ''}`}>
                 <Col md="4">
                   <span>{race.racer1} vs. {race.racer2}</span>
                 </Col>
