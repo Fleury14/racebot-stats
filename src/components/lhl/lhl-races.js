@@ -1,5 +1,6 @@
 import React, { Component }from 'react';
 import { Container, Row, Col, Input, FormGroup, Label } from 'reactstrap';
+import parseTime from '../../helpers/parseTime';
 import './lhl.scss';
 
 class LHLRaces extends Component {
@@ -36,6 +37,7 @@ class LHLRaces extends Component {
 
   render() {
     const { races } = this.props;
+    
 
     if (!races) return <h2>Races</h2>
     const sortedByDate = races.sort((a, b) => {
@@ -44,6 +46,7 @@ class LHLRaces extends Component {
       return time1 - time2;
     })
     let display = this.renderRaces(races);
+    console.log('races', display);
     return (
       <>
         <h2>Races</h2>
@@ -86,6 +89,7 @@ class LHLRaces extends Component {
           </Row>
          
           {display.map((race, index) => {
+            // console.log(race.results);
             return (
               <Row key={race.id} className={`race-row${index % 2 === 0 ? ' striped' : ''}`}>
                 <Col md="4">
@@ -97,13 +101,22 @@ class LHLRaces extends Component {
                 <Col md="2">
                   {race.date && <span>{this.formatDate(race.date)}</span>}</Col> 
                 <Col md="4">
-                  <div>
-                    {race.restream.channel && <p><span className="restream-1">Channel:</span> {race.restream.channel}</p>}
-                    {race.restream.commentary && race.restream.commentary.length && <p><span className="restream-2">Commentary:</span> {race.restream.commentary[0] + ' ' + race.restream.commentary[1]}</p>}
-                    {race.restream.restreamer && <p><span className="restream-3">Restream:</span> {race.restream.restreamer}</p>}
-                    {race.restream.tracker && <p><span className="restream-4">Tracker:</span> {race.restream.tracker}</p>}
+                  {race.status === 'Completed' && race.results ? (
+                    <>
+                      <span className={race.results && race.results.winner === 1 ? 'winner' : 'not-winner'}>{race.racer1} ({parseTime(race.results.racer1)})</span>
+                      <span> - </span>
+                      <span className={race.results && race.results.winner === 2 ? 'winner' : 'not-winner'}>{race.racer2} ({parseTime(race.results.racer2)})</span>
+                    </>
+                  ) : (
+                    <div>
+                      {race.restream.channel && <p><span className="restream-1">Channel:</span> {race.restream.channel}</p>}
+                      {race.restream.commentary && race.restream.commentary.length && <p><span className="restream-2">Commentary:</span> {race.restream.commentary[0] + ' ' + race.restream.commentary[1]}</p>}
+                      {race.restream.restreamer && <p><span className="restream-3">Restream:</span> {race.restream.restreamer}</p>}
+                      {race.restream.tracker && <p><span className="restream-4">Tracker:</span> {race.restream.tracker}</p>}
 
-                  </div>
+                    </div>
+                  )}
+                  
                 </Col>
               </Row>
               
