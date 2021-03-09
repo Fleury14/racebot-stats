@@ -46,7 +46,7 @@ class LHLRaces extends Component {
       return time1 - time2;
     })
     let display = this.renderRaces(races);
-    console.log('races', display);
+
     return (
       <>
         <h2>Races</h2>
@@ -84,7 +84,7 @@ class LHLRaces extends Component {
               <p>Date</p>
             </Col>
             <Col md="4">
-              <p>Restream Info</p>
+              <p>{this.state.raceType === "completed" ? "Results" : "Restream Info"}</p>
             </Col>
           </Row>
          
