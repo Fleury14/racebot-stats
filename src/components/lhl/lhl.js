@@ -22,7 +22,7 @@ const LHL = (props) => {
                     <LHLRaces races={sirenData.races} />
                   </Col>
                   <Col md="12">
-                    <LHLStandings entrants={sirenData.entrants} />
+                    <LHLStandings races={sirenData.races} entrants={sirenData.entrants} />
                   </Col>
                 </Row>
               </Container>
