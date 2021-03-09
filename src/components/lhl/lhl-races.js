@@ -74,16 +74,16 @@ class LHLRaces extends Component {
         </div>
         <Container fluid>
           <Row className="title-row">
-            <Col md="4">
+            <Col md="10" lg="4">
               <p>Matchup</p>
             </Col>
-            <Col md="1">
+            <Col md="2" lg="1">
               <p>Status</p>
             </Col>
-            <Col md="3">
+            <Col md="6" lg="3">
               <p>Date</p>
             </Col>
-            <Col md="4">
+            <Col md="6" lg="4">
               <p>{this.state.raceType === "completed" ? "Results" : "Restream Info"}</p>
             </Col>
           </Row>
@@ -92,15 +92,15 @@ class LHLRaces extends Component {
             // console.log(race.results);
             return (
               <Row key={race.id} className={`race-row${index % 2 === 0 ? ' striped' : ''}`}>
-                <Col md="4">
+                <Col md="10" lg="4">
                   <span>{race.racer1} vs. {race.racer2}</span>
                 </Col>
-                <Col md="1">
+                <Col md="2" lg="1">
                   <span className={race.status === 'Scheduled' ? 'scheduled' : race.status === 'Completed' ? 'completed' : 'unscheduled'}>{race.status}</span>
                 </Col>
-                <Col md="3" className="smaller-date-please d-flex align-items-flex-start">
+                <Col md="6" lg="3" className="smaller-date-please d-flex align-items-flex-start">
                   {race.date && <span>{this.formatDate(race.date)}</span>}</Col> 
-                <Col md="4">
+                <Col md="6" lg="4">
                   {race.status === 'Completed' && race.results ? (
                     <>
                       <span className={race.results && race.results.winner === 1 ? 'winner' : 'not-winner'}>{race.racer1} ({parseTime(race.results.racer1)})</span>
