@@ -98,7 +98,7 @@ class LHLRaces extends Component {
                 <Col md="1">
                   <span className={race.status === 'Scheduled' ? 'scheduled' : race.status === 'Completed' ? 'completed' : 'unscheduled'}>{race.status}</span>
                 </Col>
-                <Col md="3" className="smaller-date-please d-flex align-items-center">
+                <Col md="3" className="smaller-date-please d-flex align-items-flex-start">
                   {race.date && <span>{this.formatDate(race.date)}</span>}</Col> 
                 <Col md="4">
                   {race.status === 'Completed' && race.results ? (

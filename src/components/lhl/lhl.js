@@ -16,7 +16,7 @@ const LHL = (props) => {
             <Navbar />
             <div className="open-sans lhl">
               <h1>Lali-ho League</h1>
-              <Container>
+              <Container fluid>
                 <Row>
                   <Col md="12">
                     <LHLRaces races={sirenData.races} />
