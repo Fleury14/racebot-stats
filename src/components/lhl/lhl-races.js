@@ -52,24 +52,24 @@ class LHLRaces extends Component {
         <h2>Races</h2>
         <div className="d-flex">
           <FormGroup check className="mr-5">
-            <Input type="radio" name="radio1" onClick={() => this.changeView('all')}></Input>
-            <Label>All Races</Label>
+            <Input type="radio" name="radio1" id="radio-option-1" onClick={() => this.changeView('all')}></Input>
+            <Label for="radio-option-1">All Races</Label>
           </FormGroup>
           <FormGroup check className="mr-5">
-            <Input type="radio" name="radio1" onClick={() => this.changeView('scheduled')} defaultChecked></Input>
-            <Label>Upcoming Scheduled Races</Label>
+            <Input type="radio" name="radio1" id="radio-option-2" onClick={() => this.changeView('scheduled')} defaultChecked></Input>
+            <Label for="radio-option-2">Upcoming Scheduled Races</Label>
           </FormGroup>
           <FormGroup check className="mr-5">
-            <Input type="radio" name="radio1" onClick={() => this.changeView('completed')}></Input>
-            <Label>Completed Races</Label>
+            <Input type="radio" name="radio1" id="radio-option-3" onClick={() => this.changeView('completed')}></Input>
+            <Label for="radio-option-3">Completed Races</Label>
           </FormGroup>
           <FormGroup check className="mr-5">
-            <Input type="radio" name="radio1" onClick={() => this.changeView('unscheduled')}></Input>
-            <Label>Unscheduled Races</Label>
+            <Input type="radio" name="radio1" id="radio-option-4" onClick={() => this.changeView('unscheduled')}></Input>
+            <Label for="radio-option-4">Unscheduled Races</Label>
           </FormGroup>
           <FormGroup check className="mr-5">
-            <Input type="radio" name="radio1" onClick={() => this.changeView('hide-all')}></Input>
-            <Label>Hide all races</Label>
+            <Input type="radio" name="radio1" id="radio-option-5" onClick={() => this.changeView('hide-all')}></Input>
+            <Label for="radio-option-5">Hide all races</Label>
           </FormGroup>
         </div>
         <Container fluid>
