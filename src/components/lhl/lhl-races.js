@@ -69,24 +69,27 @@ class LHLRaces extends Component {
           </FormGroup>
           <FormGroup check className="mr-5">
             <Input type="radio" name="radio1" id="radio-option-5" onClick={() => this.changeView('hide-all')}></Input>
-            <Label for="radio-option-5">Hide all races</Label>
+            <Label for="radio-option-5">Hide all races (Standings only)</Label>
           </FormGroup>
         </div>
         <Container fluid>
-          <Row className="title-row">
-            <Col md="10" lg="4">
-              <p>Matchup</p>
-            </Col>
-            <Col md="2" lg="1">
-              <p>Status</p>
-            </Col>
-            <Col md="6" lg="3">
-              <p>Date</p>
-            </Col>
-            <Col md="6" lg="4">
-              <p>{this.state.raceType === "completed" ? "Results" : "Restream Info"}</p>
-            </Col>
-          </Row>
+          {this.state.raceType !== 'hide-all' ? (
+            <Row className="title-row">
+              <Col md="10" lg="4">
+                <p>Matchup</p>
+              </Col>
+              <Col md="2" lg="1">
+                <p>Status</p>
+              </Col>
+              <Col md="6" lg="3">
+                <p>Date</p>
+              </Col>
+              <Col md="6" lg="4">
+                <p>{this.state.raceType === "completed" ? "Results" : "Restream Info"}</p>
+              </Col>
+            </Row>
+          ) : null}
+          
          
           {display.map((race, index) => {
             // console.log(race.results);
