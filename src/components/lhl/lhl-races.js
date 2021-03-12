@@ -13,9 +13,8 @@ class LHLRaces extends Component {
   }
 
   formatDate(string) {
-    const matchDate = new Date(string)
-    if (matchDate instanceof Date && !isNaN(matchDate.valueOf() === false)) return '';
-    const newString = new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'short' }).format(matchDate);
+    const matchDate = new Date(string.replace(' ', 'T'));
+    const newString = new Intl.DateTimeFormat('en-US', { weekday: 'long', month:'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true }).format(matchDate);
     return newString;
 
   }
