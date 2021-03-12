@@ -43,9 +43,9 @@ class LHLRaces extends Component {
 
     if (!races) return <h2>Races</h2>
     const sortedByDate = races.sort((a, b) => {
-      const time1 = new Date(a.date).getTime();
-      const time2 = new Date(b.date).getTime();
-      return time1 - time2;
+      const time1 = a.date ? new Date(a.date.replace(' ', 'T')).getTime() : 0;
+      const time2 = b.date ? new Date(b.date.replace(' ', 'T')).getTime() : 0;
+      return this.state.raceType !== 'completed' ? time1 - time2 : time2 - time1;
     })
     let display = this.renderRaces(races);
 
