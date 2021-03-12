@@ -40,7 +40,7 @@ const LHLStandings = (props) => {
           const chips = createChips(races, entrant.displayname);
           return (
             (
-              <Row className="race-row" key={entrant.displayname}>
+              <Row className={`race-row${entrant.hasDropped ? ' has-dropped' : ''}`}key={entrant.displayname}>
                 <Col md="4">
                   {entrant.displayname}
                 </Col>
@@ -66,6 +66,10 @@ const LHLStandings = (props) => {
             )
           );
         })}
+        <div className="d-flex mt-4 align-items-center">
+          <p className="dropped-legend"></p>
+          <p>Has dropped from tournament</p>
+        </div>
       </Container>
       
     </>
