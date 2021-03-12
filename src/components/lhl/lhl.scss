@@ -77,3 +77,10 @@
   background-color: #fdd;
   padding: 3px 5px;
 }
+
+@media only screen and (max-width: 578px) {
+  .race-row > div {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}

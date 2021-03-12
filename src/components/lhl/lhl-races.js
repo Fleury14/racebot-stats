@@ -14,10 +14,13 @@ class LHLRaces extends Component {
 
   formatDate(string) {
     const matchDate = new Date(string)
+    if (matchDate instanceof Date && !isNaN(matchDate.valueOf() === false)) return '';
     const newString = new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'short' }).format(matchDate);
     return newString;
 
   }
+
+  
 
   renderRaces(races) {
     const { raceType } = this.state;
@@ -50,7 +53,7 @@ class LHLRaces extends Component {
     return (
       <>
         <h2>Races</h2>
-        <div className="d-flex">
+        <div className="d-flex flex-wrap">
           <FormGroup check className="mr-5">
             <Input type="radio" name="radio1" id="radio-option-1" onClick={() => this.changeView('all')}></Input>
             <Label for="radio-option-1">All Races</Label>
