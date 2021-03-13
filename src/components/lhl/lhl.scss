@@ -67,9 +67,9 @@
 }
 
 .tied {
-  background-color: #ddf;
+  background-color: lighten(gold, 40);
   padding: 3px;
-  
+
 }
 
 .chip-win {
@@ -86,7 +86,7 @@
 
 .chip-tie {
   font-size: 12px;
-  background-color: #ddf;
+  background-color: lighten(gold, 40);
   padding: 3px 5px;
 }
 
