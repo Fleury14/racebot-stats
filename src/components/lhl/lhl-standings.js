@@ -9,9 +9,9 @@ function createChips(races, entrant) {
   filteredRaces.forEach(race => {
     if (race.results && race.results.winner) {
       if (race.racer1 === entrant) {
-        chips.push({ result: race.results.winner === 1 ? 'W' : 'L', opponent: race.racer2  });
+        chips.push({ result: race.results.winner === 1 ? 'W' : race.results.winner === 3 ? 'T' : 'L', opponent: race.racer2  });
       } else {
-        chips.push({ result: race.results.winner === 2 ? 'W' : 'L', opponent: race.racer1  });
+        chips.push({ result: race.results.winner === 2 ? 'W' : race.results.winner === 3 ? 'T' : 'L', opponent: race.racer1  });
       }
     } 
   });
@@ -56,6 +56,9 @@ const LHLStandings = (props) => {
                         break;
                       case 'L':
                         chipClass = 'chip-loss';
+                        break;
+                      case 'T':
+                        chipClass = 'chip-tie';
                         break;
                       default:
                     }

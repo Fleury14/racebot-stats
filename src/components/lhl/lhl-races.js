@@ -108,9 +108,9 @@ class LHLRaces extends Component {
                 <Col md="6" lg="4">
                   {race.status === 'Completed' && race.results ? (
                     <>
-                      <span className={race.results && race.results.winner === 1 ? 'winner' : 'not-winner'}>{race.racer1} ({parseTime(race.results.racer1)})</span>
+                      <span className={race.results && race.results.winner === 1 ? 'winner' : race.results.winner === 3 ? 'tied' : 'not-winner'}>{race.racer1} ({parseTime(race.results.racer1)})</span>
                       <span> - </span>
-                      <span className={race.results && race.results.winner === 2 ? 'winner' : 'not-winner'}>{race.racer2} ({parseTime(race.results.racer2)})</span>
+                      <span className={race.results && race.results.winner === 2 ? 'winner' : race.results.winner === 3 ? 'tied' : 'not-winner'}>{race.racer2} ({parseTime(race.results.racer2)})</span>
                     </>
                   ) : (
                     <div>
