@@ -14,6 +14,11 @@ class LHLRaces extends Component {
 
   formatDate(string) {
     const matchDate = new Date(string.replace(' ', 'T'));
+    // const rawDate = new Date(string.replace(' ', 'T')); // get raw date from db in eastern
+    // const inputtedTime = rawDate.getTime(); // get time number
+    // const utcDate = new Date(inputtedTime + (1000 * 60 * 60 * 4)); // add 4 hours to convert to UTC
+    // const offset = new Date().getTimezoneOffset(); // get browsers offset from UTC (in minutes)
+    // const matchDate = new Date(utcDate.getTime() - (offset * 1000 * 60)); // apply offset to UTC dat
     const newString = new Intl.DateTimeFormat('en-US', { weekday: 'long', month:'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true }).format(matchDate);
     return newString;
 
@@ -95,6 +100,7 @@ class LHLRaces extends Component {
          
           {display.map((race, index) => {
             // console.log(race.results);
+            if (race.racer1 === 'LUF' || race.racer2 === 'LUF') console.log(race)
             return (
               <Row key={race.id} className={`race-row${index % 2 === 0 ? ' striped' : ''}`}>
                 <Col md="10" lg="4">
