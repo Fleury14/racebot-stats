@@ -5,7 +5,7 @@ const ParseWinLoss = (data) => {
   const forfeitString = 'Forfeited';
   const completedString = 'Completed';
   const twov2String = '2v2';
-  const leagueFlags = 'V1 Jia Kqm Pk Cnx -hobs T3gr S2 B F Nck Gl Etf Xsbk -noadamants -aa -fab -huh -z';
+  const leagueFlags = 'O1:quest_forge/2:quest_tradepink/3:quest_magnes/random:2,boss,char/req:4/win:crystal Kmain/summon/moon Pkey Cstandard/distinct:10/j:abilities/nekkie/bye Twildish/maxtier:6 Sstandard/sell:quarter Bstandard/alt:gauntlet Nchars/key Etoggle Glife/sylph -kit:basic -kit2:dwarf -noadamants -spoon -exp:noboost -vanilla:giant';
 
   // loop through each race
   for (let race of data) {
