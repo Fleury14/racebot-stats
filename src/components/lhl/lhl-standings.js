@@ -46,9 +46,10 @@ const LHLStandings = (props) => {
             if (chip.result === 'T') entrant.ties++; 
           });
           const isEliminated = entrant.losses + (entrant.ties / 3) >= 3;
+          const isAdvanced = entrant.swisspoints >= 10;
           return (
             (
-              <Row className={`race-row${entrant.hasDropped ? ' has-dropped' : ''}${isEliminated ? ' eliminated' : ''}`}key={entrant.displayname}>
+              <Row className={`race-row${entrant.hasDropped ? ' has-dropped' : ''}${isEliminated ? ' eliminated' : ''}${isAdvanced ? ' advanced' : ''}`}key={entrant.displayname}>
                 <Col md="4">
                   {entrant.displayname}
                 </Col>

@@ -100,7 +100,6 @@ class LHLRaces extends Component {
          
           {display.map((race, index) => {
             // console.log(race.results);
-            if (race.racer1 === 'LUF' || race.racer2 === 'LUF') console.log(race)
             return (
               <Row key={race.id} className={`race-row${index % 2 === 0 ? ' striped' : ''}`}>
                 <Col md="10" lg="4">
