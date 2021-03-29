@@ -94,11 +94,23 @@
   background-color: #ccf;
 }
 
+.eliminated {
+  background-color: #fee;
+}
+
 .dropped-legend {
   height: 20px;
   width: 40px;
   background-color: #ccf;
   margin-right: 20px;
+}
+
+.eliminated-legend {
+  height: 20px;
+  width: 40px;
+  background-color: #fee;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 @media only screen and (max-width: 578px) {

@@ -38,9 +38,17 @@ const LHLStandings = (props) => {
           </Row>
         {sortedEntrants.map(entrant => {
           const chips = createChips(races, entrant.displayname);
+          // console.log('entrant', entrant);
+          entrant.losses = 0;
+          entrant.ties = 0;
+          chips.forEach(chip => {
+            if (chip.result === 'L') entrant.losses++;
+            if (chip.result === 'T') entrant.ties++; 
+          });
+          const isEliminated = entrant.losses + (entrant.ties / 3) >= 3;
           return (
             (
-              <Row className={`race-row${entrant.hasDropped ? ' has-dropped' : ''}`}key={entrant.displayname}>
+              <Row className={`race-row${entrant.hasDropped ? ' has-dropped' : ''}${isEliminated ? ' eliminated' : ''}`}key={entrant.displayname}>
                 <Col md="4">
                   {entrant.displayname}
                 </Col>
@@ -72,6 +80,8 @@ const LHLStandings = (props) => {
         <div className="d-flex mt-4 align-items-center">
           <p className="dropped-legend"></p>
           <p>Has dropped from tournament</p>
+          <p className="eliminated-legend"></p>
+          <p>Has been eliminated from thee tournament</p>
         </div>
       </Container>
       
