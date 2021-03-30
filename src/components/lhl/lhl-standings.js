@@ -80,7 +80,7 @@ const LHLStandings = (props) => {
         })}
         <div className="d-flex mt-4 align-items-center justify-content-between flex-wrap">
           <p className="has-dropped p-2">Has dropped from tournament</p>
-          <p className="eliminated p-2">Has been eliminated from the tournament</p>
+          <p className="eliminated p-2">Has been eliminated from further advancement</p>
           <p className="advanced p-2">Has advanced to bracket stage</p>
         </div>
       </Container>
