@@ -22,7 +22,7 @@ function createChips(races, entrant) {
 const LHLStandings = (props) => {
   const { entrants, races } = props;
   if (!entrants) return <h2>Standings</h2>
-  const sortedEntrants = entrants.sort((a, b) => b.swisspoints - a.swisspoints);
+  const sortedEntrants = entrants.sort((a, b) => b.swisspoints - a.swisspoints || a.losses - b.losses);
   return (
     <>
       <h2>Standings</h2>
