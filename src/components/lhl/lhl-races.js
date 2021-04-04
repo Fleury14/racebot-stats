@@ -42,9 +42,16 @@ class LHLRaces extends Component {
     }
   }
 
+  checkPointTotal(racerName)  {
+    const { entrants } = this.props;
+    if (!racerName || !entrants) return '';
+    const foundRacer = entrants.find(entrant => entrant.displayname === racerName);
+    if (!foundRacer) return '';
+    return ` (${foundRacer.swisspoints})`
+  }
+
   render() {
     const { races } = this.props;
-    
 
     if (!races) return <h2>Races</h2>
     const sortedByDate = races.sort((a, b) => {
@@ -103,7 +110,7 @@ class LHLRaces extends Component {
             return (
               <Row key={race.id} className={`race-row${index % 2 === 0 ? ' striped' : ''}`}>
                 <Col md="10" lg="4">
-                  <span>{race.racer1} vs. {race.racer2}</span>
+                  <span>{race.racer1}{this.checkPointTotal(race.racer1)} vs. {race.racer2}{this.checkPointTotal(race.racer2)}</span>
                 </Col>
                 <Col md="2" lg="1">
                   <span className={race.status === 'Scheduled' ? 'scheduled' : race.status === 'Completed' ? 'completed' : 'unscheduled'}>{race.status}</span>

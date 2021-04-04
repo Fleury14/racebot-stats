@@ -19,7 +19,7 @@ const LHL = (props) => {
               <Container fluid>
                 <Row>
                   <Col md="12">
-                    <LHLRaces races={sirenData.races} />
+                    <LHLRaces races={sirenData.races} entrants={sirenData.entrants} />
                   </Col>
                   <Col md="12">
                     <LHLStandings races={sirenData.races} entrants={sirenData.entrants} />

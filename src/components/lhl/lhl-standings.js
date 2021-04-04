@@ -22,7 +22,9 @@ function createChips(races, entrant) {
 const LHLStandings = (props) => {
   const { entrants, races } = props;
   if (!entrants) return <h2>Standings</h2>
-  const sortedEntrants = entrants.sort((a, b) => b.swisspoints - a.swisspoints || a.losses - b.losses);
+  entrants.sort((a, b) => {  
+    return b.swisspoints - a.swisspoints || a.losses - b.losses
+  });
   return (
     <>
       <h2>Standings</h2>
@@ -36,7 +38,7 @@ const LHLStandings = (props) => {
             </Col>
             <Col md="6">Race History</Col>
           </Row>
-        {sortedEntrants.map(entrant => {
+        {entrants.map(entrant => {
           const chips = createChips(races, entrant.displayname);
           // console.log('entrant', entrant);
           entrant.losses = 0;
