@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Navbar, WinLoss, Twov2Stats, LoadingModal, DrawBadges } from '..';
 import { getRacerData, getBotData } from '../../redux/actions/BotActions';
 import { ReduxRacerStatData } from '../redux-data';
+import { hiddenRacers } from '../../data/hideStats';
 import RacerRecent from './RacerRecent';
 import './RacerStats.scss';
 import parse2v2Data from '../../helpers/Parse2v2';
@@ -62,8 +63,8 @@ class RacerStats extends Component {
                 {loading && <LoadingModal />}
                 <Navbar />
                 <div className="racer-stats-body p-5">
-                  {!racerData && <h1>There is no data for this racer.</h1>}
-                  {racerData && !loading && (
+                  {(!racerData || hiddenRacers.indexOf(this.props.match.params.racer) >= 0) ? <h1>There is no data for this racer.</h1> : null}
+                  {racerData && !loading && hiddenRacers.indexOf(this.props.match.params.racer) < 0 && (
                     <div>
                       <h1 className="racer-title text-uppercase text-center">{racerData.name}</h1>
                       {racerData.streamInfo && (
