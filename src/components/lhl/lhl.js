@@ -22,6 +22,9 @@ const LHL = (props) => {
                     <LHLRaces races={sirenData.races} entrants={sirenData.entrants} />
                   </Col>
                   <Col md="12">
+                    <iframe title="LHL Bracket" src="https://challonge.com/i8ddvaqr/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+                  </Col>
+                  <Col md="12">
                     <LHLStandings races={sirenData.races} entrants={sirenData.entrants} />
                   </Col>
                 </Row>
