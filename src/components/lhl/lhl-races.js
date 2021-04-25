@@ -91,7 +91,7 @@ class LHLRaces extends Component {
           </FormGroup>
           <FormGroup check className="mr-5">
             <Input type="radio" name="radio1" id="radio-option-5" onClick={() => this.changeView('hide-all')}></Input>
-            <Label for="radio-option-5">Hide all races (Standings only)</Label>
+            <Label for="radio-option-5">Hide all races (Bracket/Standings only)</Label>
           </FormGroup>
         </div>
         <Container fluid>
@@ -116,6 +116,7 @@ class LHLRaces extends Component {
           {display.map((race, index) => {
             // console.log(race);
             return (
+              
               <Row key={race.id} className={`race-row${index % 2 === 0 ? ' striped' : ''}`}>
                 <Col md="10" lg="4">
                   {race.game ? (
@@ -133,9 +134,9 @@ class LHLRaces extends Component {
                 <Col md="6" lg="4">
                   {race.status === 'Completed' && race.results ? (
                     <>
-                      <span className={race.results && race.results.winner === 1 ? 'winner' : race.results.winner === 3 ? 'tied' : 'not-winner'}>{race.racer1} ({parseTime(race.results.racer1)})</span>
+                      <span className={race.results && race.results.winner === 1 ? 'winner' : race.results.winner === 3 ? 'tied' : 'not-winner'}>{race.racer1} ({parseTime(race.results.racer1, !!race.game, race.results.winner === 1)})</span>
                       <span> - </span>
-                      <span className={race.results && race.results.winner === 2 ? 'winner' : race.results.winner === 3 ? 'tied' : 'not-winner'}>{race.racer2} ({parseTime(race.results.racer2)})</span>
+                      <span className={race.results && race.results.winner === 2 ? 'winner' : race.results.winner === 3 ? 'tied' : 'not-winner'}>{race.racer2} ({parseTime(race.results.racer2, !!race.game, race.results.winner === 2)})</span>
                     </>
                   ) : (
                     <div>

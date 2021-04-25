@@ -1,11 +1,11 @@
-export default function parseTime(total) {
+export default function parseTime(total, isPlayoff, isWinner) {
   // account for non-numbers in the event of a non-standard time
   if (isNaN(total)) {
     switch (total) {
       case 'Forced Win':
         return 'Forced Win';
       default:
-        return "Forfeit";
+        return isPlayoff ? isWinner ? "Advantage Win" : "Advantage Loss" : "Forfeit";
     }
     
   };
