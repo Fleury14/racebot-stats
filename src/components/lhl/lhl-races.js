@@ -106,11 +106,16 @@ class LHLRaces extends Component {
           
          
           {display.map((race, index) => {
-            // console.log(race.results);
+            // console.log(race);
             return (
               <Row key={race.id} className={`race-row${index % 2 === 0 ? ' striped' : ''}`}>
                 <Col md="10" lg="4">
-                  <span>{race.racer1}{this.checkPointTotal(race.racer1)} vs. {race.racer2}{this.checkPointTotal(race.racer2)}</span>
+                  {race.game ? (
+                    <span>{race.racer1} vs. {race.racer2} - Game {race.game}</span>
+                  ) : (
+                    <span>{race.racer1}{this.checkPointTotal(race.racer1)} vs. {race.racer2}{this.checkPointTotal(race.racer2)}</span>
+                  )}
+                  
                 </Col>
                 <Col md="2" lg="1">
                   <span className={race.status === 'Scheduled' ? 'scheduled' : race.status === 'Completed' ? 'completed' : 'unscheduled'}>{race.status}</span>
