@@ -21,13 +21,13 @@ function createChips(races, entrant) {
 
 const LHLStandings = (props) => {
   const { entrants, races } = props;
-  if (!entrants) return <h2>Standings</h2>
+  if (!entrants) return <h2>Swiss Standings</h2>
   entrants.sort((a, b) => {  
     return b.swisspoints - a.swisspoints || a.losses - b.losses
   });
   return (
     <>
-      <h2>Standings</h2>
+      <h2>Swiss Standings</h2>
       <Container fluid>
       <Row className="title-row">
             <Col md="4">

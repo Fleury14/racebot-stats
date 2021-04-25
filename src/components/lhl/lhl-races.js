@@ -50,6 +50,14 @@ class LHLRaces extends Component {
     return ` (${foundRacer.swisspoints})`
   }
 
+  checkSeed(racerName) {
+    const { entrants } = this.props;
+    if (!racerName || !entrants) return '';
+    const foundRacer = entrants.find(entrant => entrant.displayname === racerName);
+    if (!foundRacer) return '';
+    return `[${foundRacer.seed}] `;
+  }
+
   render() {
     const { races } = this.props;
 
@@ -111,7 +119,7 @@ class LHLRaces extends Component {
               <Row key={race.id} className={`race-row${index % 2 === 0 ? ' striped' : ''}`}>
                 <Col md="10" lg="4">
                   {race.game ? (
-                    <span>{race.racer1} vs. {race.racer2} - Game {race.game}</span>
+                    <span>{this.checkSeed(race.racer1)}{race.racer1} vs. {this.checkSeed(race.racer2)}{race.racer2} - Game {race.game}</span>
                   ) : (
                     <span>{race.racer1}{this.checkPointTotal(race.racer1)} vs. {race.racer2}{this.checkPointTotal(race.racer2)}</span>
                   )}
