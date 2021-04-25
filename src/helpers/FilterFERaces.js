@@ -6,8 +6,8 @@ function withinLastYear(date) {
 
 const filterFERaces = (races) => {
   if (races.items) {
-    races.items = races.items.filter(item => item.details && item.details.game === 'ff4fe' && item.details.guild && item.details.created && withinLastYear(item.details.created) && (
-      item.details.guild === '411615349579186178' || (item.details.guild.id && item.details.guild.id === '411615349579186178')    
+    races.items = races.items.filter(item => item && item.game === 'ff4fe' && item.guild && item.created && withinLastYear(item.created) && (
+      item.guild === '411615349579186178' || (item.guild.id && item.guild.id === '411615349579186178')    
     ));
   }
   return races;

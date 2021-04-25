@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 import './RaceTable.scss';
 
 const renderRaceRow = (race, index) => {
-  const startDate = new Date(race.details.created);
+  const startDate = new Date(race.created);
   if (index < 50) return (
     <tr key={race.key}>
       <th>
         <Link to={`/race/${race.key}`}>{race.key}</Link>
       </th>
-      <td>{race.details.guild.name}</td>
-      <td>{race.details.async ? 'Yes' : 'No'}</td>
-      <td>{race.details.entrants.length}</td>
+      <td>{race.guild.name}</td>
+      <td>{race.async ? 'Yes' : 'No'}</td>
+      <td>{race.entrants.length}</td>
       <td>{startDate.toLocaleString()}</td>
-      <td>{race.details.mode}</td>
+      <td>{race.mode}</td>
     </tr>
   );
 }

@@ -10,23 +10,23 @@ const ParseWinLoss = (data) => {
   // loop through each race
   for (let race of data) {
     // skip over races that arent complete and 2v2s
-    if (race.details.status !== completedString
-      || race.details.mode === twov2String
-      || race.details.type.indexOf('2v2') >= 0
-      || race.details.type.indexOf('2v2beta') >= 0
+    if (race.status !== completedString
+      || race.mode === twov2String
+      || race.type.indexOf('2v2') >= 0
+      || race.type.indexOf('2v2beta') >= 0
 
       ) {
       continue;
     }
     // loop through entrants
-    for (let entrant of race.details.entrants) {
+    for (let entrant of race.entrants) {
       // does the user in the race exist in our array?
       if (!racers.find(race => race.id === entrant.id)) {
         racers.push({ id: entrant.id, name: entrant.name, opponents: [] })
       }
 
       // do a second loop through the race for opponents 
-      for (let opponent of race.details.entrants) {
+      for (let opponent of race.entrants) {
         // skip if players are the same or if they both forfeited
         if (opponent.id === entrant.id || (opponent.status === forfeitString && entrant.status === forfeitString)) {
           continue;
@@ -45,7 +45,7 @@ const ParseWinLoss = (data) => {
         // if the opponent forfeited, give win by default
         if (opponent.status === forfeitString) {
           currentOpponent.wins++;
-          if (race.details.metadata && race.details.metadata.Flags && race.details.metadata.Flags === leagueFlags) {
+          if (race.metadata && race.metadata.Flags && race.metadata.Flags === leagueFlags) {
             currentOpponent.leagueWins++;
           }
           continue;
@@ -54,7 +54,7 @@ const ParseWinLoss = (data) => {
         // opposite if player forfeited
         if (entrant.status === forfeitString) {
           currentOpponent.losses++;
-          if (race.details.metadata && race.details.metadata.Flags && race.details.metadata.Flags === leagueFlags) {
+          if (race.metadata && race.metadata.Flags && race.metadata.Flags === leagueFlags) {
             currentOpponent.leagueLosses++;
           }
           continue;
@@ -63,7 +63,7 @@ const ParseWinLoss = (data) => {
         // compare placements. bothe players should have one since we eliminated forfeits
         if (entrant.placement < opponent.placement) {
           currentOpponent.wins++;
-          if (race.details.metadata && race.details.metadata.Flags && race.details.metadata.Flags === leagueFlags) {
+          if (race.metadata && race.metadata.Flags && race.metadata.Flags === leagueFlags) {
             currentOpponent.leagueWins++;
           }
           continue;
@@ -71,7 +71,7 @@ const ParseWinLoss = (data) => {
 
         if (entrant.placement > opponent.placement) {
           currentOpponent.losses++;
-          if (race.details.metadata && race.details.metadata.Flags && race.details.metadata.Flags === leagueFlags) {
+          if (race.metadata && race.metadata.Flags && race.metadata.Flags === leagueFlags) {
             currentOpponent.leagueLosses++;
           }
           continue;

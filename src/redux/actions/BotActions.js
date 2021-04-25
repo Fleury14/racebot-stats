@@ -105,7 +105,7 @@ export const getSingleRaceData = (key) => {
       axios.get(`${apiUrl}/races?key=${key}`, { headers: { [apiHeader]: apiKey } })
       .then(response => {
         // sort finishers by placement before sending data
-        response.data.details.finishers.sort((a, b) => a.placement - b.placement);
+        response.data.finishers.sort((a, b) => a.placement - b.placement);
         response.data.dataTime = Date.now();
         dispatch(loadFinish(response.data, DATA_DONE_LOADING_SINGLE_RACE));
       })

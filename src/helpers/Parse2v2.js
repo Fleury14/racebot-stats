@@ -9,15 +9,15 @@ const parse2v2Data = (data) => {
   // loop through each race
   for (let race of data.items) {
     // skip over races that arent complete and arent 2v2's
-    // if (race.details.mode !== twov2String) console.log('not finished');
-    if (race.details.status !== completedString || (race.details.mode !== twov2String && race.key.indexOf('2v2') && race.details.type.indexOf('2v2') < 0)) {
+    // if (race.mode !== twov2String) console.log('not finished');
+    if (race.status !== completedString || (race.mode !== twov2String && race.key.indexOf('2v2') && race.type.indexOf('2v2') < 0)) {
       continue;
     }
-    const startTime = new Date(race.details.startTime);
+    const startTime = new Date(race.startTime);
     
     // loop through entrants
-    for (let entrant of race.details.entrants) {
-      const partner = race.details.entrants.find(partner => partner.team === entrant.team && partner.id !== entrant.id);
+    for (let entrant of race.entrants) {
+      const partner = race.entrants.find(partner => partner.team === entrant.team && partner.id !== entrant.id);
       if (!partner) {
         continue;
         // TODO: account for solo teams
@@ -40,9 +40,9 @@ const parse2v2Data = (data) => {
       // this is to make sure we arent adding a win or loss twice, once for each team member
       const myTeam = teams.find(team => (team.racer1Id === entrant.id && team.racer2Id === partner.id) || (team.racer2Id === entrant.id && team.racer1Id === partner.id));
       if (myTeam.races_entered.indexOf(race.key) < 0) {
-        for (let opponent of race.details.entrants) {
-          const myPartner = race.details.entrants.find(partner => partner.team === entrant.team && partner.id !== entrant.id);
-          const opponentPartner = race.details.entrants.find(partner => partner.team === opponent.team && partner.id !== opponent.id);
+        for (let opponent of race.entrants) {
+          const myPartner = race.entrants.find(partner => partner.team === entrant.team && partner.id !== entrant.id);
+          const opponentPartner = race.entrants.find(partner => partner.team === opponent.team && partner.id !== opponent.id);
           if (!myPartner || !opponentPartner) {
             continue;
             // todo more solo team support
