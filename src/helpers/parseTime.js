@@ -4,8 +4,13 @@ export default function parseTime(total, isPlayoff, isWinner) {
     switch (total) {
       case 'Forced Win':
         return 'Forced Win';
+      case 'Game Loss':
+        return 'Advantage Loss';
+      case 'Game Win':
+        return 'Advantage Win';
       default:
-        return isPlayoff ? isWinner ? "Advantage Win" : "Advantage Loss" : "Forfeit";
+        return 'Forfeit';
+        // return isPlayoff ? isWinner ? "Advantage Win" : "Advantage Loss" : "Forfeit";
     }
     
   };
