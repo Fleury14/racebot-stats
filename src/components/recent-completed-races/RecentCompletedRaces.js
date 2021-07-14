@@ -26,7 +26,7 @@ const RecentCompletedRaces = (props) => {
               </Col>
               <Col md="5">{eachRace.guild.name}</Col>
               <Col md="1">{eachRace.entrants.length}</Col>
-              <Col md="3">{winner.name}</Col>
+              <Col md="3">{winner ? winner.name : 'No winner'}</Col>
             </Row>
           );
         })}
