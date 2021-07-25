@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Test",
+    "presets": [
+      {
+        "name": "Test set one",
+        "description": "This is the description for test set one",
+        "flags": "Orandom:3/req:all/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Nnone Etoggle Glife/sylph -kit:loaded -kit2:random -spoon"
+      },
+      {
+        "name": "Test set two",
+        "description": "This is the description for test set two",
+        "flags": "O1:quest_forge/2:quest_tradepink/random:1,quest,char/req:all/win:crystal Kmain/summon/moon Pkey Cstandard/j:abilities Twildish Sstandard Bstandard/alt:gauntlet Nchars Etoggle Glife/sylph -kit:basic -kit2:trap -spoon -supersmith -pushbtojump"
+      },
+      {
+        "name": "Test set three",
+        "description": "This is the description for test set three",
+        "flags": "O1:quest_forge/2:quest_toroiatreasury/random:2/req:all/win:crystal Kmain/summon/moon Pkey Crelaxed/no:fusoya/j:abilities/nekkie/hero Tpro Sstandard Bstandard/alt:gauntlet/whichburn Nchars/key Etoggle Glife/sylph -kit:freedom -kit2:random -noadamants"
+      }
+    ]
+  }
+]
