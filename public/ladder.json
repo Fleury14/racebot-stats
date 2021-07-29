@@ -19,8 +19,8 @@
       },
       {
         "name": "Highw4y to the Zemus Zone",
-        "description": "Pending declassification.",
-        "flags": "Omode:classicgiant/win:game Kmain/moon Pnone Cstandard Twild/no:j Scabins/free Bstandard/whichburn Nnone Etoggle/no:jdrops Gdupe/mp/warp/life/sylph -kit:basic -noadamants -spoon -supersmith"
+        "description": "The tourney returns! Chero is on, Rydia's ready to play, and the Moon is not haunted. Check out the full prospectus video and document on the main workshop and twitch channel!",
+        "flags": "O1:quest_forge/2:quest_cavebahamut/3:boss_wyvern/random:2,gated_quest,boss/req:4/win:crystal Kmain/moon Pkey Cstandard/maybe/start:any/no:fusoya/j:abilities/nodupes/hero Tpro Sstandard/no:j Bstandard/alt:gauntlet/whichburn Nchars/key Etoggle Gnone -noadamants -kit:freedom"
       },
       {
         "name": "Lali-Ho Redux",
