@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Main, RacerStats, SelectedRace, LHL, RaceDirectory, PlayerDirectory, ErrorComponent, FlagStats, Wagers, Featured, EventsComponent } from '../components'
+import { Main, RacerStats, SelectedRace, LHL, RaceDirectory, PlayerDirectory, ErrorComponent, FlagStats, Wagers, Featured, EventsComponent, ZZ4 } from '../components'
 // import Main from '../components/main/Main';
 
 class AppRouter extends Component {
@@ -18,6 +18,7 @@ class AppRouter extends Component {
           <Route path="/featured" exact component={Featured} />
           <Route path="/events/:event?" exact component={EventsComponent} />
           <Route path="/lhl" exact component={LHL} />
+          <Route path="/zz4" exact component={ZZ4} />
           <Route component={ErrorComponent} />
         </Switch>
       </Router>
