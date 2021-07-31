@@ -28,7 +28,7 @@ const apiHeader = 'apikey';
 export const getBotData = () => {
   return (dispatch) => {
     dispatch(loadStart());
-    axios.get(`${apiUrl}/races?pageSize=4000`, { headers: { [apiHeader]: apiKey } })
+    axios.get(`${apiUrl}/races?game=ff4fe&pageSize=5000`, { headers: { [apiHeader]: apiKey } })
     .then(response => {
       response.data = filterFERaces(response.data);
       response.data.dataTime = Date.now();
@@ -55,7 +55,10 @@ export const getRacerData = (racer) => {
         // }
         // oldver
         if (response.data.race_details.races_completed) {
+          console.log('response from single racer', response.data);
+          // response.data = filterFERaces(response.data);
           response.data.race_details.races_completed.reverse();
+
         }
         response.data.dataTime = Date.now();
         dispatch(loadFinish(response.data, DATA_DONE_LOADING_RACER));
@@ -82,6 +85,8 @@ export const getRacerDataById = (racerId) => {
         // }
         // oldver
         if (response.data.race_details.races_completed) {
+          // const test = filterFERaces(response.data);
+          response.data.race_details.races_completed = response.data.race_details.races_completed.filter(race => race.indexOf('ff4fe') >= 0);
           response.data.race_details.races_completed.reverse();
         }
         response.data.dataTime = Date.now();
@@ -100,7 +105,7 @@ export const getSingleRaceData = (key) => {
       axios.get(`${apiUrl}/races?key=${key}`, { headers: { [apiHeader]: apiKey } })
       .then(response => {
         // sort finishers by placement before sending data
-        response.data.details.finishers.sort((a, b) => a.placement - b.placement);
+        response.data.finishers.sort((a, b) => a.placement - b.placement);
         response.data.dataTime = Date.now();
         dispatch(loadFinish(response.data, DATA_DONE_LOADING_SINGLE_RACE));
       })

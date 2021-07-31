@@ -12,10 +12,10 @@ const SelectedRace = (props) => {
     <ReduxSingleRaceData raceName={props.match.params.race}>
       {(reduxData) => {
         const { raceData, loading } = reduxData;
-        const dataCreated = raceData ? new Date(raceData.details.created) : null;
+        const dataCreated = raceData ? new Date(raceData.created) : null;
         let finishers = null;
-        if (raceData && raceData.details && raceData.details.entrants) {
-          finishers = raceData.details.entrants.sort((a, b) => {
+        if (raceData && raceData && raceData.entrants) {
+          finishers = raceData.entrants.sort((a, b) => {
             if (a.status === 'Forfeited' && b.status === 'Forfeited') return 0;
             if (a.status === 'Forfeited' && b.status !== 'Forfeited') return 1;
             if (a.status !== 'Forfeited' && b.status === 'Forfeited') return -1;
@@ -30,34 +30,34 @@ const SelectedRace = (props) => {
               {raceData && !loading && (
                 <div className="race-stats-top-bubble">
                   <h1 className="text-uppercase">{raceData.key}</h1>
-                  <p className="text-center">Created by {raceData.details.creator && raceData.details.creator.name ? raceData.details.creator.name : "????"} on {dataCreated.toLocaleDateString()} at {dataCreated.toLocaleTimeString()} </p>
-                  {raceData.details.metadata && raceData.details.metadata.Url && (
-                    <a href={raceData.details.metadata.Url} target="_blank" rel="noreferrer noopener">
-                      <p className="text-center">{raceData.details.metadata.Url}</p>
+                  <p className="text-center">Created by {raceData.creator && raceData.creator.name ? raceData.creator.name : "????"} on {dataCreated.toLocaleDateString()} at {dataCreated.toLocaleTimeString()} </p>
+                  {raceData.metadata && raceData.metadata.Url && (
+                    <a href={raceData.metadata.Url} target="_blank" rel="noreferrer noopener">
+                      <p className="text-center">{raceData.metadata.Url}</p>
                     </a>
                   )}
                   <Container fluid>
                     <Row>
                       <Col md="4" className="race-stats-left-col">
-                        <h4 className="text-center text-uppercase">{raceData.details.guild.name}</h4>
+                        <h4 className="text-center text-uppercase">{raceData.guild.name}</h4>
                         <div className="d-flex justify-content-center">
                           <p className="mr-2">Async:</p>
-                          <p className={'ml-2 ' + raceData.details.async ? 'green-text' : 'red-text'}>{raceData.details.async ? 'Yes' : 'No'}</p>
+                          <p className={'ml-2 ' + raceData.async ? 'green-text' : 'red-text'}>{raceData.async ? 'Yes' : 'No'}</p>
                         </div>
                         <div className="d-flex justify-content-center">
                           <p className="mr-2">Mode:</p>
-                          <p className="ml-2">{raceData.details.mode}</p>
+                          <p className="ml-2">{raceData.mode}</p>
                         </div>
                       </Col>
                       <Col md="4" className="race-stats-mid-col">
                         <h4 className="text-center text-uppercase">FLAGS</h4>
-                        {raceData.details.metadata && raceData.details.metadata.Flags ? <p>{raceData.details.metadata.Flags}</p> : '????'}
-                        <h6 className="text-center text-uppercase">{raceData.details.status}</h6>
+                        {raceData.metadata && raceData.metadata.Flags ? <p>{raceData.metadata.Flags}</p> : '????'}
+                        <h6 className="text-center text-uppercase">{raceData.status}</h6>
                       </Col>
                       <Col md="4" className="race-stats-entrants">
-                        <h3 className="text-uppercase text-center">{raceData.details.entrants.length} entrants</h3>
+                        <h3 className="text-uppercase text-center">{raceData.entrants.length} entrants</h3>
                         <ul>
-                          {raceData.details.entrants.map(entrant => {
+                          {raceData.entrants.map(entrant => {
                             return (
                               <Link to={`../racer/${entrant.id}`} key={entrant.id}>
                                 <li className="text-center">{entrant.name}</li>
@@ -70,7 +70,7 @@ const SelectedRace = (props) => {
                   </Container>
                 </div>
               )}
-              {finishers && !(raceData.details.async && raceData.details.status === 'Running') && (
+              {finishers && !(raceData.async && raceData.status === 'Running') && (
                 <div className="race-stats-finisher-bubble">
                   <Table striped borderless>
                     <thead>

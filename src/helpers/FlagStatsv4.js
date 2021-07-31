@@ -206,13 +206,13 @@ const parseFlagStatsv4 = (raceArr) => {
   };
 
   // remove all non fe-races
-  const FERaces = raceArr.filter(race => race.details && race.details.game === 'ff4fe');
+  const FERaces = raceArr.filter(race => race && race.game === 'ff4fe');
   // remove all races with no flag data
   const metadataRace = FERaces.filter(race => {
-    if (!race.details.metadata) {
+    if (!race.metadata) {
       return null;
     }
-    if (race.details.metadata.Flags) {
+    if (race.metadata.Flags) {
       return race;
     }
     return null;
@@ -220,10 +220,10 @@ const parseFlagStatsv4 = (raceArr) => {
   FlagResults.total = 0;
 
   for (let race of metadataRace) {
-    const flags = race.details.metadata.Flags;
+    const flags = race.metadata.Flags;
     
     // skip non v4 races
-    if (!race.details.metadata.Version || race.details.metadata.Version.indexOf('v4') < 0) continue;
+    if (!race.metadata.Version || race.metadata.Version.indexOf('v4') < 0) continue;
     FlagResults.total++;
 
     // O Flag

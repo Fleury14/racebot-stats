@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 import './CurrentRaces.scss';
 
 const renderRaceRow = (race, index) => {
-  const startDate = new Date(race.details.created);
+  const startDate = new Date(race.created);
   return (
     <Row key={race.key} className={`current-races-body ${index % 2 === 0 ? 'current-races-stripe' : ''}`}>
       <Col>
         <Link to={`/race/${race.key}`}>{race.key}</Link>
       </Col>
-      <Col className="current-races-hide-mobile">{race.details.guild.name}</Col>
-      <Col className="current-races-hide-mobile">{race.details.async ? 'Yes' : 'No'}</Col>
-      <Col>{race.details.entrants.length}</Col>
+      <Col className="current-races-hide-mobile">{race.guild.name}</Col>
+      <Col className="current-races-hide-mobile">{race.async ? 'Yes' : 'No'}</Col>
+      <Col>{race.entrants.length}</Col>
       <Col>{startDate.toLocaleString()}</Col>
-      <Col className="current-races-hide-mobile">{race.details.mode}</Col>
+      <Col className="current-races-hide-mobile">{race.mode}</Col>
     </Row>
   );
 }

@@ -1,0 +1,133 @@
+.lhl h1, .lhl h2 {
+  text-align: center;
+}
+
+.lhl h2 {
+  margin: 20px;
+}
+
+.title-row {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.race-row {
+  padding: 6px 0px;
+  border-top: 2px solid #aaa;
+}
+
+.restream-1 {
+  color: #fff;
+  background-color: #000159;
+  padding: 5px;
+}
+
+.restream-2 {
+  color: #fff;
+  background-color: lighten(#000159, 5);
+  padding: 5px;
+}
+
+.restream-3 {
+  color: #fff;
+  background-color: lighten(#000159, 10);
+  padding: 5px;
+}
+
+.restream-4 {
+  color: #fff;
+  background-color: lighten(#000159, 15);
+  padding: 5px;
+}
+
+.unscheduled {
+  background-color: #ffdddd;
+  padding: 3px;
+}
+
+.scheduled {
+  background-color: #ffffdd;
+  padding: 3px;
+}
+
+.completed {
+  background-color: #ddffdd;
+  padding: 3px;
+}
+
+.striped {
+  // background-color: #e7e7e7;
+}
+
+.winner {
+  background-color: gold;
+  padding: 3px;
+  font-weight: 700;
+}
+
+.tied {
+  background-color: lighten(gold, 40);
+  padding: 3px;
+
+}
+
+.chip-win {
+  font-size: 12px;
+  background-color: #dfd;
+  padding: 3px 5px;
+}
+
+.chip-loss {
+  font-size: 12px;
+  background-color: #fdd;
+  padding: 3px 5px;
+}
+
+.chip-tie {
+  font-size: 12px;
+  background-color: lighten(gold, 40);
+  padding: 3px 5px;
+}
+
+.has-dropped {
+  background-color: #ccf;
+}
+
+.eliminated {
+  background-color: #fee;
+}
+
+.advanced {
+  background-color: #cfc;
+}
+
+.dropped-legend {
+  height: 20px;
+  width: 40px;
+  background-color: #ccf;
+  margin-right: 20px;
+}
+
+.eliminated-legend {
+  height: 20px;
+  width: 40px;
+  background-color: #fee;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.advanced-legend {
+  height: 20px;
+  width: 40px;
+  background-color: #cfc;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 578px) {
+  .race-row > div {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}

@@ -156,21 +156,21 @@ const parseFlagStats = (raceArr) => {
 
   };
   // remove all non fe-races
-  const FERaces = raceArr.filter(race => race.details && race.details.game === 'ff4fe');
+  const FERaces = raceArr.filter(race => race && race.game === 'ff4fe');
 
   // remove all races with no flag data
   const metadataRace = FERaces.filter(race => {
-    if (!race.details.metadata) {
+    if (!race.metadata) {
       return null;
     }
-    if (race.details.metadata.Flags) {
+    if (race.metadata.Flags) {
       return race;
     }
     return null;
   });
   FlagResults.total = metadataRace.length;
   for (let race of metadataRace) {
-    const flags = race.details.metadata.Flags;
+    const flags = race.metadata.Flags;
 
     // V FLAG
     if (flags.indexOf('V') < 0) {
@@ -393,8 +393,8 @@ const parseFlagStats = (raceArr) => {
     }
 
     // version
-    if (race.details.metadata.Version) {
-      const ver = race.details.metadata.Version;
+    if (race.metadata.Version) {
+      const ver = race.metadata.Version;
       switch (ver) {
         case '0.3.6':
           FlagResults.version.oh36++;

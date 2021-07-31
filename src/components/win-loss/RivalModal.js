@@ -15,13 +15,13 @@ class RivalModal extends Component {
     const { paginate, page, pageLength } = this.state;
     if (!raceData) return null;
     raceData.sort((a, b) => {
-      const aDate = new Date(a.details.created).getTime();
-      const bDate = new Date(b.details.created).getTime();
+      const aDate = new Date(a.created).getTime();
+      const bDate = new Date(b.created).getTime();
       return bDate - aDate;
     });
     const displayedRaces = paginate ? raceData.slice((page - 1) * pageLength, page * pageLength) : raceData;
-    const playerName = raceData[0].details.entrants.find(entrant => entrant.id === player).name;
-    const rivalName = raceData[0].details.entrants.find(entrant => entrant.id === rival).name;
+    const playerName = raceData[0].entrants.find(entrant => entrant.id === player).name;
+    const rivalName = raceData[0].entrants.find(entrant => entrant.id === rival).name;
 
     // handle pagination
     const pageNumbers = [];
@@ -50,9 +50,9 @@ class RivalModal extends Component {
               </Col>
             </Row>
             {displayedRaces.map(race => {
-              const playerData = race.details.entrants.find(entrant => entrant.id === player);
-              const rivalData = race.details.entrants.find(entrant => entrant.id === rival)
-              const raceDate = new Date(race.details.created);
+              const playerData = race.entrants.find(entrant => entrant.id === player);
+              const rivalData = race.entrants.find(entrant => entrant.id === rival)
+              const raceDate = new Date(race.created);
               return (
                 <Row key={race.key} className={
                   playerData.placement < rivalData.placement || (playerData.status !== 'Forfeited' && rivalData.status === 'Forfeited')

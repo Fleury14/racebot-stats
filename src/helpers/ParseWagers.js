@@ -1,13 +1,13 @@
 const ParseWagers = (races) => {
   races.items.sort((a, b) => {
-    const date1 = new Date(a.details.created);
-    const date2 = new Date(b.details.created);
+    const date1 = new Date(a.created);
+    const date2 = new Date(b.created);
     return date1.getTime() - date2.getTime();
   })
   const racesWithWagers = [];
   races.items.forEach(race => {
-    if (race.details && race.details.entrants) {
-      race.details.entrants.forEach(entrant => {
+    if (race && race.entrants) {
+      race.entrants.forEach(entrant => {
         if (entrant.wager) {
           if (racesWithWagers.indexOf(race.key) < 0) {
             racesWithWagers.push(race.key);
@@ -30,10 +30,10 @@ const ParseWagers = (races) => {
     const currentEntrants = [];
     // have to put two separate entrant loops,
     // one to cover total, other to obtain winnings
-    currentRace.details.entrants.forEach(entrant => {
+    currentRace.entrants.forEach(entrant => {
       wagerTotal += entrant.wager;
     });
-    currentRace.details.entrants.forEach(entrant => {
+    currentRace.entrants.forEach(entrant => {
       let winnings = 0;
       let currentBettor = allBetters.find(bettor => bettor.id === entrant.id);
       if (currentBettor) {
@@ -80,7 +80,7 @@ const ParseWagers = (races) => {
 
     currentRaceData['total'] = wagerTotal;
     currentRaceData['entrants'] = currentEntrants;
-    currentRaceData['start'] = currentRace.details.startTime;
+    currentRaceData['start'] = currentRace.startTime;
     wagerData.push(currentRaceData);
   });
   allBetters.forEach(gambler => {

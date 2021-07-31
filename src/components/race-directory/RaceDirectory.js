@@ -49,10 +49,10 @@ class RaceDirectory extends Component {
           const { startIndex, endIndex } = this.state;
           const apiResult = reduxData.botData ? reduxData.botData.items : reduxData.botData;
           if (!apiResult) return null;
-          let FERaces = apiResult.filter(race => race.details && race.details.game && race.details.game === 'ff4fe');
+          let FERaces = apiResult.filter(race => race && race.game && race.game === 'ff4fe');
           FERaces.sort((a, b) => {
-            const timeA = new Date(a.details.created);
-            const timeB = new Date(b.details.created);
+            const timeA = new Date(a.created);
+            const timeB = new Date(b.created);
             return timeB.getTime() - timeA.getTime();
           });
           let totalRace = FERaces.length;

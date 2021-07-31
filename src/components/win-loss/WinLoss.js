@@ -41,7 +41,7 @@ class WinLoss extends Component {
           close={() => this.clearRivarly()}
           />}
           <div className="d-flex justify-content-center mb-2">
-            <Button color="primary" outline={!leagueMode} onClick={() => this.setState({ leagueMode: !leagueMode })}>Toggle league stats</Button>
+            <Button color="primary" outline={!leagueMode} onClick={() => this.setState({ leagueMode: !leagueMode })}>Toggle LHL Swiss stats</Button>
           </div>
         {!playerWinLoss && <p>There is no data to display</p>}
         {playerWinLoss && (

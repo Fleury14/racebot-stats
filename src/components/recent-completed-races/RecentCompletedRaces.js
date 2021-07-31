@@ -16,7 +16,7 @@ const RecentCompletedRaces = (props) => {
           <Col md="3">Winner</Col>
         </Row>
         {data.map(eachRace => {
-          const winner = eachRace.details.entrants.find(entrant => entrant.placement === 1);
+          const winner = eachRace.entrants.find(entrant => entrant.placement === 1);
           return (
             <Row key={eachRace.key} className="recently-completed-data-row">
               <Col md="3">
@@ -24,9 +24,9 @@ const RecentCompletedRaces = (props) => {
                   {eachRace.key}
                 </Link>
               </Col>
-              <Col md="5">{eachRace.details.guild.name}</Col>
-              <Col md="1">{eachRace.details.entrants.length}</Col>
-              <Col md="3">{winner.name}</Col>
+              <Col md="5">{eachRace.guild.name}</Col>
+              <Col md="1">{eachRace.entrants.length}</Col>
+              <Col md="3">{winner ? winner.name : 'No winner'}</Col>
             </Row>
           );
         })}
