@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import { Navbar } from '..';
+import ZZ4Row from './zz4-row';
 import { ReduxMainData } from '../redux-data';
 import { parseZZ4 } from '../../helpers';
 import './zz4.scss'
@@ -17,6 +19,25 @@ class ZZ4 extends Component {
           console.log('loading?', reduxData.loading)
           return (
             <>
+              <h2>Qualifying Racers</h2>
+                <Container>
+                  <Row>
+                    {zz4Data.qualifiers.map((race, index) => {
+                      const startDate = new Date(race.startTime);
+                      return (
+                        
+                          <Col className={`zz4-qualifier${index % 2 > 0 ? ' zz4-striped' : ''}`} key={race.key} lg="2" md="4" sm="6">
+                            <Link to={`/race/${race.key}`}>
+                            <p className="qualifier-name">{race.key}</p>
+                            </Link>
+                            <p className="qualifier-date">{startDate.toLocaleDateString()}</p>
+                            <p className="qualifier-time">{startDate.toLocaleTimeString()}</p>
+                          </Col>
+                        
+                      );
+                    })}
+                  </Row>
+                </Container>
               <h2 className="text-center zz4-title">Unofficial Standings</h2>
               <Container>
                 <Row>
@@ -33,25 +54,13 @@ class ZZ4 extends Component {
                     Current Average Score
                   </Col>
                 </Row>
-                {zz4Data.map((racer, index) => {
+                {zz4Data.racers.map((racer, index) => {
                   return (
-                    <Row key={racer.id} className="zz4-row">
-                      <Col>
-                        <p className="zz4-rank">{index + 1}</p>
-                      </Col>
-                      <Col>
-                        {racer.name}
-                      </Col>
-                      <Col>
-                        {racer.races}
-                      </Col>
-                      <Col>
-                        {racer.average}
-                      </Col>
-                    </Row>
+                    <ZZ4Row key={racer.id} racer={racer} index={index} />
                   );
                 })}
               </Container>
+              <p>** This does not account for the minimum race requirement.</p>
             </>
           );
         }}

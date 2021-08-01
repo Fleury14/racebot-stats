@@ -99,7 +99,10 @@ const parseZZ4 = (data) => {
   
   
   
-  return zz4Entrants;
+  return {
+    qualifiers: qualifierRaces,
+    racers: zz4Entrants
+  };
 }
 
 export default parseZZ4;
