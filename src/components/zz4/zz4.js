@@ -10,7 +10,7 @@ import './zz4.scss'
 class ZZ4 extends Component {
   render() {
     return (
-      <div className="zz4-main">
+      <div>
       <Navbar />
       <ReduxMainData>
         {(reduxData) => {
@@ -18,8 +18,8 @@ class ZZ4 extends Component {
           console.log('zz4', zz4Data)
           console.log('loading?', reduxData.loading)
           return (
-            <>
-              <h2>Qualifying Racers</h2>
+            <div className="zz4-main">
+              <h2 className="zz4-title">Qualifying Racers</h2>
                 <Container>
                   <Row>
                     {zz4Data.qualifiers.map((race, index) => {
@@ -61,7 +61,7 @@ class ZZ4 extends Component {
                 })}
               </Container>
               <p>** This does not account for the minimum race requirement.</p>
-            </>
+            </div>
           );
         }}
       </ReduxMainData>
