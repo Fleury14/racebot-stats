@@ -5,7 +5,7 @@ const REQUIRED_RACES = 1;
 
 const parseZZ4 = (data) => {
   // console.log('races', data);
-  if (!data || !data.items || !data.items.length) return [];
+  if (!data || !data.items || !data.items.length) return { qualifiers: [], racers: [] };
 
   // filter out races that aren't in the qualifier array
   const qualifierRaces = data.items.filter(race => qualifiers.indexOf(race.key) >= 0);
