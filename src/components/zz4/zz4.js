@@ -15,8 +15,6 @@ class ZZ4 extends Component {
       <ReduxMainData>
         {(reduxData) => {
           const zz4Data = parseZZ4(reduxData.botData);
-          console.log('zz4', zz4Data)
-          console.log('loading?', reduxData.loading)
           return (
             <div className="zz4-main">
               <h2 className="zz4-title">Qualifying Racers</h2>
