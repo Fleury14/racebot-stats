@@ -17,7 +17,7 @@ class ZZ4 extends Component {
           const zz4Data = parseZZ4(reduxData.botData);
           return (
             <div className="zz4-main">
-              <h2 className="zz4-title">Qualifying Racers</h2>
+              <h2 className="zz4-title">Qualifying Races</h2>
                 <Container>
                   <Row>
                     {zz4Data.qualifiers.map((race, index) => {
