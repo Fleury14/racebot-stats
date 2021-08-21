@@ -100,6 +100,12 @@ const parseZZ4 = (data) => {
   // sort entrants by average
   zz4Entrants.sort((a, b) => b.average - a.average);
   
+  // sort qualifier races by date
+  qualifierRaces.sort((a, b) => {
+    const aDate = new Date(a.startTime);
+    const bDate = new Date(b.startTime);
+    return aDate.getTime() - bDate.getTime();
+  })
   
   
   return {
