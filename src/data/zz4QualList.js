@@ -3,4 +3,5 @@ export const qualifiers = [
   'ff4fe-wwwiof',
   'ff4fe-adftfl',
   'ff4fe-k5ozzx',
+  'ff4fe-kmzaqz',
 ];
