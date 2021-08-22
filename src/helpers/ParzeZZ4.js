@@ -62,7 +62,7 @@ const parseZZ4 = (data) => {
       const topTime = new Date(top.finishTime).getTime();
       top6Times.push(Math.floor((topTime / 1000) - (startTime / 1000)));
     });
-    if (race.key === 'ff4fe-k5ozzx') console.log('riq', top6Times, filteredEntrants);
+    
     const top6Average = Math.floor(top6Times.reduce((a, b) => a + b, 0) / top6Times.length);
     
     // go through each entrant to calculate score
