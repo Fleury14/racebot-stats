@@ -50,8 +50,8 @@ const parseZZ4 = (data) => {
 
     // figure out the average from the top 6 remaining
     filteredEntrants.sort((a, b) => {
-      const place1 = a.placement !== undefined ? a.placement : 999;
-      const place2 = b.placement !== undefined ? b.placement : 999;
+      const place1 = a.placement !== undefined && a.placement !== null ? a.placement : 999;
+      const place2 = b.placement !== undefined && b.placement !== null ? b.placement : 999;
       return place1 - place2;
     });
     const top6 = filteredEntrants.filter((val, index) => index <= 5);
@@ -62,6 +62,7 @@ const parseZZ4 = (data) => {
       const topTime = new Date(top.finishTime).getTime();
       top6Times.push(Math.floor((topTime / 1000) - (startTime / 1000)));
     });
+    if (race.key === 'ff4fe-k5ozzx') console.log('riq', top6Times, filteredEntrants);
     const top6Average = Math.floor(top6Times.reduce((a, b) => a + b, 0) / top6Times.length);
     
     // go through each entrant to calculate score
