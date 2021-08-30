@@ -9,4 +9,5 @@ export const qualifiers = [
   'ff4fe-yeckm7',
   'ff4fe-rvknfb',
   'ff4fe-mcub22',
+  'ff4fe-39wl5r',
 ];
