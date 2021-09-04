@@ -12,4 +12,5 @@ export const qualifiers = [
   'ff4fe-39wl5r',
   'ff4fe-uqe3jh',
   'ff4fe-xbdesi',
+  'ff4fe-02xznm',
 ];
