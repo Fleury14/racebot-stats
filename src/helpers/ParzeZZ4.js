@@ -1,4 +1,4 @@
-import { qualifiers } from "../data/zz4QualList";
+import { qualifiers, drops } from "../data/zz4QualList";
 
 // number of races an entrant must complete to have their time count
 const REQUIRED_RACES = 1;
@@ -17,8 +17,8 @@ const parseZZ4 = (data) => {
   // loop through each race entrants and...
   qualifierRaces.forEach(race => {
     race.entrants.forEach(entrant => {
-      // make sure they didnt forfeit
-      if (entrant.status === 'Finished') {
+      // make sure they didnt forfeit and they didnt drop
+      if (entrant.status === 'Finished' && drops.indexOf(entrant.name.toLowerCase()) < 0) {
         // check if the racer is in the "zz4 entrants" array, 
         const foundRacer = zz4Entrants.find(tourneyRacer => tourneyRacer.id === entrant.id);
         if (foundRacer) {
@@ -45,6 +45,8 @@ const parseZZ4 = (data) => {
       const foundRacer = zz4Entrants.find(tourneyRacer => tourneyRacer.id === entrant.id);
       // this shouldnt ever happen but just in case
       if (!foundRacer) return false;
+      // filter out those who have dropped
+      if(drops.indexOf(entrant.name.toLowerCase()) >= 0) return false;
       return foundRacer.races >= REQUIRED_RACES;
     });
 
@@ -56,6 +58,7 @@ const parseZZ4 = (data) => {
     });
     const top6 = filteredEntrants.filter((val, index) => index <= 5);
     // console.log('race', race);
+    if (race.key === 'ff4fe-wvvz7o') console.log('top6', top6);
     const startTime = new Date(race.startTime).getTime();
     const top6Times = [];
     top6.forEach(top => {

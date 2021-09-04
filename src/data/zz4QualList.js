@@ -12,3 +12,7 @@ export const qualifiers = [
   'ff4fe-39wl5r',
   'ff4fe-uqe3jh',
 ];
+
+export const drops = [
+  'dustygriff',
+]
