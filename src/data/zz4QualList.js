@@ -13,6 +13,7 @@ export const qualifiers = [
   'ff4fe-uqe3jh',
   'ff4fe-xbdesi',
   'ff4fe-02xznm',
+  'ff4fe-ct0osp',
 ];
 
 export const drops = [

@@ -36,7 +36,7 @@ class ZZ4 extends Component {
                     })}
                   </Row>
                 </Container>
-              <h2 className="text-center zz4-title">Unofficial Standings</h2>
+              <h2 className="text-center zz4-title">Official Standings</h2>
               <Container>
                 <Row>
                   <Col>
@@ -58,7 +58,7 @@ class ZZ4 extends Component {
                   );
                 })}
               </Container>
-              <p>** This does not account for the minimum race requirement.</p>
+              <p>** Those who did not meet the minimum required number of races (4) did not have their scores and times count.</p>
             </div>
           );
         }}

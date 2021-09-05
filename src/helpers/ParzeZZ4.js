@@ -1,7 +1,7 @@
 import { qualifiers, drops } from "../data/zz4QualList";
 
 // number of races an entrant must complete to have their time count
-const REQUIRED_RACES = 1;
+const REQUIRED_RACES = 4;
 
 const parseZZ4 = (data) => {
   // console.log('races', data);
@@ -101,8 +101,11 @@ const parseZZ4 = (data) => {
     
   }) // end race loop
   
+  // filter out uthose who didnt race enough
+  const filteredzz4Entrants = zz4Entrants.filter(entrant => entrant.races >= REQUIRED_RACES)
+
   // sort entrants by average
-  zz4Entrants.sort((a, b) => b.average - a.average);
+  filteredzz4Entrants.sort((a, b) => b.average - a.average);
   
   // sort qualifier races by date
   qualifierRaces.sort((a, b) => {
@@ -111,10 +114,11 @@ const parseZZ4 = (data) => {
     return aDate.getTime() - bDate.getTime();
   })
   
+  console.log('racers', filteredzz4Entrants)
   
   return {
     qualifiers: qualifierRaces,
-    racers: zz4Entrants
+    racers: filteredzz4Entrants
   };
 }
 
