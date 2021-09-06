@@ -58,7 +58,7 @@ const parseZZ4 = (data) => {
     });
     const top6 = filteredEntrants.filter((val, index) => index <= 5);
     // console.log('race', race);
-    if (race.key === 'ff4fe-wvvz7o') console.log('top6', top6);
+    
     const startTime = new Date(race.startTime).getTime();
     const top6Times = [];
     top6.forEach(top => {
@@ -113,8 +113,6 @@ const parseZZ4 = (data) => {
     const bDate = new Date(b.startTime);
     return aDate.getTime() - bDate.getTime();
   })
-  
-  console.log('racers', filteredzz4Entrants)
   
   return {
     qualifiers: qualifierRaces,

@@ -13,3 +13,4 @@ export const DATA_START_SIREN_LOADING = 'data-start-siren-loading';
 export const DATA_SIREN_ERROR = 'data-siren-error';
 export const DATA_DONE_LOADING_SIREN_RACERS = 'data-done-loading-siren-racers';
 export const DATA_DONE_LOADING_SIREN_RACES = 'data-done-loading-siren-races';
+export const DATA_DONE_LOADING_ZZ4 = 'data-done-loading-zz4';
