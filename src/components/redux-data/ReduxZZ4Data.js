@@ -6,6 +6,7 @@ const mapStateToProps = state => ({
   loading: state.siren.loading,
   error: state.siren.loading,
   races: state.siren.races,
+  zz4: state.siren.zz4
 });
 
 const mapActionsToProps = dispatch => ({
@@ -23,6 +24,7 @@ class ReduxSirenData extends Component {
     races: null,
     loading: false,
     error: false,
+    zz4: null,
   }
 
   componentDidMount() {
@@ -34,12 +36,12 @@ class ReduxSirenData extends Component {
     if (
       this.props.loading !== this.state.loading ||
       this.props.error !== this.state.error ||
-      this.props.races !== this.state.races
+      this.props.zz4 !== this.state.zz4
     ) {
       this.setState({
         loading: this.props.loading,
         error: this.props.error,
-        races: this.props.races,
+        zz4: this.props.zz4,
       })
     }
   }

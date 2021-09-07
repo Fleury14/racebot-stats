@@ -9,6 +9,10 @@ class ZZ4Races extends Component {
     raceType: 'scheduled',
   }
 
+  changeView(view) {
+    this.setState({ raceType: view });
+  }
+
   formatDate(string) {
     const matchDate = new Date(string.replace(' ', 'T'));
     // const rawDate = new Date(string.replace(' ', 'T')); // get raw date from db in eastern
@@ -40,7 +44,7 @@ class ZZ4Races extends Component {
   render() {
     const { races } = this.props;
 
-    if (!races) return <h2>Races</h2>
+    if (!races) return <h2 className="text-center">Races</h2>
     races.sort((a, b) => {
       const time1 = a.date ? new Date(a.date.replace(' ', 'T')).getTime() : 0;
       const time2 = b.date ? new Date(b.date.replace(' ', 'T')).getTime() : 0;
@@ -50,7 +54,7 @@ class ZZ4Races extends Component {
 
     return (
       <>
-        <h2>Races</h2>
+        <h2 className="text-center">Races</h2>
         <div className="d-flex flex-wrap">
           <FormGroup check className="mr-5">
             <Input type="radio" name="radio1" id="radio-option-1" onClick={() => this.changeView('all')}></Input>
@@ -70,7 +74,7 @@ class ZZ4Races extends Component {
           </FormGroup>
           <FormGroup check className="mr-5">
             <Input type="radio" name="radio1" id="radio-option-5" onClick={() => this.changeView('hide-all')}></Input>
-            <Label for="radio-option-5">Hide all races (Bracket/Standings only)</Label>
+            <Label for="radio-option-5">Hide all races (Qualifier Info Only)</Label>
           </FormGroup>
         </div>
         <Container fluid>
@@ -139,3 +143,5 @@ class ZZ4Races extends Component {
   }
 
 }
+
+export default ZZ4Races;

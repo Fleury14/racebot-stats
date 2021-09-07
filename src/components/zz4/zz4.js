@@ -3,8 +3,9 @@ import { Container, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Navbar } from '..';
 import ZZ4Row from './zz4-row';
-import { ReduxMainData } from '../redux-data';
+import { ReduxMainData, ReduxSirenZZ4Data } from '../redux-data';
 import { parseZZ4 } from '../../helpers';
+import ZZ4Races from './zz4-races';
 import './zz4.scss'
 
 class ZZ4 extends Component {
@@ -16,7 +17,19 @@ class ZZ4 extends Component {
         {(reduxData) => {
           const zz4Data = parseZZ4(reduxData.botData);
           return (
+            <>
+            <ReduxSirenZZ4Data>
+              {(sirenData) => {
+                console.log('hello again siren', sirenData);
+                return (
+                  <div className="zz4-races">
+                    {sirenData.zz4 ? <ZZ4Races races={sirenData.zz4} /> : null}
+                  </div>
+                );
+              }}
+            </ReduxSirenZZ4Data>
             <div className="zz4-main">
+              
               <h2 className="zz4-title">Qualifying Races</h2>
                 <Container>
                   <Row>
@@ -60,6 +73,7 @@ class ZZ4 extends Component {
               </Container>
               <p>** Those who did not meet the minimum required number of races (4) did not have their scores and times count.</p>
             </div>
+            </>
           );
         }}
       </ReduxMainData>

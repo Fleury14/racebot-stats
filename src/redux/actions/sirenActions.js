@@ -24,7 +24,7 @@ const sirenUrl = 'http://zoevee.net:5000/siren/api';
 export const getEntrants = () => {
   return (dispatch) => {
     dispatch(loadStart());
-    axios.get(`${sirenUrl}/entrants`, { headers: { 
+    axios.get(`${sirenUrl}/lhl/entrants`, { headers: { 
       
      } })
       .then(response => {
@@ -39,7 +39,7 @@ export const getEntrants = () => {
 export const getRaces = () => {
   return (dispatch) => {
     dispatch(loadStart());
-    axios.get(`${sirenUrl}/matches`)
+    axios.get(`${sirenUrl}/lhl/matches`)
       .then(response => {
         dispatch(loadFinish(response.data, 'races', DATA_DONE_LOADING_SIREN_RACES))
       })
