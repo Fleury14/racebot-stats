@@ -55,6 +55,7 @@ class ZZ4Races extends Component {
     return (
       <>
         <h2 className="text-center">Races</h2>
+        <p className="text-center">(All times are in Eastern time)</p>
         <div className="d-flex flex-wrap">
           <FormGroup check className="mr-5">
             <Input type="radio" name="radio1" id="radio-option-1" onClick={() => this.changeView('all')}></Input>
