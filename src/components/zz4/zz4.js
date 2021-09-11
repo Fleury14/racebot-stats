@@ -29,7 +29,7 @@ class ZZ4 extends Component {
               }}
             </ReduxSirenZZ4Data>
             <div className="zz4-main">
-              
+              <iframe title="LHL Bracket" src="https://challonge.com/FEzz4/module" width="100%" height="500" frameBorder="0" scrolling="auto" allowtransparency="true"></iframe>
               <h2 className="zz4-title">Qualifying Races</h2>
                 <Container>
                   <Row>
