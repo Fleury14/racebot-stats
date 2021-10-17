@@ -45,7 +45,7 @@
       {
         "name": "Supermarket Sweep",
         "description": "The strongest equipment, items, and characters may be available right out the gate. Shops are free!",
-        "flags": "Orandom:3,gated_quest/req:all/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Nnone Etoggle Glife/sylph -spoon"
+        "flags": "Orandom:4,gated_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Nnone Etoggle Glife/sylph -spoon"
       },
       {
         "name": "Giant%",
