@@ -1,0 +1,59 @@
+.zz4-main {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+
+  a {
+    width: inherit;
+  }
+}
+
+.zz4-title {
+  margin: 15px;
+}
+
+.zz4-races {
+  font-family: 'Open Sans';
+  padding: 20px;
+}
+
+.zz4-row {
+  border-bottom: 2px solid #ccc;
+  padding: 10px 0px;
+  transition: 0.5s all;
+
+  p {
+    margin: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #bbf;
+  }
+}
+
+.zz4-qualifier {
+  margin-top: 20px;
+  transition: all 0.25s;
+
+  p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #000;
+  }
+}
+
+.zz4-details {
+  margin: 20px;
+}
+
+.zz4-rank {
+  font-weight: 700;
+}
+
+.qualifier-name {
+  font-weight: 700;
+}
+
+.zz4-striped {
+ background-color: #eee;
+}

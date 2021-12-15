@@ -19,7 +19,8 @@ import Featured from './featured/Featured';
 import EventsComponent from './events/Events';
 import ClubLeaderboard from './club-leaderboard/ClubLeaderboard';
 import LHL from './lhl/lhl';
+import ZZ4 from './zz4/zz4';
 
 export { Navbar, Main, WinLoss, CurrentRaces, PlayerSearcher, RacerStats, SelectedRace, CookieLeaderboard,
   Twov2Stats, RaceDirectory, PlayerDirectory, ErrorComponent, RecentlyCompletedRaces, LoadingModal,
-  FlagStats, Wagers, DrawBadges, Featured, EventsComponent, ClubLeaderboard, LHL };
+  FlagStats, Wagers, DrawBadges, Featured, EventsComponent, ClubLeaderboard, LHL, ZZ4 };

@@ -1,4 +1,4 @@
-import { DATA_SIREN_ERROR, DATA_START_SIREN_LOADING, DATA_DONE_LOADING_SIREN_RACERS, DATA_DONE_LOADING_SIREN_RACES } from  '../actions/types';
+import { DATA_SIREN_ERROR, DATA_DONE_LOADING_ZZ4, DATA_START_SIREN_LOADING, DATA_DONE_LOADING_SIREN_RACERS, DATA_DONE_LOADING_SIREN_RACES } from  '../actions/types';
 import axios from 'axios';
 
 const loadStart = () => ({
@@ -24,7 +24,7 @@ const sirenUrl = 'http://zoevee.net:5000/siren/api';
 export const getEntrants = () => {
   return (dispatch) => {
     dispatch(loadStart());
-    axios.get(`${sirenUrl}/entrants`, { headers: { 
+    axios.get(`${sirenUrl}/lhl/entrants`, { headers: { 
       
      } })
       .then(response => {
@@ -39,9 +39,22 @@ export const getEntrants = () => {
 export const getRaces = () => {
   return (dispatch) => {
     dispatch(loadStart());
-    axios.get(`${sirenUrl}/matches`)
+    axios.get(`${sirenUrl}/lhl/matches`)
       .then(response => {
         dispatch(loadFinish(response.data, 'races', DATA_DONE_LOADING_SIREN_RACES))
+      })
+      .catch(err => {
+        dispatch(loadError(err))
+      })
+  }
+}
+
+export const getZz4Races = () => {
+  return (dispatch) => {
+    dispatch(loadStart());
+    axios.get(`${sirenUrl}/zz4/matches`)
+      .then(response => {
+        dispatch(loadFinish(response.data, 'zz4', DATA_DONE_LOADING_ZZ4))
       })
       .catch(err => {
         dispatch(loadError(err))
