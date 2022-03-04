@@ -21,7 +21,8 @@ const loadError = error => ({
   }
 });
 
-const apiUrl = process.env.REACT_APP_RACEBOT_API_URL;
+const environment = process.env.NODE_ENV;
+const apiUrl = environment === 'development' ? process.env.REACT_APP_RACEBOT_API_URL_DEV : process.env.REACT_APP_RACEBOT_API_URL;
 const apiKey = process.env.REACT_APP_RACEBOT_APIKEY;
 const apiHeader = 'apikey';
 

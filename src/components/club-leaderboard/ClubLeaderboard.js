@@ -4,8 +4,8 @@ import './ClubLeaderboard.scss';
 import { ReduxEventsData } from '../redux-data';
 import ClubHeader from './ClubHeader';
 
-const CLUB_NAMES = ['Underground Racing Club Season 2', 'Lunar Racing Club Season 2', 'MJC 2', 'Enterprise Legacy', 'SS2']
-const ABBREVIATIONS = ['URC', 'LRC', 'MJC', 'EL', 'SS'];
+const CLUB_NAMES = ['Spoil Sports S1', 'PPL2', "Hero's Journey", 'Enterprise Legacy', 'SS3']
+const ABBREVIATIONS = ['SpS', 'PPL2', 'HJ', 'EL', 'SS'];
 
 class ClubLeaderboard extends Component {
   state = {
@@ -26,14 +26,14 @@ class ClubLeaderboard extends Component {
         this.setState({ activeClub: 0 });
         break;
       case 3:
-        this.setState({ activeClub: 2 });
+        this.setState({ activeClub: 3 });
         break;
       case 4:
         this.setState({ activeClub: 1 });
         break;
       case 5:
       case 6:
-        this.setState({ activeClub: 3 });
+        this.setState({ activeClub: 2 });
         break;
       case 0:
         this.setState({ activeClub: 4 });
