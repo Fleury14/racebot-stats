@@ -29,11 +29,8 @@ const Navbar = (props) => {
           <Link to={'/events'}>
             <li>Events</li>
           </Link>
-          <Link to={'/lhl'}>
-            <li>Lali-Ho League</li>
-          </Link>
-          <Link to={'/zz4'}>
-            <li>ZZ4</li>
+          <Link to={'/ac'}>
+            <li>Adamant Cup</li>
           </Link>
         </ul>
       </div>
