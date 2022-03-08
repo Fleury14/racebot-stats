@@ -1,6 +1,7 @@
 const groups = [
   {
     title: "Artemis Bow",
+    image: 'AC22-Artemis-Bow.png',
     players: [
       {
         name: 'David B',
@@ -41,6 +42,7 @@ const groups = [
   },
   {
     title: "Blitz Whip",
+    image: 'AC22-Blitz-Whip.png',
     players: [
       {
         name: 'Y2Sky',
@@ -76,6 +78,7 @@ const groups = [
   },
   {
     title: "Cat Claw",
+    image: 'AC22-Cat-Claw.png',
     players: [
       {
         name: 'JudgeJoe',
@@ -111,6 +114,7 @@ const groups = [
   },
   {
     title: "Defense Sword",
+    image: 'AC22-Defense-Sword.png',
     players: [
       {
         name: 'McBain',
@@ -146,6 +150,7 @@ const groups = [
   },
   {
     title: "Full Moon",
+    image: 'AC22-Full-Moon.png',
     players: [
       {
         name: 'Funnelcakes',
@@ -181,6 +186,7 @@ const groups = [
   },
   {
     title: "Lilith Rod",
+    image: 'AC22-Lilith-Rod.png',
     players: [
       {
         name: 'Eykir',
@@ -216,6 +222,7 @@ const groups = [
   },
   {
     title: "Ogre Axe",
+    image: 'AC22-Ogre-Axe.png',
     players: [
       {
         name: 'Zilch',
@@ -251,6 +258,7 @@ const groups = [
   },
   {
     title: "Spear Spear",
+    image: 'AC22-Spear-Spear.png',
     players: [
       {
         name: 'Dia',
@@ -286,6 +294,7 @@ const groups = [
   },
   {
     title: "Aegis Shield",
+    image: 'AC22-Aegis-Shield.png',
     players: [
       {
         name: 'Xyrak',
@@ -321,6 +330,7 @@ const groups = [
   },
   {
     title: "Crystal Ring",
+    image: 'AC22-Crystal-Ring.png',
     players: [
       {
         name: 'Tybalt',
@@ -356,6 +366,7 @@ const groups = [
   },
   {
     title: "Dragoon Helm",
+    image: 'AC22-Dragoon-Helm.png',
     players: [
       {
         name: 'dustygriff',
@@ -391,6 +402,7 @@ const groups = [
   },
   {
     title: "Gaea Hat",
+    image: 'AC22-Gaea-Hat.png',
     players: [
       {
         name: 'Klopfer',
@@ -426,6 +438,7 @@ const groups = [
   },
   {
     title: "Heroine Robe",
+    image: 'AC22-Heroine-Robe.png',
     players: [
       {
         name: 'simbu',
@@ -461,6 +474,7 @@ const groups = [
   },
   {
     title: "Karate Gi",
+    image: 'AC22-Karate-Gi.png',
     players: [
       {
         name: 'couch_23',
@@ -496,6 +510,7 @@ const groups = [
   },
   {
     title: "Ninja Shirt",
+    image: 'AC22-Ninja-Shirt.png',
     players: [
       {
         name: 'Arusta',
@@ -536,6 +551,7 @@ const groups = [
   },
   {
     title: "Zeus Gauntlet",
+    image: 'AC22-Zeus-Gauntlets.png',
     players: [
       {
         name: 'LUF',
@@ -643,3 +659,5 @@ const groups = [
 //     players: []
 //   },
 // ]
+
+export default groups;

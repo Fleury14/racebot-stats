@@ -1,0 +1,45 @@
+.ac-page {
+  font-family: 'Open Sans', sans-serif;
+
+  h1 {
+    text-align: center;
+    margin: 20px 0px;
+  }
+}
+
+.ac-group-container {
+  border: 1px solid #777;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 75%;
+  margin-left: 12.5%;
+
+  .ac-group-title {
+    background-color: #bbf;
+    padding: 2px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      height: 45px;
+      width: 45px;
+    }
+  }
+
+  .ac-row {
+    border-bottom: 1px solid #999;
+
+    p {
+      margin: 0px;
+    }
+  }
+
+  .ac-first {
+    background-color: #bfb;
+  }
+  
+  .ac-playin {
+    background-color: #ffb;
+  }
+}
