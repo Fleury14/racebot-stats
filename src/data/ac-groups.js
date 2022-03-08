@@ -123,7 +123,7 @@ const groups = [
       },
       {
         name: 'Dragus',
-        wins: 0,
+        wins: 1,
         losses: 0,
       },
       {
@@ -134,7 +134,7 @@ const groups = [
       {
         name: 'Gambit017',
         wins: 0,
-        losses: 0,
+        losses: 1,
       },
       {
         name: 'The Bardic Panda',

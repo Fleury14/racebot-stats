@@ -19,7 +19,7 @@ class AC extends Component {
         <Container>
           <Row>
             {acData ? acData.map(group => {
-              group.players.sort((a, b) => b.wins - a.wins);
+              group.players.sort((a, b) => a.wins === b.wins ? a.losses - b.losses : b.wins - a.wins);
               return (
                 <Col md="6">
                   <div className='ac-group-container'>
