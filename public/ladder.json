@@ -88,6 +88,21 @@
         "flags": "O1:quest_magnes/2:quest_baroncastle/3:quest_zot/4:quest_sealedcave/5:quest_ribbonaltar/6:quest_cavebahamut/7:quest_dwarfcastle/8:quest_lowerbabil/random:2,gated_quest/req:all/win:crystal Kmain/summon/moon Pkey Cstandard/start:any/no:cecil,fusoya/j:abilities/nodupes/party:4 Twildish Sstandard/no:j Bstandard/alt:gauntlet Nchars Etoggle Glife/sylph -kit:better -spoon"
       }
     ]
+  },
+  {
+    "category": "Adamant Cup",
+    "presets": [
+      {
+        "name": "Group Stage",
+        "description": "The flagset used for the group stage of the Adamant Cup, this is a high power, high completion percentage flagset that will test your efficiency over large swtahs of the game. Be wary of the 4 character party limit!",
+        "flags": "Orandom:7,tough_quest/req:7/win:crystal Kmain/summon/moon Pkey Cstandard/nofree/restrict:cecil,fusoya/j:abilities/nekkie/party:4 Twildish/maxtier:7 Sstandard Bstandard/alt:gauntlet Etoggle Glife/sylph/backrow -kit:better -spoon"
+      },
+      {
+        "name": "Bracket Stage",
+        "description": "The second flagset for the Adamant cup used from the top 32 onward. The high completion percentage from group stage carries over, but the tresure chest quality gets bumped down. Also, Cecil and FuSoYa are on vacation, likely planning a trip to a Lunarian theme park.",
+        "flags": "Orandom:7,tough_quest/req:7/win:crystal Kmain/summon/moon Pkey Crelaxed/nofree/no:cecil,fusoya/j:abilities/nekkie/party:4 Tpro/maxtier:6 Sstandard/sell:quarter Bstandard/alt:gauntlet Etoggle Glife/sylph -kit:basic -spoon -smith:alt"
+      }
+    ]
   }
 
 ]
