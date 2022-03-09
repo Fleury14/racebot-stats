@@ -16,7 +16,6 @@ class ACMatchBox extends Component {
 
   render() {
     const { matches } = this.props;
-    console.log('matches', matches);
     return (
       <div className='ac-match-box'>
         <div className='ac-match-title d-flex justify-content-between align-items-center'>

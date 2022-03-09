@@ -13,7 +13,6 @@ class AC extends Component {
 
   render() {
     const acData = parseAC();
-    console.log('ac data', acData);
     return (
       <div className="ac-page">
         <Navbar />
@@ -24,7 +23,7 @@ class AC extends Component {
               const groupMatches = matches.filter(match => match.group === group.title);
               group.players.sort((a, b) => a.wins === b.wins ? a.losses - b.losses : b.wins - a.wins);
               return (
-                <Col md="6">
+                <Col md="6" key={group.title}>
                   <div className='ac-group-container'>
                     <div className='ac-group-title'>
                       <h2>{group.title}</h2>
@@ -33,7 +32,7 @@ class AC extends Component {
                     
                     {group.players.map((player, index) => {
                       return (
-                        <div className={`d-flex justify-content-between align-items-center ac-row ${index === 0 ? 'ac-first' : ''}${index === 1 || index === 2 ? 'ac-playin' : ''}`}>
+                        <div key={index} className={`d-flex justify-content-between align-items-center ac-row ${index === 0 ? 'ac-first' : ''}${index === 1 || index === 2 ? 'ac-playin' : ''}`}>
                           <p>{player.name}</p>
                           <p>{player.wins}-{player.losses}</p>
                         </div>
