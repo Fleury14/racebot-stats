@@ -42,3 +42,42 @@
     background-color: #ffb;
   }
 }
+
+.ac-match-box {
+
+  transition: all 0.5s;
+
+  p {
+    margin: 0;
+  }
+  
+  .ac-match-title {
+    background-color: lighten(#bbf, 10);
+    margin-top: 10px;
+    padding: 5px;
+  }
+
+  .ac-match-win {
+    background-color: rgb(228, 203, 120);
+    font-weight: 700;
+  }
+
+  .ac-closed {
+    display: none !important;
+  }
+
+  button {
+    transition: 0.3s all;
+    border-radius: 2px;
+    height: 30px;
+    width: 30px;
+
+    &:hover {
+      background-color: #bbf;
+      color: #fff;
+    }
+  }
+}
+
+
+

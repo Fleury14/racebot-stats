@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import { Navbar} from '..';
 import { parseAC } from '../../helpers';
+import matches from '../../data/ac-matches';
+import ACMatchBox from './ac-matches-box';
 import './ac.scss';
 
 class AC extends Component {
@@ -19,6 +21,7 @@ class AC extends Component {
         <Container>
           <Row>
             {acData ? acData.map(group => {
+              const groupMatches = matches.filter(match => match.group === group.title);
               group.players.sort((a, b) => a.wins === b.wins ? a.losses - b.losses : b.wins - a.wins);
               return (
                 <Col md="6">
@@ -36,6 +39,7 @@ class AC extends Component {
                         </div>
                       );
                     })}
+                    <ACMatchBox matches={groupMatches} />
                   </div>
                 </Col>
               );
