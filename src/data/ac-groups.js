@@ -231,13 +231,13 @@ const groups = [
       },
       {
         name: 'Marten Broadcloak',
-        wins: 1,
-        losses: 0,
+        wins: 0,
+        losses: 1,
       },
       {
         name: 'Slippery',
-        wins: 0,
-        losses: 1,
+        wins: 1,
+        losses: 0,
       },
       {
         name: 'GeminiHero',
