@@ -95,6 +95,110 @@ const matches = [
     time2: '1:38:52',
     winner: 2
   },
+  {
+    group: 'Heroine Robe',
+    racer1: 'simbu',
+    racer2: 'ZoeVermilion',
+    time1: '1:15:13',
+    time2: '1:36:47',
+    winner: 1
+  },
+  {
+    group: 'Aegis Shield',
+    racer1: 'Nightdew',
+    racer2: 'elvensorrow',
+    time1: '1:39:56',
+    time2: '1:57:57',
+    winner: 1
+  },
+  {
+    group: 'Karate Gi',
+    racer1: 'A Stone Dingley',
+    racer2: 'FirebirdLover',
+    time1: '1:41:58',
+    time2: '2:13:03',
+    winner: 1
+  },
+  {
+    group: 'Ninja Shirt',
+    racer1: 'DShmoo619',
+    racer2: 'moonblazewolf',
+    time1: '2:10:51',
+    time2: '1:54:45',
+    winner: 2
+  },
+  {
+    group: 'Defense Sword',
+    racer1: 'McBain',
+    racer2: 'TheBardicPanda',
+    time1: '2:10:53',
+    time2: '2:23:51',
+    winner: 1
+  },
+  {
+    group: 'Artemis Bow',
+    racer1: 'Blue Cat Loach',
+    racer2: 'David B',
+    time1: '1:44:21',
+    time2: '1:57:28',
+    winner: 1
+  },
+  {
+    group: 'Cat Claw',
+    racer1: 'Poidrac',
+    racer2: 'JudgeJoe',
+    time1: '1:36:28',
+    time2: '1:43:49',
+    winner: 1
+  },
+  {
+    group: 'Defense Sword',
+    racer1: 'Dragus',
+    racer2: 'Nitzy',
+    time1: '1:52:53',
+    time2: '2:06:20',
+    winner: 1
+  },
+  {
+    group: 'Lilith Rod',
+    racer1: 'Eykir',
+    racer2: 'Lenophis',
+    time1: '2:07:00',
+    time2: '2:03:39',
+    winner: 1
+  },
+  {
+    group: 'Crystal Ring',
+    racer1: 'Tybalt',
+    racer2: 'sylverfyre',
+    time1: '1:39:50',
+    time2: '1:39:05',
+    winner: 2
+  },
+  {
+    group: 'Gaea Hat',
+    racer1: 'xPankraz',
+    racer2: 'CSRadical',
+    time1: '1:25:11',
+    time2: '2:01:54',
+    winner: 1
+  },
+  {
+    group: 'Artemis Bow',
+    racer1: 'PlumeriaKnight',
+    racer2: 'JBrunTR',
+    time1: '1:54:04',
+    time2: '2:12:32',
+    winner: 1
+  },
+  {
+    group: 'Ogre Axe',
+    racer1: 'Marten Broadcloak',
+    racer2: 'Slippery',
+    time1: '1:45:55',
+    time2: '1:43:51',
+    winner: 2
+  },
   
 ]
 
