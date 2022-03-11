@@ -199,7 +199,117 @@ const matches = [
     time2: '1:43:51',
     winner: 2
   },
-  
+  {
+    group: 'Zeus Gauntlet',
+    racer1: 'BoneyC',
+    racer2: 'beernerd',
+    time1: '1:49:19',
+    time2: '1:33:36',
+    winner: 2
+  },
+  {
+    group: 'Zeus Gauntlet',
+    racer1: 'Poorlydrawnbees',
+    racer2: 'beernerd',
+    time1: '1:29:50',
+    time2: '1:39:01',
+    winner: 1
+  },
+  {
+    group: 'Heroine Robe',
+    racer1: 'bgrich419',
+    racer2: 'LadyId19',
+    time1: '2:23:32',
+    time2: '1:54:25',
+    winner: 2
+  },
+  {
+    group: 'Blitz Whip',
+    racer1: 'Cubsrule21',
+    racer2: 'Y2Sky',
+    time1: '1:25:42',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Ogre Axe',
+    racer1: 'GeminiHero',
+    racer2: 'Soleras',
+    time1: '2:29:40',
+    time2: '1:44:11',
+    winner: 2
+  },
+  {
+    group: 'Crystal Ring',
+    racer1: 'Xenocat',
+    racer2: 'Rexx Raul',
+    time1: '1:34:52',
+    time2: '1:55:17',
+    winner: 1
+  },{
+    group: 'Ninja Shirt',
+    racer1: 'Kyrios',
+    racer2: 'arusta',
+    time1: '2:28:58',
+    time2: '2:50:00',
+    winner: 1
+  },
+  {
+    group: 'Ninja Shirt',
+    racer1: 'moonblazewolf',
+    racer2: 'drcossack',
+    time1: '1:38:47',
+    time2: '1:47:08',
+    winner: 1
+  },
+  {
+    group: 'Defense Sword',
+    racer1: 'nitzy',
+    racer2: 'Zeke Highwind',
+    time1: '2:42:48',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Lilith Rod',
+    racer1: 'Pyre',
+    racer2: 'Friedghoughphtheightteau',
+    time1: '1:39:55',
+    time2: '1:45:52',
+    winner: 1
+  },
+  {
+    group: 'Artemis Bow',
+    racer1: 'John Brickhead',
+    racer2: 'frankiebones',
+    time1: '1:42:35',
+    time2: '1:51:41',
+    winner: 1
+  },
+  {
+    group: 'Karate Gi',
+    racer1: 'Galeswift',
+    racer2: 'FirebirdLover',
+    time1: '1:37:45',
+    time2: '2:07:31',
+    winner: 1
+  },
+  {
+    group: 'Ninja Shirt',
+    racer1: 'ScytheMarshall',
+    racer2: 'Sheep Launcher',
+    time1: '2:02:32',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Blitz Whip',
+    racer1: 'dnarii',
+    racer2: 'soapboxgamer',
+    time1: '1:45:35',
+    time2: '2:20:15',
+    winner: 1
+  },
 ]
 
 export default matches;
