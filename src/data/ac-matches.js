@@ -165,7 +165,7 @@ const matches = [
     racer2: 'Lenophis',
     time1: '2:07:00',
     time2: '2:03:39',
-    winner: 1
+    winner: 2
   },
   {
     group: 'Crystal Ring',
@@ -309,6 +309,126 @@ const matches = [
     time1: '1:45:35',
     time2: '2:20:15',
     winner: 1
+  },
+  {
+    group: 'Crystal Ring',
+    racer1: 'Xenocat',
+    racer2: 'Alchemie',
+    time1: '1:39:03',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Zeus Gauntlet',
+    racer1: 'Just Kinda',
+    racer2: 'BoneyC',
+    time1: 'Forfeit',
+    time2: '1:29:06',
+    winner: 2
+  },
+  {
+    group: 'Karate Gi',
+    racer1: 'A Stone Dingley',
+    racer2: 'Teknolink',
+    time1: '1:49:05',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Gaea Hat',
+    racer1: 'neongrey',
+    racer2: 'Klopfer',
+    time1: '1:47:44',
+    time2: '1:44:29',
+    winner: 2
+  },
+  {
+    group: 'Heroine Robe',
+    racer1: 'simbu',
+    racer2: 'bgrich419',
+    time1: '1:17:37',
+    time2: '1:28:34',
+    winner: 1
+  },
+  {
+    group: 'Aegis Shield',
+    racer1: 'BeautyInDiscovery',
+    racer2: 'elvensorrow',
+    time1: '2:18:50',
+    time2: '1:52:47',
+    winner: 2
+  },
+  {
+    group: 'Crystal Ring',
+    racer1: 'Saradin',
+    racer2: 'Rexx Raul',
+    time1: '1:38:14',
+    time2: '1:39:20',
+    winner: 1
+  },
+  {
+    group: 'Full Moon',
+    racer1: 'Possumorpheus',
+    racer2: 'Fleury14',
+    time1: '1:44:42',
+    time2: '1:50:27',
+    winner: 1
+  },
+  {
+    group: 'Lilith Rod',
+    racer1: 'BadKarma',
+    racer2: 'Infinious',
+    time1: '1:50:07',
+    time2: '1:52:45',
+    winner: 1
+  },
+  {
+    group: 'Cat Claw',
+    racer1: 'Poidrac',
+    racer2: 'keddril',
+    time1: '1:29:43',
+    time2: '1:28:23',
+    winner: 2
+  },
+  {
+    group: 'Lilith Rod',
+    racer1: 'Pyre',
+    racer2: 'Lenophis',
+    time1: '1:42:26',
+    time2: '2:10:14',
+    winner: 1
+  },
+  {
+    group: 'Blitz Whip',
+    racer1: 'Sorbius',
+    racer2: 'recklesscharlie',
+    time1: '1:51:10',
+    time2: '1:57:15',
+    winner: 1
+  },
+  {
+    group: 'Cat Claw',
+    racer1: 'Lord Bob Bree',
+    racer2: 'scratchdragon',
+    time1: '1:40:59',
+    time2: '1:56:14',
+    winner: 1
+  },
+  {
+    group: 'Defense Sword',
+    racer1: 'Gambit017',
+    racer2: 'Zeke Highwind',
+    time1: 'Forfeit',
+    time2: '1:58:56',
+    winner: 2
+  },
+  {
+    group: 'Gaea Hat',
+    racer1: 'SteppeLively',
+    racer2: 'mikemike34',
+    time1: '2:02:42',
+    time2: '2:01:22',
+    winner: 2
   },
 ]
 
