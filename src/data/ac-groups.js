@@ -10,17 +10,17 @@ const groups = [
       },
       {
         name: 'JBrunTR',
-        wins: 0,
-        losses: 1,
+        wins: 1,
+        losses: 2,
       },
       {
         name: 'Mechalink',
         wins: 0,
-        losses: 0,
+        losses: 1,
       },
       {
         name: 'John Brickhead',
-        wins: 1,
+        wins: 2,
         losses: 0,
       },
       {
@@ -46,7 +46,7 @@ const groups = [
     players: [
       {
         name: 'Y2Sky',
-        wins: 0,
+        wins: 1,
         losses: 1,
       },
       {
@@ -57,7 +57,7 @@ const groups = [
       {
         name: 'recklesscharlie',
         wins: 0,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'CubsRule21',
@@ -92,7 +92,7 @@ const groups = [
       },
       {
         name: 'Poidrac',
-        wins: 1,
+        wins: 2,
         losses: 1,
       },
       {
@@ -108,7 +108,7 @@ const groups = [
       {
         name: 'scratchdragon',
         wins: 0,
-        losses: 1,
+        losses: 2,
       },
     ]
   },
@@ -133,13 +133,13 @@ const groups = [
       },
       {
         name: 'Gambit017',
-        wins: 0,
+        wins: 1,
         losses: 2,
       },
       {
         name: 'The Bardic Panda',
         wins: 0,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'Zeke Highwind',
@@ -155,7 +155,7 @@ const groups = [
       {
         name: 'Funnelcakes',
         wins: 0,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'Starman',
@@ -164,7 +164,7 @@ const groups = [
       },
       {
         name: 'Fleury14',
-        wins: 0,
+        wins: 1,
         losses: 1,
       },
       {
@@ -191,7 +191,7 @@ const groups = [
       {
         name: 'Eykir',
         wins: 0,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'Lenophis',
@@ -205,7 +205,7 @@ const groups = [
       },
       {
         name: 'Infinious',
-        wins: 0,
+        wins: 1,
         losses: 1,
       },
       {
@@ -262,13 +262,13 @@ const groups = [
     players: [
       {
         name: 'Dia',
-        wins: 0,
+        wins: 1,
         losses: 0,
       },
       {
         name: 'Allisele',
         wins: 0,
-        losses: 0,
+        losses: 1,
       },
       {
         name: 'Rowdy Roddy Sniper',
@@ -303,7 +303,7 @@ const groups = [
       },
       {
         name: 'BeautyInDiscovery',
-        wins: 0,
+        wins: 1,
         losses: 1,
       },
       {
@@ -319,7 +319,7 @@ const groups = [
       {
         name: 'tallgrant',
         wins: 0,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'Nightdew',
@@ -335,11 +335,11 @@ const groups = [
       {
         name: 'Tybalt',
         wins: 0,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'Xenocat',
-        wins: 2,
+        wins: 3,
         losses: 0,
       },
       {
@@ -355,11 +355,11 @@ const groups = [
       {
         name: 'Alchemie',
         wins: 0,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'Rexx Raul',
-        wins: 0,
+        wins: 1,
         losses: 2,
       },
     ]
@@ -385,7 +385,7 @@ const groups = [
       },
       {
         name: 'microKorgs',
-        wins: 0,
+        wins: 1,
         losses: 0,
       },
       {
@@ -396,7 +396,7 @@ const groups = [
       {
         name: 'ULTROS_PROFESSIONAL',
         wins: 0,
-        losses: 0,
+        losses: 1,
       },
     ]
   },
@@ -417,7 +417,7 @@ const groups = [
       {
         name: 'neongrey',
         wins: 0,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'SteppeLively',
@@ -426,7 +426,7 @@ const groups = [
       },
       {
         name: 'xPankraz',
-        wins: 1,
+        wins: 2,
         losses: 0,
       },
       {
@@ -529,13 +529,13 @@ const groups = [
       },
       {
         name: 'ScytheMarshall',
-        wins: 2,
+        wins: 3,
         losses: 0,
       },
       {
         name: 'DShmoo619',
         wins: 0,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'Sheep Launcher',
