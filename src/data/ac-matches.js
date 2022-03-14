@@ -280,7 +280,7 @@ const matches = [
   },
   {
     group: 'Artemis Bow',
-    racer1: 'John Brickhead',
+    racer1: 'John Birckhead',
     racer2: 'frankiebones',
     time1: '1:42:35',
     time2: '1:51:41',
@@ -521,7 +521,7 @@ const matches = [
   {
     group: 'Artemis Bow',
     racer1: 'JBrunTR',
-    racer2: 'John Brickhead',
+    racer2: 'John Birckhead',
     time1: 'Forfeit',
     time2: '1:51:42',
     winner: 2
@@ -541,6 +541,132 @@ const matches = [
     time1: '1:29:25',
     time2: '2:08:57',
     winner: 2
+  },
+  {
+    group: 'Artemis Bow',
+    racer1: 'DavidB',
+    racer2: 'PlumeriaKnight',
+    time1: 'Forfeit',
+    time2: '1:43:26',
+    winner: 2
+  },
+  {
+    group: 'Heroine Robe',
+    racer1: 'LadyId19',
+    racer2: 'simbu',
+    time1: '1:28:31',
+    time2: '1:27:16',
+    winner: 2
+  },
+  {
+    group: 'Dragoon Helm',
+    racer1: 'CommanderLeonhart',
+    racer2: 'Dustygriff',
+    time1: '1:22:26',
+    time2: '1:31:11',
+    winner: 1
+  },
+  {
+    group: 'Aegis Shield',
+    racer1: 'tallgrant',
+    racer2: 'Vitasia',
+    time1: '2:15:27',
+    time2: '2:03:20',
+    winner: 2
+  },{
+    group: 'Gaea Hat',
+    racer1: 'CSRadical',
+    racer2: 'SteppeLively',
+    time1: 'Forfeit',
+    time2: '1:42:20',
+    winner: 2
+  },
+  {
+    group: 'Zeus Gauntlet',
+    racer1: 'LUF',
+    racer2: 'BoneyC',
+    time1: '2:03:33',
+    time2: '1:52:09',
+    winner: 2
+  },
+  {
+    group: 'Crystal Ring',
+    racer1: 'Alchemie',
+    racer2: 'Saradin',
+    time1: '1:59:50',
+    time2: '1:52:04',
+    winner: 2
+  },{
+    group: 'Blitz Whip',
+    racer1: 'dnarii',
+    racer2: 'Y2Sky',
+    time1: '1:54:14',
+    time2: '1:41:40',
+    winner: 2
+  },
+  {
+    group: 'Karate Gi',
+    racer1: 'Galeswift',
+    racer2: 'A Stone Dingley',
+    time1: '1:51:46',
+    time2: '1:42:36',
+    winner: 2
+  },
+  {
+    group: 'Gaea Hat',
+    racer1: 'Klopfer',
+    racer2: 'xPankraz',
+    time1: '1:34:56',
+    time2: '1:26:57',
+    winner: 2
+  },
+  {
+    group: 'Defense Sword',
+    racer1: 'Dragus',
+    racer2: 'McBain',
+    time1: '1:53:16',
+    time2: '1:54:01',
+    winner: 1
+  },
+  {
+    group: 'Full Moon',
+    racer1: 'Professor Renderer',
+    racer2: 'Possumorpheus',
+    time1: '2:10:38',
+    time2: '1:22:21',
+    winner: 2
+  },
+  {
+    group: 'Ninja Shirt',
+    racer1: 'drcossack',
+    racer2: 'Sheep Launcher',
+    time1: '1:38:11',
+    time2: '2:12:19',
+    winner: 1
+  },
+  {
+    group: 'Cat Claw',
+    racer1: 'Eizan Tayama',
+    racer2: 'Lord Bob Bree',
+    time1: '1:32:15',
+    time2: '1:26:33',
+    winner: 2
+  },
+  {
+    group: 'Ogre Axe',
+    racer1: 'Marten Broadcloak',
+    racer2: 'Zilch',
+    time1: '1:43:09',
+    time2: '1:48:22',
+    winner: 1
+  },
+  {
+    group: 'Spear Spear',
+    racer1: 'EscoNitz',
+    racer2: 'Rowdy Roddy Sniper',
+    time1: '1:37:17',
+    time2: '1:39:32',
+    winner: 1
   },
 ]
 
