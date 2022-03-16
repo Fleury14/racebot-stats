@@ -730,7 +730,7 @@ const matches = [
     racer2: 'Rexx Raul',
     time1: '2:05:55',
     time2: '1:47:18',
-    winner: 1
+    winner: 2
   },
   {
     group: 'Cat Claw',
