@@ -22,6 +22,17 @@ class AC extends Component {
             {acData ? acData.map(group => {
               const groupMatches = matches.filter(match => match.group === group.title);
               group.players.sort((a, b) => a.wins === b.wins ? a.losses - b.losses : b.wins - a.wins);
+              
+              function isTiedForFirst(player) {
+                console.log('comparing', player, group.players[0])
+                return player.wins === group.players[0].wins && player.losses === group.players[0].losses;
+                
+              }
+              function isTiedForThird(player) {
+                
+                return player.wins === group.players[2].wins && player.losses === group.players[2].losses;
+                
+              }
               return (
                 <Col md="6" key={group.title}>
                   <div className='ac-group-container'>
@@ -32,7 +43,7 @@ class AC extends Component {
                     
                     {group.players.map((player, index) => {
                       return (
-                        <div key={index} className={`d-flex justify-content-between align-items-center ac-row ${index === 0 ? 'ac-first' : ''}${index === 1 || index === 2 ? 'ac-playin' : ''}`}>
+                        <div key={index} className={`d-flex justify-content-between align-items-center ac-row ${index === 0 || isTiedForFirst(player) ? ' ac-first' : ''}${((index === 1 || index === 2) && !isTiedForFirst(player)) || (isTiedForThird(player) && !isTiedForFirst(player)) ? ' ac-playin' : ''}`}>
                           <p>{player.name}</p>
                           <p>{player.wins}-{player.losses}</p>
                         </div>

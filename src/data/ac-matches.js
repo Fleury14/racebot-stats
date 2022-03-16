@@ -536,11 +536,11 @@ const matches = [
   },
   {
     group: 'Gaea Hat',
-    racer1: 'neongrey',
-    racer2: 'xPankraz',
+    racer1: 'xPankraz',
+    racer2: 'neongrey',
     time1: '1:29:25',
     time2: '2:08:57',
-    winner: 2
+    winner: 1
   },
   {
     group: 'Artemis Bow',
@@ -667,6 +667,118 @@ const matches = [
     time1: '1:37:17',
     time2: '1:39:32',
     winner: 1
+  },
+  {
+    group: 'Zeus Gauntlet',
+    racer1: 'poorlydrawnbees',
+    racer2: 'Just Kinda',
+    time1: '1:38:26',
+    time2: '2:02:30',
+    winner: 1
+  },
+  {
+    group: 'Ninja Shirt',
+    racer1: 'moonblazewolf',
+    racer2: 'Arusta',
+    time1: '1:45:48',
+    time2: '2:03:34',
+    winner: 1
+  },
+  {
+    group: 'Spear Spear',
+    racer1: 'Allisele',
+    racer2: 'Flyeaglesfly72',
+    time1: '2:17:18',
+    time2: '2:35:04',
+    winner: 1
+  },
+  {
+    group: 'Zeus Gauntlet',
+    racer1: 'LUF',
+    racer2: 'Just Kinda',
+    time1: '1:58:40',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Defense Sword',
+    racer1: 'Gambit017',
+    racer2: 'nitzy',
+    time1: '2:09:55',
+    time2: '1:51:45',
+    winner: 2
+  },
+  {
+    group: 'Spear Spear',
+    racer1: 'EscoNitz',
+    racer2: 'Engidave',
+    time1: 'Forfeit',
+    time2: '1:45:50',
+    winner: 2
+  },
+  {
+    group: 'Ninja Shirt',
+    racer1: 'Kyrios',
+    racer2: 'ScytheMarshall',
+    time1: '1:29:04',
+    time2: '1:53:32',
+    winner: 1
+  },
+  {
+    group: 'Crystal Ring',
+    racer1: 'Tybalt',
+    racer2: 'Rexx Raul',
+    time1: '2:05:55',
+    time2: '1:47:18',
+    winner: 1
+  },
+  {
+    group: 'Cat Claw',
+    racer1: 'JudgeJoe',
+    racer2: 'Lord Bob Bree',
+    time1: '1:36:55',
+    time2: '2:00:39',
+    winner: 1
+  },
+  {
+    group: 'Lilith Rod',
+    racer1: 'Eykir',
+    racer2: 'BadKarma',
+    time1: '1:45:48',
+    time2: '1:47:38',
+    winner: 1
+  },
+  {
+    group: 'Defense Sword',
+    racer1: 'The Bardic Panda',
+    racer2: 'Zeke Highwind',
+    time1: '1:42:22',
+    time2: '1:48:12',
+    winner: 1
+  },
+  {
+    group: 'Aegis Shield',
+    racer1: 'tallgrant',
+    racer2: 'elvensorrow',
+    time1: '1:55:54',
+    time2: '2:00:29',
+    winner: 1
+  },
+  {
+    group: 'Artemis Bow',
+    racer1: 'JBrunTR',
+    racer2: 'Blue Cat Loach',
+    time1: '1:44:25',
+    time2: '1:38:58',
+    winner: 2
+  },
+  {
+    group: 'Gaea Hat',
+    racer1: 'neongrey',
+    racer2: 'mikemike34',
+    time1: '2:22:46',
+    time2: '1:53:34',
+    winner: 2
   },
 ]
 
