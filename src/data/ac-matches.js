@@ -780,6 +780,134 @@ const matches = [
     time2: '1:53:34',
     winner: 2
   },
+  {
+    group: 'Gaea Hat',
+    racer1: 'neongrey',
+    racer2: 'SteppeLively',
+    time1: '2:05:57',
+    time2: '2:17:07',
+    winner: 1
+  },
+  {
+    group: 'Karate Gi',
+    racer1: 'Galeswift',
+    racer2: 'Teknolink',
+    time1: '1:55:31',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Defense Sword',
+    racer1: 'Gambit017',
+    racer2: 'McBain',
+    time1: '1:49:26',
+    time2: '1:29:11',
+    winner: 2
+  },
+  {
+    group: 'Artemis Bow',
+    racer1: 'DavidB',
+    racer2: 'Mechalink',
+    time1: '2:11:28',
+    time2: '1:52:01',
+    winner: 2
+  },
+  {
+    group: 'Dragoon Helm',
+    racer1: 'microKorgs',
+    racer2: 'RexBanner',
+    time1: '1:40:57',
+    time2: '1:52:43',
+    winner: 1
+  },
+  {
+    group: 'Cat Claw',
+    racer1: 'EizanTayama',
+    racer2: 'scratchdragon',
+    time1: '1:53:10',
+    time2: '1:51:41',
+    winner: 2
+  },
+  {
+    group: 'Aegis Shield',
+    racer1: 'elvensorrow',
+    racer2: 'Vitasia',
+    time1: '1:31:17',
+    time2: '1:44:29',
+    winner: 1
+  },
+  {
+    group: 'Gaea Hat',
+    racer1: 'CSRadical',
+    racer2: 'Klopfer',
+    time1: 'Forfeit',
+    time2: '1:48:19',
+    winner: 2
+  },
+  {
+    group: 'Ninja Shirt',
+    racer1: 'moonblazewolf',
+    racer2: 'Kyrios',
+    time1: '1:47:27',
+    time2: '1:48:22',
+    winner: 1
+  },
+  {
+    group: 'Ogre Axe',
+    racer1: 'Marten Broadcloak',
+    racer2: 'Wewbear',
+    time1: '1:46:29',
+    time2: '1:39:36',
+    winner: 2
+  },
+  {
+    group: 'Aegis Shield',
+    racer1: 'Xyrak',
+    racer2: 'Nightdew',
+    time1: '1:48:21',
+    time2: '1:56:19',
+    winner: 1
+  },
+  {
+    group: 'Karate Gi',
+    racer1: 'FirebirdLover',
+    racer2: 'couch_23',
+    time1: '2:14:13',
+    time2: '2:10:25',
+    winner: 2
+  },
+  {
+    group: 'Artemis Bow',
+    racer1: 'Blue Cat Loach',
+    racer2: 'John Birckhead',
+    time1: '1:35:30',
+    time2: '1:43:42',
+    winner: 1
+  },
+  {
+    group: 'Defense Sword',
+    racer1: 'Dragus',
+    racer2: 'Zeke Highwind',
+    time1: '1:50:08',
+    time2: '2:00:16',
+    winner: 1
+  },
+  {
+    group: 'Ninja Shirt',
+    racer1: 'DShmoo619',
+    racer2: 'Sheep Launcher',
+    time1: '2:01:21',
+    time2: '2:30:54',
+    winner: 1
+  },
+  {
+    group: 'Artemis Bow',
+    racer1: 'PlumeriaKnight',
+    racer2: 'frankiebones',
+    time1: '1:15:46',
+    time2: '1:29:24',
+    winner: 1
+  },
 ]
 
 export default matches;
