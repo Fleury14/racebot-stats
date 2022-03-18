@@ -908,6 +908,127 @@ const matches = [
     time2: '1:29:24',
     winner: 1
   },
+  {
+    group: 'Full Moon',
+    racer1: 'Starman',
+    racer2: 'Fleury14',
+    time1: '1:44:42',
+    time2: '1:39:02',
+    winner: 2
+  },
+  {
+    group: 'Zeus Gauntlet',
+    racer1: 'poorlydrawnbees',
+    racer2: 'Demerine',
+    time1: 'Forfeit',
+    time2: '1:41:04',
+    winner: 2
+  },
+  {
+    group: 'Cat Claw',
+    racer1: 'JudgeJoe',
+    racer2: 'Keddril',
+    time1: '1:50:43',
+    time2: '1:51:55',
+    winner: 1
+  },
+  {
+    group: 'Lilith Rod',
+    racer1: 'Pyre',
+    racer2: 'Eykir',
+    time1: '1:32:17',
+    time2: '1:22:02',
+    winner: 2
+  },
+  {
+    group: 'Crystal Ring',
+    racer1: 'Xenocat',
+    racer2: 'Saradin',
+    time1: '1:40:27',
+    time2: '1:45:38',
+    winner: 1
+  },
+  {
+    group: 'Spear Spear',
+    racer1: 'Engidave',
+    racer2: 'Rowdy Roddy Sniper',
+    time1: '1:45:28',
+    time2: '1:49:25',
+    winner: 1
+  },
+  {
+    group: 'Heroine Robe',
+    racer1: 'LadyId19',
+    racer2: 'Rhybon',
+    time1: '1:37:21',
+    time2: '1:32:14',
+    winner: 2
+  },
+  {
+    group: 'Zeus Gauntlet',
+    racer1: 'beernerd',
+    racer2: 'stoppableforce',
+    time1: '1:43:25',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Full Moon',
+    racer1: 'Funnelcakes',
+    racer2: 'AsmadiGames',
+    time1: '1:33:13',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Ogre Axe',
+    racer1: 'Slippery',
+    racer2: 'Wewbear',
+    time1: '1:55:24',
+    time2: '1:26:12',
+    winner: 2
+  },
+  {
+    group: 'Heroine Robe',
+    racer1: 'bgrich419',
+    racer2: 'Eninja81',
+    time1: '1:40:21',
+    time2: '2:03:21',
+    winner: 1
+  },
+  {
+    group: 'Aegis Shield',
+    racer1: 'BeautyInDiscovery',
+    racer2: 'Nightdew',
+    time1: '2:01:42',
+    time2: '1:38:53',
+    winner: 2
+  },
+  {
+    group: 'Ninja Shirt',
+    racer1: 'drcossack',
+    racer2: 'ScytheMarshall',
+    time1: '1:59:53',
+    time2: '1:52:07',
+    winner: 2
+  },
+  {
+    group: 'Lilith Rod',
+    racer1: 'BadKarma',
+    racer2: 'Friedghoughphtheightteau',
+    time1: '1:23:30',
+    time2: '1:07:14',
+    winner: 2
+  },
+  {
+    group: 'Gaea Hat',
+    racer1: 'neongrey',
+    racer2: 'CSRadical',
+    time1: '1:58:14',
+    time2: 'Forfeit',
+    winner: 2
+  },
+  
 ]
 
 export default matches;
