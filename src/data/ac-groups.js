@@ -52,7 +52,7 @@ const groups = [
       {
         name: 'dnarii',
         wins: 1,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'recklesscharlie',
@@ -62,16 +62,16 @@ const groups = [
       {
         name: 'CubsRule21',
         wins: 1,
-        losses: 0,
+        losses: 1,
       },
       {
         name: 'soapboxgamer',
-        wins: 0,
+        wins: 1,
         losses: 1,
       },
       {
         name: 'Sorbius',
-        wins: 1,
+        wins: 2,
         losses: 0,
       },
     ]
@@ -196,21 +196,21 @@ const groups = [
       {
         name: 'Lenophis',
         wins: 1,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'Pyre',
-        wins: 2,
+        wins: 3,
         losses: 2,
       },
       {
         name: 'Infinious',
         wins: 1,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'BadKarma',
-        wins: 2,
+        wins: 3,
         losses: 2,
       },
       {
@@ -263,7 +263,7 @@ const groups = [
       {
         name: 'Dia',
         wins: 1,
-        losses: 0,
+        losses: 1,
       },
       {
         name: 'Allisele',
@@ -282,7 +282,7 @@ const groups = [
       },
       {
         name: 'Engidave',
-        wins: 3,
+        wins: 4,
         losses: 0,
       },
       {
@@ -299,7 +299,7 @@ const groups = [
       {
         name: 'Xyrak',
         wins: 1,
-        losses: 0,
+        losses: 1,
       },
       {
         name: 'BeautyInDiscovery',
@@ -313,7 +313,7 @@ const groups = [
       },
       {
         name: 'elvensorrow',
-        wins: 2,
+        wins: 3,
         losses: 2,
       },
       {
@@ -349,7 +349,7 @@ const groups = [
       },
       {
         name: 'sylverfyre',
-        wins: 1,
+        wins: 2,
         losses: 0,
       },
       {
@@ -360,7 +360,7 @@ const groups = [
       {
         name: 'Rexx Raul',
         wins: 2,
-        losses: 2,
+        losses: 3,
       },
     ]
   },
@@ -375,7 +375,7 @@ const groups = [
       },
       {
         name: 'leggystarscream',
-        wins: 0,
+        wins: 1,
         losses: 1,
       },
       {
@@ -396,7 +396,7 @@ const groups = [
       {
         name: 'ULTROS_PROFESSIONAL',
         wins: 0,
-        losses: 1,
+        losses: 2,
       },
     ]
   },
@@ -411,7 +411,7 @@ const groups = [
       },
       {
         name: 'mikemike34',
-        wins: 2,
+        wins: 3,
         losses: 0,
       },
       {
@@ -432,7 +432,7 @@ const groups = [
       {
         name: 'CSRadical',
         wins: 0,
-        losses: 4,
+        losses: 5,
       },
     ]
   },
@@ -442,7 +442,7 @@ const groups = [
     players: [
       {
         name: 'simbu',
-        wins: 3,
+        wins: 4,
         losses: 1,
       },
       {
@@ -463,7 +463,7 @@ const groups = [
       {
         name: 'Eninja81',
         wins: 1,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'ZoeVermilion',
@@ -478,7 +478,7 @@ const groups = [
     players: [
       {
         name: 'couch_23',
-        wins: 1,
+        wins: 2,
         losses: 0,
       },
       {
@@ -494,17 +494,17 @@ const groups = [
       {
         name: 'FirebirdLover',
         wins: 1,
-        losses: 3,
+        losses: 4,
       },
       {
         name: 'Guerin',
-        wins: 0,
+        wins: 1,
         losses: 0,
       },
       {
         name: 'Galeswift',
         wins: 2,
-        losses: 1,
+        losses: 2,
       },
     ]
   },
@@ -524,7 +524,7 @@ const groups = [
       },
       {
         name: 'Kyrios',
-        wins: 2,
+        wins: 3,
         losses: 1,
       },
       {
@@ -535,7 +535,7 @@ const groups = [
       {
         name: 'DShmoo619',
         wins: 1,
-        losses: 2,
+        losses: 3,
       },
       {
         name: 'Sheep Launcher',
@@ -561,7 +561,7 @@ const groups = [
       {
         name: 'stoppableforce',
         wins: 0,
-        losses: 2,
+        losses: 3,
       },
       {
         name: 'Just Kinda',
@@ -585,7 +585,7 @@ const groups = [
       },
       {
         name: 'Poorlydrawnbees',
-        wins: 2,
+        wins: 3,
         losses: 1,
       },
     ]

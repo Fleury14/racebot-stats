@@ -1028,7 +1028,118 @@ const matches = [
     time2: 'Forfeit',
     winner: 2
   },
-  
+  {
+    group: 'Ninja Shirt',
+    racer1: 'DShmoo619',
+    racer2: 'Kyrios',
+    time1: 'Forfeit',
+    time2: '1:31:02',
+    winner: 2
+  },
+  {
+    group: 'Dragoon Helm',
+    racer1: 'leggystarscream',
+    racer2: 'ULTROS_PROFESSIONAL',
+    time1: '1:43:12',
+    time2: '1:43:24',
+    winner: 1
+  },
+  {
+    group: 'Blitz Whip',
+    racer1: 'CubsRule21',
+    racer2: 'soapboxgamer',
+    time1: '1:54:39',
+    time2: '1:52:00',
+    winner: 2
+  },
+  {
+    group: 'Lilith Rod',
+    racer1: 'BadKarma',
+    racer2: 'Lenophis',
+    time1: '1:44:40',
+    time2: '1:53:14',
+    winner: 1
+  },
+  {
+    group: 'Heroine Robe',
+    racer1: 'Eninja81',
+    racer2: 'simbu',
+    time1: '1:59:36',
+    time2: '1:27:04',
+    winner: 2
+  },
+  {
+    group: 'Aegis Shield',
+    racer1: 'Xyrak',
+    racer2: 'elvensorrow',
+    time1: '2:13:15',
+    time2: '2:04:07',
+    winner: 2
+  },
+  {
+    group: 'Karate Gi',
+    racer1: 'Galeswift',
+    racer2: 'couch_23',
+    time1: '1:28:47',
+    time2: '1:20:48',
+    winner: 2
+  },
+  {
+    group: 'Lilith Rod',
+    racer1: 'Pyre',
+    racer2: 'Infinious',
+    time1: '1:45:50',
+    time2: '1:56:00',
+    winner: 1
+  },
+  {
+    group: 'Spear Spear',
+    racer1: 'Dia',
+    racer2: 'Engidave',
+    time1: 'Forfeit',
+    time2: '1:26:34',
+    winner: 2
+  },
+  {
+    group: 'Karate Gi',
+    racer1: 'Guerin',
+    racer2: 'FirebirdLover',
+    time1: '2:12:30',
+    time2: '2:17:15',
+    winner: 1
+  },
+  {
+    group: 'Zeus Gauntlet',
+    racer1: 'poorlydrawnbees',
+    racer2: 'stoppableforce',
+    time1: '1:35:55',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Blitz Whip',
+    racer1: 'dnarii',
+    racer2: 'Sorbius',
+    time1: '1:50:32',
+    time2: '1:50:18',
+    winner: 2
+  },
+  {
+    group: 'Crystal Ring',
+    racer1: 'sylverfyre',
+    racer2: 'Rexx Raul',
+    time1: '1:50:59',
+    time2: '1:55:15',
+    winner: 1
+  },
+  {
+    group: 'Gaea Hat',
+    racer1: 'CSRadical',
+    racer2: 'mikemike34',
+    time1: '2:09:53',
+    time2: '2:05:09',
+    winner: 2
+  },
 ]
 
 export default matches;
