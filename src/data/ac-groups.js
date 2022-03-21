@@ -51,8 +51,8 @@ const groups = [
       },
       {
         name: 'dnarii',
-        wins: 2,
-        losses: 2,
+        wins: 1,
+        losses: 3,
       },
       {
         name: 'recklesscharlie',
@@ -61,8 +61,8 @@ const groups = [
       },
       {
         name: 'CubsRule21',
-        wins: 2,
-        losses: 2,
+        wins: 3,
+        losses: 1,
       },
       {
         name: 'soapboxgamer',

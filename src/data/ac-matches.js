@@ -1342,8 +1342,8 @@ const matches = [
   },
   {
     group: 'Blitz Whip',
-    racer1: 'dnarii',
-    racer2: 'CubsRule21',
+    racer1: 'CubsRule21',
+    racer2: 'dnarii',
     time1: '1:50:51',
     time2: '1:55:23',
     winner: 1
