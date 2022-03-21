@@ -6,7 +6,7 @@ const groups = [
       {
         name: 'David B',
         wins: 0,
-        losses: 3,
+        losses: 4,
       },
       {
         name: 'JBrunTR',
@@ -25,7 +25,7 @@ const groups = [
       },
       {
         name: 'frankiebones',
-        wins: 1,
+        wins: 2,
         losses: 2,
       },
       {
@@ -575,7 +575,7 @@ const groups = [
       },
       {
         name: 'BoneyC',
-        wins: 3,
+        wins: 4,
         losses: 1,
       },
       {
@@ -586,7 +586,7 @@ const groups = [
       {
         name: 'Poorlydrawnbees',
         wins: 3,
-        losses: 1,
+        losses: 2,
       },
     ]
   },

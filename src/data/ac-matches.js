@@ -1396,6 +1396,22 @@ const matches = [
     time2: '1:21:12',
     winner: 2
   },
+  {
+    group: 'Artemis Bow',
+    racer1: 'DavidB',
+    racer2: 'frankiebones',
+    time1: '2:19:12',
+    time2: '1:46:34',
+    winner: 2
+  },
+  {
+    group: 'Zeus Gauntlet',
+    racer1: 'BoneyC',
+    racer2: 'poorlydrawnbees',
+    time1: '1:46:17',
+    time2: '1:50:19',
+    winner: 1
+  },
 ]
 
 export default matches;
