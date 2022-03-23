@@ -21,7 +21,12 @@ class AC extends Component {
           <Row>
             {acData ? acData.map(group => {
               const groupMatches = matches.filter(match => match.group === group.title);
-              group.players.sort((a, b) => a.wins === b.wins ? a.losses - b.losses : b.wins - a.wins);
+              group.players.sort((a, b) => {
+                const aDrop = a.dropped === true ? 1 : 0;
+                const bDrop = b.dropped === true ? 1 : 0;
+                if (aDrop !== bDrop) return aDrop - bDrop;
+                return a.wins === b.wins ? a.losses - b.losses : b.wins - a.wins
+              });
               
               function isTiedForFirst(player) {
                 console.log('comparing', player, group.players[0])
@@ -43,7 +48,7 @@ class AC extends Component {
                     
                     {group.players.map((player, index) => {
                       return (
-                        <div key={index} className={`d-flex justify-content-between align-items-center ac-row ${index === 0 || isTiedForFirst(player) ? ' ac-first' : ''}${((index === 1 || index === 2) && !isTiedForFirst(player)) || (isTiedForThird(player) && !isTiedForFirst(player)) ? ' ac-playin' : ''}`}>
+                        <div key={index} className={`d-flex justify-content-between align-items-center ac-row ${index === 0 || isTiedForFirst(player) ? ' ac-first' : ''}${((index === 1 || index === 2) && !isTiedForFirst(player)) || (isTiedForThird(player) && !isTiedForFirst(player)) ? ' ac-playin' : ''}${player.dropped === true ? ' ac-dropped' : ''}`}>
                           <p>{player.name}</p>
                           <p>{player.wins}-{player.losses}</p>
                         </div>

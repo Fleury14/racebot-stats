@@ -161,6 +161,7 @@ const groups = [
         name: 'Starman',
         wins: 1,
         losses: 1,
+        dropped: true,
       },
       {
         name: 'Fleury14',
@@ -469,6 +470,7 @@ const groups = [
         name: 'ZoeVermilion',
         wins: 0,
         losses: 5,
+        dropped: true,
       },
     ]
   },
@@ -572,6 +574,7 @@ const groups = [
         name: 'Demerine',
         wins: 1,
         losses: 1,
+        dropped: true,
       },
       {
         name: 'BoneyC',
@@ -587,6 +590,7 @@ const groups = [
         name: 'Poorlydrawnbees',
         wins: 3,
         losses: 2,
+        dropped: true,
       },
     ]
   },
