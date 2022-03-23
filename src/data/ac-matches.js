@@ -1026,7 +1026,7 @@ const matches = [
     racer2: 'CSRadical',
     time1: '1:58:14',
     time2: 'Forfeit',
-    winner: 2
+    winner: 1
   },
   {
     group: 'Ninja Shirt',
@@ -1411,6 +1411,94 @@ const matches = [
     time1: '1:46:17',
     time2: '1:50:19',
     winner: 1
+  },
+  {
+    group: 'Lilith Rod',
+    racer1: 'Lenophis',
+    racer2: 'Infinious',
+    time1: '1:47:45',
+    time2: '1:33:27',
+    winner: 2
+  },
+  {
+    group: 'Full Moon',
+    racer1: 'Starman',
+    racer2: 'AsmadiGames',
+    time1: '1:53:12',
+    time2: '1:49:51',
+    winner: 2
+  },
+  {
+    group: 'Zeus Gauntlet',
+    racer1: 'Just Kinda',
+    racer2: 'stoppableforce',
+    time1: '2:11:12',
+    time2: '1:55:47',
+    winner: 2
+  },
+  {
+    group: 'Aegis Shield',
+    racer1: 'Nightdew',
+    racer2: 'Vitasia',
+    time1: '1:37:03',
+    time2: '1:42:42',
+    winner: 1
+  },
+  {
+    group: 'Cat Claw',
+    racer1: 'Lord Bob Bree',
+    racer2: 'Keddril',
+    time1: '1:52:34',
+    time2: '1:54:20',
+    winner: 1
+  },
+  {
+    group: 'Heroine Robe',
+    racer1: 'Rhybon',
+    racer2: 'Eninja81',
+    time1: '1:35:23',
+    time2: '2:15:34',
+    winner: 1
+  },
+  {
+    group: 'Spear Spear',
+    racer1: 'Flyeaglesfly72',
+    racer2: 'Rowdy Roddy Sniper',
+    time1: '2:00:07',
+    time2: '1:34:13',
+    winner: 2
+  },
+  {
+    group: 'Karate Gi',
+    racer1: 'Guerin',
+    racer2: 'A Stone Dingley',
+    time1: '1:42:36',
+    time2: '1:32:00',
+    winner: 2
+  },
+  {
+    group: 'Aegis Shield',
+    racer1: 'Xyrak',
+    racer2: 'tallgrant',
+    time1: '1:43:44',
+    time2: '1:45:15',
+    winner: 1
+  },
+  {
+    group: 'Gaea Hat',
+    racer1: 'SteppeLively',
+    racer2: 'Klopfer',
+    time1: '2:08:11',
+    time2: '1:46;19',
+    winner: 2
+  },
+  {
+    group: 'Ogre Axe',
+    racer1: 'Slippery',
+    racer2: 'Zilch',
+    time1: '1:45:46',
+    time2: '1:38:00',
+    winner: 2
   },
 ]
 
