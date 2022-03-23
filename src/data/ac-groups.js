@@ -574,7 +574,7 @@ const groups = [
       {
         name: 'Demerine',
         wins: 1,
-        losses: 4,
+        losses: 5,
         dropped: true,
       },
       {
