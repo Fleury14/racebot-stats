@@ -309,8 +309,8 @@ const groups = [
       },
       {
         name: 'Vitasia',
-        wins: 2,
-        losses: 3,
+        wins: 1,
+        losses: 4,
       },
       {
         name: 'elvensorrow',
