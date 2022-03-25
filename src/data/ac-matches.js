@@ -1620,7 +1620,70 @@ const matches = [
     time2: '2:09:36',
     winner: 1
   },
-  
+  {
+    group: 'Dragoon Helm',
+    racer1: 'microKorgs',
+    racer2: 'leggystarscream',
+    time1: '2:04:34',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Full Moon',
+    racer1: 'Possumorpheus',
+    racer2: 'AsmadiGames',
+    time1: '1:25:11',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Artemis Bow',
+    racer1: 'DavidB',
+    racer2: 'John Birckhead',
+    time1: '1:38:01',
+    time2: '1:46:44',
+    winner: 1
+  },
+  {
+    group: 'Karate Gi',
+    racer1: 'Galeswift',
+    racer2: 'Guerin',
+    time1: '1:46:13',
+    time2: '1:55:26',
+    winner: 1
+  },
+  {
+    group: 'Lilith Rod',
+    racer1: 'Lenophis',
+    racer2: 'Friedghoughphtheightteau',
+    time1: '1:42:05',
+    time2: '1:44:05',
+    winner: 1
+  },
+  {
+    group: 'Ogre Axe',
+    racer1: 'Wewbear',
+    racer2: 'GeminiHero',
+    time1: '1:24:47',
+    time2: '2:23:58',
+    winner: 1
+  },
+  {
+    group: 'Blitz Whip',
+    racer1: 'dnarii',
+    racer2: 'recklesscharlie',
+    time1: '2:00:07',
+    time2: '2:00:36',
+    winner: 1
+  },
+  {
+    group: 'Gaea Hat',
+    racer1: 'xPankraz',
+    racer2: 'mikemike34',
+    time1: '1:16:58',
+    time2: '1:20:45',
+    winner: 1
+  },
 ]
 
 export default matches;

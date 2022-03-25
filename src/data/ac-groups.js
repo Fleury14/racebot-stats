@@ -5,7 +5,7 @@ const groups = [
     players: [
       {
         name: 'David B',
-        wins: 1,
+        wins: 2,
         losses: 4,
       },
       {
@@ -21,7 +21,7 @@ const groups = [
       {
         name: 'John Birckhead',
         wins: 3,
-        losses: 2,
+        losses: 3,
       },
       {
         name: 'frankiebones',
@@ -51,13 +51,13 @@ const groups = [
       },
       {
         name: 'dnarii',
-        wins: 1,
+        wins: 2,
         losses: 3,
       },
       {
         name: 'recklesscharlie',
         wins: 1,
-        losses: 3,
+        losses: 4,
       },
       {
         name: 'CubsRule21',
@@ -171,7 +171,7 @@ const groups = [
       {
         name: 'AsmadiGames',
         wins: 3,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'Professor Renderer',
@@ -180,7 +180,7 @@ const groups = [
       },
       {
         name: 'Possumorpheus',
-        wins: 4,
+        wins: 5,
         losses: 0,
       },
     ]
@@ -196,7 +196,7 @@ const groups = [
       },
       {
         name: 'Lenophis',
-        wins: 1,
+        wins: 2,
         losses: 3,
       },
       {
@@ -217,7 +217,7 @@ const groups = [
       {
         name: 'Friedghoughphtheightteau',
         wins: 2,
-        losses: 1,
+        losses: 2,
       },
     ]
   },
@@ -243,7 +243,7 @@ const groups = [
       {
         name: 'GeminiHero',
         wins: 0,
-        losses: 2,
+        losses: 3,
       },
       {
         name: 'Soleras',
@@ -252,7 +252,7 @@ const groups = [
       },
       {
         name: 'wewbear',
-        wins: 3,
+        wins: 4,
         losses: 0,
       },
     ]
@@ -377,7 +377,7 @@ const groups = [
       {
         name: 'leggystarscream',
         wins: 1,
-        losses: 2,
+        losses: 3,
       },
       {
         name: 'Rexbanner',
@@ -386,7 +386,7 @@ const groups = [
       },
       {
         name: 'microKorgs',
-        wins: 3,
+        wins: 4,
         losses: 0,
       },
       {
@@ -413,7 +413,7 @@ const groups = [
       {
         name: 'mikemike34',
         wins: 4,
-        losses: 0,
+        losses: 1,
       },
       {
         name: 'neongrey',
@@ -427,7 +427,7 @@ const groups = [
       },
       {
         name: 'xPankraz',
-        wins: 4,
+        wins: 5,
         losses: 0,
       },
       {
@@ -501,11 +501,11 @@ const groups = [
       {
         name: 'Guerin',
         wins: 1,
-        losses: 2,
+        losses: 3,
       },
       {
         name: 'Galeswift',
-        wins: 2,
+        wins: 3,
         losses: 2,
       },
     ]
@@ -516,7 +516,7 @@ const groups = [
     players: [
       {
         name: 'Arusta',
-        wins: 2,
+        wins: 3,
         losses: 2,
       },
       {
@@ -538,7 +538,8 @@ const groups = [
       {
         name: 'DShmoo619',
         wins: 2,
-        losses: 3,
+        losses: 4,
+        dropped: true,
       },
       {
         name: 'Sheep Launcher',
@@ -569,7 +570,8 @@ const groups = [
       {
         name: 'Just Kinda',
         wins: 1,
-        losses: 4,
+        losses: 5,
+        dropped: true,
       },
       {
         name: 'Demerine',
@@ -584,7 +586,7 @@ const groups = [
       },
       {
         name: 'Beernerd',
-        wins: 3,
+        wins: 4,
         losses: 1,
       },
       {
