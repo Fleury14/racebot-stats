@@ -46,7 +46,7 @@ const groups = [
     players: [
       {
         name: 'Y2Sky',
-        wins: 2,
+        wins: 3,
         losses: 2,
       },
       {
@@ -67,7 +67,7 @@ const groups = [
       {
         name: 'soapboxgamer',
         wins: 2,
-        losses: 2,
+        losses: 3,
       },
       {
         name: 'Sorbius',
@@ -92,7 +92,7 @@ const groups = [
       },
       {
         name: 'Poidrac',
-        wins: 2,
+        wins: 3,
         losses: 2,
       },
       {
@@ -103,7 +103,7 @@ const groups = [
       {
         name: 'LordBobBree',
         wins: 3,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'scratchdragon',
@@ -123,7 +123,7 @@ const groups = [
       },
       {
         name: 'Dragus',
-        wins: 4,
+        wins: 5,
         losses: 0,
       },
       {
@@ -139,7 +139,7 @@ const groups = [
       {
         name: 'The Bardic Panda',
         wins: 2,
-        losses: 2,
+        losses: 3,
       },
       {
         name: 'Zeke Highwind',
@@ -206,7 +206,7 @@ const groups = [
       },
       {
         name: 'Infinious',
-        wins: 2,
+        wins: 3,
         losses: 2,
       },
       {
@@ -217,7 +217,7 @@ const groups = [
       {
         name: 'Friedghoughphtheightteau',
         wins: 2,
-        losses: 2,
+        losses: 3,
       },
     ]
   },
@@ -263,7 +263,7 @@ const groups = [
     players: [
       {
         name: 'Dia',
-        wins: 2,
+        wins: 3,
         losses: 1,
       },
       {
@@ -274,7 +274,7 @@ const groups = [
       {
         name: 'Rowdy Roddy Sniper',
         wins: 1,
-        losses: 3,
+        losses: 4,
       },
       {
         name: 'Flyeaglesfly72',
@@ -371,7 +371,7 @@ const groups = [
     players: [
       {
         name: 'dustygriff',
-        wins: 2,
+        wins: 3,
         losses: 1,
       },
       {
@@ -381,13 +381,13 @@ const groups = [
       },
       {
         name: 'Rexbanner',
-        wins: 1,
+        wins: 2,
         losses: 1,
       },
       {
         name: 'microKorgs',
         wins: 4,
-        losses: 0,
+        losses: 1,
       },
       {
         name: 'CommanderLeonhart',
@@ -397,7 +397,7 @@ const groups = [
       {
         name: 'ULTROS_PROFESSIONAL',
         wins: 0,
-        losses: 4,
+        losses: 5,
       },
     ]
   },
@@ -559,12 +559,12 @@ const groups = [
     players: [
       {
         name: 'LUF',
-        wins: 4,
+        wins: 5,
         losses: 1,
       },
       {
         name: 'stoppableforce',
-        wins: 2,
+        wins: 3,
         losses: 3,
       },
       {
@@ -582,12 +582,12 @@ const groups = [
       {
         name: 'BoneyC',
         wins: 4,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'Beernerd',
         wins: 4,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'Poorlydrawnbees',

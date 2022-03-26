@@ -1684,6 +1684,78 @@ const matches = [
     time2: '1:20:45',
     winner: 1
   },
+  {
+    group: 'Zeus Gauntlet',
+    racer1: 'BoneyC',
+    racer2: 'stoppableforce',
+    time1: '1:48:36',
+    time2: '1:45:29',
+    winner: 2
+  },
+  {
+    group: 'Blitz Whip',
+    racer1: 'Y2Sky',
+    racer2: 'soapboxgamer',
+    time1: '1:21:05',
+    time2: '1:33:03',
+    winner: 1
+  },
+  {
+    group: 'Dragoon Helm',
+    racer1: 'microKorgs',
+    racer2: 'dustygriff',
+    time1: '1:43:11',
+    time2: '1:48:18',
+    winner: 2
+  },
+  {
+    group: 'Dragoon Helm',
+    racer1: 'Rexbanner',
+    racer2: 'ULTROS_PROFESSIONAL',
+    time1: '1:53:57',
+    time2: '2:00:55',
+    winner: 1
+  },
+  {
+    group: 'Cat Claw',
+    racer1: 'Poidrac',
+    racer2: 'Lord Bob Bree',
+    time1: '1:34:34',
+    time2: '1:35:07',
+    winner: 1
+  },
+  {
+    group: 'Defense Sword',
+    racer1: 'Dragus',
+    racer2: 'The Bardic Panda',
+    time1: '1:56:21',
+    time2: '2:07:16',
+    winner: 1
+  },
+  {
+    group: 'Zeus Gauntlet',
+    racer1: 'LUF',
+    racer2: 'Beernerd',
+    time1: '1:31:28',
+    time2: '1:34:03',
+    winner: 1
+  },
+  {
+    group: 'Spear Spear',
+    racer1: 'Dia',
+    racer2: 'Rowdy Roddy Sniper',
+    time1: '1:34:08',
+    time2: '1:50:17',
+    winner: 1
+  },
+  {
+    group: 'Lilith Rod',
+    racer1: 'Friedghoughphtheightteau',
+    racer2: 'Infinious',
+    time1: '1:40:12',
+    time2: '1:29:58',
+    winner: 2
+  },
 ]
 
 export default matches;
