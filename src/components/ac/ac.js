@@ -25,6 +25,11 @@ class AC extends Component {
                 const aDrop = a.dropped === true ? 1 : 0;
                 const bDrop = b.dropped === true ? 1 : 0;
                 if (aDrop !== bDrop) return aDrop - bDrop;
+                if (
+                  a.wins === b.wins &&
+                  a.losses === b.losses &&
+                  a.tiebreak !== b.tiebreak
+                ) return a.tiebreak - b.tiebreak;
                 return a.wins === b.wins ? a.losses - b.losses : b.wins - a.wins
               });
               

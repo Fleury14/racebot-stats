@@ -264,7 +264,7 @@ const groups = [
       {
         name: 'Dia',
         wins: 3,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'Allisele',
@@ -278,7 +278,7 @@ const groups = [
       },
       {
         name: 'Flyeaglesfly72',
-        wins: 1,
+        wins: 2,
         losses: 3,
       },
       {
