@@ -1756,6 +1756,94 @@ const matches = [
     time2: '1:29:58',
     winner: 2
   },
+  {
+    group: 'Ninja Shirt',
+    racer1: 'Sheep Launcher',
+    racer2: 'Kyrios',
+    time1: '2:23:23',
+    time2: '1:57:17',
+    winner: 2
+  },
+  {
+    group: 'Artemis Bow',
+    racer1: 'JBrunTR',
+    racer2: 'frankiebones',
+    time1: '1:31:45',
+    time2: '1:39:19',
+    winner: 1
+  },
+  {
+    group: 'Crystal Ring',
+    racer1: 'sylverfyre',
+    racer2: 'Alchemie',
+    time1: '1:31:26',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Karate Gi',
+    racer1: 'Guerin',
+    racer2: 'Teknolink',
+    time1: '2:33:19',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Spear Spear',
+    racer1: 'Allisele',
+    racer2: 'Engidave',
+    time1: '1:43:14',
+    time2: '1:26:02',
+    winner: 2
+  },
+  {
+    group: 'Dragoon Helm',
+    racer1: 'Rexbanner',
+    racer2: 'CommanderLeonhart',
+    time1: '1:40:49',
+    time2: '1:59:34',
+    winner: 1
+  },
+  {
+    group: 'Heroine Robe',
+    racer1: 'LadyId19',
+    racer2: 'Eninja81',
+    time1: '1:51:26',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Ogre Axe',
+    racer1: 'Slippery',
+    racer2: 'GeminiHero',
+    time1: '1:33:44',
+    time2: '1:32:27',
+    winner: 2
+  },
+  {
+    group: 'Blitz Whip',
+    racer1: 'Sorbius',
+    racer2: 'CubsRule21',
+    time1: '1:50:42',
+    time2: '1:40:32',
+    winner: 2
+  },
+  {
+    group: 'Ogre Axe',
+    racer1: 'Marten Broadcloak',
+    racer2: 'Soleras',
+    time1: '1:44:43',
+    time2: '1:46:32',
+    winner: 1
+  },
+  {
+    group: 'Artemis Bow',
+    racer1: 'Mechalink',
+    racer2: 'frankiebones',
+    time1: '1:51:10',
+    time2: '1:52:56',
+    winner: 1
+  },
 ]
 
 export default matches;

@@ -10,12 +10,12 @@ const groups = [
       },
       {
         name: 'JBrunTR',
-        wins: 1,
+        wins: 2,
         losses: 4,
       },
       {
         name: 'Mechalink',
-        wins: 1,
+        wins: 2,
         losses: 3,
       },
       {
@@ -26,7 +26,7 @@ const groups = [
       {
         name: 'frankiebones',
         wins: 2,
-        losses: 2,
+        losses: 4,
       },
       {
         name: 'PlumeriaKnight',
@@ -61,7 +61,7 @@ const groups = [
       },
       {
         name: 'CubsRule21',
-        wins: 3,
+        wins: 4,
         losses: 1,
       },
       {
@@ -72,7 +72,7 @@ const groups = [
       {
         name: 'Sorbius',
         wins: 3,
-        losses: 1,
+        losses: 2,
       },
     ]
   },
@@ -232,27 +232,27 @@ const groups = [
       },
       {
         name: 'Marten Broadcloak',
-        wins: 2,
+        wins: 3,
         losses: 2,
       },
       {
         name: 'Slippery',
         wins: 1,
-        losses: 3,
+        losses: 4,
       },
       {
         name: 'GeminiHero',
-        wins: 0,
+        wins: 1,
         losses: 3,
       },
       {
         name: 'Soleras',
         wins: 2,
-        losses: 1,
+        losses: 3,
       },
       {
         name: 'wewbear',
-        wins: 4,
+        wins: 5,
         losses: 0,
       },
     ]
@@ -269,7 +269,7 @@ const groups = [
       {
         name: 'Allisele',
         wins: 3,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'Rowdy Roddy Sniper',
@@ -283,7 +283,7 @@ const groups = [
       },
       {
         name: 'Engidave',
-        wins: 4,
+        wins: 5,
         losses: 0,
       },
       {
@@ -302,11 +302,13 @@ const groups = [
         name: 'Xyrak',
         wins: 3,
         losses: 2,
+        tiebreak: 2,
       },
       {
         name: 'BeautyInDiscovery',
         wins: 3,
         losses: 2,
+        tiebreak: 3,
       },
       {
         name: 'Vitasia',
@@ -317,6 +319,7 @@ const groups = [
         name: 'elvensorrow',
         wins: 3,
         losses: 2,
+        tiebreak: 1,
       },
       {
         name: 'tallgrant',
@@ -351,13 +354,13 @@ const groups = [
       },
       {
         name: 'sylverfyre',
-        wins: 3,
+        wins: 4,
         losses: 1,
       },
       {
         name: 'Alchemie',
         wins: 0,
-        losses: 3,
+        losses: 4,
       },
       {
         name: 'Rexx Raul',
@@ -382,7 +385,7 @@ const groups = [
       },
       {
         name: 'Rexbanner',
-        wins: 2,
+        wins: 3,
         losses: 1,
       },
       {
@@ -393,7 +396,7 @@ const groups = [
       {
         name: 'CommanderLeonhart',
         wins: 2,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'ULTROS_PROFESSIONAL',
@@ -449,7 +452,7 @@ const groups = [
       },
       {
         name: 'LadyId19',
-        wins: 2,
+        wins: 3,
         losses: 2,
       },
       {
@@ -465,7 +468,7 @@ const groups = [
       {
         name: 'Eninja81',
         wins: 1,
-        losses: 3,
+        losses: 4,
       },
       {
         name: 'ZoeVermilion',
@@ -492,7 +495,7 @@ const groups = [
       {
         name: 'Teknolink',
         wins: 0,
-        losses: 4,
+        losses: 5,
       },
       {
         name: 'FirebirdLover',
@@ -501,7 +504,7 @@ const groups = [
       },
       {
         name: 'Guerin',
-        wins: 1,
+        wins: 2,
         losses: 3,
       },
       {
@@ -528,7 +531,7 @@ const groups = [
       },
       {
         name: 'Kyrios',
-        wins: 4,
+        wins: 5,
         losses: 1,
       },
       {
@@ -545,7 +548,7 @@ const groups = [
       {
         name: 'Sheep Launcher',
         wins: 0,
-        losses: 4,
+        losses: 5,
       },
       {
         name: 'moonblazewolf',

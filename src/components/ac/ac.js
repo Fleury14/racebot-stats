@@ -34,7 +34,6 @@ class AC extends Component {
               });
               
               function isTiedForFirst(player) {
-                console.log('comparing', player, group.players[0])
                 return player.wins === group.players[0].wins && player.losses === group.players[0].losses;
                 
               }
