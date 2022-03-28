@@ -15,7 +15,7 @@ const groups = [
       },
       {
         name: 'Mechalink',
-        wins: 2,
+        wins: 3,
         losses: 3,
       },
       {
@@ -31,7 +31,7 @@ const groups = [
       {
         name: 'PlumeriaKnight',
         wins: 4,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'Blue Cat Loach',
@@ -203,16 +203,19 @@ const groups = [
         name: 'Pyre',
         wins: 3,
         losses: 2,
+        tiebreak: 2,
       },
       {
         name: 'Infinious',
         wins: 3,
         losses: 2,
+        tiebreak: 1,
       },
       {
         name: 'BadKarma',
         wins: 3,
         losses: 2,
+        tiebreak: 3,
       },
       {
         name: 'Friedghoughphtheightteau',
@@ -227,7 +230,7 @@ const groups = [
     players: [
       {
         name: 'Zilch',
-        wins: 2,
+        wins: 3,
         losses: 2,
       },
       {
@@ -243,7 +246,7 @@ const groups = [
       {
         name: 'GeminiHero',
         wins: 1,
-        losses: 3,
+        losses: 4,
       },
       {
         name: 'Soleras',
@@ -265,6 +268,7 @@ const groups = [
         name: 'Dia',
         wins: 3,
         losses: 2,
+        dropped: true,
       },
       {
         name: 'Allisele',
@@ -339,7 +343,7 @@ const groups = [
     players: [
       {
         name: 'Tybalt',
-        wins: 0,
+        wins: 1,
         losses: 4,
       },
       {
@@ -360,7 +364,7 @@ const groups = [
       {
         name: 'Alchemie',
         wins: 0,
-        losses: 4,
+        losses: 5,
       },
       {
         name: 'Rexx Raul',
@@ -375,18 +379,18 @@ const groups = [
     players: [
       {
         name: 'dustygriff',
-        wins: 3,
+        wins: 4,
         losses: 1,
       },
       {
         name: 'leggystarscream',
         wins: 1,
-        losses: 3,
+        losses: 4,
       },
       {
         name: 'Rexbanner',
         wins: 3,
-        losses: 1,
+        losses: 2,
       },
       {
         name: 'microKorgs',
@@ -395,7 +399,7 @@ const groups = [
       },
       {
         name: 'CommanderLeonhart',
-        wins: 2,
+        wins: 3,
         losses: 2,
       },
       {
@@ -520,7 +524,7 @@ const groups = [
     players: [
       {
         name: 'Arusta',
-        wins: 3,
+        wins: 4,
         losses: 2,
       },
       {
@@ -548,7 +552,7 @@ const groups = [
       {
         name: 'Sheep Launcher',
         wins: 0,
-        losses: 5,
+        losses: 6,
       },
       {
         name: 'moonblazewolf',

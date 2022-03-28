@@ -1704,8 +1704,8 @@ const matches = [
     group: 'Dragoon Helm',
     racer1: 'microKorgs',
     racer2: 'dustygriff',
-    time1: '1:43:11',
-    time2: '1:48:18',
+    time1: '1:48:18',
+    time2: '1:43:11',
     winner: 2
   },
   {
@@ -1842,6 +1842,54 @@ const matches = [
     racer2: 'frankiebones',
     time1: '1:51:10',
     time2: '1:52:56',
+    winner: 1
+  },
+  {
+    group: 'Ninja Shirt',
+    racer1: 'Sheep Launcher',
+    racer2: 'Arusta',
+    time1: '2:09:35',
+    time2: '1:53:44',
+    winner: 2
+  },
+  {
+    group: 'Dragoon Helm',
+    racer1: 'leggystarscream',
+    racer2: 'CommanderLeonhart',
+    time1: 'Forfeit',
+    time2: '2:12:22',
+    winner: 2
+  },
+  {
+    group: 'Artemis Bow',
+    racer1: 'Mechalink',
+    racer2: 'PlumeriaKnight',
+    time1: '1:43:57',
+    time2: '1:44:36',
+    winner: 1
+  },
+  {
+    group: 'Crystal Ring',
+    racer1: 'Tybalt',
+    racer2: 'Alchemie',
+    time1: '1:22:39',
+    time2: 'Forfeit',
+    winner: 1
+  },
+  {
+    group: 'Dragoon Helm',
+    racer1: 'Rexbanner',
+    racer2: 'dustygriff',
+    time1: '1:54:39',
+    time2: '1:41:57',
+    winner: 2
+  },
+  {
+    group: 'Ogre Axe',
+    racer1: 'Zilch',
+    racer2: 'GeminiHero',
+    time1: '1:36:35',
+    time2: '1:57:09',
     winner: 1
   },
 ]
