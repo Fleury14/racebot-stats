@@ -19,6 +19,9 @@ class AC extends Component {
         <h1 className='ac-title'>Adamant Cup</h1>
         <Container>
           <Row>
+            <Col md="12">
+            <iframe title="LHL Bracket" src="https://challonge.com/FEAC22/module" width="100%" height="500" frameBorder="0" scrolling="auto" allowtransparency="true"></iframe>
+            </Col>
             {acData ? acData.map(group => {
               const groupMatches = matches.filter(match => match.group === group.title);
               group.players.sort((a, b) => {
