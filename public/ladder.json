@@ -90,6 +90,56 @@
     ]
   },
   {
+    "category": "Ladder Season 6",
+    "presets": [
+      {
+        "name": "Fu In Wario Land",
+        "description": "Where does Fu go when he’s banned from tournament play? Treasure hunting! He wants only the finest weapons, armor, and secret pathways home. However, the price you pay for this immense power is No Free Bosses, and no ability to grind random encounters, so be wary!",
+        "flags": "O1:quest_forge/2:quest_tradepink/3:quest_pass/win:crystal Kmain/trap Pkey Crelaxed/start:fusoya/j:abilities Twildish Sstandard/no:j Bstandard/alt:gauntlet Nchars/key/bosses Etoggle/noexp Gwarp/life/sylph -kit:freedom -supersmith -vanilla:fusoya"
+      },
+      {
+        "name": "Push B to Jump",
+        "description": "Push B to jump, whether in battle or out of battle. Short-circuit the maps, fear no Valvalis, and avoid most boss fights. Optimized routing pays off strongly.",
+        "flags": "O1:quest_forge/2:quest_tradepink/random:1,quest,char/req:all/win:crystal Kmain/summon/moon Pkey Cstandard/nofree/j:abilities Twildish Sstandard Bstandard/alt:gauntlet Etoggle Glife/sylph/backrow -kit:basic -kit2:trap -spoon -pushbtojump"
+      },
+      {
+        "name": "Adamant Cup Group Stage",
+        "description": "The flagset used for the group stage of the Adamant Cup, this is a high power, high completion percentage flagset that will test your efficiency over large swtahs of the game. Be wary of the 4 character party limit!",
+        "flags": "Orandom:7,tough_quest/req:7/win:crystal Kmain/summon/moon Pkey Cstandard/nofree/restrict:cecil,fusoya/j:abilities/nekkie/party:4 Twildish/maxtier:7 Sstandard Bstandard/alt:gauntlet Etoggle Glife/sylph/backrow -kit:better -spoon"
+      },
+      {
+        "name": "Adamant Cup Bracket Stage",
+        "description": "The second flagset for the Adamant cup used from the top 32 onward. The high completion percentage from group stage carries over, but the tresure chest quality gets bumped down. Also, Cecil and FuSoYa are on vacation, likely planning a trip to a Lunarian theme park.",
+        "flags": "Orandom:7,tough_quest/req:7/win:crystal Kmain/summon/moon Pkey Crelaxed/nofree/no:cecil,fusoya/j:abilities/nekkie/party:4 Tpro/maxtier:6 Sstandard/sell:quarter Bstandard/alt:gauntlet Etoggle Glife/sylph -kit:basic -spoon -smith:alt"
+      },
+      {
+        "name": "Supermarket Sweep",
+        "description": "The strongest equipment, items, and characters may be available right out the gate. Shops are free!",
+        "flags": "Orandom:4,gated_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Nnone Etoggle Glife/sylph -spoon"
+      }
+    ]
+  },
+  {
+    "category": "Ladder Season 7",
+    "presets": [
+      {
+        "name": "Ladder Standard",
+        "description": "Enjoy the base flagset from which most events are derived from. Wildish loot ensures as much power as you like. This is a great flagset to familiarize yourself with the full workings of Free Enterprise. Don't forget the warp glitch to avoid that Sealed Cave!",
+        "flags": "Orandom:5,tough_quest/req:4/win:crystal Kmain/summon/moon Pkey Cstandard/nofree/maybe/restrict:cecil,fusoya/j:abilities/nekkie Twildish Sstandard Bstandard/alt:gauntlet Etoggle Gwarp/life/sylph/backrow -kit:better -noadamants -spoon"
+      },
+      {
+        "name": "Ladder Hard",
+        "description": "A more difficult version of the ladder standard where pro loot means you must invest more time to get more power. FuSoYa wants to be the star of the show, and will not accept any other role, which means if you don't see Fu as your starting character, he will not make an appearance. Without the wildish loot, the weight of Cmaybe can prove exceptionally challenging when an army of Tellahs and Edwards seek to join your party.  Don't forget about D.mist gating a key item! Good luck!",
+        "flags": "O1:quest_forge/random:4,tough_quest/req:4/win:crystal Kmain/summon/moon/nofree Pkey Cstandard/nofree/maybe/start:any/no:fusoya/j:abilities Tpro Sstandard Bstandard/alt:gauntlet Etoggle Glife/sylph/backrow -kit:basic -noadamants -spoon -smith:alt"
+      },
+      {
+        "name": "Falcon%",
+        "description": "Test yourself in one of the most challenging early-game aspects of Free Enterprise: The dreaded hook route! Gather as much strength as you can to be safe, or dive as soon as possible and hope for a couple easy bosses. The game ends when you launch the falcon with the guaranteed overworld hook.",
+        "flags": "O1:quest_falcon/req:all/win:game Kmain/nofree/force:hook Pnone Cstandard/nofree/no:fusoya/j:abilities Tpro Sstandard/sell:quarter Bstandard/alt:gauntlet Etoggle Gwarp/life/sylph/backrow -kit:basic -noadamants -spoon"
+      }
+    ]
+  },
+  {
     "category": "Adamant Cup",
     "presets": [
       {
