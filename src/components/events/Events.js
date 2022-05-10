@@ -29,11 +29,17 @@ class EventsComponent extends Component {
         {(eventData) => {
           const { events, loading } = eventData;
           const { selectedEvent } = this.state;
+          let runningEvents = [];
+          let completedEvents = [];
           let fullSelectedEvent = null;
           let eventList = null;
           if (events && events.items) {
             eventList = events.items;
             fullSelectedEvent = eventList.find(event => event.id === selectedEvent);
+            runningEvents = eventList.filter(event => event.status === 'Running');
+            completedEvents = eventList.filter(event => event.status === 'Completed');
+            runningEvents.sort((a, b) => a.name.localeCompare(b.name));
+            completedEvents.sort((a, b) => a.name.localeCompare(b.name));
           };
           
           return (
@@ -48,8 +54,24 @@ class EventsComponent extends Component {
                   <div className="event-body">
                     <h1>EVENT LIST</h1>
                     <p>Click an event from the list below to see the details</p>
+                    <h2>Running Events</h2>
                     <div className="d-flex flex-wrap">
-                      {eventList.map(event => {
+                    
+                      {runningEvents.map(event => {
+                        if (event.visibility !== 'private') { 
+                          return (
+                            <button key={event.id} onClick={() => {
+                              this.props.history.push(`/events/${event.id}`);
+                              this.setState({ selectedEvent: event.id });
+                            }}>{event.name}</button>
+                          )
+                        }
+                        return null;
+                      })}
+                      </div>
+                      <h2>Completed Events</h2>
+                      <div className="d-flex flex-wrap">
+                      {completedEvents.map(event => {
                         if (event.visibility !== 'private') { 
                           return (
                             <button key={event.id} onClick={() => {
