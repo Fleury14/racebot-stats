@@ -194,7 +194,7 @@
       },
       {
         "name": "Red Moon (example)",
-        "description": "For an authentic Red Moon experience, please visit the official discord, as this flagset utilized the Tricker bot for some additional curation of the characters and monsters. The flagset here is an example.",
+        "description": "For an authentic Red Moon experience, please visit the official discord, as this flagset utilized the Tricker bot for some additional curation of the characters and monsters. The flagset here is an example. To view the yaml for the flag details, go here: https://pastebin.com/L08T1mEY",
         "flags": "O1:boss_golbez/2:boss_fabulgauntlet/3:boss_odin/4:boss_elements/5:boss_cpu/6:boss_asura/7:boss_magus/8:boss_mombomb/req:7/win:crystal Kmain/summon/moon/force:hook/nofree Pkey Crelaxed/noearned/distinct:7/start:cecil/no:cecil,fusoya,edge/j:abilities Tpro Sstandard/no:apples Bstandard/alt:gauntlet Etoggle Glife -kit:notdeme -kit2:freedom -noadamants -spoon -smith:super"
       }
     ]
