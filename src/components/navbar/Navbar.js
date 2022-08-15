@@ -32,6 +32,9 @@ const Navbar = (props) => {
           <Link to={'/ac'}>
             <li>Adamant Cup</li>
           </Link>
+          <Link to={'/zz5'}>
+            <li>ZZ5</li>
+          </Link>
         </ul>
       </div>
     </div>
