@@ -7,6 +7,7 @@ import './Events.scss';
 class EventsComponent extends Component {
   state = {
     selectedEvent: null,
+    showCompleted: false,
   }
 
   componentDidMount() {
@@ -28,7 +29,7 @@ class EventsComponent extends Component {
       <ReduxEventsData>
         {(eventData) => {
           const { events, loading } = eventData;
-          const { selectedEvent } = this.state;
+          const { selectedEvent, showCompleted } = this.state;
           let runningEvents = [];
           let completedEvents = [];
           let fullSelectedEvent = null;
@@ -70,19 +71,27 @@ class EventsComponent extends Component {
                       })}
                       </div>
                       <h2>Completed Events</h2>
-                      <div className="d-flex flex-wrap">
-                      {completedEvents.map(event => {
-                        if (event.visibility !== 'private') { 
-                          return (
-                            <button key={event.id} onClick={() => {
-                              this.props.history.push(`/events/${event.id}`);
-                              this.setState({ selectedEvent: event.id });
-                            }}>{event.name}</button>
-                          )
-                        }
-                        return null;
-                      })}
-                    </div>
+                      {showCompleted ? (
+                        <>
+                          <div className="d-flex flex-wrap">
+                            {completedEvents.map(event => {
+                              if (event.visibility !== 'private') { 
+                                return (
+                                  <button key={event.id} onClick={() => {
+                                    this.props.history.push(`/events/${event.id}`);
+                                    this.setState({ selectedEvent: event.id });
+                                  }}>{event.name}</button>
+                                )
+                              }
+                              return null;
+                            })}
+                          </div>
+                          <button onClick={() => this.setState({ showCompleted: false })}>Hide Completed Events</button>
+                        </>
+                      ) : (
+                        <button onClick={() => this.setState({ showCompleted: true })}>Show Completed Events</button>
+                      )}
+                      
                   </div>
                   {fullSelectedEvent && (
                     <SelectedEvent event={fullSelectedEvent} />
