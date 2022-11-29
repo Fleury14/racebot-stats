@@ -146,7 +146,7 @@ export const getFeaturedRacers = () => {
 export const getEvents = () => {
   return (dispatch) => {
     dispatch(loadStart());
-      axios.get(`${apiUrl}/events`, { headers: { [apiHeader]: apiKey } })
+      axios.get(`${apiUrl}/events?pageSize=200 `, { headers: { [apiHeader]: apiKey } })
       .then(response => {
         dispatch(loadFinish(response.data, DATA_DONE_LOADING_EVENTS));
       })
