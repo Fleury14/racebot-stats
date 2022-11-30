@@ -64,7 +64,7 @@ class ClubLeaderboard extends Component {
     return (
       <ReduxEventsData>
         {(eventData) => {
-          const relevantEvents = eventData && eventData.events && eventData.events.items.length ? eventData.events.items.filter(event => event.name && CLUB_NAMES.indexOf(event.name) >= 0) : [];
+          const relevantEvents = eventData && eventData.events && eventData.events.items && eventData.events.items.length ? eventData.events.items.filter(event => event.name && CLUB_NAMES.indexOf(event.name) >= 0) : [];
           let activeEventData = null;
           if (relevantEvents.length) {
             activeEventData = relevantEvents.find(event => event.name === CLUB_NAMES[activeClub]);

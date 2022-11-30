@@ -21,7 +21,8 @@ import ClubLeaderboard from './club-leaderboard/ClubLeaderboard';
 import LHL from './lhl/lhl';
 import ZZ4 from './zz4/zz4';
 import AC from './ac/ac';
+import ZZ5 from './zz5/zz5';
 
 export { Navbar, Main, WinLoss, CurrentRaces, PlayerSearcher, RacerStats, SelectedRace, CookieLeaderboard,
   Twov2Stats, RaceDirectory, PlayerDirectory, ErrorComponent, RecentlyCompletedRaces, LoadingModal,
-  FlagStats, Wagers, DrawBadges, Featured, EventsComponent, ClubLeaderboard, LHL, ZZ4, AC };
+  FlagStats, Wagers, DrawBadges, Featured, EventsComponent, ClubLeaderboard, LHL, ZZ4, AC, ZZ5 };

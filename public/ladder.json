@@ -5,32 +5,32 @@
       {
         "name": "Fu In Wario Land",
         "description": "Where does Fu go when he’s banned from tournament play? Treasure hunting! He wants only the finest weapons, armor, and secret pathways home. However, the price you pay for this immense power is No Free Bosses, and no ability to grind random encounters, so be wary!",
-        "flags": "O1:quest_forge/2:quest_tradepink/3:quest_pass/win:crystal Kmain/trap Pkey Crelaxed/start:fusoya/j:abilities Twildish Sstandard/no:j Bstandard/alt:gauntlet Nchars/key/bosses Etoggle/noexp Gwarp/life/sylph -kit:freedom -supersmith -vanilla:fusoya"
+        "flags": "O1:quest_forge/2:quest_tradepink/3:quest_pass/win:crystal Kmain/trap/nofree Pkey Crelaxed/start:fusoya/j:abilities/nofree Twildish Sstandard/no:j Bstandard/alt:gauntlet/nofree Etoggle/noexp Gwarp/life/sylph/backrow -kit:freedom -supersmith -vanilla:fusoya"
       },
       {
         "name": "Supermarket Sweep",
         "description": "The strongest equipment, items, and characters may be available right out the gate. Shops are free!",
-        "flags": "Orandom:3,gated_quest/req:all/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Nnone Etoggle Glife/sylph -spoon"
+        "flags": "Orandom:3,gated_quest/req:all/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
       },
       {
         "name": "Giant%",
         "description": "Fast-paced, low skill floor, high skill ceiling, and very unpredictable with only one KI required for go mode. Are you willing to dive into the Giant ASAP? Or power up a bit more first? ALL the glitch flags are on for this one! Don't forget Gwarp, and practice that Gmp and Gdupe!",
-        "flags": "Omode:classicgiant/win:game Kmain/moon Pnone Cstandard Twild/no:j Scabins/free Bstandard/whichburn Nnone Etoggle/no:jdrops Gdupe/mp/warp/life/sylph -kit:basic -noadamants -spoon -supersmith"
+        "flags": "Omode:classicgiant/win:game Kmain/moon Pnone Cstandard Twild/no:j Scabins/free Bstandard/whichburn Etoggle/no:jdrops Gdupe/mp/warp/life/sylph/backrow -kit:basic -noadamants -spoon -supersmith"
       },
       {
         "name": "Highw4y to the Zemus Zone",
         "description": "The tourney returns! Chero is on, Rydia's ready to play, and the Moon is not haunted. Check out the full prospectus video and document on the main workshop and twitch channel!",
-        "flags": "O1:quest_forge/2:quest_cavebahamut/3:boss_wyvern/random:2,gated_quest,boss/req:4/win:crystal Kmain/moon Pkey Cstandard/maybe/start:any/no:fusoya/j:abilities/nodupes/hero Tpro Sstandard/no:j Bstandard/alt:gauntlet/whichburn Nchars/key Etoggle Gnone -noadamants -kit:freedom"
+        "flags": "O1:quest_forge/2:quest_cavebahamut/3:boss_wyvern/random:2,gated_quest,boss/req:4/win:crystal Kmain/moon/nofree Pkey Cstandard/maybe/start:any/no:fusoya/j:abilities/nodupes/hero/nofree Tpro Sstandard/no:j Bstandard/alt:gauntlet/whichburn Etoggle Gbackrow -noadamants -kit:freedom"
       },
       {
         "name": "Lali-Ho Redux",
         "description": "Think Lali-Ho Swiss, but a little more generous for the beginner->intermediate racer. Crelaxed and full sell prices ease things a bit. That being said, Giott is giving you his personal armor instead of letting you break his economy with jewelry. Oh, and it’s quest options instead of boss/character hunts, just to mix things up.",
-        "flags": "O1:quest_forge/2:quest_tradepink/3:quest_magnes/random:2,gated_quest/req:4/win:crystal Kmain/summon/moon Pkey Crelaxed/distinct:10/j:abilities/nekkie/bye Twildish/maxtier:6 Sstandard Bstandard/alt:gauntlet Nchars/key Etoggle Glife/sylph -kit:basic -kit2:defense -noadamants -spoon -exp:noboost -vanilla:giant"
+        "flags": "O1:quest_forge/2:quest_tradepink/3:quest_magnes/random:2,gated_quest/req:4/win:crystal Kmain/summon/moon/nofree Pkey Crelaxed/distinct:10/j:abilities/nekkie/bye/nofree Twildish/maxtier:6 Sstandard Bstandard/alt:gauntlet Etoggle Glife/sylph/backrow -kit:basic -kit2:defense -noadamants -spoon -exp:noboost -vanilla:giant"
       },
       {
         "name": "Finders Keepers",
         "description": "The big nasty of Season 3. Shops give Cabins. Treasure is set to TPro. Permajoin and Bye are both on. Your one breather is the Warp Glitch, but how long do you wait for a black mage to show up?",
-        "flags": "Orandom:5,gated_quest/req:4/win:crystal Kmain/summon/moon Pkey Cstandard/no:fusoya/j:abilities/bye/permajoin Tpro Scabins/free Bstandard/alt:gauntlet Nchars/key Etoggle Gwarp/life/sylph -kit:basic -noadamants"
+        "flags": "Orandom:5,gated_quest/req:4/win:crystal Kmain/summon/moon/nofree Pkey Cstandard/no:fusoya/j:abilities/bye/permajoin/nofree Tpro Scabins/free Bstandard/alt:gauntlet Etoggle Gwarp/life/sylph/backrow -kit:basic -noadamants"
       }
     ]
   },
@@ -40,7 +40,7 @@
       {
         "name": "Fu In Wario Land",
         "description": "Where does Fu go when he’s banned from tournament play? Treasure hunting! He wants only the finest weapons, armor, and secret pathways home. However, the price you pay for this immense power is No Free Bosses, and no ability to grind random encounters, so be wary!",
-        "flags": "O1:quest_forge/2:quest_tradepink/3:quest_pass/win:crystal Kmain/trap Pkey Crelaxed/start:fusoya/j:abilities Twildish Sstandard/no:j Bstandard/alt:gauntlet Nchars/key/bosses Etoggle/noexp Gwarp/life/sylph -kit:freedom -supersmith -vanilla:fusoya"
+        "flags": "O1:quest_forge/2:quest_tradepink/3:quest_pass/win:crystal Kmain/trap/nofree Pkey Crelaxed/start:fusoya/j:abilities/nofree Twildish Sstandard/no:j Bstandard/alt:gauntlet/nofree Etoggle/noexp Gwarp/life/sylph/backrow -kit:freedom -supersmith -vanilla:fusoya"
       },
       {
         "name": "Supermarket Sweep",
@@ -65,22 +65,22 @@
       {
         "name": "Fu In Wario Land",
         "description": "Where does Fu go when he’s banned from tournament play? Treasure hunting! He wants only the finest weapons, armor, and secret pathways home. However, the price you pay for this immense power is No Free Bosses, and no ability to grind random encounters, so be wary!",
-        "flags": "O1:quest_forge/2:quest_tradepink/3:quest_pass/win:crystal Kmain/trap Pkey Crelaxed/start:fusoya/j:abilities Twildish Sstandard/no:j Bstandard/alt:gauntlet Nchars/key/bosses Etoggle/noexp Gwarp/life/sylph -kit:freedom -supersmith -vanilla:fusoya"
+        "flags": "O1:quest_forge/2:quest_tradepink/3:quest_pass/win:crystal Kmain/trap/nofree Pkey Crelaxed/start:fusoya/j:abilities/nofree Twildish Sstandard/no:j Bstandard/alt:gauntlet/nofree Etoggle/noexp Gwarp/life/sylph/backrow -kit:freedom -supersmith -vanilla:fusoya"
       },
       {
         "name": "cHero",
         "description": "Hero Challenge! Be wary of the solo Ordeals fight. Agility manipulating gear is a godsend.",
-        "flags": "O1:quest_forge/2:quest_toroiatreasury/random:2/req:all/win:crystal Kmain/summon/moon Pkey Crelaxed/no:fusoya/j:abilities/nekkie/hero Tpro Sstandard Bstandard/alt:gauntlet/whichburn Nchars/key Etoggle Glife/sylph -kit:freedom -kit2:random -noadamants"
+        "flags": "O1:quest_forge/2:quest_toroiatreasury/random:2/req:all/win:crystal Kmain/summon/moon/nofree Pkey Crelaxed/no:fusoya/j:abilities/nekkie/hero/nofree Tpro Sstandard Bstandard/alt:gauntlet/whichburn Etoggle Glife/sylph/backrow -kit:freedom -kit2:random -noadamants"
       },
       {
         "name": "Hop Til you Shop",
         "description": "All the chests have money.And the shops are wild so if you can name it, it's probably in a shop. Be smart with your purchases: your goal is to complete a Lunar run to finish the seed. Push B to Jump is enabled to open up the world as much as possible to allow you to get that Darkness crystal as soon as you can, then sprint... (through space) to the moon!",
-        "flags": "O1:quest_murasamealtar/2:quest_crystalaltar/3:quest_whitealtar/4:quest_ribbonaltar/5:quest_masamunealtar/req:4/win:game Kmain/moon/unsafe Pkey Cstandard/distinct:5/j:abilities/nekkie Twildish/money Swild Bstandard/alt:gauntlet/whichburn Nchars Etoggle/noexp/no:jdrops Gmp/warp/life/sylph -kit:better -kit2:money -kit3:money -spoon -supersmith -vanilla:traps -pushbtojump"
+        "flags": "O1:quest_murasamealtar/2:quest_crystalaltar/3:quest_whitealtar/4:quest_ribbonaltar/5:quest_masamunealtar/req:4/win:game Kmain/moon/unsafe Pkey Cstandard/distinct:5/j:abilities/nekkie/nofree Twildish/money Swild Bstandard/alt:gauntlet/whichburn Etoggle/noexp/no:jdrops Gmp/warp/life/sylph/backrow -kit:better -kit2:money -kit3:money -spoon -supersmith -vanilla:traps -pushbtojump"
       },
       {
         "name": "Supermarket Sweep",
         "description": "The strongest equipment, items, and characters may be available right out the gate. Shops are free!",
-        "flags": "Orandom:4,gated_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Nnone Etoggle Glife/sylph -spoon"
+        "flags": "Orandom:4,gated_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
       },
       {
         "name": "10/10 Would Race Again",
@@ -95,7 +95,7 @@
       {
         "name": "Fu In Wario Land",
         "description": "Where does Fu go when he’s banned from tournament play? Treasure hunting! He wants only the finest weapons, armor, and secret pathways home. However, the price you pay for this immense power is No Free Bosses, and no ability to grind random encounters, so be wary!",
-        "flags": "O1:quest_forge/2:quest_tradepink/3:quest_pass/win:crystal Kmain/trap Pkey Crelaxed/start:fusoya/j:abilities Twildish Sstandard/no:j Bstandard/alt:gauntlet Nchars/key/bosses Etoggle/noexp Gwarp/life/sylph -kit:freedom -supersmith -vanilla:fusoya"
+        "flags": "O1:quest_forge/2:quest_tradepink/3:quest_pass/win:crystal Kmain/trap/nofree Pkey Crelaxed/start:fusoya/j:abilities/nofree Twildish Sstandard/no:j Bstandard/alt:gauntlet/nofree Etoggle/noexp Gwarp/life/sylph/backrow -kit:freedom -supersmith -vanilla:fusoya"
       },
       {
         "name": "Push B to Jump",
@@ -115,7 +115,7 @@
       {
         "name": "Supermarket Sweep",
         "description": "The strongest equipment, items, and characters may be available right out the gate. Shops are free!",
-        "flags": "Orandom:4,gated_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Nnone Etoggle Glife/sylph -spoon"
+        "flags": "Orandom:4,gated_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
       }
     ]
   },
@@ -140,6 +140,36 @@
     ]
   },
   {
+    "category": "Ladder Season 8",
+    "presets": [
+      {
+        "name": "Ladder Standard",
+        "description": "An update from the previous seasons standard increasing the objective count and guaranteeing that every character appears at least once",
+        "flags": "Orandom:7,tough_quest/req:6/win:crystal Kmain/summon/moon Pkey Cstandard/nofree/j:abilities/nekkie Twildish Sstandard Bstandard/alt:gauntlet Etoggle Gwarp/life/sylph/backrow -kit:better -noadamants -spoon"
+      },
+      {
+        "name": "Giant%",
+        "description": "Fast-paced, low skill floor, high skill ceiling, and very unpredictable with only one KI required for go mode. Are you willing to dive into the Giant ASAP? Or power up a bit more first? ALL the glitch flags are on for this one! Don't forget Gwarp, and practice that Gmp and Gdupe!",
+        "flags": "Omode:classicgiant/win:game Kmain/moon Pnone Cstandard Twild/no:j Scabins/free Bstandard/whichburn Etoggle/no:jdrops Gdupe/mp/warp/life/sylph/backrow -kit:basic -noadamants -spoon"
+      },
+      {
+        "name": "Supermarket Sweep",
+        "description": "The strongest equipment, items, and characters may be available right out the gate. Shops are free!",
+        "flags": "Orandom:4,gated_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
+      },
+      {
+        "name": "Falcon%",
+        "description": "Test yourself in one of the most challenging early-game aspects of Free Enterprise: The dreaded hook route! Gather as much strength as you can to be safe, or dive as soon as possible and hope for a couple easy bosses. The game ends when you launch the falcon with the guaranteed overworld hook.",
+        "flags": "O1:quest_falcon/req:all/win:game Kmain/nofree/force:hook Pnone Cstandard/nofree/no:fusoya/j:abilities Tpro Sstandard/sell:quarter Bstandard/alt:gauntlet Etoggle Gwarp/life/sylph/backrow -kit:basic -noadamants -spoon"
+      },
+      {
+        "name": "ZZ5 Blue Moon",
+        "description": "The flagset used for the Blue moon portion of the ZZ5 event. Gather all the free characters, assemble your party immediately and track down the bosses as quickly and efficiently as possible. Don't forget a hook route will be forced, so plan accordingly!",
+        "flags": "O1:boss_golbez/2:boss_fabulgauntlet/random:6,boss/req:7/win:crystal Kmain/summon/moon/force:hook Pkey Crelaxed/noearned/distinct:7/start:any/no:fusoya/j:abilities/nekkie/nodupes Twildish Sstandard Bstandard/alt:gauntlet Etoggle Gwarp/life/sylph/backrow -kit:basic -kit2:freedom -noadamants -spoon -smith:super"
+      }
+    ]
+  },
+  {
     "category": "Adamant Cup",
     "presets": [
       {
@@ -151,6 +181,21 @@
         "name": "Bracket Stage",
         "description": "The second flagset for the Adamant cup used from the top 32 onward. The high completion percentage from group stage carries over, but the tresure chest quality gets bumped down. Also, Cecil and FuSoYa are on vacation, likely planning a trip to a Lunarian theme park.",
         "flags": "Orandom:7,tough_quest/req:7/win:crystal Kmain/summon/moon Pkey Crelaxed/nofree/no:cecil,fusoya/j:abilities/nekkie/party:4 Tpro/maxtier:6 Sstandard/sell:quarter Bstandard/alt:gauntlet Etoggle Glife/sylph -kit:basic -spoon -smith:alt"
+      }
+    ]
+  },
+  {
+    "category": "ZZ5",
+    "presets": [
+      {
+        "name": "Blue Moon",
+        "description": "The flagset used for the Blue moon portion of the ZZ5 event. Gather all the free characters, assemble your party immediately and track down the bosses as quickly and efficiently as possible. Don't forget a hook route will be forced, so plan accordingly!",
+        "flags": "O1:boss_golbez/2:boss_fabulgauntlet/random:6,boss/req:7/win:crystal Kmain/summon/moon/force:hook Pkey Crelaxed/noearned/distinct:7/start:any/no:fusoya/j:abilities/nekkie/nodupes Twildish Sstandard Bstandard/alt:gauntlet Etoggle Gwarp/life/sylph/backrow -kit:basic -kit2:freedom -noadamants -spoon -smith:super"
+      },
+      {
+        "name": "Red Moon (example)",
+        "description": "For an authentic Red Moon experience, please visit the official discord, as this flagset utilized the Tricker bot for some additional curation of the characters and monsters. The flagset here is an example. To view the yaml for the flag details, go here: https://pastebin.com/L08T1mEY",
+        "flags": "O1:boss_golbez/2:boss_fabulgauntlet/3:boss_odin/4:boss_elements/5:boss_cpu/6:boss_asura/7:boss_magus/8:boss_mombomb/req:7/win:crystal Kmain/summon/moon/force:hook/nofree Pkey Crelaxed/noearned/distinct:7/start:cecil/no:cecil,fusoya,edge/j:abilities Tpro Sstandard/no:apples Bstandard/alt:gauntlet Etoggle Glife -kit:notdeme -kit2:freedom -noadamants -spoon -smith:super"
       }
     ]
   }
