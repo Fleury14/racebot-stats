@@ -273,6 +273,20 @@
         "flags": "O1:boss_golbez/2:boss_fabulgauntlet/3:boss_odin/4:boss_elements/5:boss_cpu/6:boss_asura/7:boss_magus/8:boss_mombomb/req:7/win:crystal Kmain/summon/moon/force:hook/nofree Pkey Crelaxed/noearned/distinct:7/start:cecil/no:cecil,fusoya,edge/j:abilities Tpro Sstandard/no:apples Bstandard/alt:gauntlet Etoggle Glife -kit:notdeme -kit2:freedom -noadamants -spoon -smith:super"
       }
     ]
+  },
+  {
+    "category": "Eblan Elixir League",
+    "presets": [
+      {
+        "name": "Potion Party",
+        "description": "This flagset joins a few distinct wrinkles to create a unique FE experience. Monster boxes can now include key items, so be sure to check those out. All non-monster boxes contain only money, but shops can include anything that is not a J-item! This flagset also ends upon completing the objectives so no worrying about the Z fight! Be sure to go over the flag details a couple times before running this set.",
+        "flags": "O1:quest_monsterqueen/2:quest_monsterking/3:quest_cavebahamut/4:quest_masamunealtar/5:quest_forge/random:3,tough_quest/req:6/win:game Kmain/trap/nofree/force:magma Pnone Cstandard/nofree/distinct:7/start:not_tellah,not_fusoya/no:fusoya/restrict:cecil/j:abilities/nekkie/nodupes/hero Twildish/money Swild/no:j Bstandard/nofree/alt:gauntlet/whichburn Etoggle/noexp Gwarp/life/sylph/backrow -kit:freedom -kit2:trap -kit3:basic -noadamants -nocursed -spoon"
+      },
+      {
+        "name": "Moonveil Mixer",
+        "description": "Several different features from previous events have been combined into one Mixer. Adamant armors can be found if you're lucky, the dwarven kit is back, running from battles is disabled and just like the Potion Party, the Hero flag is on! Four of the seven objectives are static as they are objectives from events you may remember! This flagset plays out more like a 'standard' seed of FE, but much like Potion Party, be sure to review so you don't miss out on details like the warp glitch!",
+        "flags": "O1:quest_magnes/2:quest_forge/3:boss_fabulgauntlet/4:boss_golbez/random:3,tough_quest/req:6/win:crystal Kmain/summon/moon/nofree Pkey Cstandard/nofree/restrict:cecil,fusoya/j:abilities/nekkie/hero Twildish/maxtier:5 Sstandard Bstandard/alt:gauntlet/whichburn Etoggle/cantrun Gwarp/life/sylph/backrow -kit:better -kit2:dwarf -spoon"
+      }
+    ]
   }
-
 ]
