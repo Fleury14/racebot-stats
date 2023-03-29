@@ -11,7 +11,9 @@ class EEL extends Component {
     return (
       <div className="eel-page">
         <Navbar />
-        <h1 className="eel-title">Eblan Elixir League</h1>
+        <div className="d-flex justify-content-center">
+          <img src="images/EEL-splash.png" className="eel-splash" alt="Eblan Elixir League, an FF4FE Team Tournament running from April 4th to June 18th"/>
+        </div>
         <Container>
           <Row>
             <div className="eel-subtitle">
@@ -56,6 +58,31 @@ class EEL extends Component {
           </Row>
             );
           })}
+          <Row>
+            <div className="eel-subtitle">
+              <h2>Team Detail</h2>
+            </div>
+          </Row>
+          <Row>
+          {teams.map((team, index) => {
+            return (
+              <Col md="4" key={`team${team.name}`}>
+                <div className={`eel-detail-cell${index % 2 === 1 ? ' eel-striped' : ''}`}>
+                  <p className="eel-detail-team-name">{team.name}</p>
+                  {team.members.map(member => {
+                    return (
+                      <div className="eel-detail-player-row" key={`${member.name}`}>
+                        <p>{member.name}</p>
+                        <p>GP: {member.wins + member.losses + member.ties}</p>
+                        <p>Record: {member.wins} - {member.losses}{member.ties ? `-${member.ties}` : null}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </Col>
+            )
+          })}
+          </Row>
         </Container>
       </div>
     )

@@ -8,12 +8,12 @@ for (let i = 0; i < TEAMCOUNT; i++)
 {
   const newTeam = {
     name: `Team ${i + 1}`,
-    members: {
-      0: { name: `Player ${(i * 4) + 1}`, id: (i * 4) + 1, w: 0, l: 0, d: 0 },
-      1: { name: `Player ${(i * 4) + 2}`, id: (i * 4) + 1, w: 0, l: 0, d: 0 },
-      2: { name: `Player ${(i * 4) + 3}`, id: (i * 4) + 1, w: 0, l: 0, d: 0 },
-      3: { name: `Player ${(i * 4) + 4}`, id: (i * 4) + 1, w: 0, l: 0, d: 0 },
-    },
+    members: [
+      { name: `Player ${(i * 4) + 1}`, id: (i * 4) + 1, wins: 0, losses: 0, ties: 0 },
+      { name: `Player ${(i * 4) + 2}`, id: (i * 4) + 1, wins: 0, losses: 0, ties: 0 },
+      { name: `Player ${(i * 4) + 3}`, id: (i * 4) + 1, wins: 0, losses: 0, ties: 0 },
+      { name: `Player ${(i * 4) + 4}`, id: (i * 4) + 1, wins: 0, losses: 0, ties: 0 },
+    ],
     wins: 0,
     losses: 0,
     ties: 0,

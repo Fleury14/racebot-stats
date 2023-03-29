@@ -1,6 +1,10 @@
 .eel-page {
   font-family: 'Open Sans', sans-serif;
 
+.eel-splash {
+  height: 400px;
+}
+
   h1 {
     text-align: center;
     margin: 20px 0px;
@@ -37,4 +41,19 @@
 
 .eel-striped {
   background-color: #ddd;
+}
+
+.eel-detail-cell {
+  padding: 10px;
+}
+
+.eel-detail-team-name {
+  font-weight: 700;
+  border-bottom: 1px solid #010159;
+}
+
+.eel-detail-player-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
