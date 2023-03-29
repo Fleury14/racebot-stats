@@ -1,0 +1,40 @@
+.eel-page {
+  font-family: 'Open Sans', sans-serif;
+
+  h1 {
+    text-align: center;
+    margin: 20px 0px;
+  }
+}
+
+.eel-subtitle {
+  background-color: #010159;
+  color: #eee;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 3px;
+
+  h2 {
+    margin: 10px 25px;
+    
+  }
+  
+}
+
+.eel-standings-legend {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.eel-standings-row {
+  align-items: center;
+  min-height: 30px;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.eel-striped {
+  background-color: #ddd;
+}
