@@ -20,7 +20,7 @@ const EELData = (props) => {
   }, [])
 
   useEffect(() => {
-    Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRUPzV00Hc79l-7nqNuCpqnF1tt5C0iX_mlTMXPrt0eu4HHhm4iyTyUWktBSc3TmciVE6yntOHaGffb/pub?output=csv", {
+    Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRUPzV00Hc79l-7nqNuCpqnF1tt5C0iX_mlTMXPrt0eu4HHhm4iyTyUWktBSc3TmciVE6yntOHaGffb/pub?gid=0&single=true&output=csv", {
       download: true,
       header: true,
       complete: (results) => {
