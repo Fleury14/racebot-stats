@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import { Navbar} from '..';
-import { parseEEL } from '../../helpers';
+import exceptions from '../../data/eel-exceptions';
 import './eel.scss';
 
 class EEL extends Component {
 
   trimDiscord(string) {
+    const exceptionCheck = exceptions.filter(e => e.discord === string);
+    if (exceptionCheck.length > 0) return exceptionCheck[0].requested;
     return string.slice(0, -5);
   }
 

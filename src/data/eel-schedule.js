@@ -1,0 +1,46 @@
+const schedule = {
+  1: [
+{ team1: 'Harp Faders Anonymous', team2: 'Kokkolshop Quartet' },
+{ team1: 'We Wear Shorts In Winter', team2: "What's The Big Ordeals?" },
+{ team1: 'Balamb Cricket Club', team2: "Unforced Errors" },
+{ team1: 'The Last Minute Decisions', team2: "Bold Strategy"},
+{ team1: 'Golbez, Golbez, Golbez & Golbez', team2: "Silvera Petting Zoo" },
+{ team1: 'Nue Moon', team2: "It's Bacchus O'Clock Somewhere" },
+{ team1: 'Bimmy and Jimmy Eat World', team2: "Rydia's Rebels" },
+{ team1: 'Brew Dude Attitude', team2: "Big Trouble In Little Kaipo" },
+{ team1: 'The Rusty Spoons', team2: "Time Zones R Us" },
+{ team1: 'Blue Moon Dew', team2: "Mysidian Comedy Club" },
+{ team1: 'Bring Your Own Bacchus', team2: "Team No Springs" },
+{ team1: 'Team Wombat Milk', team2: "Big Chocobo's Storage Wars" },
+  ],
+  2: [
+{ team1: "Rydia's Rebels", team2: "What's The Big Ordeals?" },
+{ team1: "The Rusty Spoons", team2: "Balamb Cricket Club" },
+{ team1: "We Wear Shorts In Winter", team2: "The Last Minute Decisions" },
+{ team1: "Bring Your Own Bacchus", team2: "Bimmy and Jimmy Eat World" },
+{ team1: "Mysidian Comedy Club", team2: "It's Bacchus O'Clock Somewhere" },
+{ team1: "Unforced Errors", team2: "Nue Moon" },
+{ team1: "Brew Dude Attitude", team2: "Bold Strategy" },
+{ team1: "Team No Springs", team2: "Silvera Petting Zoo" },
+{ team1: "Big Trouble In Little Kaipo", team2: "Big Chocobo's Storage Wars" },
+{ team1: "Kokkolshop Quartet", team2: "Harp Faders Anonymous" },
+{ team1: "Team Wombat Milk", team2: "Time Zones R Us" },
+{ team1: "Blue Moon Dew", team2: "Golbez, Golbez, Golbez & Golbez" },
+  ],
+  3: [
+    { team1: "Bring Your Own Bacchus", team2: "Golbez, Golbez, Golbez & Golbez" },
+    { team1: "The Rusty Spoons", team2: "Brew Dude Attitude" },
+    { team1: "It's Bacchus O'Clock Somewhere", team2: "Unforced Errors" },
+    { team1: "Nue Moon", team2: "Silvera Petting Zoo" },
+    { team1: "Team No Springs", team2: "Bold Strategy" },
+    { team1: "Bimmy and Jimmy Eat World", team2: "Harp Faders Anonymous" },
+    { team1: "Big Trouble In Little Kaipo", team2: "Mysidian Comedy Club" },
+    { team1: "Blue Moon Dew", team2: "We Wear Shorts In Winter" },
+    { team1: "What's The Big Ordeals?", team2: "Time Zones R Us" },
+    { team1: "Big Chocobo's Storage Wars", team2: "Balamb Cricket Club" },
+    { team1: "Team Wombat Milk", team2: "The Last Minute Decisions" },
+    { team1: "Rydia's Rebels", team2: "Kokkolshop Quartet " },
+  ]
+};
+
+export default schedule;
