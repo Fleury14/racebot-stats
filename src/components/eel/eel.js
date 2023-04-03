@@ -1,18 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import EEL from './eelView';
 import { parseEELRoster } from '../../helpers';
+import schedule from '../../data/eel-schedule';
 import Papa from 'papaparse';
 
 const EELData = (props) => {
   const [teams, setTeams] = useState([]);
   const [matches, setMatches] = useState([]);
+  const [fullSchedule, setSchedule] = useState([]);
+  
+  const isMemberOfTeam = (team, check) => {
+    if (!team) return false;
+    let result = false;
+    team.members.forEach(member => {
+      if (member.name === check) result = true;
+    });
+    
+    return result;
+  }
 
   useEffect(() => {
     Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vTo9gyNOk-yJ3JbLr2DHP_YOBZ6ukWO8cFvkYBi-wo0k7gDL6SBJh-ahBbEy_PUAwstDeTLGLhzwmdE/pub?output=csv", {
       download: true,
       header: true,
       complete: (results) => {
-        // console.log('papa results', results);
         const parsedData = parseEELRoster(results.data);
         setTeams(parsedData);
       },
@@ -24,7 +35,6 @@ const EELData = (props) => {
       download: true,
       header: true,
       complete: (results) => {
-        // console.log('papa results matches', results.data);
         // const parsedData = parseEELRoster(results.data);
         const matches = results.data
         if (teams.length > 0) {
@@ -48,7 +58,7 @@ const EELData = (props) => {
             };
             const p2Player = p2Team.members.find(member => member.name === match.p2Discord);
             if (!p2Player) return;
-            console.log('players', p1Player, p2Player, match.winner);
+            
     
             switch (match.winner) {
               case "1":
@@ -71,6 +81,58 @@ const EELData = (props) => {
             }
           })
           console.log('instance', teamsInstance);
+          for (const week in schedule) {
+            schedule[week].forEach(match => {
+              const team1 = teamsInstance.find(team => team.name === match.team1);
+              const team2 = teamsInstance.find(team => team.name === match.team2);
+              const weekMatchups = results.data.filter(match => match.week === week.toString());
+              const matchups = weekMatchups.filter(match => isMemberOfTeam(team1, match.p1Discord) || isMemberOfTeam(team2, match.p1Discord));
+
+              let team1Score = 0;
+              let team2Score = 0;
+              matchups.forEach(matchup => {
+                if(matchup.winner === "1" && isMemberOfTeam(team1, matchup.p1Discord)) {
+                  team1.matchWins++;
+                  team2.matchLosses++;
+                  team1Score++;
+                }
+                if(matchup.winner === "1" && isMemberOfTeam(team2, matchup.p1Discord)) {
+                  team2.matchWins++;
+                  team1.matchLosses++;
+                  team2Score++;
+                }
+                if(matchup.winner === "2" && isMemberOfTeam(team1, matchup.p2Discord)) {
+                  team1.matchWins++;
+                  team2.matchLosses++;
+                  team1Score++;
+                }
+                if(matchup.winner === "2" && isMemberOfTeam(team2, matchup.p2Discord)) {
+                  team2.matchWins++;
+                  team1.matchLosses++;
+                  team2Score++;
+                }
+              });
+              
+              if (matchups.length < 3) return;
+              if (team1Score > team2Score) {
+                team1.wins++
+                team1.points += 3;
+                team2.losses++;
+              }
+              if (team1Score < team2Score) {
+                team2.wins++;
+                team2.points += 3;
+                team1.losses++
+              }
+
+              if (team1Score === team2Score) {
+                team1.ties++;
+                team1.points += 1;
+                team2.ties++;
+                team2.points += 1;
+              }
+            })
+          }
           setTeams(teamsInstance);
         }
         setMatches(results.data);

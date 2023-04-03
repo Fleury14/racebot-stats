@@ -15,6 +15,11 @@ class EEL extends Component {
   render() {
     const { teams } = this.props;
     console.log('teams', teams);
+    teams.sort((a, b) => {
+      if (a.points !== b.points) return b.points - a.points;
+      if (a.wins + a.losses + a.ties !== b.wins + b.losses + b.ties) return (a.wins + a.losses + a.ties) - (b.wins + b.losses + b.ties);
+      return b.matchWins - a.matchWins 
+    });
     return (
       <div className="eel-page">
         <Navbar />
