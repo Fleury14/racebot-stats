@@ -43,17 +43,14 @@ const EELData = (props) => {
           matches.forEach(match => {
             const p1Team = teamsInstance.find(team => team.members.filter(member => member.name === match.p1Discord).length > 0);
             if (!p1Team) {
-              console.log('no team 1');
               return;
             };
             const p1Player = p1Team.members.find(member => member.name === match.p1Discord);
             if (!p1Player) {
-              console.log('no player 1', p1Team);
               return
             };
             const p2Team = teamsInstance.find(team => team.members.filter(member => member.name === match.p2Discord).length > 0);
             if (!p2Team) {
-              console.log('no team 2');
               return;
             };
             const p2Player = p2Team.members.find(member => member.name === match.p2Discord);
@@ -113,16 +110,20 @@ const EELData = (props) => {
                 }
               });
               
+              match["team1Score"] = team1Score;
+              match["team2Score"] = team2Score;
               if (matchups.length < 3) return;
               if (team1Score > team2Score) {
                 team1.wins++
                 team1.points += 3;
                 team2.losses++;
+                match["winner"] = 1;
               }
               if (team1Score < team2Score) {
                 team2.wins++;
                 team2.points += 3;
-                team1.losses++
+                team1.losses++;
+                match["winner"] = 2;
               }
 
               if (team1Score === team2Score) {
@@ -130,10 +131,13 @@ const EELData = (props) => {
                 team1.points += 1;
                 team2.ties++;
                 team2.points += 1;
+                match["winner"] = 3;
               }
             })
           }
+          setSchedule(schedule);
           setTeams(teamsInstance);
+          
         }
         setMatches(results.data);
       },
@@ -142,7 +146,7 @@ const EELData = (props) => {
   
   // const movies = Array.from(data);
   return (
-    <EEL teams={teams} />
+    <EEL teams={teams} schedule={fullSchedule} />
   );
 }
 

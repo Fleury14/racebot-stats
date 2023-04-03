@@ -13,8 +13,8 @@ class EEL extends Component {
   }
 
   render() {
-    const { teams } = this.props;
-    console.log('teams', teams);
+    const { teams, schedule } = this.props;
+    console.log('teams', teams, schedule);
     teams.sort((a, b) => {
       if (a.points !== b.points) return b.points - a.points;
       if (a.wins + a.losses + a.ties !== b.wins + b.losses + b.ties) return (a.wins + a.losses + a.ties) - (b.wins + b.losses + b.ties);
@@ -97,6 +97,54 @@ class EEL extends Component {
             )
           })}
           </Row>
+          <Row>
+            <div className="eel-subtitle">
+              <h2>Schedule</h2>
+            </div>
+            <h3 className="eel-schedule-week-subtitle">Week 1</h3>
+          </Row>
+          {schedule[1] && schedule[1].length ? (
+            schedule[1].map((match, index) => {
+              return (
+                <Row key={`w1m${index + 1}`} className="eel-schedule-team-row">
+                  <Col md="5">{match.team1}</Col>
+                  <Col md="1">{match.team1Score !== undefined ? match.team1Score : ""}</Col>
+                  <Col md="1">{match.team2Score !== undefined ? match.team2Score : ""}</Col>
+                  <Col md="5" className="eel-schedule-right-team">{match.team2}</Col>
+                </Row>
+              )
+            })
+          ) : null}
+          <Row>
+            <h3 className="eel-schedule-week-subtitle">Week 2</h3>
+          </Row>
+          {schedule[2] && schedule[2].length ? (
+            schedule[2].map((match, index) => {
+              return (
+                <Row key={`w2m${index + 1}`} className="eel-schedule-team-row">
+                  <Col md="5">{match.team1}</Col>
+                  <Col md="1">{match.team1Score !== undefined ? match.team1Score : ""}</Col>
+                  <Col md="1">{match.team2Score !== undefined ? match.team2Score : ""}</Col>
+                  <Col md="5" className="eel-schedule-right-team">{match.team2}</Col>
+                </Row>
+              )
+            })
+          ) : null}
+          <Row>
+            <h3 className="eel-schedule-week-subtitle">Week 3</h3>
+          </Row>
+          {schedule[3] && schedule[3].length ? (
+            schedule[3].map((match, index) => {
+              return (
+                <Row key={`w3m${index + 1}`} className="eel-schedule-team-row">
+                  <Col md="5">{match.team1}</Col>
+                  <Col md="1">{match.team1Score !== undefined ? match.team1Score : ""}</Col>
+                  <Col md="1">{match.team2Score !== undefined ? match.team2Score : ""}</Col>
+                  <Col md="5" className="eel-schedule-right-team">{match.team2}</Col>
+                </Row>
+              )
+            })
+          ) : null}
         </Container>
           </>
         )}
