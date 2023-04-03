@@ -14,7 +14,7 @@ class EEL extends Component {
 
   render() {
     const { teams, schedule } = this.props;
-    console.log('teams', teams, schedule);
+    // console.log('teams', teams, schedule);
     teams.sort((a, b) => {
       if (a.points !== b.points) return b.points - a.points;
       if (a.wins + a.losses + a.ties !== b.wins + b.losses + b.ties) return (a.wins + a.losses + a.ties) - (b.wins + b.losses + b.ties);

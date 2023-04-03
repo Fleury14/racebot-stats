@@ -77,7 +77,7 @@ const EELData = (props) => {
                 break;
             }
           })
-          console.log('instance', teamsInstance);
+          // console.log('instance', teamsInstance);
           for (const week in schedule) {
             schedule[week].forEach(match => {
               const team1 = teamsInstance.find(team => team.name === match.team1);
