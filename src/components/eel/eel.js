@@ -108,11 +108,18 @@ const EELData = (props) => {
                   team1.matchLosses++;
                   team2Score++;
                 }
+                if(matchup.winner === "3") {
+                  team1.matchTies++;
+                  team2.matchTies++;
+                  team1Score += 0.5;
+                  team2Score += 0.5;
+                }
               });
               
               match["team1Score"] = team1Score;
               match["team2Score"] = team2Score;
               if (matchups.length < 3) return;
+              if (team1Score === 0 && team2Score === 0) return; // account for matches being pre-entered.
               if (team1Score > team2Score) {
                 team1.wins++
                 team1.points += 3;
