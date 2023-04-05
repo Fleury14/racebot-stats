@@ -19,7 +19,7 @@ const EELResults = (props) => {
   const dateOutput = (dateStr) => {
     const date = new Date(dateStr);
     const TLD = date.toLocaleDateString();
-    const TLT = date.toLocaleTimeString();
+    const TLT = date.toLocaleTimeString("en-US", { hour12: true, timeStyle: "short" });
     return `${TLD} ${TLT}`;
   }
 

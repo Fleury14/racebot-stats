@@ -150,7 +150,7 @@ class EEL extends Component {
           ) : null}
           <Row>
             <div className="eel-subtitle">
-              <h2>Match Results</h2>
+              <h2>Match Results <span className="eel-mid-header-span">(all times eastern)</span></h2>
             </div>
           </Row>
           <EELResults matches={matches} />
