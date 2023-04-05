@@ -19,7 +19,9 @@ class EEL extends Component {
     teams.sort((a, b) => {
       if (a.points !== b.points) return b.points - a.points;
       if (a.wins + a.losses + a.ties !== b.wins + b.losses + b.ties) return (a.wins + a.losses + a.ties) - (b.wins + b.losses + b.ties);
-      return b.matchWins - a.matchWins 
+      if (a.matchWins !== b.matchWins) return b.matchWins - a.matchWins;
+      return a.matchLosses - b.matchLosses;
+      
     });
     return (
       <div className="eel-page">
