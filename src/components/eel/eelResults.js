@@ -16,11 +16,23 @@ const EELResults = (props) => {
     return string.slice(0, -5);
   }
 
+  const dateOutput = (dateStr) => {
+    const date = new Date(dateStr);
+    const TLD = date.toLocaleDateString();
+    const TLT = date.toLocaleTimeString();
+    return `${TLD} ${TLT}`;
+  }
+
   if (!matches) return null;
-  matches.sort((a, b) => {
+  upcomingMatches.sort((a, b) => {
     const aDate = Date.parse(a.Date);
     const bDate = Date.parse(b.Date);
-    return bDate - aDate;
+    return aDate - bDate;
+  });
+  completedMatches.sort((a, b) => {
+    const aDate = Date.parse(a.Date);
+    const bDate = Date.parse(b.Date);
+    return aDate - bDate;
   });
   // console.log('matches', matches)
 
@@ -30,16 +42,16 @@ const EELResults = (props) => {
         <h3>Upcoming Matches</h3>
       </Row>
       <Row className="eel-results-legend">
-        <Col md="2">Date</Col>
-        <Col md="5">Player 1</Col>
-        <Col md="5">Player 2</Col>
+        <Col md="4">Date</Col>
+        <Col md="4">Player 1</Col>
+        <Col md="4">Player 2</Col>
       </Row>
       {upcomingMatches.map((match) => {
         return (
           <Row key={`${match.p1Discord}vs${match.p2Discord}`} className={match.winner ? "eel-results-row eel-results-complete" : "eel-results-row"}>
-            <Col md="2">{match.Date}</Col>
-            <Col md="5" className={match.winner === "1" ? "eel-results-winner" : ""}>{trimDiscord(match.p1Discord)} - {match.p1Time}</Col>
-            <Col md="5" className={match.winner === "2" ? "eel-results-winner" : ""}>{trimDiscord(match.p2Discord)} - {match.p2Time}</Col>
+            <Col md="4">{dateOutput(match.Date)}</Col>
+            <Col md="4" className={match.winner === "1" ? "eel-results-winner" : ""}>{trimDiscord(match.p1Discord)} - {match.p1Time}</Col>
+            <Col md="4" className={match.winner === "2" ? "eel-results-winner" : ""}>{trimDiscord(match.p2Discord)} - {match.p2Time}</Col>
           </Row>
         );
       })}
@@ -47,16 +59,16 @@ const EELResults = (props) => {
         <h3 className="eel-results-subtitle">Completed Matches</h3>
       </Row>
       <Row className="eel-results-legend">
-        <Col md="2">Date</Col>
-        <Col md="5">Player 1</Col>
-        <Col md="5">Player 2</Col>
+        <Col md="4">Date</Col>
+        <Col md="4">Player 1</Col>
+        <Col md="4">Player 2</Col>
       </Row>
       {completedMatches.map((match) => {
         return (
           <Row key={`${match.p1Discord}vs${match.p2Discord}`} className={match.winner ? "eel-results-row eel-results-complete" : "eel-results-row"}>
-            <Col md="2">{match.Date}</Col>
-            <Col md="5" className={match.winner === "1" ? "eel-results-winner" : ""}>{trimDiscord(match.p1Discord)} - {match.p1Time}</Col>
-            <Col md="5" className={match.winner === "2" ? "eel-results-winner" : ""}>{trimDiscord(match.p2Discord)} - {match.p2Time}</Col>
+            <Col md="4">{dateOutput(match.Date)}</Col>
+            <Col md="4" className={match.winner === "1" ? "eel-results-winner" : ""}>{trimDiscord(match.p1Discord)} - {match.p1Time}</Col>
+            <Col md="4" className={match.winner === "2" ? "eel-results-winner" : ""}>{trimDiscord(match.p2Discord)} - {match.p2Time}</Col>
           </Row>
         );
       })}
