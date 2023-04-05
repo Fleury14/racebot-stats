@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import { Navbar} from '..';
 import exceptions from '../../data/eel-exceptions';
+import EELResults from './eelResults';
 import './eel.scss';
 
 class EEL extends Component {
@@ -13,7 +14,7 @@ class EEL extends Component {
   }
 
   render() {
-    const { teams, schedule } = this.props;
+    const { teams, schedule, matches } = this.props;
     // console.log('teams', teams, schedule);
     teams.sort((a, b) => {
       if (a.points !== b.points) return b.points - a.points;
@@ -145,6 +146,12 @@ class EEL extends Component {
               )
             })
           ) : null}
+          <Row>
+            <div className="eel-subtitle">
+              <h2>Match Results</h2>
+            </div>
+          </Row>
+          <EELResults matches={matches} />
         </Container>
           </>
         )}

@@ -160,7 +160,7 @@ const EELData = (props) => {
   
   // const movies = Array.from(data);
   return (
-    <EEL teams={teams} schedule={fullSchedule} />
+    <EEL teams={teams} schedule={fullSchedule} matches={matches}/>
   );
 }
 

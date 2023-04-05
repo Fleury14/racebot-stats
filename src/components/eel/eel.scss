@@ -70,3 +70,20 @@
 h3.eel-schedule-week-subtitle {
   margin-top: 20px;
 }
+
+.eel-results-legend {
+  font-weight: 700;
+}
+
+.eel-results-complete {
+  background-color: lighten(#010159, 75);
+}
+
+.eel-results-winner {
+  background-color: goldenrod;
+  font-weight: 700;
+}
+
+.eel-results-row {
+  border-bottom: 1px solid #ccc;
+}
