@@ -87,38 +87,45 @@ const EELData = (props) => {
 
               let team1Score = 0;
               let team2Score = 0;
+              let gamesPlayed = 0;
               matchups.forEach(matchup => {
                 if(matchup.winner === "1" && isMemberOfTeam(team1, matchup.p1Discord)) {
                   team1.matchWins++;
                   team2.matchLosses++;
                   team1Score++;
+                  gamesPlayed++;
                 }
                 if(matchup.winner === "1" && isMemberOfTeam(team2, matchup.p1Discord)) {
                   team2.matchWins++;
                   team1.matchLosses++;
                   team2Score++;
+                  gamesPlayed++;
                 }
                 if(matchup.winner === "2" && isMemberOfTeam(team1, matchup.p2Discord)) {
                   team1.matchWins++;
                   team2.matchLosses++;
                   team1Score++;
+                  gamesPlayed++;
                 }
                 if(matchup.winner === "2" && isMemberOfTeam(team2, matchup.p2Discord)) {
                   team2.matchWins++;
                   team1.matchLosses++;
                   team2Score++;
+                  gamesPlayed++;
                 }
                 if(matchup.winner === "3") {
                   team1.matchTies++;
                   team2.matchTies++;
                   team1Score += 0.5;
                   team2Score += 0.5;
+                  gamesPlayed++;
                 }
               });
               
               match["team1Score"] = team1Score;
               match["team2Score"] = team2Score;
               if (matchups.length < 3) return;
+              if (gamesPlayed < 3) return;
               if (team1Score === 0 && team2Score === 0) return; // account for matches being pre-entered.
               if (team1Score > team2Score) {
                 team1.wins++
