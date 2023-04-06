@@ -27,14 +27,29 @@ class EEL extends Component {
       <div className="eel-page">
         <Navbar />
         { !teams ? <h1>Loading...</h1> : (
+          <Container>
           <>
-          <div className="d-flex justify-content-center">
-          <img src="images/EEL-splash.png" className="eel-splash" alt="Eblan Elixir League, an FF4FE Team Tournament running from April 4th to June 18th"/>
-        </div>
-        <Container>
+          <Row className="eel-subnav-row">
+            <Col md="2">
+              <a href="#standings"><p>Standings</p></a>
+            </Col>
+            <Col md="2">
+              <a href="#teamDetail"><p>Team Detail</p></a>
+            </Col>
+            <Col md="2">
+              <a href="#schedule"><p>Schedule</p></a>
+            </Col>         
+            <Col md="2">
+              <a href="#matchResults"><p>Match Results</p></a>
+            </Col>
+          </Row>
+            <div className="d-flex justify-content-center">
+              <img src="images/EEL-splash.png" className="eel-splash" alt="Eblan Elixir League, an FF4FE Team Tournament running from April 4th to June 18th"/>
+            </div>
+          
           <Row>
             <div className="eel-subtitle">
-              <h2>Standings</h2>
+              <h2 id="standings">Standings</h2>
             </div>
           </Row>
           <Row className="eel-standings-legend">
@@ -77,7 +92,7 @@ class EEL extends Component {
           })}
           <Row>
             <div className="eel-subtitle">
-              <h2>Team Detail</h2>
+              <h2 id="teamDetail">Team Detail</h2>
             </div>
           </Row>
           <Row>
@@ -102,7 +117,7 @@ class EEL extends Component {
           </Row>
           <Row>
             <div className="eel-subtitle">
-              <h2>Schedule</h2>
+              <h2 id="schedule">Schedule</h2>
             </div>
             <h3 className="eel-schedule-week-subtitle">Week 1</h3>
           </Row>
@@ -150,12 +165,13 @@ class EEL extends Component {
           ) : null}
           <Row>
             <div className="eel-subtitle">
-              <h2>Match Results <span className="eel-mid-header-span">(all times eastern)</span></h2>
+              <h2 id="matchResults">Match Results <span className="eel-mid-header-span">(all times eastern)</span></h2>
             </div>
           </Row>
           <EELResults matches={matches} />
-        </Container>
+        
           </>
+          </Container>
         )}
         
       </div>

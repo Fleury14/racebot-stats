@@ -89,6 +89,7 @@ const EELData = (props) => {
               let team2Score = 0;
               let gamesPlayed = 0;
               matchups.forEach(matchup => {
+                if(!team1 || !team2) console.log('potential error in the following matchup', matchups, match, 'team1', team1, 'team2', team2, teams)
                 if(matchup.winner === "1" && isMemberOfTeam(team1, matchup.p1Discord)) {
                   team1.matchWins++;
                   team2.matchLosses++;
