@@ -5,7 +5,7 @@ import './eel.scss';
 
 const EELResults = (props) => {
   
-  const [page, setPage] = useState([0]);
+  const [page, setPage] = useState(1);
   const { matches } = props;
   const upcomingMatches = matches.filter(match => !match.winner);
   const completedMatches = matches.filter(match => match.winner);
@@ -14,6 +14,10 @@ const EELResults = (props) => {
     const exceptionCheck = exceptions.filter(e => e.discord === string);
     if (exceptionCheck.length > 0) return exceptionCheck[0].requested;
     return string.slice(0, -5);
+  }
+
+  const setWeek = (week) => {
+    setPage(week);
   }
 
   const dateOutput = (dateStr) => {
@@ -35,6 +39,8 @@ const EELResults = (props) => {
     return aDate - bDate;
   });
   // console.log('matches', matches)
+
+  const WEEK_SELECTION = [1, 2, 3, 4, 5, 6, 7, 8];
 
   return (
     <>
@@ -58,12 +64,19 @@ const EELResults = (props) => {
       <Row>
         <h3 className="eel-results-subtitle">Completed Matches</h3>
       </Row>
+      <Row>
+        <div className="d-flex justify-content-between w-100">
+          {WEEK_SELECTION.map(week => {
+            return <div className={`eel-completed-week-button${week === page ? ' eel-active-week' : ''}`} key={`completedweek${week}`} onClick={() => setWeek(week)}><span>Week {week}</span></div>
+          })}
+        </div>
+      </Row>
       <Row className="eel-results-legend">
         <Col md="4">Date</Col>
         <Col md="4">Player 1</Col>
         <Col md="4">Player 2</Col>
       </Row>
-      {completedMatches.map((match) => {
+      {completedMatches.filter(match => match.week === page.toString()).map((match) => {
         return (
           <Row key={`${match.p1Discord}vs${match.p2Discord}`} className={match.winner ? "eel-results-row eel-results-complete" : "eel-results-row"}>
             <Col md="4">{dateOutput(match.Date)}</Col>

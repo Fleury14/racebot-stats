@@ -96,6 +96,18 @@ h3.eel-schedule-week-subtitle {
   font-size: 14px;
 }
 
+.eel-completed-week-button {
+  border: 2px solid #010159;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.eel-active-week {
+  background-color: #010159;
+  color: #fff;
+}
+
 .eel-subnav-row {
   margin-top: 20px;
   a p {
