@@ -32,7 +32,7 @@ const exceptions = [
     requested: "WindFox"
   },
   {
-    discord: "BeautyInDiscovery (he/him) #2881",
+    discord: "BeautyInDiscovery (he/him)#2881",
     requested: "BeautyInDiscovery"
   },
   {
