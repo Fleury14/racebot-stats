@@ -39,7 +39,7 @@ const schedule = {
     { team1: "What's The Big Ordeals?", team2: "Time Zones R Us" },
     { team1: "Big Chocobo's Storage Wars", team2: "Balamb Cricket Club" },
     { team1: "Team Wombat Milk", team2: "The Last Minute Decisions" },
-    { team1: "Rydia's Rebels", team2: "Kokkolshop Quartet " },
+    { team1: "Rydia's Rebels", team2: "Kokkolshop Quartet" },
   ]
 };
 
