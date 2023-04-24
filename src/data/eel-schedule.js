@@ -40,6 +40,20 @@ const schedule = {
     { team1: "Big Chocobo's Storage Wars", team2: "Balamb Cricket Club" },
     { team1: "Team Wombat Milk", team2: "The Last Minute Decisions" },
     { team1: "Rydia's Rebels", team2: "Kokkolshop Quartet" },
+  ],
+  4: [
+    { team1: "The Last Minute Decisions", team2: "Balamb Cricket Club" },
+    { team1: "Blue Moon Dew", team2: "It's Bacchus O'Clock Somewhere" },
+    { team1: "The Rusty Spoons", team2: "Kokkolshop Quartet" },
+    { team1: "Bimmy and Jimmy Eat World", team2: "Nue Moon" },
+    { team1: "Brew Dude Attitude", team2: "Team Wombat Milk" },
+    { team1: "Bring Your Own Bacchus", team2: "Big Trouble In Little Kaipo" },
+    { team1: "Team No Springs", team2: "We Wear Shorts In Winter" },
+    { team1: "Bold Strategy", team2: "Silvera Petting Zoo" },
+    { team1: "What's The Big Ordeals?", team2: "Big Chocobo’s Storage Wars" },
+    { team1: "Golbez, Golbez, Golbez & Golbez", team2: "Rydia's Rebels" },
+    { team1: "Mysidian Comedy Club", team2: "Time Zones R Us" },
+    { team1: "Harp Faders Anonymous", team2: "Unforced Errors" },
   ]
 };
 

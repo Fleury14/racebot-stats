@@ -164,6 +164,21 @@ class EEL extends Component {
             })
           ) : null}
           <Row>
+            <h3 className="eel-schedule-week-subtitle">Week 4</h3>
+          </Row>
+          {schedule[4] && schedule[4].length ? (
+            schedule[4].map((match, index) => {
+              return (
+                <Row key={`w3m${index + 1}`} className="eel-schedule-team-row">
+                  <Col md="5">{match.team1}</Col>
+                  <Col md="1">{match.team1Score !== undefined ? match.team1Score : ""}</Col>
+                  <Col md="1">{match.team2Score !== undefined ? match.team2Score : ""}</Col>
+                  <Col md="5" className="eel-schedule-right-team">{match.team2}</Col>
+                </Row>
+              )
+            })
+          ) : null}
+          <Row>
             <div className="eel-subtitle">
               <h2 id="matchResults">Match Results <span className="eel-mid-header-span">(all times eastern)</span></h2>
             </div>
