@@ -50,7 +50,7 @@ const schedule = {
     { team1: "Bring Your Own Bacchus", team2: "Big Trouble In Little Kaipo" },
     { team1: "Team No Springs", team2: "We Wear Shorts In Winter" },
     { team1: "Bold Strategy", team2: "Silvera Petting Zoo" },
-    { team1: "What's The Big Ordeals?", team2: "Big Chocobo’s Storage Wars" },
+    { team1: "What's The Big Ordeals?", team2: "Big Chocobo's Storage Wars" },
     { team1: "Golbez, Golbez, Golbez & Golbez", team2: "Rydia's Rebels" },
     { team1: "Mysidian Comedy Club", team2: "Time Zones R Us" },
     { team1: "Harp Faders Anonymous", team2: "Unforced Errors" },
