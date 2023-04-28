@@ -114,3 +114,10 @@ h3.eel-schedule-week-subtitle {
     color: #000;
   }
 }
+
+.eel-schedule-button-row {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  justify-content: space-between;
+}

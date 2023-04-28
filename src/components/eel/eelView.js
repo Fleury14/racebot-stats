@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'reactstrap';
 import { Navbar} from '..';
 import exceptions from '../../data/eel-exceptions';
 import EELResults from './eelResults';
+import EELSchedule from './eelSchedule';
 import './eel.scss';
 
 class EEL extends Component {
@@ -115,69 +116,9 @@ class EEL extends Component {
             )
           })}
           </Row>
-          <Row>
-            <div className="eel-subtitle">
-              <h2 id="schedule">Schedule</h2>
-            </div>
-            <h3 className="eel-schedule-week-subtitle">Week 1</h3>
-          </Row>
-          {schedule[1] && schedule[1].length ? (
-            schedule[1].map((match, index) => {
-              return (
-                <Row key={`w1m${index + 1}`} className="eel-schedule-team-row">
-                  <Col md="5">{match.team1}</Col>
-                  <Col md="1">{match.team1Score !== undefined ? match.team1Score : ""}</Col>
-                  <Col md="1">{match.team2Score !== undefined ? match.team2Score : ""}</Col>
-                  <Col md="5" className="eel-schedule-right-team">{match.team2}</Col>
-                </Row>
-              )
-            })
-          ) : null}
-          <Row>
-            <h3 className="eel-schedule-week-subtitle">Week 2</h3>
-          </Row>
-          {schedule[2] && schedule[2].length ? (
-            schedule[2].map((match, index) => {
-              return (
-                <Row key={`w2m${index + 1}`} className="eel-schedule-team-row">
-                  <Col md="5">{match.team1}</Col>
-                  <Col md="1">{match.team1Score !== undefined ? match.team1Score : ""}</Col>
-                  <Col md="1">{match.team2Score !== undefined ? match.team2Score : ""}</Col>
-                  <Col md="5" className="eel-schedule-right-team">{match.team2}</Col>
-                </Row>
-              )
-            })
-          ) : null}
-          <Row>
-            <h3 className="eel-schedule-week-subtitle">Week 3</h3>
-          </Row>
-          {schedule[3] && schedule[3].length ? (
-            schedule[3].map((match, index) => {
-              return (
-                <Row key={`w3m${index + 1}`} className="eel-schedule-team-row">
-                  <Col md="5">{match.team1}</Col>
-                  <Col md="1">{match.team1Score !== undefined ? match.team1Score : ""}</Col>
-                  <Col md="1">{match.team2Score !== undefined ? match.team2Score : ""}</Col>
-                  <Col md="5" className="eel-schedule-right-team">{match.team2}</Col>
-                </Row>
-              )
-            })
-          ) : null}
-          <Row>
-            <h3 className="eel-schedule-week-subtitle">Week 4</h3>
-          </Row>
-          {schedule[4] && schedule[4].length ? (
-            schedule[4].map((match, index) => {
-              return (
-                <Row key={`w3m${index + 1}`} className="eel-schedule-team-row">
-                  <Col md="5">{match.team1}</Col>
-                  <Col md="1">{match.team1Score !== undefined ? match.team1Score : ""}</Col>
-                  <Col md="1">{match.team2Score !== undefined ? match.team2Score : ""}</Col>
-                  <Col md="5" className="eel-schedule-right-team">{match.team2}</Col>
-                </Row>
-              )
-            })
-          ) : null}
+          <EELSchedule
+            schedule={schedule}
+          />
           <Row>
             <div className="eel-subtitle">
               <h2 id="matchResults">Match Results <span className="eel-mid-header-span">(all times eastern)</span></h2>
