@@ -21,9 +21,9 @@ const EELSchedule = (props) => {
       </Row>
       <Row>
         <div className="eel-schedule-button-row">
-          <button className={`eel-completed-week-button${view === 0 ? 'eel-active-week' : ''}`} onClick={() => setView(0)}>Weeks 1-4</button>
-          <button className={`eel-completed-week-button${view === 1 ? 'eel-active-week' : ''}`} onClick={() => setView(1)}>Weeks 5-8</button>
-          <button className={`eel-completed-week-button${view === 2 ? 'eel-active-week' : ''}`} onClick={() => setView(2)}>Playoffs</button>
+          <div className={`eel-completed-week-button${view === 0 ? ' eel-active-week' : ''}`} onClick={() => setView(0)}>Weeks 1-4</div>
+          <div className={`eel-completed-week-button${view === 1 ? ' eel-active-week' : ''}`} onClick={() => setView(1)}>Weeks 5-8</div>
+          <div className={`eel-completed-week-button${view === 2 ? ' eel-active-week' : ''}`} onClick={() => setView(2)}>Playoffs</div>
         </div>
       </Row>
       {weeksToDisplay.map(week => {
