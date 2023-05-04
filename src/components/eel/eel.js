@@ -72,7 +72,11 @@ const EELData = (props) => {
                 p1Player.ties++;
                 p2Player.ties++;
                 break;
-    
+              case "4":
+                p1Player.losses++;
+                p2Player.losses++;
+                break;
+
               default:
                 break;
             }
@@ -119,6 +123,11 @@ const EELData = (props) => {
                   team2.matchTies++;
                   team1Score += 0.5;
                   team2Score += 0.5;
+                  gamesPlayed++;
+                }
+                if(matchup.winner === "4") {
+                  team1.matchLosses++;
+                  team2.matchLosses++;
                   gamesPlayed++;
                 }
               });
