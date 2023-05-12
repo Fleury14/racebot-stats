@@ -24,6 +24,9 @@ const parseEELRoster = (data) => {
       matchLosses: 0,
       matchTies: 0
     }
+    if (team.sub1_Discord) {
+      newTeam.members.push({ name: team.sub1_Discord, wins: 0, losses: 0, ties: 0 });
+    }
     newTeam.members.sort((a, b) => a.name.length - b.name.length);
     teams.push(newTeam);
   });
