@@ -96,7 +96,21 @@ const schedule = {
     { team1: "Team No Springs", team2: "The Rusty Spoons" },
     { team1: "Silvera Petting Zoo", team2: "Harp Faders Anonymous" },
     { team1: "Blue Moon Dew", team2: "What's The Big Ordeals?" },
-  ]
+  ],
+  8: [
+    { team1: "Team Wombat Milk", team2: "Balamb Cricket Club" },
+    { team1: "Nue Moon", team2: "The Last Minute Decisions" },
+    { team1: "Bold Strategy", team2: "Blue Moon Dew" },
+    { team1: "Big Trouble In Little Kaipo", team2: "The Rusty Spoons" },
+    { team1: "Rydia's Rebels", team2: "Bimmy and Jimmy Eat World" },
+    { team1: "Brew Dude Attitude", team2: "Bring Your Own Bacchus" },
+    { team1: "It's Bacchus O'Clock Somewhere", team2: "Team No Springs" },
+    { team1: "Golbez, Golbez, Golbez & Golbez", team2: "What's the Big Ordeals?" },
+    { team1: "Big Chocobo's Storage Wars", team2: "Harp Faders Anonymous" },
+    { team1: "Silvera Petting Zoo", team2: "Kokkolshop Quartet" },
+    { team1: "We Wear Shorts In Winter", team2: "Time Zones R Us" },
+    { team1: "Unforced Errors", team2: "Mysidian Comedy Club" },
+    ]
 };
 
 export default schedule;
