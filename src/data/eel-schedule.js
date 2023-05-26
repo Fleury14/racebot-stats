@@ -105,7 +105,7 @@ const schedule = {
     { team1: "Rydia's Rebels", team2: "Bimmy and Jimmy Eat World" },
     { team1: "Brew Dude Attitude", team2: "Bring Your Own Bacchus" },
     { team1: "It's Bacchus O'Clock Somewhere", team2: "Team No Springs" },
-    { team1: "Golbez, Golbez, Golbez & Golbez", team2: "What's the Big Ordeals?" },
+    { team1: "Golbez, Golbez, Golbez & Golbez", team2: "What's The Big Ordeals?" },
     { team1: "Big Chocobo's Storage Wars", team2: "Harp Faders Anonymous" },
     { team1: "Silvera Petting Zoo", team2: "Kokkolshop Quartet" },
     { team1: "We Wear Shorts In Winter", team2: "Time Zones R Us" },
