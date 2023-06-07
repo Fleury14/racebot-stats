@@ -8,6 +8,7 @@ const EELData = (props) => {
   const [teams, setTeams] = useState([]);
   const [matches, setMatches] = useState([]);
   const [fullSchedule, setSchedule] = useState([]);
+  const [tidal, setTidal] = useState([]);
   
   const isMemberOfTeam = (team, check) => {
     if (!team) return false;
@@ -18,6 +19,16 @@ const EELData = (props) => {
     
     return result;
   }
+
+  useEffect(() => {
+    Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRnijbLMtssj_l_XOMx7A0sVgLJazXsDnrmUk02-szDXYACFI1cM8BGMZTa7uuDIMXK3nzCBACpQnQK/pub?output=csv", {
+      download: true,
+      header: true,
+      complete: (results) => {
+        setTidal(results.data);
+      },
+    });
+  }, [])
 
   useEffect(() => {
     Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vTo9gyNOk-yJ3JbLr2DHP_YOBZ6ukWO8cFvkYBi-wo0k7gDL6SBJh-ahBbEy_PUAwstDeTLGLhzwmdE/pub?output=csv", {
@@ -170,7 +181,7 @@ const EELData = (props) => {
   
   // const movies = Array.from(data);
   return (
-    <EEL teams={teams} schedule={fullSchedule} matches={matches}/>
+    <EEL teams={teams} schedule={fullSchedule} matches={matches} tidal={tidal}/>
   );
 }
 

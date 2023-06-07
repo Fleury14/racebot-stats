@@ -70,6 +70,10 @@ const EELResults = (props) => {
             return <div className={`eel-completed-week-button${week === page ? ' eel-active-week' : ''}`} key={`completedweek${week}`} onClick={() => setWeek(week)}><span>Week {week}</span></div>
           })}
         </div>
+        <div className="d-flex justify-content-around w-100">
+          <div className={`eel-completed-week-button${page === 9 ? ' eel-active-week' : ''}`} onClick={() => setWeek(9)}><span>Semi-finals</span></div>
+          <div className={`eel-completed-week-button${page === 10 ? ' eel-active-week' : ''}`} onClick={() => setWeek(10)}><span>Finals/Consolation</span></div>
+        </div>
       </Row>
       <Row className="eel-results-legend">
         <Col md="4">Date</Col>

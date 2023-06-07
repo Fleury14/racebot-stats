@@ -4,6 +4,7 @@ import { Navbar} from '..';
 import exceptions from '../../data/eel-exceptions';
 import EELResults from './eelResults';
 import EELSchedule from './eelSchedule';
+import EELTidal from './eelTidal';
 import './eel.scss';
 
 class EEL extends Component {
@@ -15,7 +16,7 @@ class EEL extends Component {
   }
 
   render() {
-    const { teams, schedule, matches } = this.props;
+    const { teams, schedule, matches, tidal } = this.props;
     // console.log('teams', teams, schedule);
     teams.sort((a, b) => {
       if (a.points !== b.points) return b.points - a.points;
@@ -125,7 +126,7 @@ class EEL extends Component {
             </div>
           </Row>
           <EELResults matches={matches} />
-        
+          <EELTidal tidal={tidal} />
           </>
           </Container>
         )}

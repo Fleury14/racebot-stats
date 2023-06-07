@@ -110,7 +110,11 @@ const schedule = {
     { team1: "Silvera Petting Zoo", team2: "Kokkolshop Quartet" },
     { team1: "We Wear Shorts In Winter", team2: "Time Zones R Us" },
     { team1: "Unforced Errors", team2: "Mysidian Comedy Club" },
-    ]
+    ],
+  9: [
+    { team1: "Team Wombat Milk", team2: "The Rusty Spoons" },
+    { team1: "Nue Moon", team2: "Bold Strategy" },
+  ]
 };
 
 export default schedule;
