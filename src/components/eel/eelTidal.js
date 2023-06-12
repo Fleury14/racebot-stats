@@ -4,8 +4,9 @@ import exceptions from '../../data/eel-exceptions';
 import './eel.scss';
 
 const parseTime = (timeStr) => {
-  if (!timeStr) return 0;
+  if (!timeStr) return 99999;
   const timeVals = timeStr.split(':');
+  if(timeVals.length < 2) return 99999;
   return (+timeVals[0] * 3600) + (+timeVals[1] * 60) + +timeVals[2];
 }
 
