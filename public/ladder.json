@@ -10,7 +10,7 @@
       {
         "name": "Supermarket Sweep",
         "description": "The strongest equipment, items, and characters may be available right out the gate. Shops are free!",
-        "flags": "Orandom:3,gated_quest/req:all/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
+        "flags": "Orandom:3,tough_quest/req:all/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
       },
       {
         "name": "Giant%",
@@ -20,17 +20,17 @@
       {
         "name": "Highw4y to the Zemus Zone",
         "description": "The tourney returns! Chero is on, Rydia's ready to play, and the Moon is not haunted. Check out the full prospectus video and document on the main workshop and twitch channel!",
-        "flags": "O1:quest_forge/2:quest_cavebahamut/3:boss_wyvern/random:2,gated_quest,boss/req:4/win:crystal Kmain/moon/nofree Pkey Cstandard/maybe/start:any/no:fusoya/j:abilities/nodupes/hero/nofree Tpro Sstandard/no:j Bstandard/alt:gauntlet/whichburn Etoggle Gbackrow -noadamants -kit:freedom"
+        "flags": "O1:quest_forge/2:quest_cavebahamut/3:boss_wyvern/random:2,tough_quest,boss/req:4/win:crystal Kmain/moon/nofree Pkey Cstandard/maybe/start:any/no:fusoya/j:abilities/nodupes/hero/nofree Tpro Sstandard/no:j Bstandard/alt:gauntlet/whichburn Etoggle Gbackrow -noadamants -kit:freedom"
       },
       {
         "name": "Lali-Ho Redux",
         "description": "Think Lali-Ho Swiss, but a little more generous for the beginner->intermediate racer. Crelaxed and full sell prices ease things a bit. That being said, Giott is giving you his personal armor instead of letting you break his economy with jewelry. Oh, and it’s quest options instead of boss/character hunts, just to mix things up.",
-        "flags": "O1:quest_forge/2:quest_tradepink/3:quest_magnes/random:2,gated_quest/req:4/win:crystal Kmain/summon/moon/nofree Pkey Crelaxed/distinct:10/j:abilities/nekkie/bye/nofree Twildish/maxtier:6 Sstandard Bstandard/alt:gauntlet Etoggle Glife/sylph/backrow -kit:basic -kit2:defense -noadamants -spoon -exp:noboost -vanilla:giant"
+        "flags": "O1:quest_forge/2:quest_tradepink/3:quest_magnes/random:2,tough_quest/req:4/win:crystal Kmain/summon/moon/nofree Pkey Crelaxed/distinct:10/j:abilities/nekkie/bye/nofree Twildish/maxtier:6 Sstandard Bstandard/alt:gauntlet Etoggle Glife/sylph/backrow -kit:basic -kit2:defense -noadamants -spoon -exp:noboost -vanilla:giant"
       },
       {
         "name": "Finders Keepers",
         "description": "The big nasty of Season 3. Shops give Cabins. Treasure is set to TPro. Permajoin and Bye are both on. Your one breather is the Warp Glitch, but how long do you wait for a black mage to show up?",
-        "flags": "Orandom:5,gated_quest/req:4/win:crystal Kmain/summon/moon/nofree Pkey Cstandard/no:fusoya/j:abilities/bye/permajoin/nofree Tpro Scabins/free Bstandard/alt:gauntlet Etoggle Gwarp/life/sylph/backrow -kit:basic -noadamants"
+        "flags": "Orandom:5,tough_quest/req:4/win:crystal Kmain/summon/moon/nofree Pkey Cstandard/no:fusoya/j:abilities/bye/permajoin/nofree Tpro Scabins/free Bstandard/alt:gauntlet Etoggle Gwarp/life/sylph/backrow -kit:basic -noadamants"
       }
     ]
   },
@@ -45,7 +45,7 @@
       {
         "name": "Supermarket Sweep",
         "description": "The strongest equipment, items, and characters may be available right out the gate. Shops are free!",
-        "flags": "Orandom:4,gated_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Nnone Etoggle Glife/sylph -spoon"
+        "flags": "Orandom:4,tough_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Nnone Etoggle Glife/sylph -spoon"
       },
       {
         "name": "Giant%",
@@ -55,7 +55,7 @@
       {
         "name": "Fabul Gauntlet Mark II",
         "description": "The flagset from our 2020 spring event returns with a new twist: the objective will always be gated quests. Complete all 5 to get the crystal and defeat Zeromus. Don't forget about D.Mist!",
-        "flags": "Orandom:5,gated_quest/win:crystal Kmain/summon/moon Pkey Cstandard/distinct:7/j:abilities/nodupes/bye Tpro Spro/sell:quarter Bstandard/alt:gauntlet Nchars/key Etoggle Glife/sylph -kit:basic -noadamants"
+        "flags": "Orandom:5,tough_quest/win:crystal Kmain/summon/moon/nofree Pkey Cstandard/distinct:7/j:abilities/nodupes/nofree/bye Tpro Spro/sell:quarter Bstandard/alt:gauntlet Etoggle Glife/sylph -kit:basic -noadamants"
       }
     ]
   },
@@ -80,12 +80,12 @@
       {
         "name": "Supermarket Sweep",
         "description": "The strongest equipment, items, and characters may be available right out the gate. Shops are free!",
-        "flags": "Orandom:4,gated_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
+        "flags": "Orandom:4,tough_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
       },
       {
         "name": "10/10 Would Race Again",
         "description": "This flagset leverages gated quests and sets all those lovely checks that you hesitate to do into required objectives. Take a giant grind if you must, but be wary: this ultra high completion% may grant runners enough XP simply through completing the objectives.",
-        "flags": "O1:quest_magnes/2:quest_baroncastle/3:quest_zot/4:quest_sealedcave/5:quest_ribbonaltar/6:quest_cavebahamut/7:quest_dwarfcastle/8:quest_lowerbabil/random:2,gated_quest/req:all/win:crystal Kmain/summon/moon Pkey Cstandard/start:any/no:cecil,fusoya/j:abilities/nodupes/party:4 Twildish Sstandard/no:j Bstandard/alt:gauntlet Nchars Etoggle Glife/sylph -kit:better -spoon"
+        "flags": "O1:quest_magnes/2:quest_baroncastle/3:quest_zot/4:quest_sealedcave/5:quest_ribbonaltar/6:quest_cavebahamut/7:quest_dwarfcastle/8:quest_lowerbabil/random:2,tough_quest/req:all/win:crystal Kmain/summon/moon Pkey Cstandard/start:any/no:cecil,fusoya/j:abilities/nodupes/nofree/party:4 Twildish Sstandard/no:j Bstandard/alt:gauntlet Etoggle Glife/sylph -kit:better -spoon"
       }
     ]
   },
@@ -115,7 +115,7 @@
       {
         "name": "Supermarket Sweep",
         "description": "The strongest equipment, items, and characters may be available right out the gate. Shops are free!",
-        "flags": "Orandom:4,gated_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
+        "flags": "Orandom:4,tough_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
       }
     ]
   },
@@ -155,7 +155,7 @@
       {
         "name": "Supermarket Sweep",
         "description": "The strongest equipment, items, and characters may be available right out the gate. Shops are free!",
-        "flags": "Orandom:4,gated_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
+        "flags": "Orandom:4,tough_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
       },
       {
         "name": "Falcon%",
@@ -185,7 +185,7 @@
       {
         "name": "Supermarket Sweep",
         "description": "The strongest equipment, items, and characters may be available right out the gate. Shops are free!",
-        "flags": "Orandom:4,gated_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
+        "flags": "Orandom:4,tough_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
       },
       {
         "name": "ZZ5 Blue Moon",
@@ -225,7 +225,7 @@
       {
         "name": "Supermarket Sweep",
         "description": "The strongest equipment, items, and characters may be available right out the gate. Shops are free!",
-        "flags": "Orandom:4,gated_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
+        "flags": "Orandom:4,tough_quest,boss/req:3/win:crystal Kmain Pshop Crelaxed/j:abilities Twild Swild/free/no:apples Bstandard/whyburn Etoggle Glife/sylph/backrow -spoon"
       },
       {
         "name": "Fu In Wario Land",
