@@ -28,11 +28,6 @@
                 "flags": "O2:quest_monsterking/4:quest_whitealtar/random:5,tough_quest/req:6/win:crystal Kmain/summon/moon/nofree Pkey Crelaxed/nofree/distinct:5/j:abilities/nekkie/nodupes Twild/sparse:80/maxtier:7 Spro Bstandard/alt:gauntlet Etoggle Glife/sylph/backrow -kit:basic -spoon -wacky:omnidextrous"
             },
             {
-                "name": "Highw4y to the Zemus Zone",
-                "description": "The tourney returns! Chero is on, Rydia's ready to play, and the Moon is not haunted. Check out the full prospectus video and document on the main workshop and twitch channel!",
-                "flags": "O1:quest_forge/2:quest_cavebahamut/3:boss_wyvern/random:2,tough_quest,boss/req:4/win:crystal Kmain/moon/nofree Pkey Cstandard/maybe/start:any/no:fusoya/j:abilities/nodupes/hero/nofree Tpro Sstandard/no:j Bstandard/alt:gauntlet/whichburn Etoggle Gbackrow -noadamants -kit:freedom"
-            },
-            {
                 "name": "Lali-Ho Redux",
                 "description": "Think Lali-Ho Swiss, but a little more generous for the beginner->intermediate racer. Crelaxed and full sell prices ease things a bit. That being said, Giott is giving you his personal armor instead of letting you break his economy with jewelry. Oh, and it\u2019s quest options instead of boss/character hunts, just to mix things up.",
                 "flags": "O1:quest_forge/2:quest_tradepink/3:quest_magnes/random:2,tough_quest/req:4/win:crystal Kmain/summon/moon/nofree Pkey Crelaxed/distinct:10/j:abilities/nekkie/bye/nofree Twildish/maxtier:6 Sstandard Bstandard/alt:gauntlet Etoggle Glife/sylph/backrow -kit:basic -kit2:defense -noadamants -spoon -exp:noboost -vanilla:giant"
@@ -90,20 +85,17 @@
         ]
     },
     {
-        "header": "Past Events"
-    },
-    {
-        "category": "Adamant Cup",
+        "category": "Eblan Elixir League",
         "presets": [
             {
-                "name": "Group Stage",
-                "description": "The flagset used for the group stage of the Adamant Cup, this is a high power, high completion percentage flagset that will test your efficiency over large swtahs of the game. Be wary of the 4 character party limit!",
-                "flags": "Orandom:7,tough_quest/req:7/win:crystal Kmain/summon/moon Pkey Cstandard/nofree/restrict:cecil,fusoya/j:abilities/nekkie/party:4 Twildish/maxtier:7 Sstandard Bstandard/alt:gauntlet Etoggle Glife/sylph/backrow -kit:better -spoon"
+                "name": "Potion Party",
+                "description": "This flagset joins a few distinct wrinkles to create a unique FE experience. Monster boxes can now include key items, so be sure to check those out. All non-monster boxes contain only money, but shops can include anything that is not a J-item! This flagset also ends upon completing the objectives so no worrying about the Z fight! Be sure to go over the flag details a couple times before running this set.",
+                "flags": "O1:quest_monsterqueen/2:quest_monsterking/3:quest_cavebahamut/4:quest_masamunealtar/5:quest_forge/random:3,tough_quest/req:6/win:game Kmain/trap/nofree/force:magma Pnone Cstandard/nofree/distinct:7/start:not_tellah,not_fusoya/no:fusoya/restrict:cecil/j:abilities/nekkie/nodupes/hero Twildish/money Swild/no:j Bstandard/nofree/alt:gauntlet/whichburn Etoggle/noexp Gwarp/life/sylph/backrow -kit:freedom -kit2:trap -kit3:basic -noadamants -nocursed -spoon"
             },
             {
-                "name": "Bracket Stage",
-                "description": "The second flagset for the Adamant cup used from the top 32 onward. The high completion percentage from group stage carries over, but the tresure chest quality gets bumped down. Also, Cecil and FuSoYa are on vacation, likely planning a trip to a Lunarian theme park.",
-                "flags": "Orandom:7,tough_quest/req:7/win:crystal Kmain/summon/moon Pkey Crelaxed/nofree/no:cecil,fusoya/j:abilities/nekkie/party:4 Tpro/maxtier:6 Sstandard/sell:quarter Bstandard/alt:gauntlet Etoggle Glife/sylph -kit:basic -spoon -smith:alt"
+                "name": "Moonveil Mixer",
+                "description": "Several different features from previous events have been combined into one Mixer. Adamant armors can be found if you're lucky, the dwarven kit is back, running from battles is disabled and just like the Potion Party, the Hero flag is on! Four of the seven objectives are static as they are objectives from events you may remember! This flagset plays out more like a 'standard' seed of FE, but much like Potion Party, be sure to review so you don't miss out on details like the warp glitch!",
+                "flags": "O1:quest_magnes/2:quest_forge/3:boss_fabulgauntlet/4:boss_golbez/random:3,tough_quest/req:6/win:crystal Kmain/summon/moon/nofree Pkey Cstandard/nofree/restrict:cecil,fusoya/j:abilities/nekkie/hero Twildish/maxtier:5 Sstandard Bstandard/alt:gauntlet/whichburn Etoggle/cantrun Gwarp/life/sylph/backrow -kit:better -kit2:dwarf -spoon"
             }
         ]
     },
@@ -123,27 +115,27 @@
         ]
     },
     {
+        "category": "Adamant Cup",
+        "presets": [
+            {
+                "name": "Group Stage",
+                "description": "The flagset used for the group stage of the Adamant Cup, this is a high power, high completion percentage flagset that will test your efficiency over large swtahs of the game. Be wary of the 4 character party limit!",
+                "flags": "Orandom:7,tough_quest/req:7/win:crystal Kmain/summon/moon Pkey Cstandard/nofree/restrict:cecil,fusoya/j:abilities/nekkie/party:4 Twildish/maxtier:7 Sstandard Bstandard/alt:gauntlet Etoggle Glife/sylph/backrow -kit:better -spoon"
+            },
+            {
+                "name": "Bracket Stage",
+                "description": "The second flagset for the Adamant cup used from the top 32 onward. The high completion percentage from group stage carries over, but the tresure chest quality gets bumped down. Also, Cecil and FuSoYa are on vacation, likely planning a trip to a Lunarian theme park.",
+                "flags": "Orandom:7,tough_quest/req:7/win:crystal Kmain/summon/moon Pkey Crelaxed/nofree/no:cecil,fusoya/j:abilities/nekkie/party:4 Tpro/maxtier:6 Sstandard/sell:quarter Bstandard/alt:gauntlet Etoggle Glife/sylph -kit:basic -spoon -smith:alt"
+            }
+        ]
+    },
+    {
         "category": "Highw4y to the Zemus Zone",
         "presets": [
             {
                 "name": "Highw4y to the Zemus Zone",
                 "description": "Today's closest approximation of the flags used in the Highw4y to the Zemus Zone tournament",
                 "flags": "O1:quest_forge/2:quest_cavebahamut/3:boss_wyvern/random:2,tough_quest,boss/req:4/win:crystal Kmain/moon/nofree Pkey Cstandard/maybe/start:any/no:fusoya/j:abilities/nodupes/hero/nofree Tpro Sstandard/no:j Bstandard/alt:gauntlet/whichburn Etoggle Gbackrow -noadamants -kit:freedom"
-            }
-        ]
-    },
-    {
-        "category": "Eblan Elixir League",
-        "presets": [
-            {
-                "name": "Potion Party",
-                "description": "This flagset joins a few distinct wrinkles to create a unique FE experience. Monster boxes can now include key items, so be sure to check those out. All non-monster boxes contain only money, but shops can include anything that is not a J-item! This flagset also ends upon completing the objectives so no worrying about the Z fight! Be sure to go over the flag details a couple times before running this set.",
-                "flags": "O1:quest_monsterqueen/2:quest_monsterking/3:quest_cavebahamut/4:quest_masamunealtar/5:quest_forge/random:3,tough_quest/req:6/win:game Kmain/trap/nofree/force:magma Pnone Cstandard/nofree/distinct:7/start:not_tellah,not_fusoya/no:fusoya/restrict:cecil/j:abilities/nekkie/nodupes/hero Twildish/money Swild/no:j Bstandard/nofree/alt:gauntlet/whichburn Etoggle/noexp Gwarp/life/sylph/backrow -kit:freedom -kit2:trap -kit3:basic -noadamants -nocursed -spoon"
-            },
-            {
-                "name": "Moonveil Mixer",
-                "description": "Several different features from previous events have been combined into one Mixer. Adamant armors can be found if you're lucky, the dwarven kit is back, running from battles is disabled and just like the Potion Party, the Hero flag is on! Four of the seven objectives are static as they are objectives from events you may remember! This flagset plays out more like a 'standard' seed of FE, but much like Potion Party, be sure to review so you don't miss out on details like the warp glitch!",
-                "flags": "O1:quest_magnes/2:quest_forge/3:boss_fabulgauntlet/4:boss_golbez/random:3,tough_quest/req:6/win:crystal Kmain/summon/moon/nofree Pkey Cstandard/nofree/restrict:cecil,fusoya/j:abilities/nekkie/hero Twildish/maxtier:5 Sstandard Bstandard/alt:gauntlet/whichburn Etoggle/cantrun Gwarp/life/sylph/backrow -kit:better -kit2:dwarf -spoon"
             }
         ]
     }
