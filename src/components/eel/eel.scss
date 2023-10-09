@@ -1,0 +1,136 @@
+.eel-page {
+  font-family: 'Open Sans', sans-serif;
+
+.eel-splash {
+  // height: 400px;
+  width: 50%;
+}
+
+  h1 {
+    text-align: center;
+    margin: 20px 0px;
+  }
+}
+
+.eel-subtitle {
+  background-color: #010159;
+  color: #eee;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 3px;
+
+  h2 {
+    margin: 10px 25px;
+    
+  }
+  
+}
+
+.eel-standings-legend {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.eel-standings-row {
+  align-items: center;
+  min-height: 30px;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.eel-striped {
+  background-color: #ddd;
+}
+
+.eel-detail-cell {
+  padding: 10px;
+}
+
+.eel-detail-team-name {
+  font-weight: 700;
+  border-bottom: 1px solid #010159;
+}
+
+.eel-detail-player-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eel-schedule-right-team {
+  text-align: right;
+}
+
+.eel-schedule-team-row {
+  border-bottom: 1px solid #ccc;
+}
+
+h3.eel-schedule-week-subtitle {
+  margin-top: 20px;
+}
+
+.eel-results-legend {
+  font-weight: 700;
+}
+
+.eel-results-complete {
+  background-color: lighten(#010159, 75);
+}
+
+.eel-results-winner {
+  background-color: goldenrod;
+  font-weight: 700;
+}
+
+.eel-results-row {
+  border-bottom: 1px solid #ccc;
+}
+
+.eel-results-subtitle {
+  margin-top: 50px;
+}
+
+.eel-mid-header-span {
+  font-size: 14px;
+}
+
+.eel-completed-week-button {
+  border: 2px solid #010159;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.eel-active-week {
+  background-color: #010159;
+  color: #fff;
+}
+
+.eel-subnav-row {
+  margin-top: 20px;
+  a p {
+    color: #000;
+  }
+}
+
+.eel-schedule-button-row {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.eel-tidal-team-container {
+  border: 2px solid #010159;
+  border-bottom: 2px solid #010159;
+}
+
+.eel-tidal-top {
+  background-color: #bbb;
+}
+
+.eel-tidal-title {
+  font-weight: 700;
+}
