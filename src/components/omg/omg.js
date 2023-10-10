@@ -17,11 +17,38 @@ const OMG = (props) => {
 
   // const OMGdata = parseOMG();
   console.log('omgdata', data)
+  
+  const overallView = (players) => {
+    if (!players || !players.length) return null;
+    return (
+      <Container>
+        <Row>
+          <Col md="6">
+            Name
+          </Col>
+          <Col md="3">Races Run</Col>
+          <Col md="3">Points</Col>
+        </Row>
+        {players.map(player => {
+          return (
+            <Row key={player.name}>
+              <Col md="6">{player.name}</Col>
+              <Col md="3">{player.races}</Col>
+              <Col md="3">{player.points}</Col>
+            </Row>
+          );
+        })}
+      </Container>
+    )
+  }
 
   return (
     <div>
       <Navbar />
       <h1>OMG</h1>
+      <div>
+        {overallView(data.players)}
+      </div>
     </div>
   )
 
