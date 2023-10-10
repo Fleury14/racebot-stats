@@ -50,7 +50,7 @@ const EELData = (props) => {
         const matches = results.data
         if (teams.length > 0) {
           const teamsInstance = teams;
-          const scheduleResults = []
+          // const scheduleResults = []
           matches.forEach(match => {
             const p1Team = teamsInstance.find(team => team.members.filter(member => member.name === match.p1Discord).length > 0);
             if (!p1Team) {

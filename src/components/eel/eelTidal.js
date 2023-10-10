@@ -49,6 +49,7 @@ const EELTidal = (props) => {
               <Col md="3">{trimDiscord(team.runner4)}{team.time1 ? `- ${team.time4}` : ''}</Col>
           </Row>
         )
+        return null;
       })}
     </div>
   )

@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Row, Col } from 'reactstrap';
-import EELResults from './eelResults';
 import './eel.scss';
 
 
 const EELSchedule = (props) => {
 
-  const NUM_OF_WEEKS = 8;
+  // const NUM_OF_WEEKS = 8;
   const WEEK_BREAKPOINTS = [ [1, 2, 3, 4], [5, 6, 7, 8], [9, 10] ];
   const { schedule } = props;
   const [view, setView] = useState(0);
