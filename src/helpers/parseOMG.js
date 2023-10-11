@@ -42,7 +42,7 @@ export const parseOMG = async () => {
         omgAsync.entrants.forEach(entrant => {
           // see if the entrant exists. if it doesn't, create it
           // this shouldnt happen in the actual event as the signup list should be full, but will help with testing lol
-          let playerRecord = players.find(player => player.name === entrant.name);
+          let playerRecord = players.find(player => player.name.toLowerCase() === entrant.name.toLowerCase());
           if (!playerRecord) {
             players.push({
               name: entrant.name,

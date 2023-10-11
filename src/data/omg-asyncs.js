@@ -2,6 +2,7 @@ const OMGasyncs = [
   'ff4fe-fa7uto-async',
   'ff4fe-vbppeh-async',
   'ff4fe-5jzyo0-async',
+  'ff4fe-6fvrt7-async',
 ];
 
 const OMGplayers = [
