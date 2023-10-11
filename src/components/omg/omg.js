@@ -31,15 +31,17 @@ const OMG = (props) => {
             Name
           </Col>
           <Col md="3">Races Run</Col>
-          <Col md="3">Points</Col>
+          <Col md="2">Top 3 Points</Col>
+          <Col md="1">Points</Col>
         </Row>
         {players.map((player, index) => {
           return (
-            <Row key={player.name} className={`${player.asyncwins.length > 0 ? 'omg-winner' : ''} ${index > 31 ? 'omg-danger' : ''} omg-row`}>
+            <Row key={player.name} className={`${player.asyncwins.length > 0 ? 'omg-winner' : ''} omg-row ${index === 31 ? 'omg-cutoff' : ''}`}>
               <Col md="1" className="omg-rank">{index + 1}</Col>
               <Col md="5">{player.name}</Col>
               <Col md="3">{player.races}</Col>
-              <Col md="3">{player.points}</Col>
+              <Col md="2">{player.top3.map(pts => <span key={pts}>{pts} </span>)}</Col>
+              <Col md="1">{player.points}</Col>
             </Row>
           );
         })}
@@ -50,6 +52,9 @@ const OMG = (props) => {
   return (
     <div className="omg">
       <Navbar />
+      <div className="d-flex justify-content-center">
+        <img src="images/omg-banner.jpg" alt="Omnidexterous Memers guild, the FF4FE fall event" className="omg-banner" />
+      </div>
       <h2 className="omg-title">Overall Standings</h2>
       <div>
         {overallView(data.players)}

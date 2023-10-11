@@ -18,6 +18,7 @@ export const parseOMG = async () => {
       name: player,
       points: 0,
       races: 0,
+      top3: [],
       results: [],
       asyncwins: [],
     });
@@ -48,6 +49,7 @@ export const parseOMG = async () => {
               name: entrant.name,
               points: 0,
               races: 0,
+              top3: [],
               results: [],
               asyncwins: [],
             });
@@ -55,7 +57,17 @@ export const parseOMG = async () => {
           };
           playerRecord.races++;
           const points = 33 - entrant.placement;
-          playerRecord.points += points > 0 ? points : 0;
+          if (playerRecord.top3.length < 3) { 
+            playerRecord.top3.push(points)
+          } else {
+            playerRecord.top3.sort((a, b) => a - b);
+            if (points > playerRecord.top3[0]) {
+              playerRecord.top3.shift();
+              playerRecord.top3.push(points);
+            }
+          }
+          playerRecord.points = playerRecord.top3.reduce((a, b) => a + b, 0);
+          // playerRecord.points += points > 0 ? points : 0;
           playerRecord.results.push(omgAsync.key);
           if (entrant.placement === 1) playerRecord.asyncwins.push(omgAsync.key)
 
