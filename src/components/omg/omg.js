@@ -3,6 +3,7 @@ import { Navbar } from '..';
 import { Container, Row, Col } from 'reactstrap';
 import OMGAsyncView from './omgAsyncsView';
 import OMGBracketView from './omgBracketView';
+import OMGBracketResults from './omgBracketResults';
 import Papa from 'papaparse';
 import './omg.scss';
 
@@ -106,7 +107,7 @@ const OMG = (props) => {
       </div>
       <div className="omg-nav d-flex">
         <a href="#BracketView"><p>Bracket</p></a>
-        <a href="#BracketView"><p>Bracket Results</p></a>
+        <a href="#BracketResults"><p>Bracket Results</p></a>
         <a href="#PrelimStandings"><p>Qualifier Standings</p></a>
         <a href="#PrelimResults"><p>Qualifier Results</p></a>
       </div>
@@ -115,7 +116,7 @@ const OMG = (props) => {
       </div>
       <h2 className="omg-title">Bracket Results</h2>
       <div id="BracketResults">
-
+        <OMGBracketResults />
       </div>
       <h2 className="omg-title">Qualifier Standings</h2>
       <div id="PrelimStandings">
