@@ -3,6 +3,17 @@
   padding-bottom: 100px;
 }
 
+.omg-nav {
+  position: sticky;
+  background-color: #fff;
+  z-index: 5;
+  top: 0px;
+}
+
+.omg-nav p {
+  margin: 15px;
+}
+
 .omg-winner {
   background-color: #aaffaa;
 }

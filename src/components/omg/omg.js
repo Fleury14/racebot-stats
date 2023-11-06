@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar } from '..';
 import { Container, Row, Col } from 'reactstrap';
-import { parseOMG } from '../../helpers/parseOMG';
 import OMGAsyncView from './omgAsyncsView';
 import OMGBracketView from './omgBracketView';
-import { OMGasyncs } from '../../data/omg-asyncs';
 import Papa from 'papaparse';
 import './omg.scss';
 
@@ -12,14 +10,6 @@ const OMG = (props) => {
 
   const [data, setData] = useState([]);
   const [sheetData, setSheetData] = useState([]);
-
-  // useEffect(() => {
-  //   async function getOMGData() {
-  //     const OMGdata = await parseOMG();
-  //     setData(OMGdata);
-  //   }
-  //   getOMGData();
-  // }, [])
 
   useEffect(() => {
     Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vS-t3GKUF_Y0vTTfakjIJpXr2m3Q__Pvrtgtoqqx3QXXTT-mNT6mkJYGR_WhZL6fMYzXN452nmmG95Q/pub?gid=13871543&single=true&output=csv", {
@@ -31,9 +21,6 @@ const OMG = (props) => {
       }
     })
   }, [])
-
-  // const OMGdata = parseOMG();
-  // console.log('omgdata', data);
 
   const findCutoff = (players) => {
     let cutoff = 0;
@@ -52,7 +39,6 @@ const OMG = (props) => {
     {
       let isBlank = true;
       for(let playerIndex = 0; playerIndex < 8; playerIndex++) {
-        // console.log(playerIndex, raceIndex, players[playerIndex][`Async ${raceIndex + 1} Score`], players[playerIndex][`Async ${raceIndex + 1} Score`] !== "0");
         if(players[playerIndex][`Async ${raceIndex + 1} Score`] !== "0") isBlank = false;
       }
       if (!isBlank) numRaces = raceIndex + 1;
@@ -112,55 +98,33 @@ const OMG = (props) => {
     )
   }
   
-  const overallView = (players) => {
-    if (!players || !players.length) return null;
-    return (
-      <Container>
-        <Row className="omg-title-row omg-row">
-          <Col md="1">Rank</Col>
-          <Col md="5">
-            Name
-          </Col>
-          <Col md="3">Races Run</Col>
-          <Col md="2">Top 3 Points</Col>
-          <Col md="1">Total Points</Col>
-        </Row>
-        {players.map((player, index) => {
-          return (
-            <Row key={player.name} className={`${player.asyncwins.length > 0 ? 'omg-winner' : ''} omg-row ${index === 31 ? 'omg-cutoff' : ''}`}>
-              <Col md="1" className="omg-rank">{index + 1}</Col>
-              <Col md="5">{player.name}</Col>
-              <Col md="3">{player.races}</Col>
-              <Col md="2">{player.top3.map(pts => <span key={pts}>{pts} </span>)}</Col>
-              <Col md="1">{player.points}</Col>
-            </Row>
-          );
-        })}
-      </Container>
-    )
-  }
-
   return (
     <div className="omg">
       <Navbar />
       <div className="d-flex justify-content-center">
         <img src="images/omg-banner.jpg" alt="Omnidexterous Memers guild, the FF4FE fall event" className="omg-banner" />
       </div>
-      <div>
+      <div className="omg-nav d-flex">
+        <a href="#BracketView"><p>Bracket</p></a>
+        <a href="#BracketView"><p>Bracket Results</p></a>
+        <a href="#PrelimStandings"><p>Qualifier Standings</p></a>
+        <a href="#PrelimResults"><p>Qualifier Results</p></a>
+      </div>
+      <div id="BracketView">
         <OMGBracketView />
       </div>
+      <h2 className="omg-title">Bracket Results</h2>
+      <div id="BracketResults">
+
+      </div>
       <h2 className="omg-title">Qualifier Standings</h2>
-      {/* <div>
-        {overallView(data.players)}
-      </div> */}
-      <div>
+      <div id="PrelimStandings">
         {sheetView(sheetData.data)}
       </div>
       <div className="omg-divider"></div>
-      <div>
+      <div id="PrelimResults">
         <h2 className="omg-title">Individual Races</h2>
         <OMGAsyncView />
-        {/* {data.races && <OMGAsyncView races={OMGasyncs} data={data.races} />} */}
       </div>
     </div>
   )
