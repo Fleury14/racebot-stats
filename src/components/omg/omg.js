@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar } from '..';
 import { Container, Row, Col } from 'reactstrap';
 import OMGAsyncView from './omgAsyncsView';
@@ -110,6 +111,9 @@ const OMG = (props) => {
         <a href="#BracketResults"><p>Bracket Results</p></a>
         <a href="#PrelimStandings"><p>Qualifier Standings</p></a>
         <a href="#PrelimResults"><p>Qualifier Results</p></a>
+      <Link to={'/events/53558923-a6c3-45c9-b635-ea8df89eecc4'}>
+        <p>Tidal Round 2</p>
+      </Link>
       </div>
       <div id="BracketView">
         <OMGBracketView />
