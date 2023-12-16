@@ -114,6 +114,9 @@ const OMG = (props) => {
       <Link to={'/events/53558923-a6c3-45c9-b635-ea8df89eecc4'}>
         <p>Tidal Round 2</p>
       </Link>
+      <Link to={'/race/ff4fe-9vphuc'}>
+        <p>Tidal Round 2 FINAL Results</p>
+      </Link>
       </div>
       <div id="BracketView">
         <OMGBracketView />
