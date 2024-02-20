@@ -48,6 +48,8 @@ const SelectedRace = (props) => {
                           <p className="mr-2">Mode:</p>
                           <p className="ml-2">{raceData.mode}</p>
                         </div>
+                        <h4 className="text-center text-uppercase">Hash</h4>
+                        <p className="ml-2 text-center">{raceData.metadata.Hash}</p>
                       </Col>
                       <Col md="4" className="race-stats-mid-col">
                         <h4 className="text-center text-uppercase">FLAGS</h4>
