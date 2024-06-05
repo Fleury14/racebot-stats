@@ -23,6 +23,9 @@ const ZZ6Onramp = (props) => {
   return (
     <div>
       <Container>
+      <Row className="justify-content-center">
+          <h2>ZZ6 On Ramp</h2>
+        </Row>
         <Row className="justify-content-center">
           <h2>Races</h2>
         </Row>
@@ -38,14 +41,14 @@ const ZZ6Onramp = (props) => {
         <Row className="justify-content-center">
           <h2>Standings</h2>
         </Row>
-        <Row>
+        <Row className="onramp-row-header">
           <Col md="4">Rank</Col>
           <Col md="4">Racer</Col>
           <Col md="4">Points</Col>
         </Row>
-        {onrampData.map(racer => {
+        {onrampData.map((racer, index) => {
           return (
-            <Row key={racer.racer}>
+            <Row key={racer.racer} className={index % 2 === 0 ? 'onramp-row-striped' : 'onramp-row'}>
               <Col md="4">{racer.Rank}</Col>
               <Col md="4">{racer.Racer}</Col>
               <Col md="4">{racer.Points}</Col>

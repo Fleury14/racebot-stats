@@ -3,6 +3,7 @@ import { Navbar } from '..';
 import { Container, Row, Col } from 'reactstrap';
 import ZZ6Onramp from './zz6onramp';
 import Papa from 'papaparse';
+import './zz6.scss'
 
 const ZZ6 = (props) => {
 
@@ -11,7 +12,7 @@ const ZZ6 = (props) => {
   return (
     <div className='zz6'>
       <Navbar />
-      <h1>ZZ6</h1>
+      <img src="images/zz6-announce.png" alt="Highway to the Zemus Zone VI" className="w-100" />
       {view === "onramp" ? <ZZ6Onramp/> : null}
     </div>
   );
