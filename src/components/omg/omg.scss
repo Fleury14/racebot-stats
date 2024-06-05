@@ -1,0 +1,91 @@
+.omg {
+  font-family: 'Open Sans', sans-serif;
+  padding-bottom: 100px;
+}
+
+.omg-nav {
+  position: sticky;
+  background-color: #fff;
+  z-index: 5;
+  top: 0px;
+}
+
+.omg-nav p {
+  margin: 15px;
+}
+
+.omg-winner {
+  background-color: #aaffaa;
+}
+
+.omg-danger {
+  background-color: #ffaaaa;
+}
+
+.omg-row {
+  border-bottom: 2px solid #ddd;
+}
+
+.omg-title-row {
+  font-weight: 700;
+}
+
+.omg-divider {
+  height: 100px;
+}
+
+.omg-title {
+  text-align: center;
+}
+
+.omg-button {
+  background-color: #fff;
+  margin: 50px 0px;
+  transition: 0.4s all;
+}
+
+.omg-active {
+  background-color: #010159;
+  color: #fff;
+}
+
+.omg-cutoff {
+  border-top: 5px solid #000;
+}
+
+.omg-banner {
+  min-width: 25%;
+  max-width: 40%;
+  margin: 50px 0px;
+}
+
+.omg-rank-num {
+  width: 30px;
+  text-align: center;
+}
+
+.omg-ind-winner {
+  background-color: #f9cb9c;
+}
+
+.omg-stripe-1 {
+  background-color: #d9d2e9;
+}
+
+.omg-stripe-2 {
+  background-color: #b4a7d6;
+}
+.bracket-iframe {
+  width: 100%;
+  height: 1000px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+#BracketResults {
+  margin: 50px 0px;
+}
+
+.omg-bracket-winner {
+  background-color: #aaffaa;
+}

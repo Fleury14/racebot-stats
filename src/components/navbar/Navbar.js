@@ -29,14 +29,17 @@ const Navbar = (props) => {
           <Link to={'/events'}>
             <li>Events</li>
           </Link>
-          <Link to={'/ac'}>
-            <li>Adamant Cup</li>
-          </Link>
           <Link to={'/zz5'}>
             <li>ZZ5</li>
           </Link>
           <Link to={'/eel'}>
             <li>EEL</li>
+          </Link>
+          <Link to={'/omg'}>
+            <li>OMG</li>
+          </Link>
+          <Link to={'/ZZ6'}>
+            <li>ZZ6</li>
           </Link>
         </ul>
       </div>

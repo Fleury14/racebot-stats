@@ -2,7 +2,7 @@ const parseEEL = () => {
 
 // set teams object (fake)
 const teams = [];
-const TEAMSIZE = 4;
+// const TEAMSIZE = 4;
 const TEAMCOUNT = 25;
 for (let i = 0; i < TEAMCOUNT; i++)
 {
