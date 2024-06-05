@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Main, RacerStats, SelectedRace, LHL, RaceDirectory, PlayerDirectory, ErrorComponent, FlagStats, Wagers, Featured, EventsComponent, ZZ4, AC, ZZ5, EEL, OMG } from '../components'
+import { Main, RacerStats, SelectedRace, LHL, RaceDirectory, PlayerDirectory, ErrorComponent, FlagStats, Wagers, Featured, EventsComponent, ZZ4, AC, ZZ5, EEL, OMG, ZZ6 } from '../components'
 // import Main from '../components/main/Main';
 
 class AppRouter extends Component {
@@ -23,6 +23,7 @@ class AppRouter extends Component {
           <Route path="/zz5" exact component={ZZ5} />
           <Route path="/eel" exact component={EEL} />
           <Route path="/omg" exact component={OMG} />
+          <Route path="/zz6" exact component={ZZ6} />
           <Route component={ErrorComponent} />
         </Switch>
       </Router>
