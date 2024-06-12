@@ -6,7 +6,7 @@ import { Container, Row, Col } from 'reactstrap';
 const ZZ6Onramp = (props) => {
   const [onrampData, setOnrampData] = useState([]);
 
-  const races = ["ff4fe-ohhrnb-async"]
+  const races = ["ff4fe-ohhrnb-async", "ff4fe-rofyut-async"]
 
   useEffect(() => {
     Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRZzsiwlYgRA36o3IHeaLv2nMKDfWSAQoDMGGfgS2J7McEU2EfsGdjBoGEXLiemeFE_Z08zJxdZN5eX/pub?gid=0&single=true&output=csv", {
@@ -44,14 +44,14 @@ const ZZ6Onramp = (props) => {
         <Row className="onramp-row-header">
           <Col md="4">Rank</Col>
           <Col md="4">Racer</Col>
-          <Col md="4">Points</Col>
+          <Col md="4">Total Points</Col>
         </Row>
         {onrampData.map((racer, index) => {
           return (
             <Row key={racer.racer} className={index % 2 === 0 ? 'onramp-row-striped' : 'onramp-row'}>
               <Col md="4">{racer.Rank}</Col>
               <Col md="4">{racer.Racer}</Col>
-              <Col md="4">{racer.Points}</Col>
+              <Col md="4">{racer.Total}</Col>
             </Row>
           );
         })}
