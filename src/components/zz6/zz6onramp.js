@@ -6,7 +6,7 @@ import { Container, Row, Col } from 'reactstrap';
 const ZZ6Onramp = (props) => {
   const [onrampData, setOnrampData] = useState([]);
 
-  const races = ["ff4fe-ohhrnb-async", "ff4fe-rofyut-async"]
+  const races = ["ff4fe-ohhrnb-async", "ff4fe-rofyut-async", "ff4fe-6lfdlj-async"]
 
   useEffect(() => {
     Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRZzsiwlYgRA36o3IHeaLv2nMKDfWSAQoDMGGfgS2J7McEU2EfsGdjBoGEXLiemeFE_Z08zJxdZN5eX/pub?gid=0&single=true&output=csv", {
