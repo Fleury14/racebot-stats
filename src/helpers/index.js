@@ -14,5 +14,6 @@ import parseZZ4 from './ParzeZZ4';
 import parseAC from './parseAC';
 import parseEEL from './parseEEL';
 import parseEELRoster from './parseEELroster';
+import parseZZ6Standings from './parsezz6standings';
 
-export { ParseWinLoss, GetCurrentRaces, GetCookieLeaders, Parse2v2, GetRecentlyCompleteRaces, parseFlagStats, parseFlagStatsv4, parseRivalry, ParseWagers, badgeParse, searchRacer, GetRaceInfo, parseZZ4, parseAC, parseEEL, parseEELRoster };
+export { ParseWinLoss, GetCurrentRaces, GetCookieLeaders, Parse2v2, GetRecentlyCompleteRaces, parseFlagStats, parseFlagStatsv4, parseRivalry, ParseWagers, badgeParse, searchRacer, GetRaceInfo, parseZZ4, parseAC, parseEEL, parseEELRoster, parseZZ6Standings };
