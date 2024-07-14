@@ -72,16 +72,37 @@ const ZZ6Standings = (props) => {
           <Col md="6">
             <div>
               <img className="standings-image" src="images/zz6-macgiant.png" />
+              <Container>
+                <Row className="standings-data-row standings-header">
+                  <Col md="6">Name</Col>
+                  <Col md="6">Record</Col>
+                </Row>
+                {renderGroup("macGiant")}
+              </Container>
             </div>
           </Col>
           <Col md="6">
             <div>
               <img className="standings-image" src="images/zz6-warlock.png" />
+              <Container>
+                <Row className="standings-data-row standings-header">
+                  <Col md="6">Name</Col>
+                  <Col md="6">Record</Col>
+                </Row>
+                {renderGroup("warlock")}
+              </Container>
             </div>
           </Col>
           <Col md="6">
             <div>
               <img className="standings-image" src="images/zz6-yellow.png" />
+              <Container>
+                <Row className="standings-data-row standings-header">
+                  <Col md="6">Name</Col>
+                  <Col md="6">Record</Col>
+                </Row>
+                {renderGroup("yellowD")}
+              </Container>
             </div>
           </Col>
         </Row>
