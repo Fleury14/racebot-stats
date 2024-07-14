@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Navbar } from '..';
-import { Container, Row, Col } from 'reactstrap';
+// import { Container, Row, Col } from 'reactstrap';
 import ZZ6Onramp from './zz6onramp';
 import ZZ6Standings from './zz6standings';
-import Papa from 'papaparse';
+// import Papa from 'papaparse';
 import './zz6.scss'
 
 const ZZ6 = (props) => {
 
-  const [ view, setView ] = useState("onramp");
+  const [ view, setView ] = useState("standings");
 
   return (
     <div className='zz6'>

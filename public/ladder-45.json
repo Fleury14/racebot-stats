@@ -20,7 +20,7 @@
             {
                 "name": "Fu In Wario Land",
                 "description": "Where does Fu go when he\u2019s banned from tournament play? Treasure hunting! He wants only the finest weapons, armor, and secret pathways home. However, the price you pay for this immense power is No Free Bosses, and no ability to grind random encounters, so be wary!",
-                "flags": "O1:quest_forge/2:quest_tradepink/3:quest_pass/win:crystal Kmain/miab/nofree Pkey Crelaxed/start:fusoya/j:abilities/nofree Twildish Sstandard/no:j Bstandard/alt:gauntlet/nofree Etoggle/noexp Gwarp/life/sylph/backrow -kit:freedom -supersmith -vanilla:fusoya"
+                "flags": "O1:quest_forge/2:quest_tradepink/3:quest_pass/win:crystal Kmain/trap/nofree Pkey Crelaxed/start:fusoya/j:abilities/nofree Twildish Sstandard/no:j Bstandard/alt:gauntlet/nofree Etoggle/noexp Gwarp/life/sylph/backrow -kit:freedom -supersmith -vanilla:fusoya"
             },
             {
                 "name": "Omnidexterous",
@@ -39,8 +39,8 @@
             },
             {
                 "name": "Purple Moon",
-                "description": "An offshoot of our ZZ5 flagsets, this retains the boss hunt objectives from ZZ5, but incorporates monster-in-a-box (MiaB) chests and the Hero flag for a distinctly different take. Be sure to brush up on your vanilla monster chest locations!",
-                "flags": "Orandom:8,boss/req:7/win:crystal Kmain/summon/miab/force:hook Pchests Crelaxed/noearned/distinct:7/start:any/no:cecil,fusoya/j:abilities/nekkie/nodupes/hero Twildish Sstandard Bstandard/alt:gauntlet/whichburn Etoggle Gwarp/life/sylph/backrow -kit:basic -noadamants -spoon -vanilla:miabs"
+                "description": "An offshoot of our ZZ5 flagsets, this retains the boss hunt objectives from ZZ5, but incorporates trapped chests and the Hero flag for a distinctly different take. Be sure to brush up on your vanilla monster chest locations!",
+                "flags": "Orandom:8,boss/req:7/win:crystal Kmain/summon/trap/force:hook Pchests Crelaxed/noearned/distinct:7/start:any/no:cecil,fusoya/j:abilities/nekkie/nodupes/hero Twildish Sstandard Bstandard/alt:gauntlet/whichburn Etoggle Gwarp/life/sylph/backrow -kit:basic -noadamants -spoon -vanilla:traps"
             },
             {
                 "name": "Finders Keepers",
@@ -75,12 +75,12 @@
             {
                 "name": "Hop Til you Shop",
                 "description": "All the chests have money.And the shops are wild so if you can name it, it's probably in a shop. Be smart with your purchases: your goal is to complete a Lunar run to finish the seed. Push B to Jump is enabled to open up the world as much as possible to allow you to get that Darkness crystal as soon as you can, then sprint... (through space) to the moon!",
-                "flags": "O1:quest_murasamealtar/2:quest_crystalaltar/3:quest_whitealtar/4:quest_ribbonaltar/5:quest_masamunealtar/req:4/win:game Kmain/moon/unsafe Pkey Cstandard/distinct:5/j:abilities/nekkie/nofree Twildish/money Swild Bstandard/alt:gauntlet/whichburn Etoggle/noexp/no:jdrops Gmp/warp/life/sylph/backrow -kit:better -kit2:money -kit3:money -spoon -supersmith -vanilla:miabs -pushbtojump"
+                "flags": "O1:quest_murasamealtar/2:quest_crystalaltar/3:quest_whitealtar/4:quest_ribbonaltar/5:quest_masamunealtar/req:4/win:game Kmain/moon/unsafe Pkey Cstandard/distinct:5/j:abilities/nekkie/nofree Twildish/money Swild Bstandard/alt:gauntlet/whichburn Etoggle/noexp/no:jdrops Gmp/warp/life/sylph/backrow -kit:better -kit2:money -kit3:money -spoon -supersmith -vanilla:traps -pushbtojump"
             },
             {
                 "name": "Push B to Jump",
                 "description": "Push B to jump, whether in battle or out of battle. Short-circuit the maps, fear no Valvalis, and avoid most boss fights. Optimized routing pays off strongly.",
-                "flags": "O1:quest_forge/2:quest_tradepink/random:1,quest,char/req:all/win:crystal Kmain/summon/moon Pkey Cstandard/nofree/j:abilities Twildish Sstandard Bstandard/alt:gauntlet Etoggle Glife/sylph/backrow -kit:basic -kit2:miab -spoon- smith:super -pushbtojump"
+                "flags": "O1:quest_forge/2:quest_tradepink/random:1,quest,char/req:all/win:crystal Kmain/summon/moon Pkey Cstandard/nofree/j:abilities Twildish Sstandard Bstandard/alt:gauntlet Etoggle Glife/sylph/backrow -kit:basic -kit2:trap -spoon- smith:super -pushbtojump"
             }
         ]
     },
@@ -90,7 +90,7 @@
             {
                 "name": "Potion Party",
                 "description": "This flagset joins a few distinct wrinkles to create a unique FE experience. Monster boxes can now include key items, so be sure to check those out. All non-monster boxes contain only money, but shops can include anything that is not a J-item! This flagset also ends upon completing the objectives so no worrying about the Z fight! Be sure to go over the flag details a couple times before running this set.",
-                "flags": "O1:quest_monsterqueen/2:quest_monsterking/3:quest_cavebahamut/4:quest_masamunealtar/5:quest_forge/random:3,tough_quest/req:6/win:game Kmain/miab/nofree/force:magma Pnone Cstandard/nofree/distinct:7/start:not_tellah,not_fusoya/no:fusoya/restrict:cecil/j:abilities/nekkie/nodupes/hero Twildish/money Swild/no:j Bstandard/nofree/alt:gauntlet/whichburn Etoggle/noexp Gwarp/life/sylph/backrow -kit:freedom -kit2:miab -kit3:basic -noadamants -nocursed -spoon"
+                "flags": "O1:quest_monsterqueen/2:quest_monsterking/3:quest_cavebahamut/4:quest_masamunealtar/5:quest_forge/random:3,tough_quest/req:6/win:game Kmain/trap/nofree/force:magma Pnone Cstandard/nofree/distinct:7/start:not_tellah,not_fusoya/no:fusoya/restrict:cecil/j:abilities/nekkie/nodupes/hero Twildish/money Swild/no:j Bstandard/nofree/alt:gauntlet/whichburn Etoggle/noexp Gwarp/life/sylph/backrow -kit:freedom -kit2:trap -kit3:basic -noadamants -nocursed -spoon"
             },
             {
                 "name": "Moonveil Mixer",
