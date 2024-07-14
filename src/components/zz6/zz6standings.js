@@ -9,6 +9,7 @@ const ZZ6Standings = (props) => {
   const SHEET_REF = {
     GROUP: "_18",
     NAME: "",
+    RECORD: "_1",
   };
   const [standings, setStandings] = useState([]);
 
@@ -31,7 +32,7 @@ const ZZ6Standings = (props) => {
       return (
         <Row className="standings-data-row" key={standing[SHEET_REF.NAME]}>
           <Col md="6">{standing[SHEET_REF.NAME]}</Col>
-          <Col md="6">0-0</Col>
+          <Col md="6">{standing[SHEET_REF.RECORD]}</Col>
         </Row>
       );
     });
