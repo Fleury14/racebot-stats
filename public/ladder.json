@@ -85,6 +85,16 @@
         ]
     },
     {
+        "category": "ZZ6",
+        "presets": [
+            {
+                "name": "Highway to the Zemus Zone VI",
+                "description": "The flagset used for the ZZ6 tournament in 2024. A lower quality of treasure and the cHero flag will keep you on your toes. Tellah has joined Fu in his normal vacation spot.",
+                "flags": "O1:quest_forge/random:7,tough_quest/req:6/win:crystal Kmain/summon/moon/nofree Pkey Cstandard/nofree/start:cecil,kain,rydia,edward,rosa,yang,palom,porom,cid,edge/no:tellah,fusoya/j:abilities/nekkie/nodupes/hero Tpro/no:j/mintier:3/maxtier:7 Spro Bstandard/alt:gauntlet/whichburn Etoggle/no:jdrops Glife/backrow -kit:freedom -noadamants -nocursed -spoon"
+            }
+        ]
+    },
+    {
         "category": "Eblan Elixir League",
         "presets": [
             {
