@@ -26,11 +26,30 @@ const ZZ6Standings = (props) => {
     })
   }, [])
 
+  function getRowClass(index) {
+    if (index < 6) return "standings-data-row standings-qual";
+    if (index < 10) return "standings-data-row standings-next";
+    return "standings-data-row";
+  }
+
   function renderGroup(name) {
     if (!standings || !standings[name]) return null;
-    const result = standings[name].map(standing => {
+    standings[name].sort((a, b) => {
+      if (!a[SHEET_REF.RECORD] || !b[SHEET_REF.RECORD]) return 0;
+      
+      const Anums = a[SHEET_REF.RECORD].split("-")
+      const Awins = parseInt(Anums[0]);
+      const Alosses = parseInt(Anums[1]);
+      const Bnums = b[SHEET_REF.RECORD].split("-")
+      const Bwins = parseInt(Bnums[0]);
+      const Blosses = parseInt(Bnums[1]);
+      if (Awins !== Bwins) return Bwins - Awins;
+      return Alosses - Blosses;
+      
+    })
+    const result = standings[name].map((standing, index) => {
       return (
-        <Row className="standings-data-row" key={standing[SHEET_REF.NAME]}>
+        <Row className={getRowClass(index)} key={standing[SHEET_REF.NAME]}>
           <Col md="6">{standing[SHEET_REF.NAME]}</Col>
           <Col md="6">{standing[SHEET_REF.RECORD]}</Col>
         </Row>
