@@ -40,7 +40,7 @@ const ZZ6Standings = (props) => {
   }
 
   return (
-    <div>
+    <div className="zz6-standings">
       <h2>Standings</h2>
       {/* <div className="standings-container">
         <div className="standings-box">

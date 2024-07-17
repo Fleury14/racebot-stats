@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import { Container, Row, Col } from 'reactstrap';
+import ZZ6RestreamInfo from './zz6restream';
 import './zz6schedule.scss';
 
 const ZZ6Schedule = (props) => {
@@ -32,7 +33,7 @@ function renderScheduledMatches() {
           <Row key={`${index}${match["Player 1"]}${match["Player 2"]}`}>
             <Col md="4">{match.Date}</Col>
             <Col md="4">{match["Player 1"]} vs. {match["Player 2"]}</Col>
-            <Col md="4">{match.Channel}</Col>
+            <Col md="4"><ZZ6RestreamInfo comms={match.Comms} restream={match.Restreamer} tracker={match.Tracker} channel={match.Channel}/></Col>
           </Row>
         );
       })}
@@ -40,11 +41,35 @@ function renderScheduledMatches() {
   );
 }
 
+function renderCompletedMatched() {
+  const completedMatches = schedule.filter(match => match.Winner !== "")
+  return (
+    <Container>
+        <Row className="schedule-title-row">
+          <Col md="4">Date</Col>
+          <Col md="4">Player 1</Col>
+          <Col md="4">Player 2</Col>
+        </Row>
+        {completedMatches.map((match, index) => {
+          return (
+            <Row key={`${index}${match["Player 1"]}${match["Player 2"]}`}>
+              <Col md="4">{match.Date}</Col>
+              <Col md="4" className={match.Winner === "1" ? "standing-winner" : ""}>{match["Player 1"]} - {match["Player 1 Time"]}</Col>
+              <Col md="4" className={match.Winner === "2" ? "standing-winner" : ""}>{match["Player 2"]} - {match["Player 2 Time"]}</Col>
+            </Row>
+          );
+        })}
+      </Container>
+  );
+}
+
 return (
-  <div>
+  <div className="zz6-schedule">
     <h2>Schedule</h2>
     <h3>Upcoming Matches</h3>
     {renderScheduledMatches()}
+    <h3>Completed Matches</h3>
+    {renderCompletedMatched()}
   </div>
 );
 

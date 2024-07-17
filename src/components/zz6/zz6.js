@@ -9,7 +9,7 @@ import ZZ6Schedule from './zz6schedule';
 
 const ZZ6 = (props) => {
 
-  const [ view, setView ] = useState("standings");
+  const [ view, setView ] = useState("schedule");
 
   return (
     <div className='zz6'>
