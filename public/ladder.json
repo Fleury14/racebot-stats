@@ -23,8 +23,8 @@
                 "flags": "O1:quest_forge/2:quest_tradepink/3:quest_pass/win:crystal Kmain/miab/nofree Pkey Crelaxed/start:fusoya/j:abilities/nofree Twildish Sstandard/no:j Bstandard/alt:gauntlet/nofree Etoggle/noexp Gwarp/life/sylph/backrow -kit:freedom -supersmith -vanilla:fusoya"
             },
             {
-                "name": "Omnidexterous",
-                "description": "Utilizing the Omnidexterous flag, any character can equip any weapon or piece of armor, and treasures are bumped up to accomodate. Characters, however are at a premium, and shops are reduced a bit so make those treasures count!",
+                "name": "Omnidextrous",
+                "description": "Utilizing the Omnidextrous flag, any character can equip any weapon or piece of armor, and treasures are bumped up to accomodate. Characters, however are at a premium, and shops are reduced a bit so make those treasures count!",
                 "flags": "O2:quest_monsterking/4:quest_whitealtar/random:5,tough_quest/req:6/win:crystal Kmain/summon/moon/nofree Pkey Crelaxed/nofree/distinct:5/j:abilities/nekkie/nodupes Twild/sparse:80/maxtier:7 Spro Bstandard/alt:gauntlet Etoggle Glife/sylph/backrow -kit:basic -spoon -wacky:omnidextrous"
             },
             {
