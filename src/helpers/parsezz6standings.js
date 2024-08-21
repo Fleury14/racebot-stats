@@ -2,7 +2,7 @@ const parseZZ6Standings = (standings) => {
   if (!standings) return [];
 
   const SHEET_REF = {
-    GROUP: "_18",
+    GROUP: "_19",
     NAME: "",
   };
 
