@@ -3,6 +3,7 @@ import { Navbar } from '..';
 // import { Container, Row, Col } from 'reactstrap';
 import ZZ6Onramp from './zz6onramp';
 import ZZ6Standings from './zz6standings';
+import ZZ6BracketView from './zz6bracket';
 // import Papa from 'papaparse';
 import './zz6.scss'
 import ZZ6Schedule from './zz6schedule';
@@ -20,12 +21,14 @@ const ZZ6 = (props) => {
           <li className='zz6-nav-item' onClick={() => {setView("onramp")}}>On-Ramp</li>
           <li className='zz6-nav-item' onClick={() => {setView("schedule")}}>Schedule</li>
           <li className='zz6-nav-item' onClick={() => {setView("standings")}}>Standings</li>
+          <li className='zz6-nav-item' onClick={() => {setView("bracket")}}>Bracket</li>
           <li className='zz6-nav-item'>Off-Ramp</li>
         </ul>
       </div>
       {view === "onramp" ? <ZZ6Onramp/> : null}
       {view === "standings" ? <ZZ6Standings /> : null}
       {view === "schedule" ? <ZZ6Schedule /> : null}
+      {view === "bracket" ? <ZZ6BracketView /> : null}
     </div>
   );
 }
