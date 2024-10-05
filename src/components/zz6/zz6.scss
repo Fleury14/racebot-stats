@@ -9,3 +9,37 @@
 .onramp-row {
   background-color: #ddd;
 }
+
+.zz6-nav {
+  display: flex;
+  align-items: center;
+  background-color: #010159;
+  color: #fff;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  ul {
+    display: flex;
+    margin: 0;
+    height: 50px;
+    align-items: center;
+  }
+
+  li {
+    list-style-type: none;
+    margin-right: 30px;
+    transition: all 1s;
+
+    &:hover {
+      cursor: pointer;
+      color: yellow;
+    }
+  }
+}
+
+.zz6-bracket-iframe {
+  width: 100%;
+  height: 1000px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}

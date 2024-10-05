@@ -1,0 +1,33 @@
+h2 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.standings-image {
+  padding: 50px;
+}
+
+.standings-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.standings-box {
+  width: 50%;
+}
+
+.standings-data-row {
+  text-align: center;
+}
+
+.standings-header {
+  font-weight: 900;
+}
+
+.standings-qual {
+  background-color: #DFD;
+}
+
+.standings-next {
+  background-color: #FFD;
+}
